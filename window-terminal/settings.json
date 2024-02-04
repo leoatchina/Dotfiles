@@ -93,6 +93,25 @@
         {
             "command": "unbound",
             "keys": "alt+f4"
+        },
+        {
+            "command": "unbound",
+            "keys": "alt+space"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+alt+space"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+shift+space"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+numpad0"
+        },
+        {
+            "command": "openSystemMenu"
         }
     ],
     "alwaysOnTop": false,
