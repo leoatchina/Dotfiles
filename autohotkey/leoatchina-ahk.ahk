@@ -16,10 +16,10 @@ Return
 ; ----------------
 ; Tab
 ; ----------------
-CapsLock & j::
+CapsLock & n::
 Send ^{Tab}
 Return
-CapsLock & k::
+CapsLock & p::
 Send ^+{Tab}
 Return
 ; ----------------
@@ -61,10 +61,10 @@ CapsLock & w::Send {Blind}{Up DownTemp}
 CapsLock & w up::Send {Blind}{Up Up}
 CapsLock & d::Send {Blind}{Right DownTemp}
 CapsLock & d up::Send {Blind}{Right Up}
-CapsLock & n::Send {Blind}{Down DownTemp}
-CapsLock & n up::Send {Blind}{Down Up}
-CapsLock & p::Send {Blind}{Up DownTemp}
-CapsLock & p up::Send {Blind}{Up Up}
+CapsLock & j::Send {Blind}{Down DownTemp}
+CapsLock & j up::Send {Blind}{Down Up}
+CapsLock & k::Send {Blind}{Up DownTemp}
+CapsLock & k up::Send {Blind}{Up Up}
 ; ----------------
 ; Home End
 ; ----------------
