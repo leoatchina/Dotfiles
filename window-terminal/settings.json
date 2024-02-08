@@ -6,6 +6,13 @@
         {
             "command": 
             {
+                "action": "copy",
+                "singleLine": false
+            }
+        },
+        {
+            "command": 
+            {
                 "action": "switchToTab",
                 "index": 4294967295
             },
@@ -22,13 +29,6 @@
         {
             "command": 
             {
-                "action": "copy",
-                "singleLine": false
-            }
-        },
-        {
-            "command": 
-            {
                 "action": "splitPane",
                 "split": "down",
                 "splitMode": "duplicate"
@@ -39,11 +39,11 @@
             "command": "paste"
         },
         {
-            "command": "find",
-            "keys": "ctrl+shift+f"
+            "command": "showContextMenu"
         },
         {
-            "command": "showContextMenu"
+            "command": "find",
+            "keys": "ctrl+shift+f"
         },
         {
             "command": 
@@ -161,16 +161,10 @@
                 "name": "Command Prompt"
             },
             {
-                "guid": "{061ec44d-208c-5d8b-90e9-c617f5768961}",
+                "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
                 "hidden": false,
-                "name": "Developer Command Prompt for VS 2022",
-                "source": "Windows.Terminal.VisualStudio"
-            },
-            {
-                "guid": "{ddd74067-970c-535c-b11a-43f76c714b81}",
-                "hidden": false,
-                "name": "Developer PowerShell for VS 2022",
-                "source": "Windows.Terminal.VisualStudio"
+                "name": "PowerShell",
+                "source": "Windows.Terminal.PowershellCore"
             }
         ]
     },
