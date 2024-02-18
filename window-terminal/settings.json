@@ -1,40 +1,26 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions":
+    "actions": 
     [
         {
-            "command":
-            {
-                "action": "copy",
-                "singleLine": false
-            }
-        },
-        {
-            "command":
-            {
-                "action": "copy",
-                "singleLine": false
-            }
-        },
-        {
-            "command":
-            {
-                "action": "switchToTab",
-                "index": 8
-            },
-            "keys": "ctrl+alt+9"
-        },
-        {
-            "command":
+            "command": 
             {
                 "action": "switchToTab",
                 "index": 4294967295
             },
-            "keys": "ctrl+alt+0"
+            "keys": "ctrl+alt+9"
         },
         {
-            "command":
+            "command": 
+            {
+                "action": "copy",
+                "singleLine": false
+            },
+	    "keys": "ctrl+shift+c"
+        },
+        {
+            "command": 
             {
                 "action": "splitPane",
                 "split": "down",
@@ -44,14 +30,14 @@
         },
         {
             "command": "paste",
-            "keys": "ctrl+shift+v"
+	    "keys": "ctrl+shift+v"
         },
         {
             "command": "find",
             "keys": "ctrl+shift+f"
         },
         {
-            "command":
+            "command": 
             {
                 "action": "splitPane",
                 "split": "right",
@@ -62,10 +48,6 @@
         {
             "command": "unbound",
             "keys": "ctrl+c"
-        },
-        {
-            "command": "unbound",
-            "keys": "enter"
         },
         {
             "command": "unbound",
@@ -112,19 +94,13 @@
             "keys": "ctrl+numpad0"
         },
         {
-            "command":
+            "command": "unbound",
+            "keys": "ctrl+`"
+        },
+        {
+            "command": 
             {
                 "action": "globalSummon"
-            },
-            "keys": "win+`"
-        },
-        {
-            "command": "openSystemMenu"
-        },
-        {
-            "command":
-            {
-                "action": "quakeMode"
             },
             "keys": "ctrl+`"
         }
@@ -135,19 +111,19 @@
     "copyOnSelect": false,
     "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
     "language": "zh-Hans",
-    "newTabMenu":
+    "newTabMenu": 
     [
         {
             "type": "remainingProfiles"
         }
     ],
-    "profiles":
+    "profiles": 
     {
-        "defaults":
+        "defaults": 
         {
             "colorScheme": "Campbell Powershell",
             "experimental.retroTerminalEffect": false,
-            "font":
+            "font": 
             {
                 "cellHeight": "1.2",
                 "face": "CascadiaCode Nerd Font",
@@ -156,12 +132,12 @@
             },
             "useAtlasEngine": true
         },
-        "list":
+        "list": 
         [
             {
                 "colorScheme": "One Half Dark",
                 "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
-                "font":
+                "font": 
                 {
                     "face": "CascadiaCode Nerd Font"
                 },
@@ -176,14 +152,20 @@
                 "name": "Command Prompt"
             },
             {
-                "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+                "guid": "{061ec44d-208c-5d8b-90e9-c617f5768961}",
                 "hidden": false,
-                "name": "PowerShell",
-                "source": "Windows.Terminal.PowershellCore"
+                "name": "Developer Command Prompt for VS 2022",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{ddd74067-970c-535c-b11a-43f76c714b81}",
+                "hidden": false,
+                "name": "Developer PowerShell for VS 2022",
+                "source": "Windows.Terminal.VisualStudio"
             }
         ]
     },
-    "schemes":
+    "schemes": 
     [
         {
             "background": "#0C0C0C",
