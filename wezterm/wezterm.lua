@@ -3,6 +3,7 @@ local action = wezterm.action
 local config = wezterm.config_builder()
 
 config.term = ''
+config.font_size = 11
 config.keys = {
   {
     key = 'R',
@@ -18,8 +19,10 @@ config.keys = {
   },
 }
 
+local os_name = os.getenv("OS")
 
-config.default_prog = { 'C:\\Program Files\\PowerShell\\7\\pwsh.exe' }
+if os_name == "Windows_NT" then
+  config.default_prog = { 'C:\\Program Files\\PowerShell\\7\\pwsh.exe' }
+end
 
 return config
-

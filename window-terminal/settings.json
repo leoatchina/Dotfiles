@@ -1,10 +1,17 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions": 
+    "actions":
     [
         {
-            "command": 
+            "command":
+            {
+                "action": "copy",
+                "singleLine": false
+            }
+        },
+        {
+            "command":
             {
                 "action": "switchToTab",
                 "index": 4294967295
@@ -12,15 +19,15 @@
             "keys": "ctrl+alt+9"
         },
         {
-            "command": 
+            "command":
             {
-                "action": "copy",
-                "singleLine": false
+                "action": "switchToTab",
+                "index": 4294967295
             },
-	    "keys": "ctrl+shift+c"
+            "keys": "ctrl+alt+0"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "splitPane",
                 "split": "down",
@@ -29,15 +36,17 @@
             "keys": "ctrl+shift+["
         },
         {
-            "command": "paste",
-	    "keys": "ctrl+shift+v"
+            "command": "paste"
+        },
+        {
+            "command": "showContextMenu"
         },
         {
             "command": "find",
             "keys": "ctrl+shift+f"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "splitPane",
                 "split": "right",
@@ -48,6 +57,10 @@
         {
             "command": "unbound",
             "keys": "ctrl+c"
+        },
+        {
+            "command": "unbound",
+            "keys": "enter"
         },
         {
             "command": "unbound",
@@ -95,10 +108,10 @@
         },
         {
             "command": "unbound",
-            "keys": "ctrl+`"
+            "keys": "win+`"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "globalSummon"
             },
@@ -111,19 +124,19 @@
     "copyOnSelect": false,
     "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
     "language": "zh-Hans",
-    "newTabMenu": 
+    "newTabMenu":
     [
         {
             "type": "remainingProfiles"
         }
     ],
-    "profiles": 
+    "profiles":
     {
-        "defaults": 
+        "defaults":
         {
             "colorScheme": "Campbell Powershell",
             "experimental.retroTerminalEffect": false,
-            "font": 
+            "font":
             {
                 "cellHeight": "1.2",
                 "face": "CascadiaCode Nerd Font",
@@ -132,12 +145,12 @@
             },
             "useAtlasEngine": true
         },
-        "list": 
+        "list":
         [
             {
                 "colorScheme": "One Half Dark",
                 "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
-                "font": 
+                "font":
                 {
                     "face": "CascadiaCode Nerd Font"
                 },
@@ -165,7 +178,7 @@
             }
         ]
     },
-    "schemes": 
+    "schemes":
     [
         {
             "background": "#0C0C0C",
