@@ -13,22 +13,6 @@
         {
             "command":
             {
-                "action": "switchToTab",
-                "index": 4294967295
-            },
-            "keys": "ctrl+alt+9"
-        },
-        {
-            "command":
-            {
-                "action": "switchToTab",
-                "index": 4294967295
-            },
-            "keys": "ctrl+alt+0"
-        },
-        {
-            "command":
-            {
                 "action": "splitPane",
                 "split": "down",
                 "splitMode": "duplicate"
@@ -111,11 +95,29 @@
             "keys": "win+`"
         },
         {
+            "command": "unbound",
+            "keys": "ctrl+alt+left"
+        },
+        {
             "command":
             {
                 "action": "globalSummon"
             },
             "keys": "ctrl+`"
+        },
+        {
+            "command":
+            {
+                "action": "moveFocus",
+                "direction": "previous"
+            }
+        },
+        {
+            "command":
+            {
+                "action": "closeTabsAfter"
+            },
+            "keys": "ctrl+alt+0"
         }
     ],
     "alwaysOnTop": false,
