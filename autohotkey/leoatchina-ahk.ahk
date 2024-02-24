@@ -128,10 +128,6 @@ CapsLock & r::Reload
 CapsLock & g::^!+g
 CapsLock & i::^!+i
 ; ------------------------------------
-; zeal
-; ------------------------------------
-CapsLock & z::^!+z
-; ------------------------------------
 ; Input method control change
 ; ------------------------------------
 CapsLock & Enter::
@@ -150,7 +146,7 @@ CapsLock & .::^.
 ; ------------------------------------
 ; 去除复制来的内容里的回车
 ; ------------------------------------
-CapsLock & `::
+CapsLock & z::
 tmp := RegExReplace(clipboard, "(\S.*?)\R(.*?\S)", "$1 $2")
 clipboard := tmp
 clipwait 0.1
