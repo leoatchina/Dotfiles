@@ -1,17 +1,17 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions":
+    "actions": 
     [
         {
-            "command":
+            "command": 
             {
                 "action": "copy",
                 "singleLine": false
             }
         },
         {
-            "command":
+            "command": 
             {
                 "action": "splitPane",
                 "split": "down",
@@ -23,14 +23,21 @@
             "command": "paste"
         },
         {
-            "command": "showContextMenu"
-        },
-        {
             "command": "find",
             "keys": "ctrl+shift+f"
         },
         {
-            "command":
+            "command": "showContextMenu"
+        },
+        {
+            "command": 
+            {
+                "action": "globalSummon"
+            },
+            "keys": "ctrl+`"
+        },
+        {
+            "command": 
             {
                 "action": "splitPane",
                 "split": "right",
@@ -99,21 +106,14 @@
             "keys": "ctrl+alt+left"
         },
         {
-            "command":
-            {
-                "action": "globalSummon"
-            },
-            "keys": "ctrl+`"
-        },
-        {
-            "command":
+            "command": 
             {
                 "action": "moveFocus",
                 "direction": "previous"
             }
         },
         {
-            "command":
+            "command": 
             {
                 "action": "closeTabsAfter"
             },
@@ -126,19 +126,19 @@
     "copyOnSelect": false,
     "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
     "language": "zh-Hans",
-    "newTabMenu":
+    "newTabMenu": 
     [
         {
             "type": "remainingProfiles"
         }
     ],
-    "profiles":
+    "profiles": 
     {
-        "defaults":
+        "defaults": 
         {
             "colorScheme": "Campbell Powershell",
             "experimental.retroTerminalEffect": false,
-            "font":
+            "font": 
             {
                 "cellHeight": "1.2",
                 "face": "CascadiaCode Nerd Font",
@@ -147,12 +147,12 @@
             },
             "useAtlasEngine": true
         },
-        "list":
+        "list": 
         [
             {
                 "colorScheme": "One Half Dark",
                 "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
-                "font":
+                "font": 
                 {
                     "face": "CascadiaCode Nerd Font"
                 },
@@ -177,10 +177,22 @@
                 "hidden": false,
                 "name": "Developer PowerShell for VS 2022",
                 "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+                "hidden": false,
+                "name": "PowerShell",
+                "source": "Windows.Terminal.PowershellCore"
+            },
+            {
+                "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+                "hidden": false,
+                "name": "Azure Cloud Shell",
+                "source": "Windows.Terminal.Azure"
             }
         ]
     },
-    "schemes":
+    "schemes": 
     [
         {
             "background": "#0C0C0C",

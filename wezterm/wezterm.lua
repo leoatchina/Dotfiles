@@ -3,7 +3,7 @@ local action = wezterm.action
 local config = wezterm.config_builder()
 
 config.term = ''
-config.font_size = 11
+config.font_size = 10.5
 config.keys = {
   {
     key = 'R',
