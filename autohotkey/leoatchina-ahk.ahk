@@ -159,9 +159,8 @@ Clipboard = %Clipboard%
 clipwait 0.1
 Return
 ; ------------------------------------
-; ctrl+shift+win+` set to ditto clipboard
+; copy paste
 ; ------------------------------------
-CapsLock & alt::^+#`
 CapsLock & v::Send {Shift down}{Ins}{Shift up}
 CapsLock & c::Send {Ctrl down}{Ins}{Ctrl up}
 ; ------------------------------------
