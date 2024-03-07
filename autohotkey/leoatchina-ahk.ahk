@@ -14,7 +14,7 @@ Capslock & q::
 Send {ESC}
 Return
 ; ----------------
-; Tab
+; Tab/Shift-Tab
 ; ----------------
 CapsLock & n::
 Send ^{Tab}
@@ -25,13 +25,13 @@ Return
 ; ----------------
 ; Del
 ; ----------------
-CapsLock & backspace::SendInput {Blind}{Del DownTemp}
-CapsLock & backspace up::SendInput {Blind}{Del Up}
+CapsLock & x::SendInput {Blind}{Del DownTemp}
+CapsLock & x up::SendInput {Blind}{Del Up}
 ; ----------------
-; CapsLock toggle
+; CapsLockToggle 
 ; ----------------
-CapsLock & Tab::SendInput {Blind}{CapsLock DownTemp}
-CapsLock & Tab up::SendInput {Blind}{CapsLock Up}
+CapsLock & backspace::SendInput {Blind}{CapsLock DownTemp}
+CapsLock & backspace up::SendInput {Blind}{CapsLock Up}
 ; ----------------
 ; MicrosoftTODO
 ; ----------------
@@ -80,13 +80,6 @@ CapsLock & b up::SendInput {Blind}{PgUp Up}
 CapsLock & f::SendInput {Blind}{PgDn DownTemp}
 CapsLock & f up::SendInput {Blind}{PgDn Up}
 ; ----------------
-; BS Del
-; ----------------
-CapsLock & y::SendInput {Blind}{BS DownTemp}
-CapsLock & y up::SendInput {Blind}{BS Up}
-CapsLock & x::SendInput {Blind}{Del DownTemp}
-CapsLock & x up::SendInput {Blind}{Del Up}
-; ----------------
 ; Insert
 ; ----------------
 CapsLock & \::SendInput {Blind}{Insert DownTemp}
@@ -119,7 +112,7 @@ CapsLock & - up::SendInput {Blind}{F11 Up}
 CapsLock & =::SendInput    {Blind}{F12 DownTemp}
 CapsLock & = up::SendInput {Blind}{F12 Up}
 ; ------------------------------------
-; Reload ahk scripts
+; Reload ahr scripts
 ; ------------------------------------
 CapsLock & r::Reload
 ; ------------------------------------
@@ -146,7 +139,7 @@ CapsLock & .::^.
 ; ------------------------------------
 ; 去除复制来的内容里的回车
 ; ------------------------------------
-CapsLock & z::
+CapsLock & y::
 tmp := RegExReplace(clipboard, "(\S.*?)\R(.*?\S)", "$1 $2")
 clipboard := tmp
 clipwait 0.1
@@ -163,6 +156,10 @@ Return
 ; ------------------------------------
 CapsLock & v::Send {Shift down}{Ins}{Shift up}
 CapsLock & c::Send {Ctrl down}{Ins}{Ctrl up}
+; ------------------------------------
+; ditto
+; ------------------------------------
+CapsLock & `::!`
 ; ------------------------------------
 ; proe, 两侧键作为中键
 ; ------------------------------------
