@@ -23,10 +23,14 @@ CapsLock & p::
 Send ^+{Tab}
 Return
 ; ----------------
-; Del
+; Del/Bs
 ; ----------------
-CapsLock & x::SendInput {Blind}{Del DownTemp}
-CapsLock & x up::SendInput {Blind}{Del Up}
+CapsLock & x:: 
+if GetKeyState("Alt")
+    Send {Backspace}
+else
+    SendInput {Del}
+return
 ; ----------------
 ; CapsLockToggle 
 ; ----------------
