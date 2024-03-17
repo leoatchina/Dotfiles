@@ -17,6 +17,8 @@ config.keys = {
       end),
     },
   },
+  { key = 'n', mods = 'CTRL|SHIFT|ALT', action = action.MoveTabRelative(1) },
+  { key = 'p', mods = 'CTRL|SHIFT|ALT', action = action.MoveTabRelative(-1) },
 }
 
 local os_name = os.getenv("OS")
