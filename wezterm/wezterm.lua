@@ -21,8 +21,15 @@ config.keys = {
   { key = 'p', mods = 'CTRL|SHIFT|ALT', action = action.MoveTabRelative(-1) },
 }
 
-local os_name = os.getenv("OS")
+for i = 1, 9 do
+  table.insert(config.keys, {
+    key = tostring(i),
+    mods = 'CTRL|SHIFT|ALT',
+    action = action.ActivateTab(i - 1),
+  })
+end
 
+local os_name = os.getenv("OS")
 if os_name == "Windows_NT" then
   config.default_prog = { 'C:\\Program Files\\PowerShell\\7\\pwsh.exe' }
 end
