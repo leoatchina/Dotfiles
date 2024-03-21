@@ -407,7 +407,7 @@
     ],
     "showTabsInTitlebar": true,
     "tabWidthMode": "equal",
-    "theme": "dark",
+    "theme": "light",
     "themes": [],
-    "useAcrylicInTabRow": true
+    "useAcrylicInTabRow": false
 }
