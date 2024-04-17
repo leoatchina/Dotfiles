@@ -2,6 +2,11 @@
 #Persistent
 SetCapsLockState, AlwaysOff
 ; ----------------
+; screen shot
+; ---------------
+#f::Send ^{F1}
+#b::Send !{F1}
+; ----------------
 ; ESC
 ; ----------------
 Capslock & q::
