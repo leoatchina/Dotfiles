@@ -6,6 +6,7 @@ SetCapsLockState, AlwaysOff
 ; ---------------
 #f::Send ^{F1}
 #b::Send !{F1}
+#u::Send !{F2}
 ; ----------------
 ; ESC
 ; ----------------
