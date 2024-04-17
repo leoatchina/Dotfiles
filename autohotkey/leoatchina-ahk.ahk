@@ -2,12 +2,6 @@
 #Persistent
 SetCapsLockState, AlwaysOff
 ; ----------------
-; map for snipaste
-; ----------------
-#f::Send ^{F1}
-#u::Send ^{F2}
-#b::Send !{F1}
-; ----------------
 ; ESC
 ; ----------------
 Capslock & q::
