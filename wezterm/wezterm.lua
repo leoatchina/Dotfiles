@@ -77,7 +77,7 @@ end)
 
 table.insert(config.keys, {
   key="s",
-  mods="CTRL|SHIFT",
+  mods="CTRL|SHIFT|ALT",
   action=wezterm.action_callback(
     function()
       wezterm.show_quick_select(ssh_menu())

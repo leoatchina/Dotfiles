@@ -161,9 +161,9 @@ Return
 CapsLock & v::Send {Shift down}{Ins}{Shift up}
 CapsLock & c::Send {Ctrl down}{Ins}{Ctrl up}
 ; ------------------------------------
-; ditto
+; utools  
 ; ------------------------------------
-CapsLock & `::!`
+CapsLock & `::^#!v
 ; ------------------------------------
 ; proe, 两侧键作为中键
 ; ------------------------------------
