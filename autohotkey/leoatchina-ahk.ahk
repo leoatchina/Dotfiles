@@ -141,13 +141,9 @@ CapsLock & Ctrl::^`
 Ctrl & CapsLock::^`
 CapsLock & .::^.
 ; ------------------------------------
-; 去除复制来的内容里的回车
+; utools clipboard
 ; ------------------------------------
-CapsLock & y::
-tmp := RegExReplace(clipboard, "(\S.*?)\R(.*?\S)", "$1 $2")
-clipboard := tmp
-clipwait 0.1
-Return
+CapsLock & alt::#!c
 ; ------------------------------------
 ; 将剪贴板的内容转换为纯文本
 ; ------------------------------------
@@ -156,14 +152,18 @@ Clipboard = %Clipboard%
 clipwait 0.1
 Return
 ; ------------------------------------
+; 去除复制来的内容里的回车
+; ------------------------------------
+CapsLock & y::
+tmp := RegExReplace(clipboard, "(\S.*?)\R(.*?\S)", "$1 $2")
+clipboard := tmp
+clipwait 0.1
+Return
+; ------------------------------------
 ; copy paste
 ; ------------------------------------
 CapsLock & v::Send {Shift down}{Ins}{Shift up}
 CapsLock & c::Send {Ctrl down}{Ins}{Ctrl up}
-; ------------------------------------
-; utools  
-; ------------------------------------
-CapsLock & alt::#!v
 ; ------------------------------------
 ; proe, 两侧键作为中键
 ; ------------------------------------
