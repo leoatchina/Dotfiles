@@ -2,7 +2,7 @@ local wezterm = require 'wezterm'
 local action = wezterm.action
 local config = wezterm.config_builder()
 
-config.term = ''
+config.term = "xterm-256color"
 config.font_size = 10.5
 
 -- 在 WezTerm 配置中添加新的键绑定
@@ -84,6 +84,5 @@ table.insert(config.keys, {
     end
   )
 })
-
 
 return config
