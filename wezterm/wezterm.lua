@@ -21,6 +21,22 @@ config.keys = {
   },
   { key = 'n', mods = 'CTRL|SHIFT|ALT', action = action.MoveTabRelative(1) },
   { key = 'p', mods = 'CTRL|SHIFT|ALT', action = action.MoveTabRelative(-1) },
+  {
+    key = "S",
+    mods = "CTRL|SHIFT",
+    action = wezterm.action.SpawnCommandInNewTab{
+      args = {"powershell.exe", "-NoExit", "-Command", [[
+        $hosts = Get-Content $HOME\.ssh\config | Where-Object { $_ -match "^Host\s+" } | ForEach-Object { $_.Split()[1] };
+        $selectedHost = $hosts | Out-GridView -Title "选择一个主机进行SSH连接" -PassThru;
+        if ($selectedHost) {
+          ssh $selectedHost
+        } else {
+          Write-Host "没有选择主机";
+          exit;
+        }
+      ]]},
+    },
+  },
 }
 
 
