@@ -13,6 +13,10 @@ SetCapsLockState, AlwaysOff
 Capslock & q::
 Send {ESC}
 Return
+; ------------------------------------
+; disable ctrl+win+d
+; ------------------------------------
+^<#d::ESC
 ; ----------------
 ; Tab/Shift-Tab
 ; ----------------
@@ -25,14 +29,14 @@ Return
 ; ----------------
 ; Del/Bs
 ; ----------------
-CapsLock & x:: 
+CapsLock & x::
 if GetKeyState("Alt")
     Send {Backspace}
 else
     SendInput {Del}
 return
 ; ----------------
-; CapsLockToggle 
+; CapsLockToggle
 ; ----------------
 CapsLock & backspace::SendInput {Blind}{CapsLock DownTemp}
 CapsLock & backspace up::SendInput {Blind}{CapsLock Up}
