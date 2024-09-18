@@ -14,9 +14,10 @@ Capslock & q::
 Send {ESC}
 Return
 ; ------------------------------------
-; disable ctrl+win+d
+; disable ctrl+win+d / shift+space
 ; ------------------------------------
 ^<#d::ESC
++Space::Esc
 ; ----------------
 ; Tab/Shift-Tab
 ; ----------------
