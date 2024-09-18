@@ -17,7 +17,6 @@ Return
 ; disable ctrl+win+d / shift+space
 ; ------------------------------------
 ^<#d::ESC
-+Space::Esc
 ; ----------------
 ; Tab/Shift-Tab
 ; ----------------
