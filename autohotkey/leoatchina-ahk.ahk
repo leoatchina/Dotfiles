@@ -2,6 +2,39 @@
 #Persistent
 SetCapsLockState, AlwaysOff
 ; ----------------
+; 激活不同的软件
+; ---------------
+CapsLock & F1::
+IfWinExist ahk_exe firefox.exe
+    WinActivate
+else
+    Run "C:\Scoop\apps\firefox\current\firefox.exe"
+Return
+CapsLock & F2::
+IfWinExist ahk_exe msedge.exe
+    WinActivate
+else
+    Run "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
+Return
+CapsLock & F3::
+IfWinExist ahk_exe chrome.exe
+    WinActivate
+else
+    Run "C:\Scoop\apps\googlechrome\current\chrome.exe"
+Return
+CapsLock & F4::
+IfWinExist ahk_exe obsidian.exe
+    WinActivate
+else
+    Run "C:\Scoop\apps\obsidian\current\Obsidian.exe"
+Return
+CapsLock & F5::
+IfWinExist ahk_exe code.exe
+    WinActivate
+else
+    Run "C:\Scoop\apps\vscode\current\Code.exe"
+Return
+; ----------------
 ; screen shot
 ; ---------------
 #f::Send ^{F1}
