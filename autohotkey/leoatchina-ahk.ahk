@@ -9,22 +9,22 @@ CapsLock & r::Reload
 ; 激活不同的软件
 ; ---------------
 CapsLock & 1::
-IfWinExist ahk_exe firefox.exe
-    WinActivate
-else
-    Run "C:\Scoop\apps\firefox\current\firefox.exe"
-Return
-CapsLock & 2::
 IfWinExist ahk_exe msedge.exe
     WinActivate
 else
     Run "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
 Return
-CapsLock & 3::
+CapsLock & 2::
 IfWinExist ahk_exe chrome.exe
     WinActivate
 else
     Run "C:\Scoop\apps\googlechrome\current\chrome.exe"
+Return
+CapsLock & 3::
+IfWinExist ahk_exe firefox.exe
+    WinActivate
+else
+    Run "C:\Scoop\apps\firefox\current\firefox.exe"
 Return
 CapsLock & 4::
 IfWinExist ahk_exe obsidian.exe
@@ -69,16 +69,16 @@ else
     Run "C:\Program Files\WindowsApps\Microsoft.WindowsTerminal_1.20.11781.0_x64__8wekyb3d8bbwe\WindowsTerminal.exe"
 Return
 CapsLock & -::
+IfWinExist ahk_exe cursor.exe
+    WinActivate
+else
+    Run "C:\Scoop\apps\cursor\current\Cursor.exe"
+Return
+CapsLock & =::
 IfWinExist ahk_exe code.exe
     WinActivate
 else
     Run "C:\Scoop\apps\vscode\current\Code.exe"
-Return
-CapsLock & =::
-IfWinExist ahk_exe cursor.exe
-    WinActivate
-else
-    Run "C:\Users\Admin\AppData\Local\Programs\cursor\Cursor.exe"
 Return
 ; ----------------
 ; screen shot
