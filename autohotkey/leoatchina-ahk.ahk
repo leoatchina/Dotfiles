@@ -57,10 +57,10 @@ else
     Run "C:\Scoop\apps\telegram\current\Telegram.exe"
 Return
 CapsLock & 9::
-IfWinExist ahk_exe wezterm.exe
+IfWinExist ahk_exe wezterm-gui.exe
     WinActivate
 else
-    Run "C:\Scoop\apps\wezterm-nightly\current\wezterm.exe"
+    Run "C:\Scoop\apps\wezterm-nightly\current\wezterm-gui.exe"
 Return
 CapsLock & 0::
 IfWinExist ahk_exe WindowsTerminal.exe
