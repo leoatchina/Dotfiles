@@ -1,38 +1,84 @@
 ; #是win, !是alt, ^是ctrl, +是shift
 #Persistent
 SetCapsLockState, AlwaysOff
+; ------------------------------------
+; Reload ahr scripts
+; ------------------------------------
+CapsLock & r::Reload
 ; ----------------
 ; 激活不同的软件
 ; ---------------
-CapsLock & F1::
+CapsLock & 1::
 IfWinExist ahk_exe firefox.exe
     WinActivate
 else
     Run "C:\Scoop\apps\firefox\current\firefox.exe"
 Return
-CapsLock & F2::
+CapsLock & 2::
 IfWinExist ahk_exe msedge.exe
     WinActivate
 else
     Run "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
 Return
-CapsLock & F3::
+CapsLock & 3::
 IfWinExist ahk_exe chrome.exe
     WinActivate
 else
     Run "C:\Scoop\apps\googlechrome\current\chrome.exe"
 Return
-CapsLock & F4::
+CapsLock & 4::
 IfWinExist ahk_exe obsidian.exe
     WinActivate
 else
     Run "C:\Scoop\apps\obsidian\current\Obsidian.exe"
 Return
-CapsLock & F5::
+CapsLock & 5::
+IfWinExist ahk_exe zotero.exe
+    WinActivate
+else
+    Run "C:\Scoop\apps\zotero\current\zotero.exe"
+Return
+CapsLock & 6::
+IfWinExist ahk_exe logseq.exe
+    WinActivate
+else
+    Run "C:\Scoop\apps\logseq\current\logseq.exe"
+Return
+CapsLock & 7::
+IfWinExist ahk_exe joplin.exe
+    WinActivate
+else
+    Run "C:\Scoop\apps\joplin\current\Joplin.exe"
+Return
+CapsLock & 8::
+IfWinExist ahk_exe telegram.exe
+    WinActivate
+else
+    Run "C:\Scoop\apps\telegram\current\Telegram.exe"
+Return
+CapsLock & 9::
+IfWinExist ahk_exe wezterm.exe
+    WinActivate
+else
+    Run "C:\Scoop\apps\wezterm-nightly\current\wezterm.exe"
+Return
+CapsLock & 0::
+IfWinExist ahk_exe WindowsTerminal.exe
+    WinActivate
+else
+    Run "C:\Program Files\WindowsApps\Microsoft.WindowsTerminal_1.20.11781.0_x64__8wekyb3d8bbwe\WindowsTerminal.exe"
+Return
+CapsLock & -::
 IfWinExist ahk_exe code.exe
     WinActivate
 else
     Run "C:\Scoop\apps\vscode\current\Code.exe"
+Return
+CapsLock & =::
+IfWinExist ahk_exe cursor.exe
+    WinActivate
+else
+    Run "C:\Users\Admin\AppData\Local\Programs\cursor\Cursor.exe"
 Return
 ; ----------------
 ; screen shot
@@ -125,37 +171,6 @@ CapsLock & f up::SendInput {Blind}{PgDn Up}
 ; ----------------
 CapsLock & \::SendInput {Blind}{Insert DownTemp}
 CapsLock & \ up::SendInput {Blind}{Insert Up}
-; ----------------
-; Fn
-; ----------------
-CapsLock & 1::SendInput    {Blind}{F1 DownTemp}
-CapsLock & 1 up::SendInput {Blind}{F1 Up}
-CapsLock & 2::SendInput    {Blind}{F2 DownTemp}
-CapsLock & 2 up::SendInput {Blind}{F2 Up}
-CapsLock & 3::SendInput    {Blind}{F3 DownTemp}
-CapsLock & 3 up::SendInput {Blind}{F3 Up}
-CapsLock & 4::SendInput    {Blind}{F4 DownTemp}
-CapsLock & 4 up::SendInput {Blind}{F4 Up}
-CapsLock & 5::SendInput    {Blind}{F5 DownTemp}
-CapsLock & 5 up::SendInput {Blind}{F5 Up}
-CapsLock & 6::SendInput    {Blind}{F6 DownTemp}
-CapsLock & 6 up::SendInput {Blind}{F6 Up}
-CapsLock & 7::SendInput    {Blind}{F7 DownTemp}
-CapsLock & 7 up::SendInput {Blind}{F7 Up}
-CapsLock & 8::SendInput    {Blind}{F8 DownTemp}
-CapsLock & 8 up::SendInput {Blind}{F8 Up}
-CapsLock & 9::SendInput    {Blind}{F9 DownTemp}
-CapsLock & 9 up::SendInput {Blind}{F9 Up}
-CapsLock & 0::SendInput    {Blind}{F10 DownTemp}
-CapsLock & 0 up::SendInput {Blind}{F10 Up}
-CapsLock & -::SendInput    {Blind}{F11 DownTemp}
-CapsLock & - up::SendInput {Blind}{F11 Up}
-CapsLock & =::SendInput    {Blind}{F12 DownTemp}
-CapsLock & = up::SendInput {Blind}{F12 Up}
-; ------------------------------------
-; Reload ahr scripts
-; ------------------------------------
-CapsLock & r::Reload
 ; ------------------------------------
 ; GoldenDict
 ; ------------------------------------
