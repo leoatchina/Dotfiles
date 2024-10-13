@@ -8,6 +8,18 @@ CapsLock & r::Reload
 ; ----------------
 ; 激活不同的软件
 ; ---------------
+CapsLock & t::
+IfWinExist ahk_exe logseq.exe
+    WinActivate
+else
+    Run "C:\Scoop\apps\logseq\current\logseq.exe"
+Return
+CapsLock & o::
+IfWinExist ahk_exe obsidian.exe
+    WinActivate
+else
+    Run "C:\Scoop\apps\obsidian\current\Obsidian.exe"
+Return
 CapsLock & 1::
 IfWinExist ahk_exe msedge.exe
     WinActivate
@@ -21,28 +33,28 @@ else
     Run "C:\Scoop\apps\googlechrome\current\chrome.exe"
 Return
 CapsLock & 3::
+IfWinExist ahk_exe quark.exe
+    WinActivate
+else
+    Run "quark.exe"
+Return
+CapsLock & 4::
 IfWinExist ahk_exe firefox.exe
     WinActivate
 else
     Run "C:\Scoop\apps\firefox\current\firefox.exe"
 Return
-CapsLock & 4::
-IfWinExist ahk_exe obsidian.exe
+CapsLock & 5::
+IfWinExist ahk_exe telegram.exe
     WinActivate
 else
-    Run "C:\Scoop\apps\obsidian\current\Obsidian.exe"
+    Run "C:\Scoop\apps\telegram\current\Telegram.exe"
 Return
-CapsLock & 5::
+CapsLock & 6::
 IfWinExist ahk_exe zotero.exe
     WinActivate
 else
     Run "C:\Scoop\apps\zotero\current\zotero.exe"
-Return
-CapsLock & 6::
-IfWinExist ahk_exe logseq.exe
-    WinActivate
-else
-    Run "C:\Scoop\apps\logseq\current\logseq.exe"
 Return
 CapsLock & 7::
 IfWinExist ahk_exe joplin.exe
@@ -51,10 +63,10 @@ else
     Run "C:\Scoop\apps\joplin\current\Joplin.exe"
 Return
 CapsLock & 8::
-IfWinExist ahk_exe telegram.exe
+IfWinExist ahk_exe notepad--.exe
     WinActivate
 else
-    Run "C:\Scoop\apps\telegram\current\Telegram.exe"
+    Run "C:\Scoop\apps\notepad--\current\notepad--.exe"
 Return
 CapsLock & 9::
 IfWinExist ahk_exe wezterm-gui.exe
@@ -120,23 +132,15 @@ return
 CapsLock & backspace::SendInput {Blind}{CapsLock DownTemp}
 CapsLock & backspace up::SendInput {Blind}{CapsLock Up}
 ; ----------------
-; MicrosoftTODO
-; ----------------
-CapsLock & t::RUN shell:AppsFolder\Microsoft.Todos_8wekyb3d8bbwe!App
-; ----------------
 ; Volume control
 ; ----------------
 CapsLock & m::Send {Volume_Mute}
 CapsLock & ]::Send {Volume_Up}
 CapsLock & [::Send {Volume_Down}
 ; ----------------
-; Run taskmgr
-; ----------------
-CapsLock & u::Run "C:\Windows\system32\taskmgr.exe"
-; ----------------
 ; Explorer
 ; ----------------
-CapsLock & o::Run explorer.exe
+CapsLock & e::Run explorer.exe
 ; ----------------
 ; Left, Down, Up, Right
 ; ----------------
@@ -200,14 +204,14 @@ CapsLock & z::^#!c
 ; ------------------------------------
 ; 将剪贴板的内容转换为纯文本
 ; ------------------------------------
-CapsLock & e::
+CapsLock & y::
 Clipboard = %Clipboard%
 clipwait 0.1
 Return
 ; ------------------------------------
 ; 去除复制来的内容里的回车
 ; ------------------------------------
-CapsLock & y::
+CapsLock & u::
 tmp := RegExReplace(clipboard, "(\S.*?)\R(.*?\S)", "$1 $2")
 clipboard := tmp
 clipwait 0.1
