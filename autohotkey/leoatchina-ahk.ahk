@@ -78,7 +78,7 @@ CapsLock & 0::
 IfWinExist ahk_exe WindowsTerminal.exe
     WinActivate
 else
-    Run "C:\Program Files\WindowsApps\Microsoft.WindowsTerminal_1.20.11781.0_x64__8wekyb3d8bbwe\WindowsTerminal.exe"
+    Run "C:\Scoop\apps\windows-terminal\current\WindowsTerminal.exe"
 Return
 CapsLock & -::
 IfWinExist ahk_exe cursor.exe
