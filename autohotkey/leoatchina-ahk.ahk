@@ -20,6 +20,12 @@ IfWinExist ahk_exe obsidian.exe
 else
     Run "C:\Scoop\apps\obsidian\current\Obsidian.exe"
 Return
+CapsLock & z::
+IfWinExist ahk_exe zotero.exe
+    WinActivate
+else
+    Run "C:\Scoop\apps\zotero\current\zotero.exe"
+Return
 CapsLock & 1::
 IfWinExist ahk_exe msedge.exe
     WinActivate
@@ -51,16 +57,16 @@ else
     Run "C:\Scoop\apps\telegram\current\Telegram.exe"
 Return
 CapsLock & 6::
-IfWinExist ahk_exe zotero.exe
-    WinActivate
-else
-    Run "C:\Scoop\apps\zotero\current\zotero.exe"
-Return
-CapsLock & 7::
 IfWinExist ahk_exe joplin.exe
     WinActivate
 else
     Run "C:\Scoop\apps\joplin\current\Joplin.exe"
+Return
+CapsLock & 7::
+IfWinExist ahk_exe neovide.exe
+    WinActivate
+else
+    Run "C:\Scoop\apps\neovide\current\neovide.exe"
 Return
 CapsLock & 8::
 IfWinExist ahk_exe notepad--.exe
@@ -199,8 +205,8 @@ CapsLock & .::^.
 ; ------------------------------------
 ; utools clipboard
 ; ------------------------------------
-CapsLock & alt::#!c
-CapsLock & z::^#!c
+CapsLock & Alt::#!c
+CapsLock & Rshift::^#!c
 ; ------------------------------------
 ; 将剪贴板的内容转换为纯文本
 ; ------------------------------------
