@@ -8,6 +8,12 @@ CapsLock & r::Reload
 ; ----------------
 ; 激活不同的软件
 ; ---------------
+CapsLock & i::
+IfWinExist ahk_exe joplin.exe
+    WinActivate
+else
+    Run "C:\Scoop\apps\joplin\current\Joplin.exe"
+Return
 CapsLock & t::
 IfWinExist ahk_exe logseq.exe
     WinActivate
@@ -57,22 +63,22 @@ else
     Run "C:\Scoop\apps\telegram\current\Telegram.exe"
 Return
 CapsLock & 6::
-IfWinExist ahk_exe joplin.exe
-    WinActivate
-else
-    Run "C:\Scoop\apps\joplin\current\Joplin.exe"
-Return
-CapsLock & 7::
-IfWinExist ahk_exe neovide.exe
-    WinActivate
-else
-    Run "C:\Scoop\apps\neovide\current\neovide.exe"
-Return
-CapsLock & 8::
 IfWinExist ahk_exe notepad--.exe
     WinActivate
 else
     Run "C:\Scoop\apps\notepad--\current\notepad--.exe"
+Return
+CapsLock & 7::
+IfWinExist ahk_exe gvim.exe
+    WinActivate
+else
+    Run "C:\Scoop\apps\vim-nightly\current\gvim.exe"
+Return
+CapsLock & 8::
+IfWinExist ahk_exe neovide.exe
+    WinActivate
+else
+    Run "C:\Scoop\apps\neovide\current\neovide.exe"
 Return
 CapsLock & 9::
 IfWinExist ahk_exe wezterm-gui.exe
@@ -184,8 +190,12 @@ CapsLock & \ up::SendInput {Blind}{Insert Up}
 ; ------------------------------------
 ; GoldenDict
 ; ------------------------------------
-CapsLock & g::^!+g
-CapsLock & i::^!+i
+CapsLock & g::
+if GetKeyState("Alt")
+    Send ^!+i
+else
+    Send ^!+g
+return
 ; ------------------------------------
 ; Input method control change
 ; ------------------------------------
