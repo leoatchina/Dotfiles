@@ -48,7 +48,11 @@ CapsLock & 3::
 IfWinExist ahk_exe quark.exe
     WinActivate
 else
-    Run "quark.exe"
+    If FileExist("C:\Users\Admin\AppData\Local\Programs\Quark\quark.exe")
+        Run "C:\Users\Admin\AppData\Local\Programs\Quark\quark.exe"
+    else
+        Run "quark.exe"
+    Return
 Return
 CapsLock & 4::
 IfWinExist ahk_exe firefox.exe
