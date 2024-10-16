@@ -32,6 +32,12 @@ IfWinExist ahk_exe zotero.exe
 else
     Run "C:\Scoop\apps\zotero\current\zotero.exe"
 Return
+CapsLock & m::
+IfWinExist ahk_exe telegram.exe
+    WinActivate
+else
+    Run "C:\Scoop\apps\telegram\current\Telegram.exe"
+Return
 CapsLock & 1::
 IfWinExist ahk_exe msedge.exe
     WinActivate
@@ -61,28 +67,28 @@ else
     Run "C:\Scoop\apps\firefox\current\firefox.exe"
 Return
 CapsLock & 5::
-IfWinExist ahk_exe telegram.exe
-    WinActivate
-else
-    Run "C:\Scoop\apps\telegram\current\Telegram.exe"
-Return
-CapsLock & 6::
 IfWinExist ahk_exe notepad--.exe
     WinActivate
 else
     Run "C:\Scoop\apps\notepad--\current\notepad--.exe"
 Return
-CapsLock & 7::
+CapsLock & 6::
 IfWinExist ahk_exe gvim.exe
     WinActivate
 else
     Run "C:\Scoop\apps\vim-nightly\current\gvim.exe"
 Return
-CapsLock & 8::
+CapsLock & 7::
 IfWinExist ahk_exe neovide.exe
     WinActivate
 else
     Run "C:\Scoop\apps\neovide\current\neovide.exe"
+Return
+CapsLock & 8::
+IfWinExist ahk_exe positron.exe
+    WinActivate
+else
+    Run "C:\Scoop\apps\Positron\current\positron.exe"
 Return
 CapsLock & 9::
 IfWinExist ahk_exe wezterm-gui.exe
@@ -150,7 +156,7 @@ CapsLock & backspace up::SendInput {Blind}{CapsLock Up}
 ; ----------------
 ; Volume control
 ; ----------------
-CapsLock & m::Send {Volume_Mute}
+CapsLock & \::Send {Volume_Mute}
 CapsLock & ]::Send {Volume_Up}
 CapsLock & [::Send {Volume_Down}
 ; ----------------
@@ -186,11 +192,6 @@ CapsLock & b::SendInput {Blind}{PgUp DownTemp}
 CapsLock & b up::SendInput {Blind}{PgUp Up}
 CapsLock & f::SendInput {Blind}{PgDn DownTemp}
 CapsLock & f up::SendInput {Blind}{PgDn Up}
-; ----------------
-; Insert
-; ----------------
-CapsLock & \::SendInput {Blind}{Insert DownTemp}
-CapsLock & \ up::SendInput {Blind}{Insert Up}
 ; ------------------------------------
 ; GoldenDict
 ; ------------------------------------
