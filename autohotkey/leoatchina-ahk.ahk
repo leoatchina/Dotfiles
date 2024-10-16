@@ -112,28 +112,28 @@ else
     Run "C:\Scoop\apps\firefox\current\firefox.exe"
 Return
 CapsLock & 5::
-IfWinExist ahk_exe notepad--.exe
+IfWinExist ahk_exe positron.exe
     WinActivate
 else
-    Run "C:\Scoop\apps\notepad--\current\notepad--.exe"
+    Run "C:\Scoop\apps\Positron\current\positron.exe"
 Return
 CapsLock & 6::
-IfWinExist ahk_exe gvim.exe
-    WinActivate
-else
-    Run "C:\Scoop\apps\vim-nightly\current\gvim.exe"
-Return
-CapsLock & 7::
 IfWinExist ahk_exe neovide.exe
     WinActivate
 else
     Run "C:\Scoop\apps\neovide\current\neovide.exe"
 Return
-CapsLock & 8::
-IfWinExist ahk_exe positron.exe
+CapsLock & 7::
+IfWinExist ahk_exe gvim.exe
     WinActivate
 else
-    Run "C:\Scoop\apps\Positron\current\positron.exe"
+    Run "C:\Scoop\apps\vim-nightly\current\gvim.exe"
+Return
+CapsLock & 8::
+IfWinExist ahk_exe notepad--.exe
+    WinActivate
+else
+    Run "C:\Scoop\apps\notepad--\current\notepad--.exe"
 Return
 CapsLock & 9::
 IfWinExist ahk_exe wezterm-gui.exe
