@@ -53,6 +53,12 @@ return
 ; ----------------
 ; 激活不同的软件
 ; ---------------
+CapsLock & LShift::
+IfWinExist ahk_exe telegram.exe
+    WinActivate
+else
+    Run "C:\Scoop\apps\telegram\current\Telegram.exe"
+Return
 CapsLock & i::
 IfWinExist ahk_exe joplin.exe
     WinActivate
@@ -76,12 +82,6 @@ IfWinExist ahk_exe zotero.exe
     WinActivate
 else
     Run "C:\Scoop\apps\zotero\current\zotero.exe"
-Return
-CapsLock & m::
-IfWinExist ahk_exe telegram.exe
-    WinActivate
-else
-    Run "C:\Scoop\apps\telegram\current\Telegram.exe"
 Return
 CapsLock & 1::
 IfWinExist ahk_exe msedge.exe
@@ -201,7 +201,7 @@ CapsLock & backspace up::SendInput {Blind}{CapsLock Up}
 ; ----------------
 ; Volume control
 ; ----------------
-CapsLock & \::Send {Volume_Mute}
+CapsLock & m::Send {Volume_Mute}
 CapsLock & ]::Send {Volume_Up}
 CapsLock & [::Send {Volume_Down}
 ; ----------------
