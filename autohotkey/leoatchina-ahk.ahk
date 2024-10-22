@@ -96,6 +96,30 @@ else
     Run "C:\Scoop\apps\googlechrome\current\chrome.exe"
 Return
 CapsLock & 3::
+IfWinExist ahk_exe WindowsTerminal.exe
+    WinActivate
+else
+    Run "C:\Scoop\apps\windows-terminal\current\WindowsTerminal.exe"
+Return
+CapsLock & 4::
+IfWinExist ahk_exe wezterm-gui.exe
+    WinActivate
+else
+    Run "C:\Scoop\apps\wezterm-nightly\current\wezterm-gui.exe"
+Return
+CapsLock & 5::
+IfWinExist ahk_exe cursor.exe
+    WinActivate
+else
+    Run "C:\Scoop\apps\cursor\current\Cursor.exe"
+Return
+CapsLock & 6::
+IfWinExist ahk_exe code.exe
+    WinActivate
+else
+    Run "C:\Scoop\apps\vscode\current\Code.exe"
+Return
+CapsLock & 7::
 IfWinExist ahk_exe quark.exe
     WinActivate
 else
@@ -105,59 +129,35 @@ else
         Run "quark.exe"
     Return
 Return
-CapsLock & 4::
+CapsLock & 8::
 IfWinExist ahk_exe firefox.exe
     WinActivate
 else
     Run "C:\Scoop\apps\firefox\current\firefox.exe"
 Return
-CapsLock & 5::
+CapsLock & 9::
 IfWinExist ahk_exe positron.exe
     WinActivate
 else
     Run "C:\Scoop\apps\Positron\current\positron.exe"
 Return
-CapsLock & 6::
-IfWinExist ahk_exe neovide.exe
-    WinActivate
-else
-    Run "C:\Scoop\apps\neovide\current\neovide.exe"
-Return
-CapsLock & 7::
-IfWinExist ahk_exe gvim.exe
-    WinActivate
-else
-    Run "C:\Scoop\apps\vim-nightly\current\gvim.exe"
-Return
-CapsLock & 8::
+CapsLock & 0::
 IfWinExist ahk_exe notepad--.exe
     WinActivate
 else
     Run "C:\Scoop\apps\notepad--\current\notepad--.exe"
 Return
-CapsLock & 9::
-IfWinExist ahk_exe wezterm-gui.exe
-    WinActivate
-else
-    Run "C:\Scoop\apps\wezterm-nightly\current\wezterm-gui.exe"
-Return
-CapsLock & 0::
-IfWinExist ahk_exe WindowsTerminal.exe
-    WinActivate
-else
-    Run "C:\Scoop\apps\windows-terminal\current\WindowsTerminal.exe"
-Return
 CapsLock & -::
-IfWinExist ahk_exe cursor.exe
+IfWinExist ahk_exe gvim.exe
     WinActivate
 else
-    Run "C:\Scoop\apps\cursor\current\Cursor.exe"
+    Run "C:\Scoop\apps\vim-nightly\current\gvim.exe"
 Return
 CapsLock & =::
-IfWinExist ahk_exe code.exe
+IfWinExist ahk_exe neovide.exe
     WinActivate
 else
-    Run "C:\Scoop\apps\vscode\current\Code.exe"
+    Run "C:\Scoop\apps\neovide\current\neovide.exe"
 Return
 ; ----------------
 ; screen shot
