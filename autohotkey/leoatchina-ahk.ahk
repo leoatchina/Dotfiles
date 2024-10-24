@@ -4,9 +4,16 @@ SetCapsLockState, AlwaysOff
 ; ------------------------------------
 ; Reload ahr scripts
 ; ------------------------------------
-CapsLock & r::Reload
+CapsLock & r::
+if GetKeyState("Alt")
+    Reload
+else
+    IfWinExist ahk_exe follow.exe
+        WinActivate
+    Return
+return
 ; ------------------------------------
-; right alt + 1 ~ 0 , and -/= , map to f1-f12 
+; right alt + 1 ~ 0 , and -/= , map to f1-f12
 ; ------------------------------------
 RAlt & 1::
     Send, {F1}
