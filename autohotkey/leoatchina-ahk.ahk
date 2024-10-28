@@ -2,7 +2,7 @@
 #Persistent
 SetCapsLockState, AlwaysOff
 ; ------------------------------------
-; Reload ahr scripts
+; follow && Reload scripts
 ; ------------------------------------
 CapsLock & r::
 if GetKeyState("Alt")
@@ -10,6 +10,8 @@ if GetKeyState("Alt")
 else
     IfWinExist ahk_exe follow.exe
         WinActivate
+    else
+        Run "C:\Scoop\apps\follow\current\follow.exe"
     Return
 return
 ; ------------------------------------
