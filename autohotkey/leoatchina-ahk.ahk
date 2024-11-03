@@ -141,8 +141,10 @@ Return
 CapsLock & 8::
 IfWinExist ahk_exe zen.exe
     WinActivate
+else IfWinExist ahk_exe firefox.exe
+    WinActivate
 else
-    Run "C:\Scoop\apps\zen-browser\current\zen.exe"
+    Run "C:\Scoop\apps\firefox\current\firefox.exe"
 Return
 CapsLock & 9::
 IfWinExist ahk_exe positron.exe
