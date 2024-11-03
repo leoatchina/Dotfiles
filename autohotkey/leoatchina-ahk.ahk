@@ -131,16 +131,16 @@ Return
 CapsLock & 7::
 IfWinExist ahk_exe quark.exe
     WinActivate
-else
-    If FileExist("C:\Users\Admin\AppData\Local\Programs\Quark\quark.exe")
-        Run "C:\Users\Admin\AppData\Local\Programs\Quark\quark.exe"
-    else
-        Run "quark.exe"
-    Return
+else If FileExist("C:\Users\Admin\AppData\Local\Programs\Quark\quark.exe")
+    Run "C:\Users\Admin\AppData\Local\Programs\Quark\quark.exe"
+else If FileExist("C:\Users\LEO\AppData\Local\Programs\Quark\quark.exe")
+    Run "C:\Users\LEO\AppData\Local\Programs\Quark\quark.exe"
 Return
 CapsLock & 8::
 IfWinExist ahk_exe zen.exe
     WinActivate
+else If FileExist("C:\Scoop\apps\zen-browser\current\zen.exe")
+    Run "C:\Scoop\apps\zen-browser\current\zen.exe"
 else IfWinExist ahk_exe firefox.exe
     WinActivate
 else
