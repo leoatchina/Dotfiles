@@ -107,8 +107,10 @@ Return
 CapsLock & 3::
 IfWinExist ahk_exe WindowsTerminal.exe
     WinActivate
-else
+else If FileExist("C:\Scoop\apps\windows-terminal\current\WindowsTerminal.exe")
     Run "C:\Scoop\apps\windows-terminal\current\WindowsTerminal.exe"
+else If FileExist("C:\Program Files\WindowsApps\Microsoft.WindowsTerminal_1.21.2911.0_x64__8wekyb3d8bbwe\WindowsTerminal.exe")
+    Run "C:\Program Files\WindowsApps\Microsoft.WindowsTerminal_1.21.2911.0_x64__8wekyb3d8bbwe\WindowsTerminal.exe"
 Return
 CapsLock & 4::
 IfWinExist ahk_exe wezterm-gui.exe
@@ -131,6 +133,8 @@ Return
 CapsLock & 7::
 IfWinExist ahk_exe quark.exe
     WinActivate
+else If FileExist("C:\Scoop\apps\quark\current\quark.exe")
+    Run "C:\Scoop\apps\quark\current\quark.exe"
 else If FileExist("C:\Users\Admin\AppData\Local\Programs\Quark\quark.exe")
     Run "C:\Users\Admin\AppData\Local\Programs\Quark\quark.exe"
 else If FileExist("C:\Users\LEO\AppData\Local\Programs\Quark\quark.exe")
