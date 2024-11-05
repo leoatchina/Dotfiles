@@ -153,7 +153,11 @@ else
     Run "C:\Scoop\apps\Positron\current\positron.exe"
 Return
 CapsLock & 0::
-IfWinExist ahk_exe notepad--.exe
+IfWinExist ahk_exe zed.exe
+    WinActivate
+else If FileExist("C:\Scoop\apps\zed-nightly\current\zed.exe")
+    Run "C:\Scoop\apps\zed-nightly\current\zed.exe"
+else IfWinExist ahk_exe notepad--.exe
     WinActivate
 else
     Run "C:\Scoop\apps\notepad--\current\notepad--.exe"
