@@ -143,8 +143,8 @@ Return
 CapsLock & 8::
 IfWinExist ahk_exe zen.exe
     WinActivate
-else If FileExist("C:\Scoop\apps\zen-browser\current\zen.exe")
-    Run "C:\Scoop\apps\zen-browser\current\zen.exe"
+else If FileExist("C:\Program Files\Zen Browser\zen.exe")
+    Run "C:\Program Files\Zen Browser\zen.exe"
 else IfWinExist ahk_exe firefox.exe
     WinActivate
 else
@@ -177,6 +177,12 @@ IfWinExist ahk_exe neovide.exe
     WinActivate
 else
     Run "C:\Scoop\apps\neovide\current\neovide.exe"
+Return
+CapsLock & \::
+IfWinExist ahk_exe notepad--.exe
+    WinActivate
+else
+    Run "C:\Scoop\apps\notepad--\current\Notepad--.exe"
 Return
 ; ----------------
 ; screen shot
