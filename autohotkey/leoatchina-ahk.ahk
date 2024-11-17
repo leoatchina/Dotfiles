@@ -157,14 +157,18 @@ else
     Run "C:\Scoop\apps\Positron\current\positron.exe"
 Return
 CapsLock & 0::
-IfWinExist ahk_exe zed.exe
-    WinActivate
-else If FileExist("C:\Scoop\apps\zed-nightly\current\zed.exe")
-    Run "C:\Scoop\apps\zed-nightly\current\zed.exe"
-else IfWinExist ahk_exe notepad--.exe
-    WinActivate
+if GetKeyState("Alt")
+    IfWinExist ahk_exe zed.exe
+        WinActivate
+    else If FileExist("C:\Scoop\apps\zed-nightly\current\zed.exe")
+        Run "C:\Scoop\apps\zed-nightly\current\zed.exe"
 else
-    Run "C:\Scoop\apps\notepad--\current\notepad--.exe"
+    IfWinExist ahk_exe windsurf.exe
+        WinActivate
+    else If FileExist("C:\Users\LEO\AppData\Local\Programs\Windsurf\Windsurf.exe")
+        Run "C:\Users\LEO\AppData\Local\Programs\Windsurf\Windsurf.exe"
+    else
+        Run "C:\Users\Admin\AppData\Local\Programs\Windsurf\Windsurf.exe"
 Return
 CapsLock & -::
 IfWinExist ahk_exe gvim.exe
