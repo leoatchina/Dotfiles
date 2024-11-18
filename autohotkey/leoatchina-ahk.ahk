@@ -125,10 +125,12 @@ else
     Run "C:\Scoop\apps\cursor\current\Cursor.exe"
 Return
 CapsLock & 6::
-IfWinExist ahk_exe code.exe
+IfWinExist ahk_exe windsurf.exe
     WinActivate
-else
-    Run "C:\Scoop\apps\vscode\current\Code.exe"
+else If FileExist("C:\Users\LEO\AppData\Local\Programs\Windsurf\Windsurf.exe")
+    Run "C:\Users\LEO\AppData\Local\Programs\Windsurf\Windsurf.exe"
+else If FileExist("C:\Users\Admin\AppData\Local\Programs\Windsurf\Windsurf.exe")
+    Run "C:\Users\Admin\AppData\Local\Programs\Windsurf\Windsurf.exe"
 Return
 CapsLock & 7::
 IfWinExist ahk_exe quark.exe
@@ -164,12 +166,10 @@ if GetKeyState("Alt"){
         Run "C:\Scoop\apps\zed-nightly\current\zed.exe"
     Return
 }
-else IfWinExist ahk_exe windsurf.exe
+else IfWinExist ahk_exe code.exe
     WinActivate
-else If FileExist("C:\Users\LEO\AppData\Local\Programs\Windsurf\Windsurf.exe")
-    Run "C:\Users\LEO\AppData\Local\Programs\Windsurf\Windsurf.exe"
-else If FileExist("C:\Users\Admin\AppData\Local\Programs\Windsurf\Windsurf.exe")
-    Run "C:\Users\Admin\AppData\Local\Programs\Windsurf\Windsurf.exe"
+else
+    Run "C:\Scoop\apps\vscode\current\Code.exe"
 Return
 CapsLock & -::
 IfWinExist ahk_exe gvim.exe
