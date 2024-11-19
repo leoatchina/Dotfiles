@@ -119,18 +119,18 @@ else
     Run "C:\Scoop\apps\wezterm-nightly\current\wezterm-gui.exe"
 Return
 CapsLock & 5::
-IfWinExist ahk_exe cursor.exe
-    WinActivate
-else
-    Run "C:\Scoop\apps\cursor\current\Cursor.exe"
-Return
-CapsLock & 6::
 IfWinExist ahk_exe windsurf.exe
     WinActivate
 else If FileExist("C:\Users\LEO\AppData\Local\Programs\Windsurf\Windsurf.exe")
     Run "C:\Users\LEO\AppData\Local\Programs\Windsurf\Windsurf.exe"
 else If FileExist("C:\Users\Admin\AppData\Local\Programs\Windsurf\Windsurf.exe")
     Run "C:\Users\Admin\AppData\Local\Programs\Windsurf\Windsurf.exe"
+Return
+CapsLock & 6::
+IfWinExist ahk_exe cursor.exe
+    WinActivate
+else
+    Run "C:\Scoop\apps\cursor\current\Cursor.exe"
 Return
 CapsLock & 7::
 IfWinExist ahk_exe quark.exe
