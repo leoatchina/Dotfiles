@@ -86,7 +86,7 @@ IfWinExist ahk_exe obsidian.exe
 else
     Run "C:\Scoop\apps\obsidian\current\Obsidian.exe"
 Return
-CapsLock & z::
+CapsLock & y::
 IfWinExist ahk_exe zotero.exe
     WinActivate
 else
@@ -302,28 +302,31 @@ CapsLock & .::^.
 ; ------------------------------------
 ; utools clipboard
 ; ------------------------------------
-CapsLock & Alt::#!c
+CapsLock & z::#!c
 CapsLock & Rshift::^#!c
-; ------------------------------------
-; 将剪贴板的内容转换为纯文本
-; ------------------------------------
-CapsLock & y::
-Clipboard = %Clipboard%
-clipwait 0.1
-Return
-; ------------------------------------
-; 去除复制来的内容里的回车
-; ------------------------------------
-CapsLock & u::
-tmp := RegExReplace(clipboard, "(\S.*?)\R(.*?\S)", "$1 $2")
-clipboard := tmp
-clipwait 0.1
-Return
 ; ------------------------------------
 ; copy paste
 ; ------------------------------------
 CapsLock & v::Send {Shift down}{Ins}{Shift up}
 CapsLock & c::Send {Ctrl down}{Ins}{Ctrl up}
+; ------------------------------------
+; 去除复制来的内容里的回车
+; ------------------------------------
+CapsLock & u::
+if GetKeyState("Alt"){
+    tmp := RegExReplace(clipboard, "(\S.*?)\R(.*?\S)", "$1 $2")
+    clipboard := tmp
+    clipwait 0.1
+    Return
+}
+; ------------------------------------
+; 将剪贴板的内容转换为纯文本
+; ------------------------------------
+else{
+    Clipboard = %Clipboard%
+    clipwait 0.1
+    Return 
+}
 ; ------------------------------------
 ; proe, 两侧键作为中键
 ; ------------------------------------
