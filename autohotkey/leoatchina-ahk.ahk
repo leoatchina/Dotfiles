@@ -7,10 +7,12 @@ SetCapsLockState, AlwaysOff
 CapsLock & r::
 if GetKeyState("Alt")
     Reload
-else If WinExist ahk_exe follow.exe
-    WinActivate
 else
-    Run "C:\Scoop\apps\follow\current\follow.exe"
+    IfWinExist ahk_exe follow.exe
+        WinActivate
+    else
+        Run "C:\Scoop\apps\follow\current\follow.exe"
+    Return
 return
 ; ------------------------------------
 ; right alt + 1 ~ 0 , and -/= , map to f1-f12
@@ -61,49 +63,49 @@ return
 ; 激活不同的软件
 ; ---------------
 CapsLock & LShift::
-If WinExist ahk_exe telegram.exe
+IfWinExist ahk_exe telegram.exe
     WinActivate
 else
     Run "C:\Scoop\apps\telegram\current\Telegram.exe"
 Return
 CapsLock & i::
-If WinExist ahk_exe joplin.exe
+IfWinExist ahk_exe joplin.exe
     WinActivate
 else
     Run "C:\Scoop\apps\joplin\current\Joplin.exe"
 Return
 CapsLock & t::
-If WinExist ahk_exe logseq.exe
+IfWinExist ahk_exe logseq.exe
     WinActivate
 else
     Run "C:\Scoop\apps\logseq\current\logseq.exe"
 Return
 CapsLock & o::
-If WinExist ahk_exe obsidian.exe
+IfWinExist ahk_exe obsidian.exe
     WinActivate
 else
     Run "C:\Scoop\apps\obsidian\current\Obsidian.exe"
 Return
 CapsLock & y::
-If WinExist ahk_exe zotero.exe
+IfWinExist ahk_exe zotero.exe
     WinActivate
 else
     Run "C:\Scoop\apps\zotero\current\zotero.exe"
 Return
 CapsLock & 1::
-If WinExist ahk_exe msedge.exe
+IfWinExist ahk_exe msedge.exe
     WinActivate
 else
     Run "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
 Return
 CapsLock & 2::
-If WinExist ahk_exe chrome.exe
+IfWinExist ahk_exe chrome.exe
     WinActivate
 else
     Run "C:\Scoop\apps\googlechrome\current\chrome.exe"
 Return
 CapsLock & 3::
-If WinExist ahk_exe WindowsTerminal.exe
+IfWinExist ahk_exe WindowsTerminal.exe
     WinActivate
 else If FileExist("C:\Scoop\apps\windows-terminal\current\WindowsTerminal.exe")
     Run "C:\Scoop\apps\windows-terminal\current\WindowsTerminal.exe"
@@ -118,13 +120,13 @@ if GetKeyState("Alt"){
         Run "C:\Scoop\apps\alacritty\current\alacritty.exe"
     Return
 }
-else If WinExist ahk_exe wezterm-gui.exe
+else IfWinExist ahk_exe wezterm-gui.exe
     WinActivate
 else
     Run "C:\Scoop\apps\wezterm-nightly\current\wezterm-gui.exe"
 Return
 CapsLock & 5::
-If WinExist ahk_exe windsurf.exe
+IfWinExist ahk_exe windsurf.exe
     WinActivate
 else If FileExist("C:\Users\LEO\AppData\Local\Programs\Windsurf\Windsurf.exe")
     Run "C:\Users\LEO\AppData\Local\Programs\Windsurf\Windsurf.exe"
@@ -132,13 +134,13 @@ else If FileExist("C:\Users\Admin\AppData\Local\Programs\Windsurf\Windsurf.exe")
     Run "C:\Users\Admin\AppData\Local\Programs\Windsurf\Windsurf.exe"
 Return
 CapsLock & 6::
-If WinExist ahk_exe cursor.exe
+IfWinExist ahk_exe cursor.exe
     WinActivate
 else
     Run "C:\Scoop\apps\cursor\current\Cursor.exe"
 Return
 CapsLock & 7::
-If WinExist ahk_exe quark.exe
+IfWinExist ahk_exe quark.exe
     WinActivate
 else If FileExist("C:\Scoop\apps\quark\current\quark.exe")
     Run "C:\Scoop\apps\quark\current\quark.exe"
@@ -148,48 +150,48 @@ else If FileExist("C:\Users\LEO\AppData\Local\Programs\Quark\quark.exe")
     Run "C:\Users\LEO\AppData\Local\Programs\Quark\quark.exe"
 Return
 CapsLock & 8::
-If WinExist ahk_exe zen.exe
+IfWinExist ahk_exe zen.exe
     WinActivate
 else If FileExist("C:\Program Files\Zen Browser\zen.exe")
     Run "C:\Program Files\Zen Browser\zen.exe"
-else If WinExist ahk_exe firefox.exe
+else IfWinExist ahk_exe firefox.exe
     WinActivate
 else
     Run "C:\Scoop\apps\firefox\current\firefox.exe"
 Return
 CapsLock & 9::
-If WinExist ahk_exe positron.exe
+IfWinExist ahk_exe positron.exe
     WinActivate
 else
     Run "C:\Scoop\apps\Positron\current\positron.exe"
 Return
 CapsLock & 0::
 if GetKeyState("Alt"){
-    If WinExist ahk_exe zed.exe
+    IfWinExist ahk_exe zed.exe
         WinActivate
     else If FileExist("C:\Scoop\apps\zed-nightly\current\zed.exe")
         Run "C:\Scoop\apps\zed-nightly\current\zed.exe"
     Return
 }
-else If WinExist ahk_exe code.exe
+else IfWinExist ahk_exe code.exe
     WinActivate
 else
     Run "C:\Scoop\apps\vscode\current\Code.exe"
 Return
 CapsLock & -::
-If WinExist ahk_exe gvim.exe
+IfWinExist ahk_exe gvim.exe
     WinActivate
 else
     Run "C:\Scoop\apps\vim-nightly\current\gvim.exe"
 Return
 CapsLock & =::
-If WinExist ahk_exe neovide.exe
+IfWinExist ahk_exe neovide.exe
     WinActivate
 else
     Run "C:\Scoop\apps\neovide\current\neovide.exe"
 Return
 CapsLock & \::
-If WinExist ahk_exe notepad--.exe
+IfWinExist ahk_exe notepad--.exe
     WinActivate
 else
     Run "C:\Scoop\apps\notepad--\current\Notepad--.exe"
@@ -227,7 +229,7 @@ if GetKeyState("Alt")
     SendInput {Backspace}
 else
     SendInput {Del}
-Return
+return
 ; ----------------
 ; CapsLockToggle
 ; ----------------
@@ -319,6 +321,7 @@ if GetKeyState("Alt"){
     tmp := RegExReplace(clipboard, "(\S.*?)\R(.*?\S)", "$1 $2")
     clipboard := tmp
     clipwait 0.1
+    Return
 }
 ; ------------------------------------
 ; 将剪贴板的内容转换为纯文本
@@ -326,8 +329,8 @@ if GetKeyState("Alt"){
 else{
     Clipboard = %Clipboard%
     clipwait 0.1
+    Return 
 }
-Return 
 ; ------------------------------------
 ; proe, 两侧键作为中键
 ; ------------------------------------
