@@ -113,7 +113,14 @@ else If FileExist("C:\Program Files\WindowsApps\Microsoft.WindowsTerminal_1.21.2
     Run "C:\Program Files\WindowsApps\Microsoft.WindowsTerminal_1.21.2911.0_x64__8wekyb3d8bbwe\WindowsTerminal.exe"
 Return
 CapsLock & 4::
-IfWinExist ahk_exe wezterm-gui.exe
+if GetKeyState("Alt"){
+    IfWinExist ahk_exe alacritty.exe
+        WinActivate
+    else
+        Run "C:\Scoop\apps\alacritty\current\alacritty.exe"
+    Return
+}
+else IfWinExist ahk_exe wezterm-gui.exe
     WinActivate
 else
     Run "C:\Scoop\apps\wezterm-nightly\current\wezterm-gui.exe"
