@@ -226,7 +226,7 @@ Return
 ; ----------------
 CapsLock & x::
 if GetKeyState("Alt")
-    Send {Backspace}
+    SendInput {Backspace}
 else
     SendInput {Del}
 return
@@ -287,15 +287,19 @@ return
 ; Input method control change
 ; ------------------------------------
 CapsLock & Enter::
-Send {LWin Down}{Space Down}
-KeyWait, Enter
-Send {LWin Up}{Space Up}
-Return
+{
+    Send {LWin Down}{Space Down}
+    KeyWait, Enter
+    Send {LWin Up}{Space Up}
+    Return
+}
 CapsLock & Space::
-Send {Ctrl Down}{LWin Down}{Space Down}
-KeyWait, Space
-Send {Ctrl Up}{LWin Up}{Space Up}
-Return
+{
+    Send {Ctrl Down}{LWin Down}{Space Down}
+    KeyWait, Space
+    Send {Ctrl Up}{LWin Up}{Space Up}
+    Return
+}
 CapsLock & Ctrl::^`
 Ctrl & CapsLock::^`
 CapsLock & .::^.
