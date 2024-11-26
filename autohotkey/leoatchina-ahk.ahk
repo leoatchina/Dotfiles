@@ -114,7 +114,7 @@ else If FileExist("C:\Program Files\WindowsApps\Microsoft.WindowsTerminal_1.21.2
 Return
 CapsLock & 4::
 if GetKeyState("Alt"){
-    If WinExist ahk_exe alacritty.exe
+    IfWinExist ahk_exe alacritty.exe
         WinActivate
     else
         Run "C:\Scoop\apps\alacritty\current\alacritty.exe"
