@@ -150,14 +150,17 @@ else If FileExist("C:\Users\LEO\AppData\Local\Programs\Quark\quark.exe")
     Run "C:\Users\LEO\AppData\Local\Programs\Quark\quark.exe"
 Return
 CapsLock & 8::
-IfWinExist ahk_exe zen.exe
+if GetKeyState("Alt"){
+    IfWinExist ahk_exe firefox.exe
+        WinActivate
+    else
+        Run "C:\Scoop\apps\firefox\current\firefox.exe"
+    Return
+}
+else IfWinExist ahk_exe zen.exe
     WinActivate
 else If FileExist("C:\Program Files\Zen Browser\zen.exe")
     Run "C:\Program Files\Zen Browser\zen.exe"
-else IfWinExist ahk_exe firefox.exe
-    WinActivate
-else
-    Run "C:\Scoop\apps\firefox\current\firefox.exe"
 Return
 CapsLock & 9::
 IfWinExist ahk_exe positron.exe
