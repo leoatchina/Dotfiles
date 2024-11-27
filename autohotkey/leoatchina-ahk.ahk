@@ -75,7 +75,11 @@ else
     Run "C:\Scoop\apps\joplin\current\Joplin.exe"
 Return
 CapsLock & t::
-IfWinExist ahk_exe logseq.exe
+IfWinExist superProductivity.exe
+    WinActivate
+else If FileExist("C:\Program Files\WindowsApps\53707johannesjo.SuperProductivity_10.1.1.0_x64__ch45amy23cdv6\app\superProductivity.exe")
+    Run "C:\Program Files\WindowsApps\53707johannesjo.SuperProductivity_10.1.1.0_x64__ch45amy23cdv6\app\superProductivity.exe"
+else IfWinExist ahk_exe logseq.exe
     WinActivate
 else
     Run "C:\Scoop\apps\logseq\current\logseq.exe"
