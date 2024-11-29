@@ -214,9 +214,7 @@ Return
 ; ----------------
 ; ESC
 ; ----------------
-Capslock & q::
-    Send, ^{Space}
-Return
+Capslock & q::Send, {ESC}
 ; ------------------------------------
 ; disable ctrl+win+d / shift+space
 ; ------------------------------------
@@ -253,13 +251,7 @@ CapsLock & [::Send {Volume_Down}
 ; ----------------
 ; Explorer
 ; ----------------
-CapsLock & e::
-if GetKeyState("Alt")
-    Run explorer.exe
-else
-
-    Send {ESC}
-Return
+CapsLock & e::Run explorer.exe
 ; ----------------
 ; Left, Down, Up, Right
 ; ----------------
@@ -308,21 +300,26 @@ CapsLock & Enter::
     Send {LWin Up}{Space Up}
     Return
 }
-CapsLock & Space::
+CapsLock & RShift::
 {
     Send {Ctrl Down}{LWin Down}{Space Down}
     KeyWait, Space
     Send {Ctrl Up}{LWin Up}{Space Up}
     Return
 }
+CapsLock & Space::Send ^{Space}
 CapsLock & Ctrl::^`
 Ctrl & CapsLock::^`
 CapsLock & .::^.
 ; ------------------------------------
 ; utools clipboard
 ; ------------------------------------
-CapsLock & z::#!c
-CapsLock & Rshift::^#!c
+CapsLock & z::
+if GetKeyState("Alt")
+    Send ^#!c
+else
+    Send #!c
+Return
 ; ------------------------------------
 ; copy paste
 ; ------------------------------------
