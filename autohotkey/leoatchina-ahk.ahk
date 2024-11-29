@@ -215,7 +215,7 @@ Return
 ; ESC
 ; ----------------
 Capslock & q::
-Send {ESC}
+    Send, ^{Space}
 Return
 ; ------------------------------------
 ; disable ctrl+win+d / shift+space
@@ -225,10 +225,10 @@ Return
 ; Tab/Shift-Tab
 ; ----------------
 CapsLock & n::
-Send ^{Tab}
+    Send ^{Tab}
 Return
 CapsLock & p::
-Send ^+{Tab}
+    Send ^+{Tab}
 Return
 ; ----------------
 ; Del/Bs
@@ -253,7 +253,13 @@ CapsLock & [::Send {Volume_Down}
 ; ----------------
 ; Explorer
 ; ----------------
-CapsLock & e::Run explorer.exe
+CapsLock & e::
+if GetKeyState("Alt")
+    Run explorer.exe
+else
+
+    Send {ESC}
+Return
 ; ----------------
 ; Left, Down, Up, Right
 ; ----------------
