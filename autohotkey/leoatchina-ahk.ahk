@@ -10,6 +10,10 @@ if GetKeyState("Alt")
 else
     IfWinExist ahk_exe follow.exe
         WinActivate
+    else If FileExist("C:\Users\LEO\AppData\Local\Follow\Follow.exe")
+        Run "C:\Users\LEO\AppData\Local\Follow\Follow.exe"
+    else If FileExist("C:\Users\Admin\AppData\Local\Follow\Follow.exe")
+        Run "C:\Users\Admin\AppData\Local\Follow\Follow.exe"
     else
         Run "C:\Scoop\apps\follow\current\follow.exe"
     Return
