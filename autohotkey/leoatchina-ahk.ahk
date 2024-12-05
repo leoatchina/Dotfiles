@@ -66,12 +66,6 @@ return
 ; ----------------
 ; 激活不同的软件
 ; ---------------
-CapsLock & LShift::
-IfWinExist ahk_exe telegram.exe
-    WinActivate
-else
-    Run "C:\Scoop\apps\telegram\current\Telegram.exe"
-Return
 CapsLock & i::
 IfWinExist ahk_exe joplin.exe
     WinActivate
@@ -79,17 +73,22 @@ else
     Run "C:\Scoop\apps\joplin\current\Joplin.exe"
 Return
 CapsLock & t::
-IfWinExist superProductivity.exe
-    WinActivate
-else If FileExist("C:\Scoop\apps\super-productivity\current\Super Productivity.exe")
-    Run "C:\Scoop\apps\super-productivity\current\Super Productivity.exe"
-else If FileExist("C:\Program Files\WindowsApps\53707johannesjo.SuperProductivity_10.1.1.0_x64__ch45amy23cdv6\app\superProductivity.exe")
-    Run "C:\Program Files\WindowsApps\53707johannesjo.SuperProductivity_10.1.1.0_x64__ch45amy23cdv6\app\superProductivity.exe"
-else IfWinExist ahk_exe logseq.exe
-    WinActivate
-else
-    Run "C:\Scoop\apps\logseq\current\logseq.exe"
-Return
+if GetKeyState("Alt"){
+    IfWinExist superProductivity.exe
+        WinActivate
+    else If FileExist("C:\Scoop\apps\super-productivity\current\Super Productivity.exe")
+        Run "C:\Scoop\apps\super-productivity\current\Super Productivity.exe"
+    else If FileExist("C:\Program Files\WindowsApps\53707johannesjo.SuperProductivity_10.1.1.0_x64__ch45amy23cdv6\app\superProductivity.exe")
+        Run "C:\Program Files\WindowsApps\53707johannesjo.SuperProductivity_10.1.1.0_x64__ch45amy23cdv6\app\superProductivity.exe"
+    Return
+}
+else {
+    IfWinExist ahk_exe telegram.exe
+        WinActivate
+    else
+        Run "C:\Scoop\apps\telegram\current\Telegram.exe"
+    Return
+}
 CapsLock & o::
 IfWinExist ahk_exe obsidian.exe
     WinActivate
