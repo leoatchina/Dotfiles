@@ -296,16 +296,25 @@ return
 ; ------------------------------------
 ; Input method control change
 ; ------------------------------------
+; 输入法切换
 CapsLock & Enter::
 {
     Send #{Space}
     Return
 }
+; 两个输入法切换
 CapsLock & RShift::
 {
     Send ^#{Space}
     Return
 }
+;切换到英文输入法，
+CapsLock & LShift::
+{
+    Send ^+0
+    Return
+}
+; smart 中英切换
 CapsLock & Space::
 {
     WinGet, WinID,, A
