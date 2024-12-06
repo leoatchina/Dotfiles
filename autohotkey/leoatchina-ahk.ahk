@@ -298,19 +298,30 @@ return
 ; ------------------------------------
 CapsLock & Enter::
 {
-    Send {LWin Down}{Space Down}
-    KeyWait, Enter
-    Send {LWin Up}{Space Up}
+    Send #{Space}
     Return
 }
 CapsLock & RShift::
 {
-    Send {Ctrl Down}{LWin Down}{Space Down}
-    KeyWait, Space
-    Send {Ctrl Up}{LWin Up}{Space Up}
+    Send ^#{Space}
     Return
 }
-CapsLock & Space::Send ^{Space}
+CapsLock & Space::
+{
+    WinGet, WinID,, A
+    ThreadID:=DllCall("GetWindowThreadProcessId", "UInt", WinID, "UInt", 0)
+    InputLocaleID:=DllCall("GetKeyboardLayout", "UInt", ThreadID, "UInt")
+    ; 英文输入法
+    if InputLocaleID = 67699721
+    {
+        Send ^#{Space}
+    }
+    else
+    {
+        Send ^{Space}
+    }
+    Return
+}
 CapsLock & Ctrl::^`
 Ctrl & CapsLock::^`
 CapsLock & .::^.
@@ -318,11 +329,13 @@ CapsLock & .::^.
 ; utools clipboard
 ; ------------------------------------
 CapsLock & z::
-if GetKeyState("Alt")
-    Send ^#!c
-else
-    Send #!c
-Return
+{
+    if GetKeyState("Alt")
+        Send ^#!c
+    else
+        Send #!c
+    Return
+}
 ; ------------------------------------
 ; copy paste
 ; ------------------------------------
@@ -357,3 +370,4 @@ else{
 #IfWinActive ahk_exe xtop.exe
 XButton1::MButton
 XButton2::MButton
+
