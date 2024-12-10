@@ -145,6 +145,10 @@ Return
 CapsLock & 6::
 IfWinExist ahk_exe cursor.exe
     WinActivate
+else If FileExist("C:\Users\LEO\AppData\Local\Programs\cursor\Cursor.exe")
+    Run "C:\Users\LEO\AppData\Local\Programs\cursor\Cursor.exe"
+else If FileExist("C:\Users\Admin\AppData\Local\Programs\cursor\Cursor.exe")
+    Run "C:\Users\Admin\AppData\Local\Programs\cursor\Cursor.exe"
 else
     Run "C:\Scoop\apps\cursor\current\Cursor.exe"
 Return
