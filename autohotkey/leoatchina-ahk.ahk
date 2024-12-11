@@ -201,7 +201,14 @@ else
     Run "C:\Scoop\apps\vim-nightly\current\gvim.exe"
 Return
 CapsLock & =::
-IfWinExist ahk_exe neovide.exe
+if GetKeyState("Alt"){
+    IfWinExist ahk_exe nvim-qt.exe
+        WinActivate
+    else If FileExist("C:\Scoop\apps\neovim-qt\current\bin\nvim-qt.exe")
+        Run "C:\Scoop\apps\neovim-qt\current\bin\nvim-qt.exe"
+    Return
+}
+else IfWinExist ahk_exe neovide.exe
     WinActivate
 else
     Run "C:\Scoop\apps\neovide\current\neovide.exe"
