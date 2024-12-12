@@ -319,29 +319,50 @@ CapsLock & RShift::
     Send ^#{Space}
     Return
 }
-;切换到英文输入法，
+; 切换到英文输入法，
 CapsLock & LShift::
 {
     Send ^+0
     Return
 }
 ; smart 中英切换
-CapsLock & Space::
-{
+SwitchInputMethod() {
     WinGet, WinID,, A
-    ThreadID:=DllCall("GetWindowThreadProcessId", "UInt", WinID, "UInt", 0)
-    InputLocaleID:=DllCall("GetKeyboardLayout", "UInt", ThreadID, "UInt")
-    ; 英文输入法
-    if InputLocaleID = 67699721
-    {
+    ThreadID := DllCall("GetWindowThreadProcessId", "UInt", WinID, "UInt", 0)
+    InputLocaleID := DllCall("GetKeyboardLayout", "UInt", ThreadID, "UInt")
+    ; English input method
+    if (InputLocaleID == 67699721) {
         Send ^#{Space}
-    }
-    else
-    {
+    } else {
         Send ^{Space}
     }
+}
+; 使用示例
+CapsLock & Space::
+{
+    SwitchInputMethod()
     Return
 }
+; lastKeyPressTime := 0
+; keyPressCount := 0
+; :::
+; {
+    
+;     keyPressCount += 1 
+;     currentTime := A_TickCount  ; 获取当前时间
+;     if (keyPressCount == 2) {
+;         keyPressCount := 0
+;         if (currentTime - lastKeyPressTime < 500) {  ; 检查是否再次按下
+;             SwitchInputMethod() ; 切换输入法
+;         }else{
+;             SendInput {U+003A}
+;         }
+;     }else{
+;         SendInput {U+003A}
+;     }
+;     lastKeyPressTime := currentTime  ; 更新最后按键时间
+;     return
+; }
 CapsLock & Ctrl::^`
 Ctrl & CapsLock::^`
 CapsLock & .::^.
@@ -390,4 +411,3 @@ else{
 #IfWinActive ahk_exe xtop.exe
 XButton1::MButton
 XButton2::MButton
-
