@@ -124,13 +124,15 @@ CapsLock & 4::
 if GetKeyState("Alt"){
     IfWinExist ahk_exe alacritty.exe
         WinActivate
-    else
+    else If FileExist("C:\Scoop\apps\alacritty\current\alacritty.exe")
         Run "C:\Scoop\apps\alacritty\current\alacritty.exe"
     Return
 }
 else IfWinExist ahk_exe wezterm-gui.exe
     WinActivate
-else
+else If FileExist("C:\Scoop\apps\wezterm\current\wezterm-gui.exe")
+    Run "C:\Scoop\apps\wezterm\current\wezterm-gui.exe"
+else If FileExist("C:\Scoop\apps\wezterm-nightly\current\wezterm-gui.exe")
     Run "C:\Scoop\apps\wezterm-nightly\current\wezterm-gui.exe"
 Return
 CapsLock & 5::
