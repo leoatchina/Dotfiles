@@ -1,5 +1,6 @@
 ; #是win, !是alt, ^是ctrl, +是shift
 #Persistent
+EnvGet, UserProfile, USERPROFILE
 SetCapsLockState, AlwaysOff
 ; ------------------------------------
 ; follow && Reload scripts
@@ -10,10 +11,8 @@ if GetKeyState("Alt")
 else
     IfWinExist ahk_exe follow.exe
         WinActivate
-    else If FileExist("C:\Users\LEO\AppData\Local\Follow\Follow.exe")
-        Run "C:\Users\LEO\AppData\Local\Follow\Follow.exe"
-    else If FileExist("C:\Users\Admin\AppData\Local\Follow\Follow.exe")
-        Run "C:\Users\Admin\AppData\Local\Follow\Follow.exe"
+    else If FileExist(UserProfile . "\AppData\Local\Follow\Follow.exe")
+        Run % UserProfile . "\AppData\Local\Follow\Follow.exe"
     else
         Run "C:\Scoop\apps\follow\current\follow.exe"
     Return
@@ -61,7 +60,7 @@ RShift & Esc::
     Send, {~}
 return
 RAlt & Esc::
-    Send, ``
+    Send, ```
 return
 ; ----------------
 ; 激活不同的软件
@@ -137,30 +136,22 @@ Return
 CapsLock & 5::
 IfWinExist ahk_exe windsurf.exe
     WinActivate
-else If FileExist("C:\Users\LEO\AppData\Local\Programs\Windsurf\Windsurf.exe")
-    Run "C:\Users\LEO\AppData\Local\Programs\Windsurf\Windsurf.exe"
-else If FileExist("C:\Users\Admin\AppData\Local\Programs\Windsurf\Windsurf.exe")
-    Run "C:\Users\Admin\AppData\Local\Programs\Windsurf\Windsurf.exe"
+else If FileExist(UserProfile . "\AppData\Local\Programs\Windsurf\Windsurf.exe")
+    Run % UserProfile . "\AppData\Local\Programs\Windsurf\Windsurf.exe"
 Return
 CapsLock & 6::
 IfWinExist ahk_exe cursor.exe
     WinActivate
-else If FileExist("C:\Users\LEO\AppData\Local\Programs\cursor\Cursor.exe")
-    Run "C:\Users\LEO\AppData\Local\Programs\cursor\Cursor.exe"
-else If FileExist("C:\Users\Admin\AppData\Local\Programs\cursor\Cursor.exe")
-    Run "C:\Users\Admin\AppData\Local\Programs\cursor\Cursor.exe"
+else If FileExist(UserProfile . "\AppData\Local\Programs\cursor\Cursor.exe")
+    Run % UserProfile . "\AppData\Local\Programs\cursor\Cursor.exe"
 else
     Run "C:\Scoop\apps\cursor\current\Cursor.exe"
 Return
 CapsLock & 7::
 IfWinExist ahk_exe quark.exe
     WinActivate
-else If FileExist("C:\Scoop\apps\quark\current\quark.exe")
-    Run "C:\Scoop\apps\quark\current\quark.exe"
-else If FileExist("C:\Users\Admin\AppData\Local\Programs\Quark\quark.exe")
-    Run "C:\Users\Admin\AppData\Local\Programs\Quark\quark.exe"
-else If FileExist("C:\Users\LEO\AppData\Local\Programs\Quark\quark.exe")
-    Run "C:\Users\LEO\AppData\Local\Programs\Quark\quark.exe"
+else If FileExist(UserProfile . "\AppData\Local\Programs\Quark\quark.exe")
+    Run % UserProfile . "\AppData\Local\Programs\Quark\quark.exe"
 Return
 CapsLock & 8::
 if GetKeyState("Alt"){
