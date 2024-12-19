@@ -202,11 +202,6 @@ else
     SendInput {Del}
 return
 ; ----------------
-; CapsLockToggle
-; ----------------
-CapsLock & backspace::SendInput {Blind}{CapsLock DownTemp}
-CapsLock & backspace up::SendInput {Blind}{CapsLock Up}
-; ----------------
 ; Volume control
 ; ----------------
 CapsLock & m::Send {Volume_Mute}
@@ -245,15 +240,6 @@ CapsLock & b::SendInput {Blind}{PgUp DownTemp}
 CapsLock & b up::SendInput {Blind}{PgUp Up}
 CapsLock & f::SendInput {Blind}{PgDn DownTemp}
 CapsLock & f up::SendInput {Blind}{PgDn Up}
-; ------------------------------------
-; GoldenDict
-; ------------------------------------
-CapsLock & g::
-if GetKeyState("Alt")
-    Send ^!+i
-else
-    Send ^!+g
-return
 ; ------------------------------------
 ; Input method control change
 ; ------------------------------------
@@ -307,6 +293,11 @@ CapsLock & z::
         Send #!c
     Return
 }
+; ----------------
+; CapsLockToggle
+; ----------------
+CapsLock & RCtrl::SendInput {Blind}{CapsLock DownTemp}
+CapsLock & RCtrl up::SendInput {Blind}{CapsLock Up}
 ; ------------------------------------
 ; copy paste
 ; ------------------------------------
