@@ -152,16 +152,16 @@ else If FileExist("C:\Scoop\apps\vim-nightly\current\gvim.exe")
 Return
 CapsLock & =::
 if GetKeyState("Alt"){
-    IfWinExist ahk_exe nvim-qt.exe
+    IfWinExist ahk_exe neovide.exe
         WinActivate
-    else If FileExist("C:\Scoop\apps\neovim-qt\current\bin\nvim-qt.exe")
-        Run "C:\Scoop\apps\neovim-qt\current\bin\nvim-qt.exe"
+    else If FileExist("C:\Scoop\apps\neovide\current\neovide.exe")
+        Run "C:\Scoop\apps\neovide\current\neovide.exe"
     Return
 }
-else IfWinExist ahk_exe neovide.exe
+else IfWinExist ahk_exe nvim-qt.exe
     WinActivate
-else
-    Run "C:\Scoop\apps\neovide\current\neovide.exe"
+else If FileExist("C:\Scoop\apps\neovim-qt\current\bin\nvim-qt.exe")
+    Run "C:\Scoop\apps\neovim-qt\current\bin\nvim-qt.exe"
 Return
 CapsLock & \::
 IfWinExist ahk_exe notepad--.exe
