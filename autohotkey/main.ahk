@@ -250,19 +250,19 @@ CapsLock & Ctrl::^`
 Ctrl & CapsLock::^`
 CapsLock & .::^.
 ; 输入法切换
-CapsLock & Enter::
+CapsLock & Backspace::
 {
     Send #{Space}
     Return
 }
 ; 两个输入法切换
-CapsLock & RShift::
+CapsLock & Enter::
 {
     Send ^#{Space}
     Return
 }
 ; 切换到英文输入法，
-CapsLock & LShift::
+CapsLock & RShift::
 {
     Send ^+0
     Return
