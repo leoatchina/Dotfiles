@@ -125,7 +125,7 @@ if GetKeyState("Alt"){
 }
 else IfWinExist ahk_exe code.exe
     WinActivate
-else If FileExist("C:\Users\Admin\AppData\Local\Programs\Microsoft VS Code\Code.exe")
+else If FileExist(UserProfile . "\AppData\Local\Programs\Microsoft VS Code\Code.exe")
     Run % UserProfile . "\AppData\Local\Programs\Microsoft VS Code\Code.exe"
 else If FileExist("C:\Scoop\apps\vscode\current\Code.exe")
     Run "C:\Scoop\apps\vscode\current\Code.exe"
