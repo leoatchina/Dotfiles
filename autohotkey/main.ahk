@@ -378,8 +378,8 @@ CapsLock & z::
 ; ----------------
 ; CapsLockToggle
 ; ----------------
-CapsLock & RCtrl::SendInput {Blind}{CapsLock DownTemp}
-CapsLock & RCtrl up::SendInput {Blind}{CapsLock Up}
+; CapsLock & /::SendInput {Blind}{CapsLock DownTemp}
+; CapsLock & / up::SendInput {Blind}{CapsLock Up}
 ; ------------------------------------
 ; copy paste
 ; ------------------------------------
