@@ -225,17 +225,6 @@ CapsLock & w::Send {Blind}{Up DownTemp}
 CapsLock & w up::Send {Blind}{Up Up}
 CapsLock & d::Send {Blind}{Right DownTemp}
 CapsLock & d up::Send {Blind}{Right Up}
-CapsLock & j::Send {Blind}{Down DownTemp}
-CapsLock & j up::Send {Blind}{Down Up}
-CapsLock & k::Send {Blind}{Up DownTemp}
-CapsLock & k up::Send {Blind}{Up Up}
-; ----------------
-; Home End
-; ----------------
-CapsLock & h::SendInput {Blind}{Home DownTemp}
-CapsLock & h up::SendInput {Blind}{Home Up}
-CapsLock & l::SendInput {Blind}{End DownTemp}
-CapsLock & l up::SendInput {Blind}{End Up}
 ; ----------------
 ; PgUp PgDn
 ; ----------------
@@ -243,6 +232,57 @@ CapsLock & b::SendInput {Blind}{PgUp DownTemp}
 CapsLock & b up::SendInput {Blind}{PgUp Up}
 CapsLock & f::SendInput {Blind}{PgDn DownTemp}
 CapsLock & f up::SendInput {Blind}{PgDn Up}
+; ------------------------------
+; Home End PgUp PgDn enhance
+; ------------------------------
+CapsLock & h::
+if GetKeyState("Alt")
+    SendInput {Blind}{Home DownTemp}
+else
+    Send {Blind}{Left DownTemp}
+Return
+CapsLock & h up::
+if GetKeyState("Alt")
+    SendInput {Blind}{Home Up}
+else
+    Send {Blind}{Left Up}
+Return
+CapsLock & l::
+if GetKeyState("Alt")
+    SendInput {Blind}{End DownTemp}
+else
+    Send {Blind}{Right DownTemp}
+Return
+CapsLock & l up::
+if GetKeyState("Alt")
+    SendInput {Blind}{End Up}
+else
+    Send {Blind}{Right Up}
+Return
+CapsLock & j::
+if GetKeyState("Alt")
+    SendInput {Blind}{PgDn DownTemp}
+else
+    Send {Blind}{Down DownTemp}
+Return
+CapsLock & j up::
+if GetKeyState("Alt")
+    SendInput {Blind}{PgDn Up}
+else
+    Send {Blind}{Down Up}
+Return
+CapsLock & k::
+if GetKeyState("Alt")
+    SendInput {Blind}{PgUp DownTemp}
+else
+    Send {Blind}{Up DownTemp}
+Return
+CapsLock & k up::
+if GetKeyState("Alt")
+    SendInput {Blind}{PgUp Up}
+else
+    Send {Blind}{Up Up}
+Return
 ; ------------------------------------
 ; Input method control change
 ; ------------------------------------
@@ -322,7 +362,7 @@ if GetKeyState("Alt"){
 else{
     Clipboard = %Clipboard%
     clipwait 0.1
-    Return 
+    Return
 }
 ; ------------------------------------
 ; proe, 两侧键作为中键
