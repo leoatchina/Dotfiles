@@ -1,7 +1,7 @@
 ; #是win, !是alt, ^是ctrl, +是shift
 #Persistent
-EnvGet, UserProfile, USERPROFILE
 SetCapsLockState, AlwaysOff
+EnvGet, UserProfile, USERPROFILE
 ; ------------------------------------
 ; follow && Reload scripts
 ; ------------------------------------
@@ -325,27 +325,18 @@ Return
 ; ------------------------------------
 ; Input method control change
 ; ------------------------------------
-CapsLock & Ctrl::^`
-Ctrl & CapsLock::^`
-CapsLock & .::^.
-; 输入法切换
-CapsLock & Backspace::
-{
-    Send #{Space}
-    Return
-}
-; 两个输入法切换
-CapsLock & Enter::
-{
-    Send ^#{Space}
-    Return
-}
 ; 切换到英文输入法，
 CapsLock & RShift::
-{
-    Send ^+0
-    Return
-}
+    SendInput, ^+0
+Return
+; 输入法切换
+CapsLock & Backspace::
+    SendInput, #{Space}
+Return
+; 两个输入法切换
+CapsLock & Enter::
+    SendInput, ^#{Space}
+Return
 ; smart 中英切换
 SwitchInputMethod() {
     WinGet, WinID,, A
@@ -358,12 +349,12 @@ SwitchInputMethod() {
         SendInput, ^{Space}
     }
 }
-; 使用示例
 CapsLock & Space::
-{
     SwitchInputMethod()
-    Return
-}
+Return
+CapsLock & Ctrl::^`
+Ctrl & CapsLock::^`
+CapsLock & .::^.
 ; ------------------------------------
 ; utools clipboard
 ; ------------------------------------
