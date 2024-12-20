@@ -147,14 +147,16 @@ else IfWinExist ahk_exe nvim-qt.exe
 else If FileExist("C:\Scoop\apps\neovim-qt\current\bin\nvim-qt.exe")
     Run "C:\Scoop\apps\neovim-qt\current\bin\nvim-qt.exe"
 Return
+CapsLock & \::
+IfWinExist ahk_exe notepad--.exe
+    WinActivate
+else
+    Run "C:\Scoop\apps\notepad--\current\Notepad--.exe"
+Return
 ; f b
 CapsLock & f::
 if GetKeyState("Alt"){
-    IfWinExist ahk_exe notepad--.exe
-        WinActivate
-    else
-        Run "C:\Scoop\apps\notepad--\current\Notepad--.exe"
-    Return
+    Send ^#!f
 }
 else IfWinExist ahk_exe WindowsTerminal.exe
     WinActivate
@@ -206,7 +208,12 @@ return
 ; ----------------
 ; Volume control
 ; ----------------
-CapsLock & m::Send {Volume_Mute}
+CapsLock & m::
+if GetKeyState("Alt")
+    Run "C:\Scoop\apps\motrix\current\motrix.exe"
+else 
+    Send {Volume_Mute}
+Return
 CapsLock & ]::Send {Volume_Up}
 CapsLock & [::Send {Volume_Down}
 ; ----------------
