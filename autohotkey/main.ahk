@@ -215,26 +215,57 @@ CapsLock & [::Send {Volume_Down}
 ; ----------------
 CapsLock & e::Run explorer.exe
 ; ----------------
-; Left, Down, Up, Right
+; direction  
 ; ----------------
-CapsLock & a::Send {Blind}{Left DownTemp}
-CapsLock & a up::Send {Blind}{Left Up}
-CapsLock & s::Send {Blind}{Down DownTemp}
-CapsLock & s up::Send {Blind}{Down Up}
-CapsLock & w::Send {Blind}{Up DownTemp}
-CapsLock & w up::Send {Blind}{Up Up}
-CapsLock & d::Send {Blind}{Right DownTemp}
-CapsLock & d up::Send {Blind}{Right Up}
-; ----------------
-; PgUp PgDn
-; ----------------
-CapsLock & b::SendInput {Blind}{PgUp DownTemp}
-CapsLock & b up::SendInput {Blind}{PgUp Up}
-CapsLock & f::SendInput {Blind}{PgDn DownTemp}
-CapsLock & f up::SendInput {Blind}{PgDn Up}
-; ------------------------------
-; Home End PgUp PgDn enhance
-; ------------------------------
+CapsLock & a::
+if GetKeyState("Alt")
+    SendInput {Blind}{Home DownTemp}
+else
+    Send {Blind}{Left DownTemp}
+Return
+CapsLock & a up::
+if GetKeyState("Alt")
+    SendInput {Blind}{Home Up}
+else
+    Send {Blind}{Left Up}
+Return
+CapsLock & d::
+if GetKeyState("Alt")
+    SendInput {Blind}{End DownTemp}
+else
+    Send {Blind}{Right DownTemp}
+Return
+CapsLock & d up::
+if GetKeyState("Alt")
+    SendInput {Blind}{End Up}
+else
+    Send {Blind}{Right Up}
+Return
+CapsLock & s::
+if GetKeyState("Alt")
+    SendInput {Blind}{PgDn DownTemp}
+else
+    Send {Blind}{Down DownTemp}
+Return
+CapsLock & s up::
+if GetKeyState("Alt")
+    SendInput {Blind}{PgDn Up}
+else
+    Send {Blind}{Down Up}
+Return
+CapsLock & w::
+if GetKeyState("Alt")
+    SendInput {Blind}{PgUp DownTemp}
+else
+    Send {Blind}{Up DownTemp}
+Return
+CapsLock & w up::
+if GetKeyState("Alt")
+    SendInput {Blind}{PgUp Up}
+else
+    Send {Blind}{Up Up}
+Return
+; like vim
 CapsLock & h::
 if GetKeyState("Alt")
     SendInput {Blind}{Home DownTemp}
