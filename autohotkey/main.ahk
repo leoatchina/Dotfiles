@@ -110,6 +110,8 @@ Return
 CapsLock & 9::
 IfWinExist ahk_exe positron.exe
     WinActivate
+else If FileExist(UserProfile . "\AppData\Local\Programs\Positron\Positron.exe")
+    Run % UserProfile . "\AppData\Local\Programs\Positron\Positron.exe"
 else
     Run "C:\Scoop\apps\Positron\current\positron.exe"
 Return
