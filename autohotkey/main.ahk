@@ -68,29 +68,19 @@ else
     Run "C:\Scoop\apps\googlechrome\current\chrome.exe"
 Return
 CapsLock & 3::
-IfWinExist ahk_exe WindowsTerminal.exe
+IfWinExist ahk_exe wezterm-gui.exe
     WinActivate
-else If FileExist("C:\Scoop\apps\windows-terminal\current\WindowsTerminal.exe")
-    Run "C:\Scoop\apps\windows-terminal\current\WindowsTerminal.exe"
-else If FileExist("C:\Program Files\WindowsApps\Microsoft.WindowsTerminal_1.21.2911.0_x64__8wekyb3d8bbwe\WindowsTerminal.exe")
-    Run "C:\Program Files\WindowsApps\Microsoft.WindowsTerminal_1.21.2911.0_x64__8wekyb3d8bbwe\WindowsTerminal.exe"
+else If FileExist("C:\Scoop\apps\wezterm-nightly\current\wezterm-gui.exe")
+    Run "C:\Scoop\apps\wezterm-nightly\current\wezterm-gui.exe"
+else If FileExist("C:\Scoop\apps\wezterm\current\wezterm-gui.exe")
+    Run "C:\Scoop\apps\wezterm\current\wezterm-gui.exe"
 Return
 CapsLock & 4::
-if GetKeyState("Alt"){
-    IfWinExist ahk_exe wezterm-gui.exe
-        WinActivate
-    else If FileExist("C:\Scoop\apps\wezterm-nightly\current\wezterm-gui.exe")
-        Run "C:\Scoop\apps\wezterm-nightly\current\wezterm-gui.exe"
-    else If FileExist("C:\Scoop\apps\wezterm\current\wezterm-gui.exe")
-        Run "C:\Scoop\apps\wezterm\current\wezterm-gui.exe"
-    Return
-}else{
-    IfWinExist ahk_exe alacritty.exe
-        WinActivate
-    else If FileExist("C:\Scoop\apps\alacritty\current\alacritty.exe")
-        Run "C:\Scoop\apps\alacritty\current\alacritty.exe"
-    Return
-}
+IfWinExist ahk_exe alacritty.exe
+    WinActivate
+else If FileExist("C:\Scoop\apps\alacritty\current\alacritty.exe")
+    Run "C:\Scoop\apps\alacritty\current\alacritty.exe"
+Return
 CapsLock & 5::
 IfWinExist ahk_exe windsurf.exe
     WinActivate
@@ -112,19 +102,10 @@ else If FileExist(UserProfile . "\AppData\Local\Programs\Quark\quark.exe")
     Run % UserProfile . "\AppData\Local\Programs\Quark\quark.exe"
 Return
 CapsLock & 8::
-if GetKeyState("Alt"){
-    IfWinExist ahk_exe firefox.exe
-        WinActivate
-    else
-        Run "C:\Scoop\apps\firefox\current\firefox.exe"
-    Return
-}
-else IfWinExist ahk_exe zen.exe
+IfWinExist ahk_exe firefox.exe
     WinActivate
-else If FileExist("C:\Scoop\apps\zen-browser\current\zen.exe")
-    Run "C:\Scoop\apps\zen-browser\current\zen.exe"
-else If FileExist("C:\Program Files\Zen Browser\zen.exe")
-    Run "C:\Program Files\Zen Browser\zen.exe"
+else
+    Run "C:\Scoop\apps\firefox\current\firefox.exe"
 Return
 CapsLock & 9::
 IfWinExist ahk_exe positron.exe
@@ -166,11 +147,29 @@ else IfWinExist ahk_exe nvim-qt.exe
 else If FileExist("C:\Scoop\apps\neovim-qt\current\bin\nvim-qt.exe")
     Run "C:\Scoop\apps\neovim-qt\current\bin\nvim-qt.exe"
 Return
-CapsLock & \::
-IfWinExist ahk_exe notepad--.exe
+; f b
+CapsLock & f::
+if GetKeyState("Alt"){
+    IfWinExist ahk_exe notepad--.exe
+        WinActivate
+    else
+        Run "C:\Scoop\apps\notepad--\current\Notepad--.exe"
+    Return
+}
+else IfWinExist ahk_exe WindowsTerminal.exe
     WinActivate
-else
-    Run "C:\Scoop\apps\notepad--\current\Notepad--.exe"
+else If FileExist("C:\Scoop\apps\windows-terminal\current\WindowsTerminal.exe")
+    Run "C:\Scoop\apps\windows-terminal\current\WindowsTerminal.exe"
+else If FileExist("C:\Program Files\WindowsApps\Microsoft.WindowsTerminal_1.21.2911.0_x64__8wekyb3d8bbwe\WindowsTerminal.exe")
+    Run "C:\Program Files\WindowsApps\Microsoft.WindowsTerminal_1.21.2911.0_x64__8wekyb3d8bbwe\WindowsTerminal.exe"
+Return
+CapsLock & b::
+IfWinExist ahk_exe zen.exe
+    WinActivate
+else If FileExist("C:\Scoop\apps\zen-browser\current\zen.exe")
+    Run "C:\Scoop\apps\zen-browser\current\zen.exe"
+else If FileExist("C:\Program Files\Zen Browser\zen.exe")
+    Run "C:\Program Files\Zen Browser\zen.exe"
 Return
 ; ----------------
 ; screen shot
