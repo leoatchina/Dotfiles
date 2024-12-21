@@ -352,9 +352,9 @@ SwitchInputMethod() {
 CapsLock & Space::
     SwitchInputMethod()
 Return
-CapsLock & Ctrl::^`
-Ctrl & CapsLock::^`
-CapsLock & .::^.
+; 小狼毫
+CapsLock & RCtrl::^`
+RCtrl & CapsLock::^`
 ; ------------------------------------
 ; utools clipboard
 ; ------------------------------------
