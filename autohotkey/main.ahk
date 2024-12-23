@@ -44,11 +44,19 @@ else {
     Return
 }
 CapsLock & o::
-IfWinExist ahk_exe obsidian.exe
-    WinActivate
-else
-    Run "C:\Scoop\apps\obsidian\current\Obsidian.exe"
-Return
+if GetKeyState("Alt"){
+    IfWinExist ahk_exe notepad--.exe
+        WinActivate
+    else
+        Run "C:\Scoop\apps\notepad--\current\Notepad--.exe"
+    Return
+}else{
+    IfWinExist ahk_exe obsidian.exe
+        WinActivate
+    else
+        Run "C:\Scoop\apps\obsidian\current\Obsidian.exe"
+    Return
+}
 CapsLock & y::
 IfWinExist ahk_exe zotero.exe
     WinActivate
@@ -116,14 +124,7 @@ else
     Run "C:\Scoop\apps\Positron\current\positron.exe"
 Return
 CapsLock & 0::
-if GetKeyState("Alt"){
-    IfWinExist ahk_exe zed.exe
-        WinActivate
-    else If FileExist("C:\Scoop\apps\zed-nightly\current\zed.exe")
-        Run "C:\Scoop\apps\zed-nightly\current\zed.exe"
-    Return
-}
-else IfWinExist ahk_exe code.exe
+IfWinExist ahk_exe code.exe
     WinActivate
 else If FileExist(UserProfile . "\AppData\Local\Programs\Microsoft VS Code\Code.exe")
     Run % UserProfile . "\AppData\Local\Programs\Microsoft VS Code\Code.exe"
@@ -131,11 +132,19 @@ else If FileExist("C:\Scoop\apps\vscode\current\Code.exe")
     Run "C:\Scoop\apps\vscode\current\Code.exe"
 Return
 CapsLock & -::
-IfWinExist ahk_exe gvim.exe
-    WinActivate
-else If FileExist("C:\Scoop\apps\vim-nightly\current\gvim.exe")
-    Run "C:\Scoop\apps\vim-nightly\current\gvim.exe"
-Return
+if GetKeyState("Alt"){
+    IfWinExist ahk_exe zed.exe
+        WinActivate
+    else If FileExist("C:\Scoop\apps\zed-nightly\current\zed.exe")
+        Run "C:\Scoop\apps\zed-nightly\current\zed.exe"
+    Return
+}else{
+    IfWinExist ahk_exe gvim.exe
+        WinActivate
+    else If FileExist("C:\Scoop\apps\vim-nightly\current\gvim.exe")
+        Run "C:\Scoop\apps\vim-nightly\current\gvim.exe"
+    Return
+}
 CapsLock & =::
 if GetKeyState("Alt"){
     IfWinExist ahk_exe neovide.exe
@@ -149,18 +158,12 @@ else IfWinExist ahk_exe nvim-qt.exe
 else If FileExist("C:\Scoop\apps\neovim-qt\current\bin\nvim-qt.exe")
     Run "C:\Scoop\apps\neovim-qt\current\bin\nvim-qt.exe"
 Return
-CapsLock & \::
-IfWinExist ahk_exe notepad--.exe
-    WinActivate
-else
-    Run "C:\Scoop\apps\notepad--\current\Notepad--.exe"
-Return
-; f b
-CapsLock & f::
-if GetKeyState("Alt"){
+CapsLock & /::
     Send ^#!f
-}
-else IfWinExist ahk_exe WindowsTerminal.exe
+Return
+; windows terminal 
+CapsLock & f::
+IfWinExist ahk_exe WindowsTerminal.exe
     WinActivate
 else If FileExist("C:\Scoop\apps\windows-terminal\current\WindowsTerminal.exe")
     Run "C:\Scoop\apps\windows-terminal\current\WindowsTerminal.exe"
@@ -325,12 +328,11 @@ Return
 ; ------------------------------------
 ; Input method control change
 ; ------------------------------------
-; 切换到英文输入法，
-CapsLock & RShift::
-    SendInput, ^+0
-Return
+; CapsLockToggle
+CapsLock & Backspace::SendInput {Blind}{CapsLock DownTemp}
+CapsLock & Backspace up::SendInput {Blind}{CapsLock Up}
 ; 输入法切换
-CapsLock & Backspace::
+CapsLock & RShift::
     SendInput, #{Space}
 Return
 ; 两个输入法切换
@@ -366,11 +368,6 @@ CapsLock & z::
         Send #!c
     Return
 }
-; ----------------
-; CapsLockToggle
-; ----------------
-; CapsLock & /::SendInput {Blind}{CapsLock DownTemp}
-; CapsLock & / up::SendInput {Blind}{CapsLock Up}
 ; ------------------------------------
 ; copy paste
 ; ------------------------------------
