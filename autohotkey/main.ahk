@@ -329,10 +329,10 @@ Return
 ; Input method control change
 ; ------------------------------------
 ; CapsLockToggle
-CapsLock & Backspace::SendInput {Blind}{CapsLock DownTemp}
-CapsLock & Backspace up::SendInput {Blind}{CapsLock Up}
+CapsLock & RShift::SendInput {Blind}{CapsLock DownTemp}
+CapsLock & RShift up::SendInput {Blind}{CapsLock Up}
 ; 输入法切换
-CapsLock & RShift::
+CapsLock & Backspace::
     SendInput, #{Space}
 Return
 ; 两个输入法切换
