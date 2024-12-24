@@ -44,19 +44,11 @@ else {
     Return
 }
 CapsLock & o::
-if GetKeyState("Alt"){
-    IfWinExist ahk_exe notepad--.exe
-        WinActivate
-    else
-        Run "C:\Scoop\apps\notepad--\current\Notepad--.exe"
-    Return
-}else{
-    IfWinExist ahk_exe obsidian.exe
-        WinActivate
-    else
-        Run "C:\Scoop\apps\obsidian\current\Obsidian.exe"
-    Return
-}
+IfWinExist ahk_exe obsidian.exe
+    WinActivate
+else
+    Run "C:\Scoop\apps\obsidian\current\Obsidian.exe"
+Return
 CapsLock & y::
 IfWinExist ahk_exe zotero.exe
     WinActivate
@@ -84,24 +76,24 @@ else If FileExist("C:\Scoop\apps\wezterm\current\wezterm-gui.exe")
     Run "C:\Scoop\apps\wezterm\current\wezterm-gui.exe"
 Return
 CapsLock & 4::
-IfWinExist ahk_exe alacritty.exe
-    WinActivate
-else If FileExist("C:\Scoop\apps\alacritty\current\alacritty.exe")
-    Run "C:\Scoop\apps\alacritty\current\alacritty.exe"
-Return
-CapsLock & 5::
 IfWinExist ahk_exe windsurf.exe
     WinActivate
 else If FileExist(UserProfile . "\AppData\Local\Programs\Windsurf\Windsurf.exe")
     Run % UserProfile . "\AppData\Local\Programs\Windsurf\Windsurf.exe"
 Return
-CapsLock & 6::
-IfWinExist ahk_exe cursor.exe
+CapsLock & 5::
+IfWinExist ahk_exe code.exe
     WinActivate
-else If FileExist(UserProfile . "\AppData\Local\Programs\cursor\Cursor.exe")
-    Run % UserProfile . "\AppData\Local\Programs\cursor\Cursor.exe"
-else
-    Run "C:\Scoop\apps\cursor\current\Cursor.exe"
+else If FileExist(UserProfile . "\AppData\Local\Programs\Microsoft VS Code\Code.exe")
+    Run % UserProfile . "\AppData\Local\Programs\Microsoft VS Code\Code.exe"
+else If FileExist("C:\Scoop\apps\vscode\current\Code.exe")
+    Run "C:\Scoop\apps\vscode\current\Code.exe"
+Return
+CapsLock & 6::
+IfWinExist ahk_exe alacritty.exe
+    WinActivate
+else If FileExist("C:\Scoop\apps\alacritty\current\alacritty.exe")
+    Run "C:\Scoop\apps\alacritty\current\alacritty.exe"
 Return
 CapsLock & 7::
 IfWinExist ahk_exe quark.exe
@@ -124,19 +116,27 @@ else
     Run "C:\Scoop\apps\Positron\current\positron.exe"
 Return
 CapsLock & 0::
-IfWinExist ahk_exe code.exe
-    WinActivate
-else If FileExist(UserProfile . "\AppData\Local\Programs\Microsoft VS Code\Code.exe")
-    Run % UserProfile . "\AppData\Local\Programs\Microsoft VS Code\Code.exe"
-else If FileExist("C:\Scoop\apps\vscode\current\Code.exe")
-    Run "C:\Scoop\apps\vscode\current\Code.exe"
-Return
-CapsLock & -::
 if GetKeyState("Alt"){
     IfWinExist ahk_exe zed.exe
         WinActivate
     else If FileExist("C:\Scoop\apps\zed-nightly\current\zed.exe")
         Run "C:\Scoop\apps\zed-nightly\current\zed.exe"
+    Return
+}else{
+    IfWinExist ahk_exe cursor.exe
+        WinActivate
+    else If FileExist(UserProfile . "\AppData\Local\Programs\cursor\Cursor.exe")
+        Run % UserProfile . "\AppData\Local\Programs\cursor\Cursor.exe"
+    else
+        Run "C:\Scoop\apps\cursor\current\Cursor.exe"
+    Return
+}
+CapsLock & -::
+if GetKeyState("Alt"){
+    IfWinExist ahk_exe notepad--.exe
+        WinActivate
+    else
+        Run "C:\Scoop\apps\notepad--\current\Notepad--.exe"
     Return
 }else{
     IfWinExist ahk_exe gvim.exe
