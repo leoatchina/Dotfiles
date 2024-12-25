@@ -227,6 +227,7 @@ CapsLock & [::Send {Volume_Down}
 CapsLock & e::Run explorer.exe
 ; ----------------
 ; direction  
+; like fps games
 ; ----------------
 CapsLock & a::
 if GetKeyState("Alt")
@@ -276,7 +277,9 @@ if GetKeyState("Alt")
 else
     Send {Blind}{Up Up}
 Return
+; -----------------
 ; like vim
+; -----------------
 CapsLock & h::
 if GetKeyState("Alt")
     SendInput {Blind}{Home DownTemp}
