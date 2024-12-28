@@ -68,12 +68,10 @@ else
     Run "C:\Scoop\apps\googlechrome\current\chrome.exe"
 Return
 CapsLock & 3::
-IfWinExist ahk_exe wezterm-gui.exe
+IfWinExist ahk_exe alacritty.exe
     WinActivate
-else If FileExist("C:\Scoop\apps\wezterm-nightly\current\wezterm-gui.exe")
-    Run "C:\Scoop\apps\wezterm-nightly\current\wezterm-gui.exe"
-else If FileExist("C:\Scoop\apps\wezterm\current\wezterm-gui.exe")
-    Run "C:\Scoop\apps\wezterm\current\wezterm-gui.exe"
+else If FileExist("C:\Scoop\apps\alacritty\current\alacritty.exe")
+    Run "C:\Scoop\apps\alacritty\current\alacritty.exe"
 Return
 CapsLock & 4::
 IfWinExist ahk_exe windsurf.exe
@@ -90,10 +88,12 @@ else If FileExist("C:\Scoop\apps\vscode\current\Code.exe")
     Run "C:\Scoop\apps\vscode\current\Code.exe"
 Return
 CapsLock & 6::
-IfWinExist ahk_exe alacritty.exe
+IfWinExist ahk_exe wezterm-gui.exe
     WinActivate
-else If FileExist("C:\Scoop\apps\alacritty\current\alacritty.exe")
-    Run "C:\Scoop\apps\alacritty\current\alacritty.exe"
+else If FileExist("C:\Scoop\apps\wezterm-nightly\current\wezterm-gui.exe")
+    Run "C:\Scoop\apps\wezterm-nightly\current\wezterm-gui.exe"
+else If FileExist("C:\Scoop\apps\wezterm\current\wezterm-gui.exe")
+    Run "C:\Scoop\apps\wezterm\current\wezterm-gui.exe"
 Return
 CapsLock & 7::
 IfWinExist ahk_exe quark.exe
