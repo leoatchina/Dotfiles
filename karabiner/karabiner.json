@@ -204,13 +204,14 @@
                         ]
                     },
                     {
-                        "description": "Keep cmd+enter for fullsceen in iterm2 && therm, and keep ctrl+tab for tab switch",
+                        "description": "Keep cmd+enter for fullsceen in iterm2 && alacritty && therm, and keep ctrl+tab for tab switch",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
                                             "com.googlecode.iterm2",
+                                            "org.alacritty",
                                             "com.pancake.therm"
                                         ],
                                         "type": "frontmost_application_if"
@@ -239,6 +240,7 @@
                                     {
                                         "bundle_identifiers": [
                                             "com.googlecode.iterm2",
+                                            "org.alacritty",
                                             "com.pancake.therm"
                                         ],
                                         "type": "frontmost_application_if"
@@ -267,6 +269,7 @@
                                     {
                                         "bundle_identifiers": [
                                             "com.googlecode.iterm2",
+                                            "org.alacritty",
                                             "com.pancake.therm"
                                         ],
                                         "type": "frontmost_application_if"
@@ -296,6 +299,7 @@
                                     {
                                         "bundle_identifiers": [
                                             "com.googlecode.iterm2",
+                                            "org.alacritty",
                                             "com.pancake.therm"
                                         ],
                                         "type": "frontmost_application_if"
@@ -326,6 +330,7 @@
                                     {
                                         "bundle_identifiers": [
                                             "com.googlecode.iterm2",
+                                            "org.alacritty",
                                             "com.pancake.therm"
                                         ],
                                         "type": "frontmost_application_if"
@@ -354,6 +359,7 @@
                                     {
                                         "bundle_identifiers": [
                                             "com.googlecode.iterm2",
+                                            "org.alacritty",
                                             "com.pancake.therm"
                                         ],
                                         "type": "frontmost_application_if"
@@ -380,7 +386,7 @@
                         ]
                     },
                     {
-                        "description": "Map cmd+enter to fullsceen besides iterm2 && therm",
+                        "description": "Map cmd+enter to fullsceen besides iterm2 && alacritty && therm",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -660,7 +666,7 @@
                         ]
                     },
                     {
-                        "description": "Keep l_command and l_option in iterm2/therm/terminal/vimR/macvim with tab/space",
+                        "description": "Keep l_command and l_option in iterm2/alacritty/therm/terminal/vimR/macvim with tab/space",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -670,6 +676,7 @@
                                             "org.vim.MacVim",
                                             "com.qvacua.VimR",
                                             "com.googlecode.iterm2",
+                                            "org.alacritty",
                                             "com.pancake.therm"
                                         ],
                                         "type": "frontmost_application_if"
@@ -701,6 +708,7 @@
                                             "org.vim.MacVim",
                                             "com.qvacua.VimR",
                                             "com.googlecode.iterm2",
+                                            "org.alacritty",
                                             "com.pancake.therm"
                                         ],
                                         "type": "frontmost_application_if"
@@ -732,6 +740,7 @@
                                             "org.vim.MacVim",
                                             "com.qvacua.VimR",
                                             "com.googlecode.iterm2",
+                                            "org.alacritty",
                                             "com.pancake.therm"
                                         ],
                                         "type": "frontmost_application_if"
@@ -763,6 +772,7 @@
                                             "org.vim.MacVim",
                                             "com.qvacua.VimR",
                                             "com.googlecode.iterm2",
+                                            "org.alacritty",
                                             "com.pancake.therm"
                                         ],
                                         "type": "frontmost_application_if"
@@ -789,7 +799,7 @@
                         ]
                     },
                     {
-                        "description": "Swap l_command  with l_option in iterm2/therm/terminal/vimR/macvim",
+                        "description": "Swap l_command  with l_option in iterm2/alacritty/therm/terminal/vimR/macvim",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -799,6 +809,7 @@
                                             "org.vim.MacVim",
                                             "com.qvacua.VimR",
                                             "com.googlecode.iterm2",
+                                            "org.alacritty",
                                             "com.pancake.therm"
                                         ],
                                         "type": "frontmost_application_if"
@@ -832,6 +843,7 @@
                                             "org.vim.MacVim",
                                             "com.qvacua.VimR",
                                             "com.googlecode.iterm2",
+                                            "org.alacritty",
                                             "com.pancake.therm"
                                         ],
                                         "type": "frontmost_application_if"
