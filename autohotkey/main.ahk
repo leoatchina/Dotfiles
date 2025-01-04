@@ -132,19 +132,11 @@ if GetKeyState("Alt"){
     Return
 }
 CapsLock & -::
-if GetKeyState("Alt"){
-    IfWinExist ahk_exe notepad--.exe
-        WinActivate
-    else
-        Run "C:\Scoop\apps\notepad--\current\Notepad--.exe"
-    Return
-}else{
-    IfWinExist ahk_exe gvim.exe
-        WinActivate
-    else If FileExist("C:\Scoop\apps\vim-nightly\current\gvim.exe")
-        Run "C:\Scoop\apps\vim-nightly\current\gvim.exe"
-    Return
-}
+IfWinExist ahk_exe gvim.exe
+    WinActivate
+else If FileExist("C:\Scoop\apps\vim-nightly\current\gvim.exe")
+    Run "C:\Scoop\apps\vim-nightly\current\gvim.exe"
+Return
 CapsLock & =::
 if GetKeyState("Alt"){
     IfWinExist ahk_exe neovide.exe
@@ -163,7 +155,13 @@ CapsLock & /::
 Return
 ; windows terminal 
 CapsLock & f::
-IfWinExist ahk_exe WindowsTerminal.exe
+if GetKeyState("Alt"){
+    IfWinExist ahk_exe notepad--.exe
+        WinActivate
+    else
+        Run "C:\Scoop\apps\notepad--\current\Notepad--.exe"
+    Return
+}else IfWinExist ahk_exe WindowsTerminal.exe
     WinActivate
 else If FileExist("C:\Scoop\apps\windows-terminal\current\WindowsTerminal.exe")
     Run "C:\Scoop\apps\windows-terminal\current\WindowsTerminal.exe"
