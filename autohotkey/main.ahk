@@ -88,12 +88,10 @@ else If FileExist("C:\Scoop\apps\vscode\current\Code.exe")
     Run "C:\Scoop\apps\vscode\current\Code.exe"
 Return
 CapsLock & 6::
-IfWinExist ahk_exe wezterm-gui.exe
+IfWinExist ahk_exe tabby.exe
     WinActivate
-else If FileExist("C:\Scoop\apps\wezterm-nightly\current\wezterm-gui.exe")
-    Run "C:\Scoop\apps\wezterm-nightly\current\wezterm-gui.exe"
-else If FileExist("C:\Scoop\apps\wezterm\current\wezterm-gui.exe")
-    Run "C:\Scoop\apps\wezterm\current\wezterm-gui.exe"
+else If FileExist("C:\Scoop\apps\tabby\current\tabby.exe")
+    Run "C:\Scoop\apps\tabby\current\tabby.exe"
 Return
 CapsLock & 7::
 IfWinExist ahk_exe quark.exe
