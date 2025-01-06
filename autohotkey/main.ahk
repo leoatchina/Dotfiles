@@ -124,7 +124,7 @@ else If FileExist(UserProfile . "\AppData\Local\Programs\cursor\Cursor.exe")
 else
     Run "C:\Scoop\apps\cursor\current\Cursor.exe"
 Return
-CapsLock & i::
+CapsLock & g::
 IfWinExist ahk_exe gvim.exe
     WinActivate
 else If FileExist("C:\Scoop\apps\vim-nightly\current\gvim.exe")
