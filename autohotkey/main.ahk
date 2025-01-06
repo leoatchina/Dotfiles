@@ -20,12 +20,6 @@ return
 ; ----------------
 ; 激活不同的软件
 ; ---------------
-CapsLock & i::
-IfWinExist ahk_exe joplin.exe
-    WinActivate
-else
-    Run "C:\Scoop\apps\joplin\current\Joplin.exe"
-Return
 CapsLock & t::
 if GetKeyState("Alt"){
     IfWinExist superProductivity.exe
@@ -35,22 +29,31 @@ if GetKeyState("Alt"){
     else If FileExist("C:\Program Files\WindowsApps\53707johannesjo.SuperProductivity_10.1.1.0_x64__ch45amy23cdv6\app\superProductivity.exe")
         Run "C:\Program Files\WindowsApps\53707johannesjo.SuperProductivity_10.1.1.0_x64__ch45amy23cdv6\app\superProductivity.exe"
     Return
-}
-else {
-    IfWinExist ahk_exe telegram.exe
+}else IfWinExist ahk_exe telegram.exe
+    WinActivate
+else
+    Run "C:\Scoop\apps\telegram\current\Telegram.exe"
+Return
+CapsLock & o::
+if GetKeyState("Alt"){
+    IfWinExist ahk_exe joplin.exe
         WinActivate
     else
-        Run "C:\Scoop\apps\telegram\current\Telegram.exe"
+        Run "C:\Scoop\apps\joplin\current\Joplin.exe"
     Return
-}
-CapsLock & o::
-IfWinExist ahk_exe obsidian.exe
+}else IfWinExist ahk_exe obsidian.exe
     WinActivate
 else
     Run "C:\Scoop\apps\obsidian\current\Obsidian.exe"
 Return
-CapsLock & y::
-IfWinExist ahk_exe zotero.exe
+CapsLock & z::
+if GetKeyState("Alt"){
+    IfWinExist ahk_exe zed.exe
+        WinActivate
+    else If FileExist("C:\Scoop\apps\zed-nightly\current\zed.exe")
+        Run "C:\Scoop\apps\zed-nightly\current\zed.exe"
+    Return
+}else IfWinExist ahk_exe zotero.exe
     WinActivate
 else
     Run "C:\Scoop\apps\zotero\current\zotero.exe"
@@ -114,36 +117,27 @@ else
     Run "C:\Scoop\apps\Positron\current\positron.exe"
 Return
 CapsLock & 0::
-if GetKeyState("Alt"){
-    IfWinExist ahk_exe zed.exe
-        WinActivate
-    else If FileExist("C:\Scoop\apps\zed-nightly\current\zed.exe")
-        Run "C:\Scoop\apps\zed-nightly\current\zed.exe"
-    Return
-}else{
-    IfWinExist ahk_exe cursor.exe
-        WinActivate
-    else If FileExist(UserProfile . "\AppData\Local\Programs\cursor\Cursor.exe")
-        Run % UserProfile . "\AppData\Local\Programs\cursor\Cursor.exe"
-    else
-        Run "C:\Scoop\apps\cursor\current\Cursor.exe"
-    Return
-}
-CapsLock & -::
+IfWinExist ahk_exe cursor.exe
+    WinActivate
+else If FileExist(UserProfile . "\AppData\Local\Programs\cursor\Cursor.exe")
+    Run % UserProfile . "\AppData\Local\Programs\cursor\Cursor.exe"
+else
+    Run "C:\Scoop\apps\cursor\current\Cursor.exe"
+Return
+CapsLock & i::
 IfWinExist ahk_exe gvim.exe
     WinActivate
 else If FileExist("C:\Scoop\apps\vim-nightly\current\gvim.exe")
     Run "C:\Scoop\apps\vim-nightly\current\gvim.exe"
 Return
 CapsLock & =::
-if GetKeyState("Alt"){
-    IfWinExist ahk_exe neovide.exe
-        WinActivate
-    else If FileExist("C:\Scoop\apps\neovide\current\neovide.exe")
-        Run "C:\Scoop\apps\neovide\current\neovide.exe"
-    Return
-}
-else IfWinExist ahk_exe nvim-qt.exe
+IfWinExist ahk_exe neovide.exe
+    WinActivate
+else If FileExist("C:\Scoop\apps\neovide\current\neovide.exe")
+    Run "C:\Scoop\apps\neovide\current\neovide.exe"
+Return
+CapsLock & -::
+IfWinExist ahk_exe nvim-qt.exe
     WinActivate
 else If FileExist("C:\Scoop\apps\neovim-qt\current\bin\nvim-qt.exe")
     Run "C:\Scoop\apps\neovim-qt\current\bin\nvim-qt.exe"
@@ -359,7 +353,7 @@ RCtrl & CapsLock::^`
 ; ------------------------------------
 ; utools clipboard
 ; ------------------------------------
-CapsLock & z::
+CapsLock & y::
 {
     if GetKeyState("Alt")
         Send ^#!c
