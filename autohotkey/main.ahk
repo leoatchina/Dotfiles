@@ -353,7 +353,7 @@ RCtrl & CapsLock::^`
 ; ------------------------------------
 ; utools clipboard
 ; ------------------------------------
-CapsLock & y::
+CapsLock & LCtrl::
 {
     if GetKeyState("Alt")
         Send ^#!c
