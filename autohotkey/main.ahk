@@ -353,6 +353,9 @@ RCtrl & CapsLock::^`
 ; ------------------------------------
 ; utools clipboard
 ; ------------------------------------
+LCtrl & CapsLock::
+Send #!c
+Return
 CapsLock & LCtrl::
 Send #!c
 Return
