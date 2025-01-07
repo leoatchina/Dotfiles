@@ -354,13 +354,11 @@ RCtrl & CapsLock::^`
 ; utools clipboard
 ; ------------------------------------
 CapsLock & LCtrl::
-{
-    if GetKeyState("Alt")
-        Send ^#!c
-    else
-        Send #!c
-    Return
-}
+Send #!c
+Return
+CapsLock & y::
+Send ^#!c
+Return
 ; ------------------------------------
 ; copy paste
 ; ------------------------------------
