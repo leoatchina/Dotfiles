@@ -39,7 +39,7 @@ if GetKeyState("Alt"){
     IfWinExist ahk_exe joplin.exe
         WinActivate
     else
-        Run "C:\Scoop\apps\joplin\current\Joplin.exe"
+        Run % UserProfile . "\AppData\Local\Programs\Joplin\Joplin.exe"
     Return
 }else IfWinExist ahk_exe obsidian.exe
     WinActivate
