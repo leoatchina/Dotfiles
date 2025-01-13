@@ -38,10 +38,10 @@ CapsLock & o::
 if GetKeyState("Alt"){
     IfWinExist ahk_exe joplin.exe
         WinActivate
-    else If FileExist(% UserProfile . "\AppData\Local\Programs\Joplin\Joplin.exe")
+    else If FileExist(UserProfile . "\AppData\Local\Programs\Joplin\Joplin.exe")
         Run % UserProfile . "\AppData\Local\Programs\Joplin\Joplin.exe"
     else If FileExist("C:\Scoop\apps\joplin\current\Joplin.exe")
-        Run "C:\Scoop\apps\joplin\current\Joplin.exe" 
+        Run "C:\Scoop\apps\joplin\current\Joplin.exe"
     Return
 }else IfWinExist ahk_exe obsidian.exe
     WinActivate
@@ -147,7 +147,7 @@ Return
 CapsLock & /::
     Send ^#!f
 Return
-; windows terminal 
+; windows terminal
 CapsLock & f::
 if GetKeyState("Alt"){
     IfWinExist ahk_exe notepad--.exe
@@ -208,7 +208,7 @@ return
 CapsLock & m::
 if GetKeyState("Alt")
     Run "C:\Scoop\apps\motrix\current\motrix.exe"
-else 
+else
     Send {Volume_Mute}
 Return
 CapsLock & ]::Send {Volume_Up}
@@ -218,7 +218,7 @@ CapsLock & [::Send {Volume_Down}
 ; ----------------
 CapsLock & e::Run explorer.exe
 ; ----------------
-; direction  
+; direction
 ; like fps games
 ; ----------------
 CapsLock & a::
