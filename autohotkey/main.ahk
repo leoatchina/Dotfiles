@@ -38,12 +38,14 @@ CapsLock & o::
 if GetKeyState("Alt"){
     IfWinExist ahk_exe joplin.exe
         WinActivate
-    else
+    else If FileExist(% UserProfile . "\AppData\Local\Programs\Joplin\Joplin.exe")
         Run % UserProfile . "\AppData\Local\Programs\Joplin\Joplin.exe"
+    else If FileExist("C:\Scoop\apps\joplin\current\Joplin.exe")
+        Run "C:\Scoop\apps\joplin\current\Joplin.exe" 
     Return
 }else IfWinExist ahk_exe obsidian.exe
     WinActivate
-else
+else If FileExist("C:\Scoop\apps\obsidian\current\Obsidian.exe")
     Run "C:\Scoop\apps\obsidian\current\Obsidian.exe"
 Return
 CapsLock & z::
