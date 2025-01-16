@@ -85,12 +85,12 @@ else If FileExist(UserProfile . "\AppData\Local\Programs\Windsurf\Windsurf.exe")
     Run % UserProfile . "\AppData\Local\Programs\Windsurf\Windsurf.exe"
 Return
 CapsLock & 5::
-IfWinExist ahk_exe code.exe
+IfWinExist ahk_exe cursor.exe
     WinActivate
-else If FileExist(UserProfile . "\AppData\Local\Programs\Microsoft VS Code\Code.exe")
-    Run % UserProfile . "\AppData\Local\Programs\Microsoft VS Code\Code.exe"
-else If FileExist("C:\Scoop\apps\vscode\current\Code.exe")
-    Run "C:\Scoop\apps\vscode\current\Code.exe"
+else If FileExist(UserProfile . "\AppData\Local\Programs\cursor\Cursor.exe")
+    Run % UserProfile . "\AppData\Local\Programs\cursor\Cursor.exe"
+else
+    Run "C:\Scoop\apps\cursor\current\Cursor.exe"
 Return
 CapsLock & 6::
 IfWinExist ahk_exe tabby.exe
@@ -119,12 +119,12 @@ else
     Run "C:\Scoop\apps\Positron\current\positron.exe"
 Return
 CapsLock & 0::
-IfWinExist ahk_exe cursor.exe
+IfWinExist ahk_exe code.exe
     WinActivate
-else If FileExist(UserProfile . "\AppData\Local\Programs\cursor\Cursor.exe")
-    Run % UserProfile . "\AppData\Local\Programs\cursor\Cursor.exe"
-else
-    Run "C:\Scoop\apps\cursor\current\Cursor.exe"
+else If FileExist(UserProfile . "\AppData\Local\Programs\Microsoft VS Code\Code.exe")
+    Run % UserProfile . "\AppData\Local\Programs\Microsoft VS Code\Code.exe"
+else If FileExist("C:\Scoop\apps\vscode\current\Code.exe")
+    Run "C:\Scoop\apps\vscode\current\Code.exe"
 Return
 CapsLock & g::
 IfWinExist ahk_exe gvim.exe
