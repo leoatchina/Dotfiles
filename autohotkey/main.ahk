@@ -38,12 +38,14 @@ CapsLock & o::
 if GetKeyState("Alt"){
     IfWinExist ahk_exe joplin.exe
         WinActivate
-    else
+    else If FileExist(UserProfile . "\AppData\Local\Programs\Joplin\Joplin.exe")
+        Run % UserProfile . "\AppData\Local\Programs\Joplin\Joplin.exe"
+    else If FileExist("C:\Scoop\apps\joplin\current\Joplin.exe")
         Run "C:\Scoop\apps\joplin\current\Joplin.exe"
     Return
 }else IfWinExist ahk_exe obsidian.exe
     WinActivate
-else
+else If FileExist("C:\Scoop\apps\obsidian\current\Obsidian.exe")
     Run "C:\Scoop\apps\obsidian\current\Obsidian.exe"
 Return
 CapsLock & z::
@@ -83,12 +85,12 @@ else If FileExist(UserProfile . "\AppData\Local\Programs\Windsurf\Windsurf.exe")
     Run % UserProfile . "\AppData\Local\Programs\Windsurf\Windsurf.exe"
 Return
 CapsLock & 5::
-IfWinExist ahk_exe code.exe
+IfWinExist ahk_exe cursor.exe
     WinActivate
-else If FileExist(UserProfile . "\AppData\Local\Programs\Microsoft VS Code\Code.exe")
-    Run % UserProfile . "\AppData\Local\Programs\Microsoft VS Code\Code.exe"
-else If FileExist("C:\Scoop\apps\vscode\current\Code.exe")
-    Run "C:\Scoop\apps\vscode\current\Code.exe"
+else If FileExist(UserProfile . "\AppData\Local\Programs\cursor\Cursor.exe")
+    Run % UserProfile . "\AppData\Local\Programs\cursor\Cursor.exe"
+else
+    Run "C:\Scoop\apps\cursor\current\Cursor.exe"
 Return
 CapsLock & 6::
 IfWinExist ahk_exe tabby.exe
@@ -117,12 +119,12 @@ else
     Run "C:\Scoop\apps\Positron\current\positron.exe"
 Return
 CapsLock & 0::
-IfWinExist ahk_exe cursor.exe
+IfWinExist ahk_exe code.exe
     WinActivate
-else If FileExist(UserProfile . "\AppData\Local\Programs\cursor\Cursor.exe")
-    Run % UserProfile . "\AppData\Local\Programs\cursor\Cursor.exe"
-else
-    Run "C:\Scoop\apps\cursor\current\Cursor.exe"
+else If FileExist(UserProfile . "\AppData\Local\Programs\Microsoft VS Code\Code.exe")
+    Run % UserProfile . "\AppData\Local\Programs\Microsoft VS Code\Code.exe"
+else If FileExist("C:\Scoop\apps\vscode\current\Code.exe")
+    Run "C:\Scoop\apps\vscode\current\Code.exe"
 Return
 CapsLock & g::
 IfWinExist ahk_exe gvim.exe
@@ -145,7 +147,7 @@ Return
 CapsLock & /::
     Send ^#!f
 Return
-; windows terminal 
+; windows terminal
 CapsLock & f::
 if GetKeyState("Alt"){
     IfWinExist ahk_exe notepad--.exe
@@ -206,7 +208,7 @@ return
 CapsLock & m::
 if GetKeyState("Alt")
     Run "C:\Scoop\apps\motrix\current\motrix.exe"
-else 
+else
     Send {Volume_Mute}
 Return
 CapsLock & ]::Send {Volume_Up}
@@ -216,7 +218,7 @@ CapsLock & [::Send {Volume_Down}
 ; ----------------
 CapsLock & e::Run explorer.exe
 ; ----------------
-; direction  
+; direction
 ; like fps games
 ; ----------------
 CapsLock & a::
