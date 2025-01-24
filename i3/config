@@ -36,6 +36,11 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
+
+# displays, eDP-1 is the monitor of power15G7
+exec_always --no-startup-id xrandr --output eDP-1 --primary
+exec_always --no-startup-id xrandr --output eDP-1 --auto --pos 0x0 --output DP-1 --auto --left-of eDP-1
+
 # logout
 bindsym $mod+Ctrl+l exec "i3-msg exit"
 
