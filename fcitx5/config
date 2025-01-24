@@ -1,16 +1,14 @@
 [Hotkey]
 # Enumerate when press trigger key repeatedly
 EnumerateWithTriggerKeys=True
+# Temporally switch between first and current Input Method
+AltTriggerKeys=
 # Skip first input method while enumerating
 EnumerateSkipFirst=False
 
 [Hotkey/TriggerKeys]
 0=Control+space
-1=Super+space
-2=SUPER_SPACE
-
-[Hotkey/AltTriggerKeys]
-0=Shift_L
+1=Super+BackSpace
 
 [Hotkey/EnumerateForwardKeys]
 0=Control+Shift_L

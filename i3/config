@@ -3,9 +3,9 @@
 #
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).
-#
 
-# i3 config file (v4)
+# map capslock to super
+exec_always setxkbmap -option caps:super
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
@@ -204,4 +204,3 @@ bar {
         status_command i3status
 }
 
-exec_always setxkbmap -option caps:super
