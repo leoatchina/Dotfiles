@@ -6,8 +6,8 @@ EnumerateSkipFirst=False
 
 [Hotkey/TriggerKeys]
 0=Control+space
-1=Zenkaku_Hankaku
-2=Hangul
+1=Super+space
+2=SUPER_SPACE
 
 [Hotkey/AltTriggerKeys]
 0=Shift_L
