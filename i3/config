@@ -56,16 +56,13 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-# bindsym $mod+Return exec kitty
-bindsym $mod+Return exec tabby
 bindsym $mod+Shift+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # 替换默认的 Mod+d 绑定
-# NOTE: apt install j4-dmenu-desktop rofi
-# bindsym $mod+shift+d exec "j4-dmenu-desktop --dmenu='dmenu'"
+# NOTE: apt install rofi
 bindsym $mod+shift+d exec --no-startup-id dmenu_run
 bindsym $mod+d exec "rofi -show drun"
 bindsym Mod1+Tab exec "rofi -show window"
@@ -107,7 +104,7 @@ bindsym $mod+BackLeft split h
 bindsym $mod+BackRight split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $mod+Return fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -172,6 +169,10 @@ bindsym $mod+Mod1+9 workspace number $ws19
 bindsym $mod+Mod1+0 workspace number $ws20
 # jump between recently worked ws
 bindsym $mod+Tab workspace back_and_forth
+
+
+# flameshot
+bindsym $mod+f exec flameshot gui
 
 # move focused container to workspace
 bindsym $mod+Control+1 move container to workspace number $ws1
