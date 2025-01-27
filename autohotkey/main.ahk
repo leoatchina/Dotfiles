@@ -67,16 +67,16 @@ else
     Run "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
 Return
 CapsLock & 2::
-IfWinExist ahk_exe chrome.exe
-    WinActivate
-else
-    Run "C:\Scoop\apps\googlechrome\current\chrome.exe"
-Return
-CapsLock & 3::
 IfWinExist ahk_exe alacritty.exe
     WinActivate
 else If FileExist("C:\Scoop\apps\alacritty\current\alacritty.exe")
     Run "C:\Scoop\apps\alacritty\current\alacritty.exe"
+Return
+CapsLock & 3::
+IfWinExist ahk_exe chrome.exe
+    WinActivate
+else
+    Run "C:\Scoop\apps\googlechrome\current\chrome.exe"
 Return
 CapsLock & 4::
 IfWinExist ahk_exe windsurf.exe
