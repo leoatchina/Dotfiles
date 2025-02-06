@@ -7,7 +7,7 @@
 exec --no-startup-id feh --bg-fill ~/.config/i3/i3wm.png 
 
 # map capslock to super
-exec --no-startup-id "setxkbmap -option caps:super"
+exec_always --no-startup-id setxkbmap -option caps:super
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
