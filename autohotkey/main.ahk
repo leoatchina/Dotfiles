@@ -167,6 +167,8 @@ IfWinExist ahk_exe zen.exe
     WinActivate
 else If FileExist("C:\Scoop\apps\zen-browser\current\zen.exe")
     Run "C:\Scoop\apps\zen-browser\current\zen.exe"
+else If FileExist(UserProfile . "\AppData\Local\Zen Browser\zen.exe")
+    Run % UserProfile . "\AppData\Local\Zen Browser\zen.exe"
 else If FileExist("C:\Program Files\Zen Browser\zen.exe")
     Run "C:\Program Files\Zen Browser\zen.exe"
 Return
