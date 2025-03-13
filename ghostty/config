@@ -19,3 +19,13 @@ keybind = alt+shift+seven=goto_tab:7
 keybind = alt+shift+eight=goto_tab:8
 keybind = alt+shift+nine=goto_tab:9
 keybind = alt+shift+zero=last_tab
+
+keybind = ctrl+equal=unbind
+keybind = ctrl+plus=unbind
+keybind = ctrl+minus=unbind
+keybind = ctrl+zero=unbind
+
+keybind = ctrl+shift+equal=increase_font_size:1
+keybind = ctrl+shift+plus=increase_font_size:1
+keybind = ctrl+shift+minus=decrease_font_size:1
+keybind = ctrl+shift+zero=reset_font_size
