@@ -70,8 +70,8 @@ bindsym $mod+Shift+q kill
 
 # 替换默认的 Mod+d 绑定
 # NOTE: apt install rofi
-bindsym $mod+shift+d exec --no-startup-id dmenu_run
-bindsym $mod+d exec "rofi -show drun"
+# bindsym ctrl+shift+space exec --no-startup-id dmenu_run
+bindsym Mod1+space exec "rofi -show drun"
 bindsym Mod1+Tab exec "rofi -show window"
 
 # A more modern dmenu replacement is rofi:
@@ -116,9 +116,9 @@ bindsym $mod+s layout stacking
 bindsym $mod+e layout toggle split
 
 # enter fullscreen mode for the focused container
-bindsym Mod1+Return fullscreen toggle
+bindsym $mod+Return fullscreen toggle
 # toggle tiling / floating
-bindsym $mod+Return floating toggle
+bindsym $mod+d floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+BackSpace focus mode_toggle
