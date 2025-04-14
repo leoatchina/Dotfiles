@@ -8,8 +8,9 @@
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
-font pango:monospace 8
+# font pango:DejaVu Sans Mono 8
+# font pango:monospace 8
+
 
 set $mod Mod4
 
@@ -19,9 +20,6 @@ exec --no-startup-id fcitx5 -d
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
-
-# map capslock to super
-exec --no-startup-id setxkbmap -option caps:super
 
 # wallpaller
 exec --no-startup-id feh --bg-fill ~/.config/i3/i3wm.png 
@@ -34,7 +32,7 @@ exec --no-startup-id feh --bg-fill ~/.config/i3/i3wm.png
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
-# and nm-applet is a desktop environment-independent system tray GUI for it.
+# and nm-applet is a desktop environment-independent system tray GUI for i.
 exec --no-startup-id nm-applet
 
 # displays, eDP-1 is the monitor of power15G7
@@ -43,6 +41,10 @@ exec_always --no-startup-id xrandr --output eDP-1 --primary
 # exec_always --no-startup-id xrandr --output eDP-1 --auto --pos 0x0 --output DP-2 --auto --left-of eDP-1
 exec_always --no-startup-id xrandr --output DP-2 --auto --left-of eDP-1
 exec_always --no-startup-id xrandr --output DP-1 --auto --left-of DP-2 
+
+
+# map capslock to super
+exec --no-startup-id "setxkbmap -option caps:super"
 
 # logout
 bindsym $mod+Ctrl+l exec "i3-msg exit"
