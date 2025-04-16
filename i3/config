@@ -9,8 +9,7 @@
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 # font pango:DejaVu Sans Mono 8
-# font pango:monospace 8
-
+font pango:monospace 8
 
 set $mod Mod4
 
@@ -41,10 +40,8 @@ exec_always --no-startup-id xrandr --output eDP-1 --primary
 # exec_always --no-startup-id xrandr --output eDP-1 --auto --pos 0x0 --output DP-2 --auto --left-of eDP-1
 exec_always --no-startup-id xrandr --output DP-2 --auto --left-of eDP-1
 exec_always --no-startup-id xrandr --output DP-1 --auto --left-of DP-2 
-
-
 # map capslock to super
-exec --no-startup-id "setxkbmap -option caps:super"
+exec_always --no-startup-id "setxkbmap -option caps:super"
 
 # logout
 bindsym $mod+Ctrl+l exec "i3-msg exit"
