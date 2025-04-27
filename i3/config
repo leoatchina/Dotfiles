@@ -35,13 +35,13 @@ exec_always --no-startup-id xrandr --output eDP-1 --primary
 # exec_always --no-startup-id xrandr --output eDP-1 --auto --pos 0x0 --output DP-1 --auto --left-of eDP-1
 # exec_always --no-startup-id xrandr --output eDP-1 --auto --pos 0x0 --output DP-2 --auto --left-of eDP-1
 exec_always --no-startup-id xrandr --output DP-2 --auto --left-of eDP-1
-exec_always --no-startup-id xrandr --output DP-1 --auto --left-of DP-2 
+exec_always --no-startup-id xrandr --output DP-1 --auto --left-of DP-2
 
 # map capslock to super
 exec_always --no-startup-id "setxkbmap -option caps:super"
 
 # wallpaller
-exec_always --no-startup-id feh --bg-fill ~/.config/i3/i3wm.png 
+exec_always --no-startup-id feh --bg-fill ~/.config/i3/i3wm.png
 
 # logout
 bindsym $mod+Ctrl+l exec "i3-msg exit"
@@ -61,16 +61,17 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Shift+Return exec tabby 
+bindsym $mod+Shift+Return exec tabby
 bindsym $mod+Mod1+Return exec kitty
-bindsym $mod+ctrl+Return exec ghostty 
+bindsym $mod+ctrl+Return exec ghostty
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# 替换默认的 Mod+d 绑定
+# default mod+d
+# bindsym $mod+d exec --no-startup-id dmenu_run
+
 # NOTE: apt install rofi
-# bindsym ctrl+shift+space exec --no-startup-id dmenu_run
 bindsym Mod1+space exec "rofi -show drun"
 bindsym Mod1+Tab exec "rofi -show window"
 
@@ -115,10 +116,9 @@ bindsym $mod+t layout tabbed
 bindsym $mod+s layout stacking
 bindsym $mod+e layout toggle split
 
-# enter fullscreen mode for the focused container
-bindsym $mod+Return fullscreen toggle
+
 # toggle tiling / floating
-bindsym $mod+d floating toggle
+bindsym $mod+Return floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+BackSpace focus mode_toggle
