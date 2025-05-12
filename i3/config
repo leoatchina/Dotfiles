@@ -30,12 +30,16 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for i.
 exec --no-startup-id nm-applet
 
-# displays, eDP-1 is the monitor of power15G7
-exec_always --no-startup-id xrandr --output eDP-1 --primary
+# 显示器配置
+# 运行显示器自动配置脚本
+exec_always --no-startup-id ~/.config/i3/monitor-hotplug.sh
+
+# 旧的手动配置(已被脚本替代)
+# exec_always --no-startup-id xrandr --output eDP-1 --primary
 # exec_always --no-startup-id xrandr --output eDP-1 --auto --pos 0x0 --output DP-1 --auto --left-of eDP-1
 # exec_always --no-startup-id xrandr --output eDP-1 --auto --pos 0x0 --output DP-2 --auto --left-of eDP-1
-exec_always --no-startup-id xrandr --output DP-2 --auto --left-of eDP-1
-exec_always --no-startup-id xrandr --output DP-1 --auto --left-of DP-2
+# exec_always --no-startup-id xrandr --output DP-1 --auto --pos 0x0 --right-of eDP-1
+# exec_always --no-startup-id xrandr --output DP-2 --auto --pos 0x0 --right-of DP-1
 
 # map capslock to super
 exec_always --no-startup-id "setxkbmap -option caps:super"
