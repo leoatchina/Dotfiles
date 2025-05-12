@@ -3,6 +3,11 @@
 # 定义日志文件
 LOG_FILE="/tmp/monitor-hotplug.log"
 
+# 删除旧的日志文件
+if [ -f "$LOG_FILE" ]; then
+    rm -f "$LOG_FILE"
+fi
+
 # 日志记录函数
 log_message() {
     echo "$(date): $1" >> $LOG_FILE
@@ -10,9 +15,6 @@ log_message() {
 
 # 记录脚本启动
 log_message "显示器热插拔事件触发"
-
-# 等待系统识别显示器
-sleep 2
 
 # 检测连接的显示器
 CONNECTED_MONITORS=$(xrandr | grep " connected" | awk '{print $1}')
