@@ -112,4 +112,15 @@ else
     log_message "错误: xrandr命令为空，未执行任何操作"
 fi
 
+
+# 检查是否同时连接了DP-1和DP-2
+if xrandr | grep -q "DP-1 connected" && xrandr | grep -q "DP-2 connected"; then
+    log_message "检测到DP-1和DP-2同时连接，设置工作区映射"
+    # 设置工作区到显示器的映射 - 先设置DP-2，再设置DP-1
+    i3-msg "workspace 4 output DP-2"
+    i3-msg "workspace 2 output DP-1"
+    i3-msg "workspace 3 output DP-1"
+    log_message "工作区映射设置完成: 工作区1->eDP-1, 工作区2->DP-1, 工作区3->DP-1, 工作区4->DP-2"
+fi
+# finish
 log_message "脚本执行完成"

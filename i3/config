@@ -30,9 +30,6 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for i.
 exec --no-startup-id nm-applet
 
-# 显示器配置
-# 运行显示器自动配置脚本
-exec_always --no-startup-id ~/.config/i3/monitor-hotplug.sh
 
 # 旧的手动配置(已被脚本替代)
 # exec_always --no-startup-id xrandr --output eDP-1 --primary
@@ -236,6 +233,10 @@ exec --no-startup-id "which utools >/dev/null 2>&1 && utools || echo 'utools 未
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-    # tray_output eDP-1
     status_command i3status
 }
+
+# 显示器配置
+workspace 1 output eDP-1"
+# 运行显示器自动配置脚本
+exec_always --no-startup-id ~/.config/i3/monitor-hotplug.sh
