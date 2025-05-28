@@ -11,10 +11,10 @@ if GetKeyState("Alt")
 else
     IfWinExist ahk_exe follow.exe
         WinActivate
-    else If FileExist(UserProfile . "\AppData\Local\Follow\Follow.exe")
-        Run % UserProfile . "\AppData\Local\Follow\Follow.exe"
+    else If FileExist(UserProfile . "\AppData\Local\folo\folo.exe")
+        Run % UserProfile . "\AppData\Local\folo\folo.exe"
     else
-        Run "C:\Scoop\apps\follow\current\follow.exe"
+        Run "C:\Scoop\apps\folo\current\folo.exe"
     Return
 return
 ; ----------------
@@ -22,12 +22,12 @@ return
 ; ---------------
 CapsLock & t::
 if GetKeyState("Alt"){
-    IfWinExist superProductivity.exe
+    IfWinExist Heynote.exe
         WinActivate
-    else If FileExist(UserProfile . "\AppData\Local\Programs\superProductivity\Super Productivity.exe")
-        Run % UserProfile . "\AppData\Local\Programs\superProductivity\Super Productivity.exe"
-    else If FileExist("C:\Program Files\WindowsApps\53707johannesjo.SuperProductivity_10.1.1.0_x64__ch45amy23cdv6\app\superProductivity.exe")
-        Run "C:\Program Files\WindowsApps\53707johannesjo.SuperProductivity_10.1.1.0_x64__ch45amy23cdv6\app\superProductivity.exe"
+    else If FileExist(UserProfile . "\AppData\Local\Programs\Heynote\Heynote.exe")
+        Run % UserProfile . "\AppData\Local\Programs\Heynote\Heynote.exe"
+    else If FileExist("C:\Scoop\apps\Heynote\current\Heynote.exe")
+        Run "C:\Scoop\apps\Heynote\current\Heynote.exe"
     Return
 }else IfWinExist ahk_exe telegram.exe
     WinActivate
