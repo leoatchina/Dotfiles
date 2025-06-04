@@ -85,18 +85,16 @@ else If FileExist(UserProfile . "\AppData\Local\Programs\Windsurf\Windsurf.exe")
     Run % UserProfile . "\AppData\Local\Programs\Windsurf\Windsurf.exe"
 Return
 CapsLock & 5::
-IfWinExist ahk_exe cursor.exe
+IfWinExist ahk_exe trae.exe
     WinActivate
-else If FileExist(UserProfile . "\AppData\Local\Programs\cursor\Cursor.exe")
-    Run % UserProfile . "\AppData\Local\Programs\cursor\Cursor.exe"
-else
-    Run "C:\Scoop\apps\cursor\current\Cursor.exe"
+else If FileExist(UserProfile . "\AppData\Local\Programs\Trae\Trae.exe")
+    Run % UserProfile . "\AppData\Local\Programs\Trae\Trae.exe"
 Return
 CapsLock & 6::
-IfWinExist ahk_exe tabby.exe
+IfWinExist ahk_exe wezterm-gui.exe
     WinActivate
-else If FileExist("C:\Scoop\apps\tabby\current\tabby.exe")
-    Run "C:\Scoop\apps\tabby\current\tabby.exe"
+else If FileExist("C:\Scoop\apps\wezterm-nightly\current\wezterm-gui.exe")
+    Run "C:\Scoop\apps\wezterm-nightly\current\wezterm-gui.exe"
 Return
 CapsLock & 7::
 IfWinExist ahk_exe quark.exe
@@ -105,26 +103,22 @@ else If FileExist(UserProfile . "\AppData\Local\Programs\Quark\quark.exe")
     Run % UserProfile . "\AppData\Local\Programs\Quark\quark.exe"
 Return
 CapsLock & 8::
-IfWinExist ahk_exe firefox.exe
-    WinActivate
-else
-    Run "C:\Scoop\apps\firefox\current\firefox.exe"
-Return
-CapsLock & 9::
 IfWinExist ahk_exe positron.exe
     WinActivate
 else If FileExist(UserProfile . "\AppData\Local\Programs\Positron\Positron.exe")
     Run % UserProfile . "\AppData\Local\Programs\Positron\Positron.exe"
-else
-    Run "C:\Scoop\apps\Positron\current\positron.exe"
+Return
+CapsLock & 9::
+IfWinExist ahk_exe Cursor.exe
+    WinActivate
+else If FileExist(UserProfile . "\AppData\Local\Programs\Cursor\Cursor.exe")
+    Run % UserProfile . "\AppData\Local\Programs\Cursor\Cursor.exe"
 Return
 CapsLock & 0::
 IfWinExist ahk_exe code.exe
     WinActivate
 else If FileExist(UserProfile . "\AppData\Local\Programs\Microsoft VS Code\Code.exe")
     Run % UserProfile . "\AppData\Local\Programs\Microsoft VS Code\Code.exe"
-else If FileExist("C:\Scoop\apps\vscode\current\Code.exe")
-    Run "C:\Scoop\apps\vscode\current\Code.exe"
 Return
 CapsLock & g::
 IfWinExist ahk_exe gvim.exe
