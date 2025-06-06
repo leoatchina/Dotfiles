@@ -154,8 +154,8 @@ if GetKeyState("Alt"){
     Return
 }else IfWinExist ahk_exe WindowsTerminal.exe
     WinActivate
-else If FileExist("C:\Program Files\WindowsApps\Microsoft.WindowsTerminal_1.22.11141.0_x64__8wekyb3d8bbwe\WindowsTerminal.exe")
-    Run "C:\Program Files\WindowsApps\Microsoft.WindowsTerminal_1.22.11141.0_x64__8wekyb3d8bbwe\WindowsTerminal.exe"
+else If FileExist(UserProfile . "\AppData\Local\Microsoft\WindowsApps\wt.exe")
+    Run % UserProfile . "\AppData\Local\Microsoft\WindowsApps\wt.exe"
 Return
 CapsLock & b::
 IfWinExist ahk_exe zen.exe
