@@ -20,6 +20,7 @@ return
 ; ----------------
 ; 激活不同的软件
 ; ---------------
+; note
 CapsLock & t::
 if GetKeyState("Alt"){
     IfWinExist Heynote.exe
@@ -48,18 +49,7 @@ if GetKeyState("Alt"){
 else If FileExist("C:\Scoop\apps\obsidian\current\Obsidian.exe")
     Run "C:\Scoop\apps\obsidian\current\Obsidian.exe"
 Return
-CapsLock & z::
-if GetKeyState("Alt"){
-    IfWinExist ahk_exe zed.exe
-        WinActivate
-    else If FileExist("C:\Scoop\apps\zed-nightly\current\zed.exe")
-        Run "C:\Scoop\apps\zed-nightly\current\zed.exe"
-    Return
-}else IfWinExist ahk_exe zotero.exe
-    WinActivate
-else
-    Run "C:\Scoop\apps\zotero\current\zotero.exe"
-Return
+; editor && browser
 CapsLock & 1::
 IfWinExist ahk_exe msedge.exe
     WinActivate
@@ -103,28 +93,22 @@ else If FileExist(UserProfile . "\AppData\Local\Programs\Quark\quark.exe")
     Run % UserProfile . "\AppData\Local\Programs\Quark\quark.exe"
 Return
 CapsLock & 8::
-IfWinExist ahk_exe positron.exe
-    WinActivate
-else If FileExist(UserProfile . "\AppData\Local\Programs\Positron\Positron.exe")
-    Run % UserProfile . "\AppData\Local\Programs\Positron\Positron.exe"
-Return
-CapsLock & 9::
 IfWinExist ahk_exe Cursor.exe
     WinActivate
 else If FileExist(UserProfile . "\AppData\Local\Programs\Cursor\Cursor.exe")
     Run % UserProfile . "\AppData\Local\Programs\Cursor\Cursor.exe"
+Return
+CapsLock & 9::
+IfWinExist ahk_exe positron.exe
+    WinActivate
+else If FileExist(UserProfile . "\AppData\Local\Programs\Positron\Positron.exe")
+    Run % UserProfile . "\AppData\Local\Programs\Positron\Positron.exe"
 Return
 CapsLock & 0::
 IfWinExist ahk_exe code.exe
     WinActivate
 else If FileExist(UserProfile . "\AppData\Local\Programs\Microsoft VS Code\Code.exe")
     Run % UserProfile . "\AppData\Local\Programs\Microsoft VS Code\Code.exe"
-Return
-CapsLock & g::
-IfWinExist ahk_exe gvim.exe
-    WinActivate
-else If FileExist("C:\Scoop\apps\vim-nightly\current\gvim.exe")
-    Run "C:\Scoop\apps\vim-nightly\current\gvim.exe"
 Return
 CapsLock & =::
 IfWinExist ahk_exe neovide.exe
@@ -138,6 +122,25 @@ IfWinExist ahk_exe nvim-qt.exe
 else If FileExist("C:\Scoop\apps\neovim-qt\current\bin\nvim-qt.exe")
     Run "C:\Scoop\apps\neovim-qt\current\bin\nvim-qt.exe"
 Return
+CapsLock & g::
+IfWinExist ahk_exe gvim.exe
+    WinActivate
+else If FileExist("C:\Scoop\apps\vim-nightly\current\gvim.exe")
+    Run "C:\Scoop\apps\vim-nightly\current\gvim.exe"
+Return
+CapsLock & z::
+if GetKeyState("Alt"){
+    IfWinExist ahk_exe zed.exe
+        WinActivate
+    else If FileExist("C:\Scoop\apps\zed-nightly\current\zed.exe")
+        Run "C:\Scoop\apps\zed-nightly\current\zed.exe"
+    Return
+}else IfWinExist ahk_exe zotero.exe
+    WinActivate
+else
+    Run "C:\Scoop\apps\zotero\current\zotero.exe"
+Return
+; seach using utools
 CapsLock & /::
     Send ^#!f
 Return
