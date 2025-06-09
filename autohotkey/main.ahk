@@ -32,8 +32,8 @@ if GetKeyState("Alt"){
     Return
 }else IfWinExist ahk_exe telegram.exe
     WinActivate
-else
-    Run "C:\Scoop\apps\telegram\current\Telegram.exe"
+else If FileExist(UserProfile . "\AppData\Roaming\Telegram Desktop\Telegram.exe")
+    Run % UserProfile . "\AppData\Roaming\Telegram Desktop\Telegram.exe"
 Return
 CapsLock & o::
 if GetKeyState("Alt"){
