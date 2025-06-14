@@ -2,6 +2,34 @@
 #Persistent
 SetCapsLockState, AlwaysOff
 EnvGet, UserProfile, USERPROFILE
+
+; 检测Scoop安装位置
+ScoopPath := ""
+if (FileExist("C:\Scoop"))
+    ScoopPath := "C:\Scoop"
+else if (FileExist("D:\Scoop"))
+    ScoopPath := "D:\Scoop"
+else if (FileExist(UserProfile . "\scoop"))
+    ScoopPath := UserProfile . "\scoop"
+else if (FileExist("C:\Program Files\Scoop"))
+    ScoopPath := "C:\Program Files\Scoop"
+else if (FileExist("C:\Program Files (x86)\Scoop"))
+    ScoopPath := "C:\Program Files (x86)\Scoop"
+else if (FileExist("C:\ProgramData\Scoop"))
+    ScoopPath := "C:\ProgramData\Scoop"
+else if (FileExist("C:\Program Files\Scoop\apps"))
+    ScoopPath := "C:\Program Files\Scoop\apps"
+else if (FileExist("C:\Program Files (x86)\Scoop\apps"))
+    ScoopPath := "C:\Program Files (x86)\Scoop\apps"
+else if (FileExist("C:\ProgramData\Scoop\apps"))
+    ScoopPath := "C:\ProgramData\Scoop\apps"
+else if (FileExist("C:\Program Files\Scoop\current"))
+    ScoopPath := "C:\Program Files\Scoop\current"
+else if (FileExist("C:\Program Files (x86)\Scoop\current"))
+    ScoopPath := "C:\Program Files (x86)\Scoop\current"
+else if (FileExist("C:\ProgramData\Scoop\current"))
+    ScoopPath := "C:\ProgramData\Scoop\current"
+Return
 ; ------------------------------------
 ; follow && Reload scripts
 ; ------------------------------------
@@ -14,7 +42,7 @@ else
     else If FileExist(UserProfile . "\AppData\Local\folo\folo.exe")
         Run % UserProfile . "\AppData\Local\folo\folo.exe"
     else
-        Run "C:\Scoop\apps\folo\current\folo.exe"
+        Run % ScoopPath . "\apps\folo\current\folo.exe"
     Return
 return
 ; ----------------
@@ -27,8 +55,8 @@ if GetKeyState("Alt"){
         WinActivate
     else If FileExist(UserProfile . "\AppData\Local\Programs\Heynote\Heynote.exe")
         Run % UserProfile . "\AppData\Local\Programs\Heynote\Heynote.exe"
-    else If FileExist("C:\Scoop\apps\Heynote\current\Heynote.exe")
-        Run "C:\Scoop\apps\Heynote\current\Heynote.exe"
+    else If FileExist(ScoopPath . "\apps\Heynote\current\Heynote.exe")
+        Run % ScoopPath . "\apps\Heynote\current\Heynote.exe"
     Return
 }else IfWinExist ahk_exe telegram.exe
     WinActivate
@@ -41,13 +69,13 @@ if GetKeyState("Alt"){
         WinActivate
     else If FileExist(UserProfile . "\AppData\Local\Programs\Joplin\Joplin.exe")
         Run % UserProfile . "\AppData\Local\Programs\Joplin\Joplin.exe"
-    else If FileExist("C:\Scoop\apps\joplin\current\Joplin.exe")
-        Run "C:\Scoop\apps\joplin\current\Joplin.exe"
+    else If FileExist(ScoopPath . "\apps\joplin\current\Joplin.exe")
+        Run % ScoopPath . "\apps\joplin\current\Joplin.exe"
     Return
 }else IfWinExist ahk_exe obsidian.exe
     WinActivate
-else If FileExist("C:\Scoop\apps\obsidian\current\Obsidian.exe")
-    Run "C:\Scoop\apps\obsidian\current\Obsidian.exe"
+else If FileExist(ScoopPath . "\apps\obsidian\current\Obsidian.exe")
+    Run % ScoopPath . "\apps\obsidian\current\Obsidian.exe"
 Return
 ; editor && browser
 CapsLock & 1::
@@ -60,13 +88,13 @@ CapsLock & 2::
 IfWinExist ahk_exe chrome.exe
     WinActivate
 else
-    Run "C:\Scoop\apps\googlechrome\current\chrome.exe"
+    Run % ScoopPath . "\apps\googlechrome\current\chrome.exe"
 Return
 CapsLock & 3::
 IfWinExist ahk_exe wezterm-gui.exe
     WinActivate
-else If FileExist("C:\Scoop\apps\wezterm-nightly\current\wezterm-gui.exe")
-    Run "C:\Scoop\apps\wezterm-nightly\current\wezterm-gui.exe"
+else If FileExist(ScoopPath . "\apps\wezterm-nightly\current\wezterm-gui.exe")
+    Run % ScoopPath . "\apps\wezterm-nightly\current\wezterm-gui.exe"
 Return
 CapsLock & 4::
 IfWinExist ahk_exe windsurf.exe
@@ -83,8 +111,8 @@ Return
 CapsLock & 6::
 IfWinExist ahk_exe mobaxterm.exe
     WinActivate
-else If FileExist("C:\Scoop\apps\mobaxterm\current\mobaxterm.exe")
-    Run "C:\Scoop\apps\mobaxterm\current\mobaxterm.exe"
+else If FileExist(ScoopPath . "\apps\mobaxterm\current\mobaxterm.exe")
+    Run % ScoopPath . "\apps\mobaxterm\current\mobaxterm.exe"
 Return
 CapsLock & 7::
 IfWinExist ahk_exe quark.exe
@@ -113,32 +141,32 @@ Return
 CapsLock & =::
 IfWinExist ahk_exe neovide.exe
     WinActivate
-else If FileExist("C:\Scoop\apps\neovide\current\neovide.exe")
-    Run "C:\Scoop\apps\neovide\current\neovide.exe"
+else If FileExist(ScoopPath . "\apps\neovide\current\neovide.exe")
+    Run % ScoopPath . "\apps\neovide\current\neovide.exe"
 Return
 CapsLock & -::
 IfWinExist ahk_exe nvim-qt.exe
     WinActivate
-else If FileExist("C:\Scoop\apps\neovim-qt\current\bin\nvim-qt.exe")
-    Run "C:\Scoop\apps\neovim-qt\current\bin\nvim-qt.exe"
+else If FileExist(ScoopPath . "\apps\neovim-qt\current\bin\nvim-qt.exe")
+    Run % ScoopPath . "\apps\neovim-qt\current\bin\nvim-qt.exe"
 Return
 CapsLock & g::
 IfWinExist ahk_exe gvim.exe
     WinActivate
-else If FileExist("C:\Scoop\apps\vim-nightly\current\gvim.exe")
-    Run "C:\Scoop\apps\vim-nightly\current\gvim.exe"
+else If FileExist(ScoopPath . "\apps\vim-nightly\current\gvim.exe")
+    Run % ScoopPath . "\apps\vim-nightly\current\gvim.exe"
 Return
 CapsLock & z::
 if GetKeyState("Alt"){
     IfWinExist ahk_exe zed.exe
         WinActivate
-    else If FileExist("C:\Scoop\apps\zed-nightly\current\zed.exe")
-        Run "C:\Scoop\apps\zed-nightly\current\zed.exe"
+    else If FileExist(ScoopPath . "\apps\zed-nightly\current\zed.exe")
+        Run % ScoopPath . "\apps\zed-nightly\current\zed.exe"
     Return
 }else IfWinExist ahk_exe zotero.exe
     WinActivate
 else
-    Run "C:\Scoop\apps\zotero\current\zotero.exe"
+    Run % ScoopPath . "\apps\zotero\current\zotero.exe"
 Return
 ; seach using utools
 CapsLock & /::
@@ -150,7 +178,7 @@ if GetKeyState("Alt"){
     IfWinExist ahk_exe notepad--.exe
         WinActivate
     else
-        Run "C:\Scoop\apps\notepad--\current\Notepad--.exe"
+        Run % ScoopPath . "\apps\notepad--\current\Notepad--.exe"
     Return
 }else IfWinExist ahk_exe WindowsTerminal.exe
     WinActivate
@@ -160,8 +188,8 @@ Return
 CapsLock & b::
 IfWinExist ahk_exe zen.exe
     WinActivate
-else If FileExist("C:\Scoop\apps\zen-browser\current\zen.exe")
-    Run "C:\Scoop\apps\zen-browser\current\zen.exe"
+else If FileExist(ScoopPath . "\apps\zen-browser\current\zen.exe")
+    Run % ScoopPath . "\apps\zen-browser\current\zen.exe"
 else If FileExist(UserProfile . "\AppData\Local\Zen Browser\zen.exe")
     Run % UserProfile . "\AppData\Local\Zen Browser\zen.exe"
 else If FileExist("C:\Program Files\Zen Browser\zen.exe")
@@ -204,7 +232,7 @@ return
 ; ----------------
 CapsLock & m::
 if GetKeyState("Alt")
-    Run "C:\Scoop\apps\motrix\current\motrix.exe"
+    Run % ScoopPath . "\apps\motrix\current\motrix.exe"
 else
     Send {Volume_Mute}
 Return
