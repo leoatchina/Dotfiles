@@ -2,33 +2,14 @@
 #Persistent
 SetCapsLockState, AlwaysOff
 EnvGet, UserProfile, USERPROFILE
-
 ; 检测Scoop安装位置
-ScoopPath := ""
+ScoopPath := "C:\Scoop"
 if (FileExist("C:\Scoop"))
     ScoopPath := "C:\Scoop"
 else if (FileExist("D:\Scoop"))
     ScoopPath := "D:\Scoop"
 else if (FileExist(UserProfile . "\scoop"))
     ScoopPath := UserProfile . "\scoop"
-else if (FileExist("C:\Program Files\Scoop"))
-    ScoopPath := "C:\Program Files\Scoop"
-else if (FileExist("C:\Program Files (x86)\Scoop"))
-    ScoopPath := "C:\Program Files (x86)\Scoop"
-else if (FileExist("C:\ProgramData\Scoop"))
-    ScoopPath := "C:\ProgramData\Scoop"
-else if (FileExist("C:\Program Files\Scoop\apps"))
-    ScoopPath := "C:\Program Files\Scoop\apps"
-else if (FileExist("C:\Program Files (x86)\Scoop\apps"))
-    ScoopPath := "C:\Program Files (x86)\Scoop\apps"
-else if (FileExist("C:\ProgramData\Scoop\apps"))
-    ScoopPath := "C:\ProgramData\Scoop\apps"
-else if (FileExist("C:\Program Files\Scoop\current"))
-    ScoopPath := "C:\Program Files\Scoop\current"
-else if (FileExist("C:\Program Files (x86)\Scoop\current"))
-    ScoopPath := "C:\Program Files (x86)\Scoop\current"
-else if (FileExist("C:\ProgramData\Scoop\current"))
-    ScoopPath := "C:\ProgramData\Scoop\current"
 Return
 ; ------------------------------------
 ; follow && Reload scripts
