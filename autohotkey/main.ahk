@@ -44,6 +44,15 @@ if GetKeyState("Alt"){
 else If FileExist(UserProfile . "\AppData\Roaming\Telegram Desktop\Telegram.exe")
     Run % UserProfile . "\AppData\Roaming\Telegram Desktop\Telegram.exe"
 Return
+; ----------------
+; Explorer
+; ----------------
+CapsLock & e::
+IfWinExist ahk_exe feishu.exe
+    WinActivate
+else If FileExist(UserProfile . "\AppData\Local\Feishu\Feishu.exe")
+    Run % UserProfile . "\AppData\Local\Feishu\Feishu.exe"
+Return
 CapsLock & o::
 if GetKeyState("Alt"){
     IfWinExist ahk_exe joplin.exe
@@ -219,10 +228,6 @@ else
 Return
 CapsLock & ]::Send {Volume_Up}
 CapsLock & [::Send {Volume_Down}
-; ----------------
-; Explorer
-; ----------------
-CapsLock & e::Run explorer.exe
 ; ----------------
 ; direction
 ; like fps games
