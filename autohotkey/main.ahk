@@ -77,6 +77,8 @@ Return
 CapsLock & 2::
 IfWinExist ahk_exe chrome.exe
     WinActivate
+else If FileExist("C:\Program Files\Google\Chrome\Application\chrome.exe")
+    Run "C:\Program Files\Google\Chrome\Application\chrome.exe"
 else
     Run % ScoopPath . "\apps\googlechrome\current\chrome.exe"
 Return
