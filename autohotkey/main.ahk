@@ -130,17 +130,17 @@ IfWinExist ahk_exe code.exe
 else If FileExist(UserProfile . "\AppData\Local\Programs\Microsoft VS Code\Code.exe")
     Run % UserProfile . "\AppData\Local\Programs\Microsoft VS Code\Code.exe"
 Return
-CapsLock & =::
-IfWinExist ahk_exe neovide.exe
-    WinActivate
-else If FileExist(ScoopPath . "\apps\neovide\current\neovide.exe")
-    Run % ScoopPath . "\apps\neovide\current\neovide.exe"
-Return
 CapsLock & -::
 IfWinExist ahk_exe nvim-qt.exe
     WinActivate
 else If FileExist(ScoopPath . "\apps\neovim-qt\current\bin\nvim-qt.exe")
     Run % ScoopPath . "\apps\neovim-qt\current\bin\nvim-qt.exe"
+Return
+CapsLock & =::
+IfWinExist ahk_exe neovide.exe
+    WinActivate
+else If FileExist(ScoopPath . "\apps\neovide\current\neovide.exe")
+    Run % ScoopPath . "\apps\neovide\current\neovide.exe"
 Return
 CapsLock & g::
 IfWinExist ahk_exe gvim.exe
