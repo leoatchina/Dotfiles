@@ -113,16 +113,16 @@ else If FileExist(UserProfile . "\AppData\Local\Programs\Quark\quark.exe")
     Run % UserProfile . "\AppData\Local\Programs\Quark\quark.exe"
 Return
 CapsLock & 8::
-IfWinExist ahk_exe positron.exe
+IfWinExist ahk_exe zed.exe
     WinActivate
-else If FileExist(UserProfile . "\AppData\Local\Programs\Positron\Positron.exe")
-    Run % UserProfile . "\AppData\Local\Programs\Positron\Positron.exe"
+else If FileExist(ScoopPath . "\apps\zed-nightly\current\zed.exe")
+    Run % ScoopPath . "\apps\zed-nightly\current\zed.exe"
 Return
 CapsLock & 9::
-IfWinExist ahk_exe trae.exe
+IfWinExist ahk_exe positron.exe
     WinActivate
-else If FileExist(UserProfile . "\AppData\Local\Programs\Trae\Trae.exe")
-    Run % UserProfile . "\AppData\Local\Programs\Trae\Trae.exe"
+else If FileExist(UserProfile . "\AppData\Local\Programs\positron\positron.exe")
+    Run % UserProfile . "\AppData\Local\Programs\positron\positron.exe"
 Return
 CapsLock & 0::
 IfWinExist ahk_exe code.exe
@@ -149,15 +149,9 @@ else If FileExist(ScoopPath . "\apps\vim-nightly\current\gvim.exe")
     Run % ScoopPath . "\apps\vim-nightly\current\gvim.exe"
 Return
 CapsLock & z::
-if GetKeyState("Alt"){
-    IfWinExist ahk_exe zed.exe
-        WinActivate
-    else If FileExist(ScoopPath . "\apps\zed-nightly\current\zed.exe")
-        Run % ScoopPath . "\apps\zed-nightly\current\zed.exe"
-    Return
-}else IfWinExist ahk_exe zotero.exe
+IfWinExist ahk_exe zotero.exe
     WinActivate
-else
+else If FileExist(ScoopPath . "\apps\zotero\current\zotero.exe")
     Run % ScoopPath . "\apps\zotero\current\zotero.exe"
 Return
 ; seach using utools
