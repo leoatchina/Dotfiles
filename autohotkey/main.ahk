@@ -95,10 +95,10 @@ else If FileExist(UserProfile . "\AppData\Local\Programs\Windsurf\Windsurf.exe")
     Run % UserProfile . "\AppData\Local\Programs\Windsurf\Windsurf.exe"
 Return
 CapsLock & 5::
-IfWinExist ahk_exe trae.exe
+IfWinExist ahk_exe Cursor.exe
     WinActivate
-else If FileExist(UserProfile . "\AppData\Local\Programs\Trae\Trae.exe")
-    Run % UserProfile . "\AppData\Local\Programs\Trae\Trae.exe"
+else If FileExist(UserProfile . "\AppData\Local\Programs\Cursor\Cursor.exe")
+    Run % UserProfile . "\AppData\Local\Programs\Cursor\Cursor.exe"
 Return
 CapsLock & 6::
 IfWinExist ahk_exe mobaxterm.exe
@@ -113,10 +113,10 @@ else If FileExist(UserProfile . "\AppData\Local\Programs\Quark\quark.exe")
     Run % UserProfile . "\AppData\Local\Programs\Quark\quark.exe"
 Return
 CapsLock & 8::
-IfWinExist ahk_exe Cursor.exe
+IfWinExist ahk_exe trae.exe
     WinActivate
-else If FileExist(UserProfile . "\AppData\Local\Programs\Cursor\Cursor.exe")
-    Run % UserProfile . "\AppData\Local\Programs\Cursor\Cursor.exe"
+else If FileExist(UserProfile . "\AppData\Local\Programs\Trae\Trae.exe")
+    Run % UserProfile . "\AppData\Local\Programs\Trae\Trae.exe"
 Return
 CapsLock & 9::
 IfWinExist ahk_exe positron.exe
