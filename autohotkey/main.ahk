@@ -113,16 +113,16 @@ else If FileExist(UserProfile . "\AppData\Local\Programs\Quark\quark.exe")
     Run % UserProfile . "\AppData\Local\Programs\Quark\quark.exe"
 Return
 CapsLock & 8::
-IfWinExist ahk_exe trae.exe
-    WinActivate
-else If FileExist(UserProfile . "\AppData\Local\Programs\Trae\Trae.exe")
-    Run % UserProfile . "\AppData\Local\Programs\Trae\Trae.exe"
-Return
-CapsLock & 9::
 IfWinExist ahk_exe positron.exe
     WinActivate
 else If FileExist(UserProfile . "\AppData\Local\Programs\Positron\Positron.exe")
     Run % UserProfile . "\AppData\Local\Programs\Positron\Positron.exe"
+Return
+CapsLock & 9::
+IfWinExist ahk_exe trae.exe
+    WinActivate
+else If FileExist(UserProfile . "\AppData\Local\Programs\Trae\Trae.exe")
+    Run % UserProfile . "\AppData\Local\Programs\Trae\Trae.exe"
 Return
 CapsLock & 0::
 IfWinExist ahk_exe code.exe
