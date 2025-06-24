@@ -89,16 +89,16 @@ else If FileExist(ScoopPath . "\apps\wezterm-nightly\current\wezterm-gui.exe")
     Run % ScoopPath . "\apps\wezterm-nightly\current\wezterm-gui.exe"
 Return
 CapsLock & 4::
-IfWinExist ahk_exe windsurf.exe
-    WinActivate
-else If FileExist(UserProfile . "\AppData\Local\Programs\Windsurf\Windsurf.exe")
-    Run % UserProfile . "\AppData\Local\Programs\Windsurf\Windsurf.exe"
-Return
-CapsLock & 5::
 IfWinExist ahk_exe Cursor.exe
     WinActivate
 else If FileExist(UserProfile . "\AppData\Local\Programs\Cursor\Cursor.exe")
     Run % UserProfile . "\AppData\Local\Programs\Cursor\Cursor.exe"
+Return
+CapsLock & 5::
+IfWinExist ahk_exe windsurf.exe
+    WinActivate
+else If FileExist(UserProfile . "\AppData\Local\Programs\Windsurf\Windsurf.exe")
+    Run % UserProfile . "\AppData\Local\Programs\Windsurf\Windsurf.exe"
 Return
 CapsLock & 6::
 IfWinExist ahk_exe mobaxterm.exe
