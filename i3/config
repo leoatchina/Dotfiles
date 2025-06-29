@@ -62,9 +62,10 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Shift+Return exec tabby
-bindsym $mod+Mod1+Return exec kitty
-bindsym $mod+ctrl+Return exec ghostty
+bindsym $mod+Mod1+Return  exec kitty
+bindsym $mod+Ctrl+Return  exec ghostty
+bindsym $mod+Shift+Return exec wezterm
+bindsym $mod+Ctrl+Shift+Return exec tabby
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -117,15 +118,12 @@ bindsym $mod+t layout tabbed
 bindsym $mod+s layout stacking
 bindsym $mod+e layout toggle split
 
-
 # toggle tiling / floating
 bindsym $mod+Return floating toggle
-
 # change focus between tiling / floating windows
-bindsym $mod+BackSpace focus mode_toggle
-
+bindsym Ctrl+Shift+Alt+Return focus mode_toggle
 # focus the parent container
-bindsym $mod+q focus parent
+bindsym $mod+BackSpace focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
