@@ -17,7 +17,7 @@ Return
 CapsLock & r::
 if GetKeyState("Alt")
     Reload
-else
+else{
     IfWinExist ahk_exe follow.exe
         WinActivate
     else If FileExist(UserProfile . "\AppData\Local\folo\folo.exe")
@@ -25,7 +25,7 @@ else
     else
         Run % ScoopPath . "\apps\folo\current\folo.exe"
     Return
-return
+}
 ; ----------------
 ; 激活不同的软件
 ; ---------------
@@ -221,7 +221,15 @@ return
 ; ----------------
 CapsLock & m::
 if GetKeyState("Alt")
-    Run % ScoopPath . "\apps\motrix\current\motrix.exe"
+    IfWinExist ahk_exe Motrix.exe
+        WinActivate
+    else If FileExist(UserProfile . "\AppData\Local\Programs\Motrix\Motrix.exe")
+        Run % UserProfile . "\AppData\Local\Programs\Motrix\Motrix.exe"
+    else If FileExist(ScoopPath . "\apps\motrix\current\motrix.exe")
+        Run % ScoopPath . "\apps\motrix\current\motrix.exe"
+    else{
+        Return
+    }
 else
     Send {Volume_Mute}
 Return
