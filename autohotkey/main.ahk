@@ -125,16 +125,16 @@ else If FileExist(UserProfile . "\AppData\Local\Programs\Quark\quark.exe")
     Run % UserProfile . "\AppData\Local\Programs\Quark\quark.exe"
 Return
 CapsLock & 8::
-IfWinExist ahk_exe zed.exe
+IfWinExist ahk_exe kiro.exe
     WinActivate
-else If FileExist(ScoopPath . "\apps\zed\current\zed.exe")
-    Run % ScoopPath . "\apps\zed\current\zed.exe"
+else If FileExist(UserProfile . "\AppData\Local\Programs\kiro\kiro.exe")
+    Run % UserProfile . "\AppData\Local\Programs\kiro\kiro.exe"
 Return
 CapsLock & 9::
-IfWinExist ahk_exe positron.exe
+IfWinExist ahk_exe trae.exe
     WinActivate
-else If FileExist(UserProfile . "\AppData\Local\Programs\positron\positron.exe")
-    Run % UserProfile . "\AppData\Local\Programs\positron\positron.exe"
+else If FileExist(UserProfile . "\AppData\Local\Programs\trae\trae.exe")
+    Run % UserProfile . "\AppData\Local\Programs\trae\trae.exe"
 Return
 CapsLock & 0::
 IfWinExist ahk_exe code.exe
