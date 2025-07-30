@@ -106,10 +106,10 @@ else If FileExist(UserProfile . "\AppData\Local\Programs\Windsurf\Windsurf.exe")
     Run % UserProfile . "\AppData\Local\Programs\Windsurf\Windsurf.exe"
 Return
 CapsLock & 5::
-IfWinExist ahk_exe gvim.exe
+IfWinExist ahk_exe opera.exe
     WinActivate
-else If FileExist(ScoopPath . "\apps\vim-nightly\current\gvim.exe")
-    Run % ScoopPath . "\apps\vim-nightly\current\gvim.exe"
+else If FileExist(ScoopPath . "\apps\opera\current\opera.exe")
+    Run % ScoopPath . "\apps\opera\current\opera.exe"
 Return
 ; important progs
 CapsLock & 6::
