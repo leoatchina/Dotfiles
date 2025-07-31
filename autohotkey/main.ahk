@@ -85,12 +85,12 @@ Return
 CapsLock & b::
 IfWinExist ahk_exe zen.exe
     WinActivate
-else If FileExist(ScoopPath . "\apps\zen-browser\current\zen.exe")
-    Run % ScoopPath . "\apps\zen-browser\current\zen.exe"
 else If FileExist(UserProfile . "\AppData\Local\Zen Browser\zen.exe")
     Run % UserProfile . "\AppData\Local\Zen Browser\zen.exe"
 else If FileExist("C:\Program Files\Zen Browser\zen.exe")
     Run "C:\Program Files\Zen Browser\zen.exe"
+else If FileExist(ScoopPath . "\apps\zen-browser\current\zen.exe")
+    Run % ScoopPath . "\apps\zen-browser\current\zen.exe"
 Return
 ; main editors
 CapsLock & 3::
