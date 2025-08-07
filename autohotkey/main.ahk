@@ -106,10 +106,10 @@ else If FileExist(UserProfile . "\AppData\Local\Programs\Windsurf\Windsurf.exe")
     Run % UserProfile . "\AppData\Local\Programs\Windsurf\Windsurf.exe"
 Return
 CapsLock & 5::
-IfWinExist ahk_exe opera.exe
+IfWinExist ahk_exe trae.exe
     WinActivate
-else If FileExist(ScoopPath . "\apps\opera\current\opera.exe")
-    Run % ScoopPath . "\apps\opera\current\opera.exe"
+else If FileExist(UserProfile . "\AppData\Local\Programs\trae\trae.exe")
+    Run % UserProfile . "\AppData\Local\Programs\trae\trae.exe"
 Return
 ; important progs
 CapsLock & 6::
@@ -127,14 +127,14 @@ Return
 CapsLock & 8::
 IfWinExist ahk_exe kiro.exe
     WinActivate
-else If FileExist(UserProfile . "\AppData\Local\Programs\kiro\kiro.exe")
-    Run % UserProfile . "\AppData\Local\Programs\kiro\kiro.exe"
+else If FileExist(ScoopPath . "\apps\zed\current\zed.exe")
+    Run % ScoopPath . "\apps\zed\current\zed.exe"
 Return
 CapsLock & 9::
-IfWinExist ahk_exe trae.exe
+IfWinExist ahk_exe kiro.exe
     WinActivate
-else If FileExist(UserProfile . "\AppData\Local\Programs\trae\trae.exe")
-    Run % UserProfile . "\AppData\Local\Programs\trae\trae.exe"
+else If FileExist(UserProfile . "\AppData\Local\Programs\kiro\kiro.exe")
+    Run % UserProfile . "\AppData\Local\Programs\kiro\kiro.exe"
 Return
 CapsLock & 0::
 IfWinExist ahk_exe code.exe
