@@ -125,7 +125,7 @@ else If FileExist(UserProfile . "\AppData\Local\Programs\Quark\quark.exe")
     Run % UserProfile . "\AppData\Local\Programs\Quark\quark.exe"
 Return
 CapsLock & 8::
-IfWinExist ahk_exe kiro.exe
+IfWinExist ahk_exe zed.exe
     WinActivate
 else If FileExist(ScoopPath . "\apps\zed\current\zed.exe")
     Run % ScoopPath . "\apps\zed\current\zed.exe"
