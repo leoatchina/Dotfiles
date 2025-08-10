@@ -17,15 +17,13 @@ Return
 CapsLock & r::
 if GetKeyState("Alt")
     Reload
-else{
-    IfWinExist ahk_exe follow.exe
-        WinActivate
-    else If FileExist(UserProfile . "\AppData\Local\folo\folo.exe")
-        Run % UserProfile . "\AppData\Local\folo\folo.exe"
-    else
-        Run % ScoopPath . "\apps\folo\current\folo.exe"
-    Return
-}
+else IfWinExist ahk_exe follow.exe
+    WinActivate
+else If FileExist(UserProfile . "\AppData\Local\folo\folo.exe")
+    Run % UserProfile . "\AppData\Local\folo\folo.exe"
+else
+    Run % ScoopPath . "\apps\folo\current\folo.exe"
+Return
 ; ----------------
 ; 激活不同的软件
 ; ---------------
@@ -131,10 +129,10 @@ else If FileExist(ScoopPath . "\apps\zed\current\zed.exe")
     Run % ScoopPath . "\apps\zed\current\zed.exe"
 Return
 CapsLock & 9::
-IfWinExist ahk_exe kiro.exe
+IfWinExist ahk_exe Positron.exe
     WinActivate
-else If FileExist(UserProfile . "\AppData\Local\Programs\kiro\kiro.exe")
-    Run % UserProfile . "\AppData\Local\Programs\kiro\kiro.exe"
+else If FileExist(UserProfile . "\AppData\Local\Programs\Positron\Positron.exe")
+    Run % UserProfile . "\AppData\Local\Programs\Positron\Positron.exe"
 Return
 CapsLock & 0::
 IfWinExist ahk_exe code.exe
@@ -215,7 +213,7 @@ if GetKeyState("Alt")
     SendInput {Backspace}
 else
     SendInput {Del}
-return
+Return
 ; ----------------
 ; Volume control
 ; ----------------
