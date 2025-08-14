@@ -21,7 +21,7 @@ CapsLock & r::
 if GetKeyState("Alt") {
     Reload
 }
-else If WinExist ahk_exe folo.exe {
+else If WinExist("ahk_exe folo.exe") {
     WinActivate
 }
 else If FileExist(UserProfile . "\AppData\Local\folo\folo.exe") {
@@ -35,7 +35,7 @@ Return
 ; 激活不同的软件
 ; ---------------
 CapsLock & e::
-If WinExist ahk_exe feishu.exe {
+If WinExist("ahk_exe feishu.exe") {
     WinActivate
 }
 else If FileExist(UserProfile . "\AppData\Local\Feishu\Feishu.exe") {
@@ -47,7 +47,7 @@ Return
 ; ----------------
 CapsLock & t::
 if GetKeyState("Alt") {
-    If WinExist Heynote.exe {
+    If WinExist("Heynote.exe") {
         WinActivate
     }
     else If FileExist(UserProfile . "\AppData\Local\Programs\Heynote\Heynote.exe") {
@@ -57,13 +57,13 @@ if GetKeyState("Alt") {
         Run % ScoopPath . "\apps\Heynote\current\Heynote.exe"
     }
 }
-else If WinExist ahk_exe telegram.exe {
+else If WinExist("ahk_exe telegram.exe") {
     WinActivate
 }
 Return
 CapsLock & o::
 if GetKeyState("Alt") {
-    If WinExist ahk_exe joplin.exe {
+    If WinExist("ahk_exe joplin.exe") {
         WinActivate
     }
     else If FileExist(UserProfile . "\AppData\Local\Programs\Joplin\Joplin.exe") {
@@ -73,7 +73,7 @@ if GetKeyState("Alt") {
         Run % ScoopPath . "\apps\joplin\current\Joplin.exe"
     }
 }
-else If WinExist ahk_exe obsidian.exe {
+else If WinExist("ahk_exe obsidian.exe") {
     WinActivate
 }
 else If FileExist(ScoopPath . "\apps\obsidian\current\Obsidian.exe") {
@@ -82,7 +82,7 @@ else If FileExist(ScoopPath . "\apps\obsidian\current\Obsidian.exe") {
 Return
 ; editor && browser
 CapsLock & b::
-If WinExist ahk_exe zen.exe {
+If WinExist("ahk_exe zen.exe") {
     WinActivate
 }
 else If FileExist(UserProfile . "\AppData\Local\Zen Browser\zen.exe") {
@@ -96,7 +96,7 @@ else If FileExist(ScoopPath . "\apps\zen-browser\current\zen.exe") {
 }
 Return
 CapsLock & 1::
-If WinExist ahk_exe msedge.exe {
+If WinExist("ahk_exe msedge.exe") {
     WinActivate
 }
 else {
@@ -104,7 +104,7 @@ else {
 }
 Return
 CapsLock & 2::
-If WinExist ahk_exe chrome.exe {
+If WinExist("ahk_exe chrome.exe") {
     WinActivate
 }
 else If FileExist("C:\Program Files\Google\Chrome\Application\chrome.exe") {
@@ -115,7 +115,7 @@ else {
 }
 Return
 CapsLock & 3::
-If WinExist ahk_exe Cursor.exe {
+If WinExist("ahk_exe Cursor.exe") {
     WinActivate
 }
 else If FileExist(UserProfile . "\AppData\Local\Programs\Cursor\Cursor.exe") {
@@ -123,7 +123,7 @@ else If FileExist(UserProfile . "\AppData\Local\Programs\Cursor\Cursor.exe") {
 }
 Return
 CapsLock & 4::
-If WinExist ahk_exe windsurf.exe {
+If WinExist("ahk_exe windsurf.exe") {
     WinActivate
 }
 else If FileExist(UserProfile . "\AppData\Local\Programs\Windsurf\Windsurf.exe") {
@@ -131,7 +131,7 @@ else If FileExist(UserProfile . "\AppData\Local\Programs\Windsurf\Windsurf.exe")
 }
 Return
 CapsLock & 5::
-If WinExist ahk_exe trae.exe {
+If WinExist("ahk_exe trae.exe") {
     WinActivate
 }
 else If FileExist(UserProfile . "\AppData\Local\Programs\trae\trae.exe") {
@@ -140,7 +140,7 @@ else If FileExist(UserProfile . "\AppData\Local\Programs\trae\trae.exe") {
 Return
 ; important progs
 CapsLock & 6::
-If WinExist ahk_exe mobaxterm.exe {
+If WinExist("ahk_exe mobaxterm.exe") {
     WinActivate
 }
 else If FileExist(ScoopPath . "\apps\mobaxterm\current\mobaxterm.exe") {
@@ -148,7 +148,7 @@ else If FileExist(ScoopPath . "\apps\mobaxterm\current\mobaxterm.exe") {
 }
 Return
 CapsLock & 7::
-If WinExist ahk_exe quark.exe {
+If WinExist("ahk_exe quark.exe") {
     WinActivate
 }
 else If FileExist(UserProfile . "\AppData\Local\Programs\Quark\quark.exe") {
@@ -156,7 +156,7 @@ else If FileExist(UserProfile . "\AppData\Local\Programs\Quark\quark.exe") {
 }
 Return
 CapsLock & 8::
-If WinExist ahk_exe zed.exe {
+If WinExist("ahk_exe zed.exe") {
     WinActivate
 }
 else If FileExist(ScoopPath . "\apps\zed\current\zed.exe") {
@@ -164,7 +164,7 @@ else If FileExist(ScoopPath . "\apps\zed\current\zed.exe") {
 }
 Return
 CapsLock & 9::
-If WinExist ahk_exe Positron.exe {
+If WinExist("ahk_exe Positron.exe") {
     WinActivate
 }
 else If FileExist(UserProfile . "\AppData\Local\Programs\Positron\Positron.exe") {
@@ -172,7 +172,7 @@ else If FileExist(UserProfile . "\AppData\Local\Programs\Positron\Positron.exe")
 }
 Return
 CapsLock & 0::
-If WinExist ahk_exe code.exe {
+If WinExist("ahk_exe code.exe") {
     WinActivate
 }
 else If FileExist(UserProfile . "\AppData\Local\Programs\Microsoft VS Code\Code.exe") {
@@ -180,7 +180,7 @@ else If FileExist(UserProfile . "\AppData\Local\Programs\Microsoft VS Code\Code.
 }
 Return
 CapsLock & -::
-If WinExist ahk_exe nvim-qt.exe {
+If WinExist("ahk_exe nvim-qt.exe") {
     WinActivate
 }
 else If FileExist(ScoopPath . "\apps\neovim-qt\current\bin\nvim-qt.exe") {
@@ -188,7 +188,7 @@ else If FileExist(ScoopPath . "\apps\neovim-qt\current\bin\nvim-qt.exe") {
 }
 Return
 CapsLock & =::
-If WinExist ahk_exe neovide.exe {
+If WinExist("ahk_exe neovide.exe") {
     WinActivate
 }
 else If FileExist(ScoopPath . "\apps\neovide\current\neovide.exe") {
@@ -196,7 +196,7 @@ else If FileExist(ScoopPath . "\apps\neovide\current\neovide.exe") {
 }
 Return
 CapsLock & z::
-If WinExist ahk_exe zotero.exe {
+If WinExist("ahk_exe zotero.exe") {
     WinActivate
 }
 else If FileExist(ScoopPath . "\apps\zotero\current\zotero.exe") {
@@ -208,14 +208,14 @@ CapsLock & /:: Send ^#!f
 ; windows terminal
 CapsLock & f::
 if GetKeyState("Alt") {
-    If WinExist ahk_exe notepad--.exe {
+    If WinExist("ahk_exe notepad--.exe") {
         WinActivate
     }
     else {
         Run % ScoopPath . "\apps\notepad--\current\Notepad--.exe"
     }
 }
-else If WinExist ahk_exe WindowsTerminal.exe {
+else If WinExist("ahk_exe WindowsTerminal.exe") {
     WinActivate
 }
 else If FileExist(UserProfile . "\AppData\Local\Microsoft\WindowsApps\wt.exe") {
@@ -224,7 +224,7 @@ else If FileExist(UserProfile . "\AppData\Local\Microsoft\WindowsApps\wt.exe") {
 Return
 ; wezterm
 CapsLock & g::
-If WinExist ahk_exe wezterm-gui.exe {
+If WinExist("ahk_exe wezterm-gui.exe") {
     WinActivate
 }
 else If FileExist(ScoopPath . "\apps\wezterm-nightly\current\wezterm-gui.exe") {
@@ -266,7 +266,7 @@ Return
 ; ----------------
 CapsLock & m::
 if GetKeyState("Alt") {
-    If WinExist ahk_exe Motrix.exe {
+    If WinExist("ahk_exe Motrix.exe") {
         WinActivate
     }
     else If FileExist(UserProfile . "\AppData\Local\Programs\Motrix\Motrix.exe") {
