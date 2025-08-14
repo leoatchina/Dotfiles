@@ -70,6 +70,16 @@ else If FileExist(ScoopPath . "\apps\obsidian\current\Obsidian.exe"){
     Run % ScoopPath . "\apps\obsidian\current\Obsidian.exe"
 }
 ; editor && browser
+CapsLock & b::
+IfWinExist ahk_exe zen.exe
+    WinActivate
+else If FileExist(UserProfile . "\AppData\Local\Zen Browser\zen.exe")
+    Run % UserProfile . "\AppData\Local\Zen Browser\zen.exe"
+else If FileExist("C:\Program Files\Zen Browser\zen.exe")
+    Run "C:\Program Files\Zen Browser\zen.exe"
+else If FileExist(ScoopPath . "\apps\zen-browser\current\zen.exe"){
+    Run % ScoopPath . "\apps\zen-browser\current\zen.exe"
+}
 CapsLock & 1::
 IfWinExist ahk_exe msedge.exe
     WinActivate
@@ -83,16 +93,6 @@ else If FileExist("C:\Program Files\Google\Chrome\Application\chrome.exe")
     Run "C:\Program Files\Google\Chrome\Application\chrome.exe"
 else{
     Run % ScoopPath . "\apps\googlechrome\current\chrome.exe"
-}
-CapsLock & b::
-IfWinExist ahk_exe zen.exe
-    WinActivate
-else If FileExist(UserProfile . "\AppData\Local\Zen Browser\zen.exe")
-    Run % UserProfile . "\AppData\Local\Zen Browser\zen.exe"
-else If FileExist("C:\Program Files\Zen Browser\zen.exe")
-    Run "C:\Program Files\Zen Browser\zen.exe"
-else If FileExist(ScoopPath . "\apps\zen-browser\current\zen.exe"){
-    Run % ScoopPath . "\apps\zen-browser\current\zen.exe"
 }
 ; main editors
 CapsLock & 3::
