@@ -1,8 +1,17 @@
 ; #是win, !是alt, ^是ctrl, +是shift
 #Persistent
 SetCapsLockState, AlwaysOff
+; ------------------------------------
+; 单独按下CapsLock时不做任何事情，防止卡住
+; ------------------------------------
+CapsLock::Return
+; ------------------------------------
+; 获取用户目录
+; ------------------------------------
 EnvGet, UserProfile, USERPROFILE
+; ------------------------------------
 ; 检测Scoop安装位置
+; ------------------------------------
 ScoopPath := "C:\Scoop"
 if FileExist("C:\Scoop")
     ScoopPath := "C:\Scoop"
