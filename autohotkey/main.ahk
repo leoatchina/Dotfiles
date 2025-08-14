@@ -56,7 +56,6 @@ if GetKeyState("Alt") {
     else If FileExist(ScoopPath . "\apps\Heynote\current\Heynote.exe") {
         Run % ScoopPath . "\apps\Heynote\current\Heynote.exe"
     }
-    Return
 }
 else If WinExist ahk_exe telegram.exe {
     WinActivate
@@ -205,9 +204,7 @@ else If FileExist(ScoopPath . "\apps\zotero\current\zotero.exe") {
 }
 Return
 ; seach using utools
-CapsLock & /::
-    Send ^#!f
-Return
+CapsLock & /:: Send ^#!f
 ; windows terminal
 CapsLock & f::
 if GetKeyState("Alt") {
@@ -251,12 +248,8 @@ Capslock & q::Send, {ESC}
 ; ----------------
 ; Tab/Shift-Tab
 ; ----------------
-CapsLock & n::
-    Send ^{Tab}
-Return
-CapsLock & p::
-    Send ^+{Tab}
-Return
+CapsLock & n:: Send ^{Tab}
+CapsLock & p:: Send ^+{Tab}
 ; ----------------
 ; Del/Bs
 ; ----------------
@@ -431,13 +424,9 @@ Return
 CapsLock & RShift::SendInput {Blind}{CapsLock DownTemp}
 CapsLock & RShift up::SendInput {Blind}{CapsLock Up}
 ; 输入法切换
-CapsLock & Backspace::
-    SendInput, #{Space}
-Return
+CapsLock & Backspace:: SendInput, #{Space}
 ; 两个输入法切换
-CapsLock & Enter::
-    SendInput, ^#{Space}
-Return
+CapsLock & Enter:: SendInput, ^#{Space}
 ; smart 中英切换
 SwitchInputMethod() {
     WinGet, WinID,, A
@@ -450,24 +439,16 @@ SwitchInputMethod() {
         SendInput, ^{Space}
     }
 }
-CapsLock & Space::
-    SwitchInputMethod()
-Return
+CapsLock & Space:: SwitchInputMethod()
 ; 小狼毫
 CapsLock & RCtrl::^`
 RCtrl & CapsLock::^`
 ; ------------------------------------
 ; utools clipboard
 ; ------------------------------------
-LCtrl & CapsLock::
-    Send #!c
-Return
-CapsLock & LCtrl::
-    Send #!c
-Return
-CapsLock & y::
-    Send ^#!c
-Return
+LCtrl & CapsLock:: Send #!c
+CapsLock & LCtrl:: Send #!c
+CapsLock & y:: Send ^#!c
 ; ------------------------------------
 ; copy paste
 ; ------------------------------------
