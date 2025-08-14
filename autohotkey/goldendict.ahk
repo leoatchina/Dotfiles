@@ -2,10 +2,12 @@
 ; GoldenDict
 ; ------------------------------------
 CapsLock & i::
-  if GetKeyState("Alt")
+  if GetKeyState("Alt") {
     Send ^!+i
-  else
+  }
+  else {
     Send ^!+g
+  }
 return
 
 ~LButton::
