@@ -8,7 +8,7 @@ CapsLock & i::
   else {
     Send ^!+g
   }
-return
+Return
 
 ~LButton::
   Loop {
@@ -26,7 +26,7 @@ Routine:
   {
     ifwinactive ahk_class CabinetWClass
     {
-      return
+      Return
     }
     clipboard =
     send ,^c
@@ -35,14 +35,14 @@ Routine:
     if cliplen > 20
     {
       ;避免不是英文單字的東西送到GoldenDict去翻譯。
-      return
+      Return
     }
     if cliplen < 2
     {
       ;避免不是英文單字的東西送到GoldenDict去翻譯。
-      return
+      Return
     }
     ; send,{Ctrl down}cc{Ctrl up} 可用這行，也可用下行
     run C:\tools\GoldenDict\GoldenDict.exe  %clipboard%
   }
-return
+Return

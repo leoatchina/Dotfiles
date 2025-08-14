@@ -11,6 +11,7 @@ else if FileExist("D:\Scoop")
 else if FileExist(UserProfile . "\scoop")
     ScoopPath := UserProfile . "\scoop"
 else {
+    MsgBox Scoop not found
     Return
 }
 ; ------------------------------------
@@ -19,24 +20,34 @@ else {
 CapsLock & r::
 if GetKeyState("Alt") {
     Reload
-    Return
 }
-else IfWinExist ahk_exe follow.exe {
+else If WinExist ahk_exe folo.exe {
     WinActivate
 }
 else If FileExist(UserProfile . "\AppData\Local\folo\folo.exe") {
     Run % UserProfile . "\AppData\Local\folo\folo.exe"
 }
-else {
+else If FileExist(ScoopPath . "\apps\folo\current\folo.exe") {
     Run % ScoopPath . "\apps\folo\current\folo.exe"
 }
+Return
 ; ----------------
 ; 激活不同的软件
 ; ---------------
-; note
+CapsLock & e::
+If WinExist ahk_exe feishu.exe {
+    WinActivate
+}
+else If FileExist(UserProfile . "\AppData\Local\Feishu\Feishu.exe") {
+    Run % UserProfile . "\AppData\Local\Feishu\Feishu.exe"
+}
+Return
+; ----------------
+; note softwares
+; ----------------
 CapsLock & t::
 if GetKeyState("Alt") {
-    IfWinExist Heynote.exe {
+    If WinExist Heynote.exe {
         WinActivate
     }
     else If FileExist(UserProfile . "\AppData\Local\Programs\Heynote\Heynote.exe") {
@@ -47,25 +58,13 @@ if GetKeyState("Alt") {
     }
     Return
 }
-else IfWinExist ahk_exe telegram.exe {
+else If WinExist ahk_exe telegram.exe {
     WinActivate
 }
-else If FileExist(UserProfile . "\AppData\Roaming\Telegram Desktop\Telegram.exe") {
-    Run % UserProfile . "\AppData\Roaming\Telegram Desktop\Telegram.exe"
-}
-; ----------------
-; notesoftwares 
-; ----------------
-CapsLock & e::
-IfWinExist ahk_exe feishu.exe {
-    WinActivate
-}
-else If FileExist(UserProfile . "\AppData\Local\Feishu\Feishu.exe") {
-    Run % UserProfile . "\AppData\Local\Feishu\Feishu.exe"
-}
+Return
 CapsLock & o::
 if GetKeyState("Alt") {
-    IfWinExist ahk_exe joplin.exe {
+    If WinExist ahk_exe joplin.exe {
         WinActivate
     }
     else If FileExist(UserProfile . "\AppData\Local\Programs\Joplin\Joplin.exe") {
@@ -75,15 +74,16 @@ if GetKeyState("Alt") {
         Run % ScoopPath . "\apps\joplin\current\Joplin.exe"
     }
 }
-else IfWinExist ahk_exe obsidian.exe {
+else If WinExist ahk_exe obsidian.exe {
     WinActivate
 }
 else If FileExist(ScoopPath . "\apps\obsidian\current\Obsidian.exe") {
     Run % ScoopPath . "\apps\obsidian\current\Obsidian.exe"
 }
+Return
 ; editor && browser
 CapsLock & b::
-IfWinExist ahk_exe zen.exe {
+If WinExist ahk_exe zen.exe {
     WinActivate
 }
 else If FileExist(UserProfile . "\AppData\Local\Zen Browser\zen.exe") {
@@ -97,14 +97,15 @@ else If FileExist(ScoopPath . "\apps\zen-browser\current\zen.exe") {
 }
 Return
 CapsLock & 1::
-IfWinExist ahk_exe msedge.exe {
+If WinExist ahk_exe msedge.exe {
     WinActivate
 }
 else {
     Run "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
 }
+Return
 CapsLock & 2::
-IfWinExist ahk_exe chrome.exe {
+If WinExist ahk_exe chrome.exe {
     WinActivate
 }
 else If FileExist("C:\Program Files\Google\Chrome\Application\chrome.exe") {
@@ -113,85 +114,96 @@ else If FileExist("C:\Program Files\Google\Chrome\Application\chrome.exe") {
 else {
     Run % ScoopPath . "\apps\googlechrome\current\chrome.exe"
 }
-; main editors
+Return
 CapsLock & 3::
-IfWinExist ahk_exe Cursor.exe {
+If WinExist ahk_exe Cursor.exe {
     WinActivate
 }
 else If FileExist(UserProfile . "\AppData\Local\Programs\Cursor\Cursor.exe") {
     Run % UserProfile . "\AppData\Local\Programs\Cursor\Cursor.exe"
 }
+Return
 CapsLock & 4::
-IfWinExist ahk_exe windsurf.exe {
+If WinExist ahk_exe windsurf.exe {
     WinActivate
 }
 else If FileExist(UserProfile . "\AppData\Local\Programs\Windsurf\Windsurf.exe") {
     Run % UserProfile . "\AppData\Local\Programs\Windsurf\Windsurf.exe"
 }
+Return
 CapsLock & 5::
-IfWinExist ahk_exe trae.exe {
+If WinExist ahk_exe trae.exe {
     WinActivate
 }
 else If FileExist(UserProfile . "\AppData\Local\Programs\trae\trae.exe") {
     Run % UserProfile . "\AppData\Local\Programs\trae\trae.exe"
 }
+Return
 ; important progs
 CapsLock & 6::
-IfWinExist ahk_exe mobaxterm.exe {
+If WinExist ahk_exe mobaxterm.exe {
     WinActivate
 }
 else If FileExist(ScoopPath . "\apps\mobaxterm\current\mobaxterm.exe") {
     Run % ScoopPath . "\apps\mobaxterm\current\mobaxterm.exe"
 }
+Return
 CapsLock & 7::
-IfWinExist ahk_exe quark.exe {
+If WinExist ahk_exe quark.exe {
     WinActivate
 }
 else If FileExist(UserProfile . "\AppData\Local\Programs\Quark\quark.exe") {
     Run % UserProfile . "\AppData\Local\Programs\Quark\quark.exe"
 }
+Return
 CapsLock & 8::
-IfWinExist ahk_exe zed.exe {
+If WinExist ahk_exe zed.exe {
     WinActivate
 }
 else If FileExist(ScoopPath . "\apps\zed\current\zed.exe") {
     Run % ScoopPath . "\apps\zed\current\zed.exe"
 }
+Return
 CapsLock & 9::
-IfWinExist ahk_exe Positron.exe {
+If WinExist ahk_exe Positron.exe {
     WinActivate
 }
 else If FileExist(UserProfile . "\AppData\Local\Programs\Positron\Positron.exe") {
     Run % UserProfile . "\AppData\Local\Programs\Positron\Positron.exe"
 }
+Return
 CapsLock & 0::
-IfWinExist ahk_exe code.exe {
+If WinExist ahk_exe code.exe {
     WinActivate
 }
 else If FileExist(UserProfile . "\AppData\Local\Programs\Microsoft VS Code\Code.exe") {
     Run % UserProfile . "\AppData\Local\Programs\Microsoft VS Code\Code.exe"
 }
+Return
 CapsLock & -::
-IfWinExist ahk_exe nvim-qt.exe {
+If WinExist ahk_exe nvim-qt.exe {
     WinActivate
 }
 else If FileExist(ScoopPath . "\apps\neovim-qt\current\bin\nvim-qt.exe") {
     Run % ScoopPath . "\apps\neovim-qt\current\bin\nvim-qt.exe"
 }
+Return
 CapsLock & =::
-IfWinExist ahk_exe neovide.exe {
+If WinExist ahk_exe neovide.exe {
     WinActivate
 }
 else If FileExist(ScoopPath . "\apps\neovide\current\neovide.exe") {
     Run % ScoopPath . "\apps\neovide\current\neovide.exe"
 }
+Return
 CapsLock & z::
-IfWinExist ahk_exe zotero.exe {
+If WinExist ahk_exe zotero.exe {
     WinActivate
 }
 else If FileExist(ScoopPath . "\apps\zotero\current\zotero.exe") {
     Run % ScoopPath . "\apps\zotero\current\zotero.exe"
 }
+Return
 ; seach using utools
 CapsLock & /::
     Send ^#!f
@@ -199,28 +211,29 @@ Return
 ; windows terminal
 CapsLock & f::
 if GetKeyState("Alt") {
-    IfWinExist ahk_exe notepad--.exe {
+    If WinExist ahk_exe notepad--.exe {
         WinActivate
     }
     else {
         Run % ScoopPath . "\apps\notepad--\current\Notepad--.exe"
     }
-    Return
 }
-else IfWinExist ahk_exe WindowsTerminal.exe {
+else If WinExist ahk_exe WindowsTerminal.exe {
     WinActivate
 }
 else If FileExist(UserProfile . "\AppData\Local\Microsoft\WindowsApps\wt.exe") {
     Run % UserProfile . "\AppData\Local\Microsoft\WindowsApps\wt.exe"
 }
+Return
 ; wezterm
 CapsLock & g::
-IfWinExist ahk_exe wezterm-gui.exe {
+If WinExist ahk_exe wezterm-gui.exe {
     WinActivate
 }
 else If FileExist(ScoopPath . "\apps\wezterm-nightly\current\wezterm-gui.exe") {
     Run % ScoopPath . "\apps\wezterm-nightly\current\wezterm-gui.exe"
 }
+Return
 ; ----------------
 ; screen shot
 ; ---------------
@@ -260,7 +273,7 @@ Return
 ; ----------------
 CapsLock & m::
 if GetKeyState("Alt") {
-    IfWinExist ahk_exe Motrix.exe {
+    If WinExist ahk_exe Motrix.exe {
         WinActivate
     }
     else If FileExist(UserProfile . "\AppData\Local\Programs\Motrix\Motrix.exe") {
@@ -269,13 +282,11 @@ if GetKeyState("Alt") {
     else If FileExist(ScoopPath . "\apps\motrix\current\motrix.exe") {
         Run % ScoopPath . "\apps\motrix\current\motrix.exe"
     }
-    else {
-        Return
-    }
 }
 else {
     Send {Volume_Mute}
 }
+Return
 CapsLock & ]::Send {Volume_Up}
 CapsLock & [::Send {Volume_Down}
 ; ----------------
@@ -466,20 +477,18 @@ CapsLock & c::Send {Ctrl down}{Ins}{Ctrl up}
 ; 去除复制来的内容里的回车
 ; ------------------------------------
 CapsLock & u::
-if GetKeyState("Alt"){
+if GetKeyState("Alt") {
     tmp := RegExReplace(clipboard, "(\S.*?)\R(.*?\S)", "$1 $2")
     clipboard := tmp
     clipwait 0.1
     Return
 }
-; ------------------------------------
-; 将剪贴板的内容转换为纯文本
-; ------------------------------------
-else{
+else {
     Clipboard = %Clipboard%
     clipwait 0.1
     Return
 }
+Return
 ; ------------------------------------
 ; proe, 两侧键作为中键
 ; ------------------------------------

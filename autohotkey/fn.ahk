@@ -7,43 +7,43 @@ SetCapsLockState, AlwaysOff
 ; ------------------------------------
 RAlt & 1::
     Send, {F1}
-return
+Return
 RAlt & 2::
     Send, {F2}
-return
+Return
 RAlt & 3::
     Send, {F3}
-return
+Return
 RAlt & 4::
     Send, {F4}
-return
+Return
 RAlt & 5::
     Send, {F5}
-return
+Return
 RAlt & 6::
     Send, {F6}
-return
+Return
 RAlt & 7::
     Send, {F7}
-return
+Return
 RAlt & 8::
     Send, {F8}
-return
+Return
 RAlt & 9::
     Send, {F9}
-return
+Return
 RAlt & 0::
     Send, {F10}
-return
+Return
 RAlt & -::
     Send, {F11}
-return
+Return
 RAlt & =::
     Send, {F12}
-return
+Return
 RShift & Esc::
     Send, {~}
-return
+Return
 RAlt & Esc::
     Send, ```
-return
+Return
