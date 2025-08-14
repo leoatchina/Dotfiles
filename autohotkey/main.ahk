@@ -4,26 +4,30 @@ SetCapsLockState, AlwaysOff
 EnvGet, UserProfile, USERPROFILE
 ; 检测Scoop安装位置
 ScoopPath := "C:\Scoop"
-if (FileExist("C:\Scoop"))
+if FileExist("C:\Scoop")
     ScoopPath := "C:\Scoop"
-else if (FileExist("D:\Scoop"))
+else if FileExist("D:\Scoop")
     ScoopPath := "D:\Scoop"
-else if (FileExist(UserProfile . "\scoop"))
+else if FileExist(UserProfile . "\scoop")
     ScoopPath := UserProfile . "\scoop"
-Return
+else {
+    Return
+}
 ; ------------------------------------
 ; follow && Reload scripts
 ; ------------------------------------
 CapsLock & r::
-if GetKeyState("Alt")
+if GetKeyState("Alt"){
     Reload
+    Return
+}
 else IfWinExist ahk_exe follow.exe
     WinActivate
 else If FileExist(UserProfile . "\AppData\Local\folo\folo.exe")
     Run % UserProfile . "\AppData\Local\folo\folo.exe"
-else
+else {
     Run % ScoopPath . "\apps\folo\current\folo.exe"
-Return
+}
 ; ----------------
 ; 激活不同的软件
 ; ---------------
@@ -39,47 +43,47 @@ if GetKeyState("Alt"){
     Return
 }else IfWinExist ahk_exe telegram.exe
     WinActivate
-else If FileExist(UserProfile . "\AppData\Roaming\Telegram Desktop\Telegram.exe")
+else If FileExist(UserProfile . "\AppData\Roaming\Telegram Desktop\Telegram.exe"){
     Run % UserProfile . "\AppData\Roaming\Telegram Desktop\Telegram.exe"
-Return
+}
 ; ----------------
-; Explorer
+; notesoftwares 
 ; ----------------
 CapsLock & e::
 IfWinExist ahk_exe feishu.exe
     WinActivate
-else If FileExist(UserProfile . "\AppData\Local\Feishu\Feishu.exe")
+else If FileExist(UserProfile . "\AppData\Local\Feishu\Feishu.exe"){
     Run % UserProfile . "\AppData\Local\Feishu\Feishu.exe"
-Return
+}
 CapsLock & o::
 if GetKeyState("Alt"){
     IfWinExist ahk_exe joplin.exe
         WinActivate
     else If FileExist(UserProfile . "\AppData\Local\Programs\Joplin\Joplin.exe")
         Run % UserProfile . "\AppData\Local\Programs\Joplin\Joplin.exe"
-    else If FileExist(ScoopPath . "\apps\joplin\current\Joplin.exe")
+    else If FileExist(ScoopPath . "\apps\joplin\current\Joplin.exe"){
         Run % ScoopPath . "\apps\joplin\current\Joplin.exe"
-    Return
+    }
 }else IfWinExist ahk_exe obsidian.exe
     WinActivate
-else If FileExist(ScoopPath . "\apps\obsidian\current\Obsidian.exe")
+else If FileExist(ScoopPath . "\apps\obsidian\current\Obsidian.exe"){
     Run % ScoopPath . "\apps\obsidian\current\Obsidian.exe"
-Return
+}
 ; editor && browser
 CapsLock & 1::
 IfWinExist ahk_exe msedge.exe
     WinActivate
-else
+else {
     Run "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
-Return
+}
 CapsLock & 2::
 IfWinExist ahk_exe chrome.exe
     WinActivate
 else If FileExist("C:\Program Files\Google\Chrome\Application\chrome.exe")
     Run "C:\Program Files\Google\Chrome\Application\chrome.exe"
-else
+else{
     Run % ScoopPath . "\apps\googlechrome\current\chrome.exe"
-Return
+}
 CapsLock & b::
 IfWinExist ahk_exe zen.exe
     WinActivate
@@ -87,77 +91,77 @@ else If FileExist(UserProfile . "\AppData\Local\Zen Browser\zen.exe")
     Run % UserProfile . "\AppData\Local\Zen Browser\zen.exe"
 else If FileExist("C:\Program Files\Zen Browser\zen.exe")
     Run "C:\Program Files\Zen Browser\zen.exe"
-else If FileExist(ScoopPath . "\apps\zen-browser\current\zen.exe")
+else If FileExist(ScoopPath . "\apps\zen-browser\current\zen.exe"){
     Run % ScoopPath . "\apps\zen-browser\current\zen.exe"
-Return
+}
 ; main editors
 CapsLock & 3::
 IfWinExist ahk_exe Cursor.exe
     WinActivate
-else If FileExist(UserProfile . "\AppData\Local\Programs\Cursor\Cursor.exe")
+else If FileExist(UserProfile . "\AppData\Local\Programs\Cursor\Cursor.exe"){
     Run % UserProfile . "\AppData\Local\Programs\Cursor\Cursor.exe"
-Return
+}
 CapsLock & 4::
 IfWinExist ahk_exe windsurf.exe
     WinActivate
-else If FileExist(UserProfile . "\AppData\Local\Programs\Windsurf\Windsurf.exe")
+else If FileExist(UserProfile . "\AppData\Local\Programs\Windsurf\Windsurf.exe"){
     Run % UserProfile . "\AppData\Local\Programs\Windsurf\Windsurf.exe"
-Return
+}
 CapsLock & 5::
 IfWinExist ahk_exe trae.exe
     WinActivate
-else If FileExist(UserProfile . "\AppData\Local\Programs\trae\trae.exe")
+else If FileExist(UserProfile . "\AppData\Local\Programs\trae\trae.exe"){
     Run % UserProfile . "\AppData\Local\Programs\trae\trae.exe"
-Return
+}
 ; important progs
 CapsLock & 6::
 IfWinExist ahk_exe mobaxterm.exe
     WinActivate
-else If FileExist(ScoopPath . "\apps\mobaxterm\current\mobaxterm.exe")
+else If FileExist(ScoopPath . "\apps\mobaxterm\current\mobaxterm.exe"){
     Run % ScoopPath . "\apps\mobaxterm\current\mobaxterm.exe"
-Return
+}
 CapsLock & 7::
 IfWinExist ahk_exe quark.exe
     WinActivate
-else If FileExist(UserProfile . "\AppData\Local\Programs\Quark\quark.exe")
+else If FileExist(UserProfile . "\AppData\Local\Programs\Quark\quark.exe"){
     Run % UserProfile . "\AppData\Local\Programs\Quark\quark.exe"
-Return
+}
 CapsLock & 8::
 IfWinExist ahk_exe zed.exe
     WinActivate
-else If FileExist(ScoopPath . "\apps\zed\current\zed.exe")
+else If FileExist(ScoopPath . "\apps\zed\current\zed.exe"){
     Run % ScoopPath . "\apps\zed\current\zed.exe"
-Return
+}
 CapsLock & 9::
 IfWinExist ahk_exe Positron.exe
     WinActivate
-else If FileExist(UserProfile . "\AppData\Local\Programs\Positron\Positron.exe")
+else If FileExist(UserProfile . "\AppData\Local\Programs\Positron\Positron.exe"){
     Run % UserProfile . "\AppData\Local\Programs\Positron\Positron.exe"
-Return
+}
 CapsLock & 0::
 IfWinExist ahk_exe code.exe
     WinActivate
-else If FileExist(UserProfile . "\AppData\Local\Programs\Microsoft VS Code\Code.exe")
+else If FileExist(UserProfile . "\AppData\Local\Programs\Microsoft VS Code\Code.exe"){
     Run % UserProfile . "\AppData\Local\Programs\Microsoft VS Code\Code.exe"
-Return
+}
 CapsLock & -::
 IfWinExist ahk_exe nvim-qt.exe
     WinActivate
-else If FileExist(ScoopPath . "\apps\neovim-qt\current\bin\nvim-qt.exe")
+else If FileExist(ScoopPath . "\apps\neovim-qt\current\bin\nvim-qt.exe"){
     Run % ScoopPath . "\apps\neovim-qt\current\bin\nvim-qt.exe"
-Return
+}
 CapsLock & =::
 IfWinExist ahk_exe neovide.exe
     WinActivate
-else If FileExist(ScoopPath . "\apps\neovide\current\neovide.exe")
+else If FileExist(ScoopPath . "\apps\neovide\current\neovide.exe"){
     Run % ScoopPath . "\apps\neovide\current\neovide.exe"
-Return
+}
 CapsLock & z::
 IfWinExist ahk_exe zotero.exe
     WinActivate
-else If FileExist(ScoopPath . "\apps\zotero\current\zotero.exe")
+else If FileExist(ScoopPath . "\apps\zotero\current\zotero.exe"){
     Run % ScoopPath . "\apps\zotero\current\zotero.exe"
-Return
+}
 ; seach using utools
 CapsLock & /::
     Send ^#!f
@@ -172,16 +176,16 @@ if GetKeyState("Alt"){
     Return
 }else IfWinExist ahk_exe WindowsTerminal.exe
     WinActivate
-else If FileExist(UserProfile . "\AppData\Local\Microsoft\WindowsApps\wt.exe")
+else If FileExist(UserProfile . "\AppData\Local\Microsoft\WindowsApps\wt.exe"){
     Run % UserProfile . "\AppData\Local\Microsoft\WindowsApps\wt.exe"
-Return
+}
 ; wezterm
 CapsLock & g::
 IfWinExist ahk_exe wezterm-gui.exe
     WinActivate
-else If FileExist(ScoopPath . "\apps\wezterm-nightly\current\wezterm-gui.exe")
+else If FileExist(ScoopPath . "\apps\wezterm-nightly\current\wezterm-gui.exe"){
     Run % ScoopPath . "\apps\wezterm-nightly\current\wezterm-gui.exe"
-Return
+}
 ; ----------------
 ; screen shot
 ; ---------------
@@ -228,9 +232,9 @@ if GetKeyState("Alt")
     else{
         Return
     }
-else
+else{
     Send {Volume_Mute}
-Return
+}
 CapsLock & ]::Send {Volume_Up}
 CapsLock & [::Send {Volume_Down}
 ; ----------------
@@ -372,13 +376,13 @@ RCtrl & CapsLock::^`
 ; utools clipboard
 ; ------------------------------------
 LCtrl & CapsLock::
-Send #!c
+    Send #!c
 Return
 CapsLock & LCtrl::
-Send #!c
+    Send #!c
 Return
 CapsLock & y::
-Send ^#!c
+    Send ^#!c
 Return
 ; ------------------------------------
 ; copy paste
