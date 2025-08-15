@@ -8,16 +8,16 @@ EnvGet, UserProfile, USERPROFILE
 ; ------------------------------------
 ; 检测Scoop安装位置
 ; ------------------------------------
-ScoopPath := "C:\Scoop"
-if FileExist("C:\Scoop")
+if FileExist("C:\Scoop") {
     ScoopPath := "C:\Scoop"
-else if FileExist("D:\Scoop")
+}
+else if FileExist("D:\Scoop"){
     ScoopPath := "D:\Scoop"
-else if FileExist(UserProfile . "\scoop")
+}
+else if FileExist(UserProfile . "\scoop"){
     ScoopPath := UserProfile . "\scoop"
-else {
-    MsgBox Scoop not found
-    Return
+}else {
+    ScoopPath := ""
 }
 ; ------------------------------------
 ; follow && Reload scripts
@@ -474,6 +474,13 @@ else {
     clipwait 0.1
     Return
 }
+Return
+; ------------------------------------
+; 防止CapsLock键卡住，但不影响组合键功能
+; ------------------------------------
+~CapsLock::
+KeyWait, CapsLock  ; 等待CapsLock键释放
+SetCapsLockState, AlwaysOff  ; 确保CapsLock状态为关闭
 Return
 ; ------------------------------------
 ; proe, 两侧键作为中键
