@@ -2,10 +2,6 @@
 #Persistent
 SetCapsLockState, AlwaysOff
 ; ------------------------------------
-; 单独按下CapsLock时不做任何事情，防止卡住
-; ------------------------------------
-CapsLock::Return
-; ------------------------------------
 ; 获取用户目录
 ; ------------------------------------
 EnvGet, UserProfile, USERPROFILE
@@ -69,6 +65,9 @@ if GetKeyState("Alt") {
 else If WinExist("ahk_exe telegram.exe") {
     WinActivate
 }
+else If FileExist(UserProfile . "\AppData\Roaming\Telegram Desktop\Telegram.exe") {
+    Run % UserProfile . "\AppData\Roaming\Telegram Desktop\Telegram.exe"
+}
 Return
 CapsLock & o::
 if GetKeyState("Alt") {
@@ -118,9 +117,6 @@ If WinExist("ahk_exe chrome.exe") {
 }
 else If FileExist("C:\Program Files\Google\Chrome\Application\chrome.exe") {
     Run "C:\Program Files\Google\Chrome\Application\chrome.exe"
-}
-else {
-    Run % ScoopPath . "\apps\googlechrome\current\chrome.exe"
 }
 Return
 CapsLock & 3::
