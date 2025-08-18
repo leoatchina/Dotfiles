@@ -145,11 +145,11 @@ else If FileExist(UserProfile . "\AppData\Local\Programs\trae\trae.exe") {
 Return
 ; important progs
 CapsLock & 6::
-If WinExist("ahk_exe mobaxterm.exe") {
+If WinExist("ahk_exe tabby.exe") {
     WinActivate
 }
-else If FileExist(ScoopPath . "\apps\mobaxterm\current\mobaxterm.exe") {
-    Run % ScoopPath . "\apps\mobaxterm\current\mobaxterm.exe"
+else If FileExist(ScoopPath . "\apps\tabby\current\tabby.exe") {
+    Run % ScoopPath . "\apps\tabby\current\tabby.exe"
 }
 Return
 CapsLock & 7::
