@@ -423,32 +423,6 @@ else {
 }
 Return
 ; ------------------------------------
-; Input method control change
-; ------------------------------------
-; CapsLockToggle
-CapsLock & RShift::SendInput {Blind}{CapsLock DownTemp}
-CapsLock & RShift up::SendInput {Blind}{CapsLock Up}
-; 输入法切换
-CapsLock & Backspace:: SendInput, #{Space}
-; 两个输入法切换
-CapsLock & Enter:: SendInput, ^#{Space}
-; smart 中英切换
-SwitchInputMethod() {
-    WinGet, WinID,, A
-    ThreadID := DllCall("GetWindowThreadProcessId", "UInt", WinID, "UInt", 0)
-    InputLocaleID := DllCall("GetKeyboardLayout", "UInt", ThreadID, "UInt")
-    ; English input method
-    if (InputLocaleID == 67699721) {
-        SendInput, ^#{Space}
-    } else {
-        SendInput, ^{Space}
-    }
-}
-CapsLock & Space:: SwitchInputMethod()
-; 小狼毫
-CapsLock & RCtrl::^`
-RCtrl & CapsLock::^`
-; ------------------------------------
 ; utools clipboard
 ; ------------------------------------
 LCtrl & CapsLock:: Send #!c
@@ -476,12 +450,25 @@ else {
 }
 Return
 ; ------------------------------------
-; 防止CapsLock键卡住，但不影响组合键功能
+; Input method control change
 ; ------------------------------------
-~CapsLock::
-KeyWait, CapsLock  ; 等待CapsLock键释放
-SetCapsLockState, AlwaysOff  ; 确保CapsLock状态为关闭
-Return
+; 输入法切换
+CapsLock & Enter:: SendInput, #{Space}
+; 两个输入法切换
+CapsLock & Space:: SendInput, ^#{Space}
+; smart 中英切换
+SwitchInputMethod() {
+    WinGet, WinID,, A
+    ThreadID := DllCall("GetWindowThreadProcessId", "UInt", WinID, "UInt", 0)
+    InputLocaleID := DllCall("GetKeyboardLayout", "UInt", ThreadID, "UInt")
+    ; English input method
+    if (InputLocaleID == 67699721) {
+        SendInput, ^#{Space}
+    } else {
+        SendInput, ^{Space}
+    }
+}
+CapsLock:: SwitchInputMethod()
 ; ------------------------------------
 ; proe, 两侧键作为中键
 ; ------------------------------------
