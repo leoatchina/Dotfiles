@@ -453,9 +453,9 @@ Return
 ; Input method control change
 ; ------------------------------------
 ; 输入法切换
-CapsLock & Enter:: SendInput, #{Space}
+CapsLock & Backspace:: SendInput, #{Space}
 ; 两个输入法切换
-CapsLock & Space:: SendInput, ^#{Space}
+CapsLock & Enter:: SendInput, ^#{Space}
 ; smart 中英切换
 SwitchInputMethod() {
     WinGet, WinID,, A
@@ -469,6 +469,7 @@ SwitchInputMethod() {
     }
 }
 CapsLock:: SwitchInputMethod()
+CapsLock & Space:: SwitchInputMethod()
 ; ------------------------------------
 ; proe, 两侧键作为中键
 ; ------------------------------------
