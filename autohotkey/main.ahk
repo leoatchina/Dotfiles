@@ -236,35 +236,10 @@ else If FileExist(ScoopPath . "\apps\tabby\current\tabby.exe") {
 }
 Return
 ; ----------------
-; screen shot
-; ---------------
-#f::Send ^{F1}
-#b::Send !{F1}
-#u::Send !{F2}
-; ----------------
-; ESC
-; ----------------
-Capslock & q::Send, {ESC}
-; ------------------------------------
-; disable ctrl+win+d / shift+space
-; ------------------------------------
-^<#d::ESC
-; ----------------
 ; Tab/Shift-Tab
 ; ----------------
 CapsLock & n:: Send ^{Tab}
 CapsLock & p:: Send ^+{Tab}
-; ----------------
-; Del/Bs
-; ----------------
-CapsLock & x::
-if GetKeyState("Alt") {
-    SendInput {Backspace}
-}
-else {
-    SendInput {Del}
-}
-Return
 ; ----------------
 ; Volume control
 ; ----------------
@@ -432,6 +407,17 @@ CapsLock & y:: Send ^#!c
 ; ------------------------------------
 CapsLock & v::Send {Shift down}{Ins}{Shift up}
 CapsLock & c::Send {Ctrl down}{Ins}{Ctrl up}
+; ----------------
+; Del/Bs
+; ----------------
+CapsLock & x::
+if GetKeyState("Alt") {
+    SendInput {Backspace}
+}
+else {
+    SendInput {Del}
+}
+Return
 ; ------------------------------------
 ; 去除复制来的内容里的回车
 ; ------------------------------------
@@ -440,14 +426,26 @@ if GetKeyState("Alt") {
     tmp := RegExReplace(clipboard, "(\S.*?)\R(.*?\S)", "$1 $2")
     clipboard := tmp
     clipwait 0.1
-    Return
 }
 else {
     Clipboard = %Clipboard%
     clipwait 0.1
-    Return
 }
 Return
+; ------------------------------------
+; disable ctrl+win+d / shift+space
+; ------------------------------------
+^<#d::ESC
+; ----------------
+; ESC
+; ----------------
+Capslock & q::Send {ESC}
+; ----------------
+; screen shot
+; ---------------
+#f::Send ^{F1}
+#b::Send !{F1}
+#u::Send !{F2}
 ; ------------------------------------
 ; Input method control change
 ; ------------------------------------
@@ -467,8 +465,8 @@ SwitchInputMethod() {
         SendInput, ^{Space}
     }
 }
-CapsLock:: SwitchInputMethod()
 CapsLock & Space:: SwitchInputMethod()
+CapsLock:: SwitchInputMethod()
 ; ------------------------------------
 ; proe, 两侧键作为中键
 ; ------------------------------------
@@ -480,3 +478,4 @@ CapsLock & Space:: SwitchInputMethod()
 #IfWinActive ahk_exe xtop.exe
 XButton1::MButton
 XButton2::MButton
+Return
