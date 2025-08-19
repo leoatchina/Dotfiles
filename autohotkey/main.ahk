@@ -143,13 +143,12 @@ else If FileExist(UserProfile . "\AppData\Local\Programs\trae\trae.exe") {
     Run % UserProfile . "\AppData\Local\Programs\trae\trae.exe"
 }
 Return
-; important progs
 CapsLock & 6::
-If WinExist("ahk_exe tabby.exe") {
+If WinExist("ahk_exe alacritty.exe") {
     WinActivate
 }
-else If FileExist(ScoopPath . "\apps\tabby\current\tabby.exe") {
-    Run % ScoopPath . "\apps\tabby\current\tabby.exe"
+else If FileExist(ScoopPath . "\apps\alacritty\current\alacritty.exe") {
+    Run % ScoopPath . "\apps\alacritty\current\alacritty.exe"
 }
 Return
 CapsLock & 7::
@@ -227,13 +226,13 @@ else If FileExist(UserProfile . "\AppData\Local\Microsoft\WindowsApps\wt.exe") {
     Run % UserProfile . "\AppData\Local\Microsoft\WindowsApps\wt.exe"
 }
 Return
-; wezterm
+; tabby 
 CapsLock & g::
-If WinExist("ahk_exe wezterm-gui.exe") {
+If WinExist("ahk_exe tabby.exe") {
     WinActivate
 }
-else If FileExist(ScoopPath . "\apps\wezterm-nightly\current\wezterm-gui.exe") {
-    Run % ScoopPath . "\apps\wezterm-nightly\current\wezterm-gui.exe"
+else If FileExist(ScoopPath . "\apps\tabby\current\tabby.exe") {
+    Run % ScoopPath . "\apps\tabby\current\tabby.exe"
 }
 Return
 ; ----------------
