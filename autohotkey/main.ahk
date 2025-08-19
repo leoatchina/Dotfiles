@@ -226,7 +226,7 @@ else If FileExist(UserProfile . "\AppData\Local\Microsoft\WindowsApps\wt.exe") {
     Run % UserProfile . "\AppData\Local\Microsoft\WindowsApps\wt.exe"
 }
 Return
-; tabby 
+; tabby
 CapsLock & g::
 If WinExist("ahk_exe tabby.exe") {
     WinActivate
