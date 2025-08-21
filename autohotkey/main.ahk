@@ -6,6 +6,7 @@
 ; ------------------------------------
 #Warn VarUnset, Off
 #SingleInstance
+SetCapsLockState("AlwaysOff")
 
 ; ------------------------------------
 ; Global Variables - Detect Scoop Path
@@ -199,7 +200,6 @@ SwitchInputMethod() {
 }
 
 CapsLock & Space:: SwitchInputMethod()
-CapsLock:: SwitchInputMethod()
 
 ; ------------------------------------
 ; Remap side mouse buttons to middle button for xtop.exe
