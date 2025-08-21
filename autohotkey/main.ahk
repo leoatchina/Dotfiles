@@ -10,13 +10,14 @@
 ; ------------------------------------
 ; Global Variables - Detect Scoop Path
 ; ------------------------------------
-global ScoopPath
+global ScoopPath, UserProfile
+UserProfile := EnvGet("USERPROFILE")
 if DirExist("C:\Scoop")
     ScoopPath := "C:\Scoop"
 else if DirExist("D:\Scoop")
     ScoopPath := "D:\Scoop"
-else if DirExist(A_UserProfile . "\scoop")
-    ScoopPath := A_UserProfile . "\scoop"
+else if DirExist(UserProfile . "\scoop")
+    ScoopPath := UserProfile . "\scoop"
 else
     ScoopPath := ""
 ; ------------------------------------
@@ -43,40 +44,40 @@ CapsLock & r:: {
     if GetKeyState("Alt")
         Reload()
     else
-        LaunchOrActivate("ahk_exe folo.exe", A_UserProfile . "\AppData\Local\folo\folo.exe", ScoopPath . "\apps\folo\current\folo.exe")
+        LaunchOrActivate("ahk_exe folo.exe", UserProfile . "\folo\folo.exe", ScoopPath . "\apps\folo\current\folo.exe")
 }
 
 ; Feishu
-CapsLock & e:: LaunchOrActivate("ahk_exe feishu.exe", A_UserProfile . "\AppData\Local\Feishu\Feishu.exe")
+CapsLock & e:: LaunchOrActivate("ahk_exe feishu.exe", UserProfile . "\Feishu\Feishu.exe")
 
 ; Telegram / Heynote
 CapsLock & t:: {
     if GetKeyState("Alt")
-        LaunchOrActivate("ahk_exe Heynote.exe", A_UserProfile . "\AppData\Local\Programs\Heynote\Heynote.exe", ScoopPath . "\apps\Heynote\current\Heynote.exe")
+        LaunchOrActivate("ahk_exe Heynote.exe", UserProfile . "\Programs\Heynote\Heynote.exe", ScoopPath . "\apps\Heynote\current\Heynote.exe")
     else
-        LaunchOrActivate("ahk_exe telegram.exe", A_UserProfile . "\AppData\Roaming\Telegram Desktop\Telegram.exe")
+        LaunchOrActivate("ahk_exe telegram.exe", A_AppData . "\Telegram Desktop\Telegram.exe")
 }
 
 ; Obsidian / Joplin
 CapsLock & o:: {
     if GetKeyState("Alt")
-        LaunchOrActivate("ahk_exe joplin.exe", A_UserProfile . "\AppData\Local\Programs\Joplin\Joplin.exe", ScoopPath . "\apps\joplin\current\Joplin.exe")
+        LaunchOrActivate("ahk_exe joplin.exe", UserProfile . "\Programs\Joplin\Joplin.exe", ScoopPath . "\apps\joplin\current\Joplin.exe")
     else
         LaunchOrActivate("ahk_exe obsidian.exe", ScoopPath . "\apps\obsidian\current\Obsidian.exe")
 }
 
 ; Browsers & Editors
-CapsLock & b:: LaunchOrActivate("ahk_exe zen.exe", A_UserProfile . "\AppData\Local\Zen Browser\zen.exe", "C:\Program Files\Zen Browser\zen.exe", ScoopPath . "\apps\zen-browser\current\zen.exe")
+CapsLock & b:: LaunchOrActivate("ahk_exe zen.exe", UserProfile . "\Zen Browser\zen.exe", "C:\Program Files\Zen Browser\zen.exe", ScoopPath . "\apps\zen-browser\current\zen.exe")
 CapsLock & 1:: LaunchOrActivate("ahk_exe msedge.exe", "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe")
 CapsLock & 2:: LaunchOrActivate("ahk_exe chrome.exe", "C:\Program Files\Google\Chrome\Application\chrome.exe")
-CapsLock & 3:: LaunchOrActivate("ahk_exe Cursor.exe", A_UserProfile . "\AppData\Local\Programs\Cursor\Cursor.exe")
-CapsLock & 4:: LaunchOrActivate("ahk_exe windsurf.exe", A_UserProfile . "\AppData\Local\Programs\Windsurf\Windsurf.exe")
-CapsLock & 5:: LaunchOrActivate("ahk_exe trae.exe", A_UserProfile . "\AppData\Local\Programs\trae\trae.exe")
+CapsLock & 3:: LaunchOrActivate("ahk_exe Cursor.exe", UserProfile . "\Programs\Cursor\Cursor.exe")
+CapsLock & 4:: LaunchOrActivate("ahk_exe windsurf.exe", UserProfile . "\Programs\Windsurf\Windsurf.exe")
+CapsLock & 5:: LaunchOrActivate("ahk_exe trae.exe", UserProfile . "\Programs\trae\trae.exe")
 CapsLock & 6:: LaunchOrActivate("ahk_exe alacritty.exe", ScoopPath . "\apps\alacritty\current\alacritty.exe")
-CapsLock & 7:: LaunchOrActivate("ahk_exe quark.exe", A_UserProfile . "\AppData\Local\Programs\Quark\quark.exe")
+CapsLock & 7:: LaunchOrActivate("ahk_exe quark.exe", UserProfile . "\Programs\Quark\quark.exe")
 CapsLock & 8:: LaunchOrActivate("ahk_exe zed.exe", ScoopPath . "\apps\zed\current\zed.exe")
-CapsLock & 9:: LaunchOrActivate("ahk_exe Positron.exe", A_UserProfile . "\AppData\Local\Programs\Positron\Positron.exe")
-CapsLock & 0:: LaunchOrActivate("ahk_exe code.exe", A_UserProfile . "\AppData\Local\Programs\Microsoft VS Code\Code.exe")
+CapsLock & 9:: LaunchOrActivate("ahk_exe Positron.exe", UserProfile . "\Programs\Positron\Positron.exe")
+CapsLock & 0:: LaunchOrActivate("ahk_exe code.exe", UserProfile . "\Programs\Microsoft VS Code\Code.exe")
 CapsLock & -:: LaunchOrActivate("ahk_exe nvim-qt.exe", ScoopPath . "\apps\neovim-qt\current\bin\nvim-qt.exe")
 CapsLock & =:: LaunchOrActivate("ahk_exe neovide.exe", ScoopPath . "\apps\neovide\current\neovide.exe")
 CapsLock & z:: LaunchOrActivate("ahk_exe zotero.exe", ScoopPath . "\apps\zotero\current\zotero.exe")
@@ -86,7 +87,7 @@ CapsLock & f:: {
     if GetKeyState("Alt")
         LaunchOrActivate("ahk_exe notepad--.exe", ScoopPath . "\apps\notepad--\current\Notepad--.exe")
     else
-        LaunchOrActivate("ahk_exe WindowsTerminal.exe", A_UserProfile . "\AppData\Local\Microsoft\WindowsApps\wt.exe")
+        LaunchOrActivate("ahk_exe WindowsTerminal.exe", UserProfile . "\Microsoft\WindowsApps\wt.exe")
 }
 CapsLock & g:: LaunchOrActivate("ahk_exe tabby.exe", ScoopPath . "\apps\tabby\current\tabby.exe")
 
@@ -103,7 +104,7 @@ CapsLock & p:: Send("^+{Tab}")
 ; Volume control
 CapsLock & m:: {
     if GetKeyState("Alt")
-        LaunchOrActivate("ahk_exe Motrix.exe", A_UserProfile . "\AppData\Local\Programs\Motrix\Motrix.exe", ScoopPath . "\apps\motrix\current\motrix.exe")
+        LaunchOrActivate("ahk_exe Motrix.exe", UserProfile . "\Programs\Motrix\Motrix.exe", ScoopPath . "\apps\motrix\current\motrix.exe")
     else
         Send("{Volume_Mute}")
 }
@@ -200,3 +201,10 @@ SwitchInputMethod() {
 CapsLock & Space:: SwitchInputMethod()
 CapsLock:: SwitchInputMethod()
 
+; ------------------------------------
+; Remap side mouse buttons to middle button for xtop.exe
+; ------------------------------------
+#HotIf WinActive("ahk_exe xtop.exe")
+XButton1::MButton
+XButton2::MButton
+#HotIf
