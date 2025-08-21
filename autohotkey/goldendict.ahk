@@ -1,48 +1,36 @@
+; AutoHotkey v2 Script
+
 ; ------------------------------------
 ; GoldenDict
 ; ------------------------------------
-CapsLock & i::
+CapsLock & i:: {
   if GetKeyState("Alt") {
-    Send ^!+i
+    Send("^!+i")
   }
   else {
-    Send ^!+g
+    Send("^!+g")
   }
-Return
+}
 
-~LButton::
-  Loop {
-    LButtonDown := GetKeyState("LButton","P")
-    If (!LButtonDown)
-      Break
-  }
-  WaitTime:=DllCall("GetDoubleClickTime")/4000
-  KeyWait, LButton, D T%WaitTime%
-  If errorlevel=0
-    GoSub, Routine
-Return
+TranslateSelection() {
+    if WinActive("ahk_class CabinetWClass") {
+      Return
+    }
+    A_Clipboard := ""
+    Send("^c")
+    if ClipWait(1) {
+        cliplen := StrLen(A_Clipboard)
+        if (cliplen > 20 || cliplen < 2) {
+          ; Avoid translating non-words
+          Return
+        }
+        ; Run GoldenDict with the selected text
+        Run('C:\tools\GoldenDict\GoldenDict.exe "' . A_Clipboard . '"')
+    }
+}
 
-Routine:
-  {
-    ifwinactive ahk_class CabinetWClass
-    {
-      Return
+~LButton:: {
+    if (A_PriorHotkey = A_ThisHotkey && A_TimeSincePriorHotkey < DllCall("GetDoubleClickTime")) {
+        TranslateSelection()
     }
-    clipboard =
-    send ,^c
-    ClipWait,1
-    StringLen, cliplen, clipboard
-    if cliplen > 20
-    {
-      ;避免不是英文單字的東西送到GoldenDict去翻譯。
-      Return
-    }
-    if cliplen < 2
-    {
-      ;避免不是英文單字的東西送到GoldenDict去翻譯。
-      Return
-    }
-    ; send,{Ctrl down}cc{Ctrl up} 可用這行，也可用下行
-    run C:\tools\GoldenDict\GoldenDict.exe  %clipboard%
-  }
-Return
+}

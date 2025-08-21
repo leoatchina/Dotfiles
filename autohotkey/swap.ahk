@@ -1,15 +1,5 @@
-LAlt::
-Send {LWin DownTemp}
-return
+; AutoHotkey v2 Script
 
-LAlt Up::
-Send {LWin Up}
-return
-
-LWin::
-Send {LAlt DownTemp}
-return
-
-LWin Up::
-Send {LAlt Up}
-return
+; Swap Left Alt and Left Win keys
+$LAlt::LWin
+$LWin::LAlt
