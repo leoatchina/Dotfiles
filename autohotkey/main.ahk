@@ -1,26 +1,27 @@
 ; AutoHotkey v2 Script
-; Converted and refactored by Cascade
-
 ; ------------------------------------
 ; Configuration
 ; ------------------------------------
 #Warn VarUnset, Off
 #SingleInstance
 SetCapsLockState("AlwaysOff")
-
 ; ------------------------------------
 ; Global Variables - Detect Scoop Path
 ; ------------------------------------
 global ScoopPath, UserProfile
 UserProfile := EnvGet("USERPROFILE")
-if DirExist("C:\Scoop")
+if DirExist("C:\Scoop"){
     ScoopPath := "C:\Scoop"
-else if DirExist("D:\Scoop")
+}
+else if DirExist("D:\Scoop"){
     ScoopPath := "D:\Scoop"
-else if DirExist(UserProfile . "\scoop")
+}
+else if DirExist(UserProfile . "\scoop"){
     ScoopPath := UserProfile . "\scoop"
-else
+}
+else{
     ScoopPath := ""
+}
 ; ------------------------------------
 ; Helper Function to Launch or Activate Apps
 ; ------------------------------------
