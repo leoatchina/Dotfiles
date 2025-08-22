@@ -187,8 +187,10 @@ CapsLock & j up:: SendDirKey("Down", "PgDn", "Up")
 ; ------------------------------------
 ; Input Method Control
 ; ------------------------------------
+
 CapsLock & Backspace:: Send("#{Space}")
 CapsLock & Enter:: Send("^#{Space}")
+CapsLock & RShift:: Send("{RCtrl}")
 
 SwitchInputMethod() {
     WinID := WinGetID("A")
@@ -211,3 +213,4 @@ CapsLock:: SwitchInputMethod()
 XButton1::MButton
 XButton2::MButton
 #HotIf
+
