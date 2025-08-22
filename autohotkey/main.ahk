@@ -204,7 +204,7 @@ SwitchInputMethod() {
 }
 
 CapsLock & Space:: SwitchInputMethod()
-CapsLock:: SwitchInputMethod()
+; CapsLock:: SwitchInputMethod()
 
 ; ------------------------------------
 ; Remap side mouse buttons to middle button for xtop.exe
