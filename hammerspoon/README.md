@@ -1,21 +1,21 @@
 # 功能概述
 * 窗口管理
   * 最大化窗口 (并不是 MacOS 的全屏模式)
+  * 切换显示器功能
   * 将当前窗口移动到另一屏幕
   * 类 Windows 的窗口移动，作用与 Windows 系统下的 `winKey + left/right` 一致
   * **直接**将窗口大小设置为当前的一半（上下左右四个方向）
   * 向**任意**方向调整窗口大小
-  * 切换显示器功能
 
 * 其他功能
   * 显示当前时间、电量
 
 # 安装
 * **首先**安装 [HammerSpoon](https://github.com/Hammerspoon/hammerspoon)
-* 下载、拷贝这些文件到`~/.hammersppon`, 或者直接 `git clone https://github.com/leoatchina/leoatchina-hammerspoon.git ~/.hammerspoon` ：
-  * [init.lua](https://github.com/leoatchina/hammerspon-config/blob/master/init.lua) - 主程序入口
-  * [key-binding.lua](https://github.com/leoatchina/hammerspon-config/blob/master/key-binding.lua) - 窗口管理快捷键配置
-  * [window-management.lua](https://github.com/leoatchina/hammerspon-config/blob/master/window-management.lua) - 窗口管理
+* ln -sf `hammerspoon` 到`~/.hammersppon` ：
+  * [init.lua](./init.lua) - 主程序入口
+  * [key-binding.lua](./key-binding.lua) - 窗口管理快捷键配置
+  * [window-management.lua](./window-management.lua) - 窗口管理
 
 # 快捷键
 * 显示电量、时间
