@@ -59,7 +59,6 @@ CapsLock & f:: {
 ; terminal 
 CapsLock & t:: {
     if GetKeyState("Alt")
-        
         LaunchOrActivate("ahk_exe alacritty.exe", ScoopPath . "\apps\alacritty\current\alacritty.exe")
     else
         LaunchOrActivate("ahk_exe WindowsTerminal.exe", AppDataLocal . "\Microsoft\WindowsApps\wt.exe")
