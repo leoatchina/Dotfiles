@@ -202,7 +202,7 @@ SwitchInputMethod() {
 
 CapsLock & Shift:: SwitchInputMethod()
 CapsLock & Enter:: Send("#{Space}")
-CapsLock & Space:: Send("^#{Space}")
+; CapsLock & Space:: Send("^#{Space}")
 CapsLock:: Send("^#{Space}")
 
 ; ------------------------------------
