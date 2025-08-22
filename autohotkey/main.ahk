@@ -188,10 +188,7 @@ CapsLock & j up:: SendDirKey("Down", "PgDn", "Up")
 ; Input Method Control
 ; ------------------------------------
 
-CapsLock & Enter:: Send("#{Space}")
-CapsLock & Space:: Send("^#{Space}")
 CapsLock & BackSpace:: Send("{RCtrl}")
-
 SwitchInputMethod() {
     WinID := WinGetID("A")
     ThreadID := DllCall("GetWindowThreadProcessId", "Ptr", WinID, "Ptr", 0)
@@ -204,7 +201,9 @@ SwitchInputMethod() {
 }
 
 CapsLock & Shift:: SwitchInputMethod()
-; CapsLock:: SwitchInputMethod()
+CapsLock & Enter:: Send("#{Space}")
+CapsLock & Space:: Send("^#{Space}")
+CapsLock:: Send("^#{Space}")
 
 ; ------------------------------------
 ; Remap side mouse buttons to middle button for xtop.exe
