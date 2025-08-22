@@ -188,9 +188,9 @@ CapsLock & j up:: SendDirKey("Down", "PgDn", "Up")
 ; Input Method Control
 ; ------------------------------------
 
-CapsLock & Backspace:: Send("#{Space}")
-CapsLock & Enter:: Send("^#{Space}")
-CapsLock & RShift:: Send("{RCtrl}")
+CapsLock & Enter:: Send("#{Space}")
+CapsLock & Space:: Send("^#{Space}")
+CapsLock & BackSpace:: Send("{RCtrl}")
 
 SwitchInputMethod() {
     WinID := WinGetID("A")
@@ -203,7 +203,7 @@ SwitchInputMethod() {
         Send("^{Space}") ; Switch to English
 }
 
-CapsLock & Space:: SwitchInputMethod()
+CapsLock & Shift:: SwitchInputMethod()
 ; CapsLock:: SwitchInputMethod()
 
 ; ------------------------------------
