@@ -200,9 +200,8 @@ SwitchInputMethod() {
         Send("^{Space}") ; Switch to English
 }
 
-CapsLock & Shift:: SwitchInputMethod()
-CapsLock & Enter:: Send("#{Space}")
-; CapsLock & Space:: Send("^#{Space}")
+CapsLock & Enter:: SwitchInputMethod()
+CapsLock & Shift:: Send("#{Space}")
 CapsLock:: Send("^#{Space}")
 
 ; ------------------------------------
