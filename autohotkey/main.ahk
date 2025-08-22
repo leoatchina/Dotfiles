@@ -42,31 +42,41 @@ LaunchOrActivate(winTitle, paths*) {
 ; ------------------------------------
 ; Application Hotkeys
 ; ------------------------------------
-; Reload script
 CapsLock & r:: {
     if GetKeyState("Alt")
         Reload()
     else
-        LaunchOrActivate("ahk_exe folo.exe", ScoopPath . "\apps\folo\current\folo.exe")
+        LaunchOrActivate("ahk_exe telegram.exe", A_AppData . "\Telegram Desktop\telegram.exe")
 }
 
-; Feishu
-CapsLock & e:: LaunchOrActivate("ahk_exe feishu.exe", AppDataLocal . "\Feishu\Feishu.exe")
+CapsLock & f:: {
+    if GetKeyState("Alt")
+        LaunchOrActivate("ahk_exe folo.exe", ScoopPath . "\apps\folo\current\folo.exe")
+    else
+        LaunchOrActivate("ahk_exe feishu.exe", AppDataLocal . "\Feishu\Feishu.exe")
+}
 
-; Telegram / Heynote
+; terminal 
 CapsLock & t:: {
     if GetKeyState("Alt")
-        LaunchOrActivate("ahk_exe Heynote.exe",  ScoopPath . "\apps\Heynote\current\Heynote.exe")
+        LaunchOrActivate("ahk_exe tabby.exe", ScoopPath . "\apps\tabby\current\tabby.exe")
     else
-        LaunchOrActivate("ahk_exe telegram.exe", A_AppData . "\Telegram Desktop\Telegram.exe")
+        LaunchOrActivate("ahk_exe WindowsTerminal.exe", AppDataLocal . "\Microsoft\WindowsApps\wt.exe")
 }
 
-; Obsidian / Joplin
+; note softwares 
 CapsLock & o:: {
     if GetKeyState("Alt")
         LaunchOrActivate("ahk_exe joplin.exe", ScoopPath . "\apps\joplin\current\Joplin.exe")
     else
         LaunchOrActivate("ahk_exe obsidian.exe", ScoopPath . "\apps\obsidian\current\Obsidian.exe")
+}
+
+CapsLock & e:: {
+    if GetKeyState("Alt")
+        LaunchOrActivate("ahk_exe notepad--.exe", ScoopPath . "\apps\notepad--\current\Notepad--.exe")
+    else
+        LaunchOrActivate("ahk_exe Heynote.exe",  ScoopPath . "\apps\Heynote\current\Heynote.exe")
 }
 
 ; Browsers & Editors
@@ -78,21 +88,11 @@ CapsLock & 4:: LaunchOrActivate("ahk_exe windsurf.exe", AppDataLocal . "\Program
 CapsLock & 5:: LaunchOrActivate("ahk_exe trae.exe", AppDataLocal . "\Programs\trae\trae.exe")
 CapsLock & 6:: LaunchOrActivate("ahk_exe alacritty.exe", ScoopPath . "\apps\alacritty\current\alacritty.exe")
 CapsLock & 7:: LaunchOrActivate("ahk_exe quark.exe", AppDataLocal . "\Programs\Quark\quark.exe")
-CapsLock & 8:: LaunchOrActivate("ahk_exe zed.exe", ScoopPath . "\apps\zed\current\zed.exe")
-CapsLock & 9:: LaunchOrActivate("ahk_exe Positron.exe", AppDataLocal . "\Programs\Positron\Positron.exe")
-CapsLock & 0:: LaunchOrActivate("ahk_exe code.exe", AppDataLocal . "\Programs\Microsoft VS Code\Code.exe")
+CapsLock & 8:: LaunchOrActivate("ahk_exe Positron.exe", AppDataLocal . "\Programs\Positron\Positron.exe")
+CapsLock & 9:: LaunchOrActivate("ahk_exe code.exe", AppDataLocal . "\Programs\Microsoft VS Code\Code.exe")
+CapsLock & 0:: LaunchOrActivate("ahk_exe zed.exe", ScoopPath . "\apps\zed\current\zed.exe")
 CapsLock & -:: LaunchOrActivate("ahk_exe nvim-qt.exe", ScoopPath . "\apps\neovim-qt\current\bin\nvim-qt.exe")
 CapsLock & =:: LaunchOrActivate("ahk_exe neovide.exe", ScoopPath . "\apps\neovide\current\neovide.exe")
-CapsLock & z:: LaunchOrActivate("ahk_exe zotero.exe", ScoopPath . "\apps\zotero\current\zotero.exe")
-
-; Terminals
-CapsLock & f:: {
-    if GetKeyState("Alt")
-        LaunchOrActivate("ahk_exe notepad--.exe", ScoopPath . "\apps\notepad--\current\Notepad--.exe")
-    else
-        LaunchOrActivate("ahk_exe WindowsTerminal.exe", AppDataLocal . "\Microsoft\WindowsApps\wt.exe")
-}
-CapsLock & g:: LaunchOrActivate("ahk_exe tabby.exe", ScoopPath . "\apps\tabby\current\tabby.exe")
 
 ; ------------------------------------
 ; General Hotkeys
@@ -188,7 +188,6 @@ CapsLock & j up:: SendDirKey("Down", "PgDn", "Up")
 ; Input Method Control
 ; ------------------------------------
 
-CapsLock & BackSpace:: Send("{RCtrl}")
 SwitchInputMethod() {
     WinID := WinGetID("A")
     ThreadID := DllCall("GetWindowThreadProcessId", "Ptr", WinID, "Ptr", 0)
@@ -200,9 +199,20 @@ SwitchInputMethod() {
         Send("^{Space}") ; Switch to English
 }
 
-CapsLock & Enter:: SwitchInputMethod()
-CapsLock & Shift:: Send("#{Space}")
-CapsLock:: Send("^#{Space}")
+CapsLock & RShift:: SwitchInputMethod()
+RShift & CapsLock:: SwitchInputMethod()
+CapsLock & Enter:: Send("^#{Space}")
+CapsLock & LShift:: Send("^#{Space}")
+LShift & CapsLock:: Send("^#{Space}")
+CapsLock & BackSpace:: Send("#{Space}")
+
+CapsLock & z:: {
+    if GetKeyState("Alt")
+        LaunchOrActivate("ahk_exe zotero.exe", ScoopPath . "\apps\zotero\current\zotero.exe")
+    else
+        Send("^#{Space}")
+}
+
 
 ; ------------------------------------
 ; Remap side mouse buttons to middle button for xtop.exe
