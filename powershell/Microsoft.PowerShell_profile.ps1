@@ -9,7 +9,9 @@ Set-Alias grep findstr
 Import-Module posh-git
 Import-Module Terminal-Icons
 Import-Module scoop-completion
-oh-my-posh init pwsh | Invoke-Expression
+# Initialize oh-my-posh with default theme
+$env:POSH_THEME = if ($env:POSH_THEME) { $env:POSH_THEME } else { "$env:POSH_THEMES_PATH\atomic.omp.json" }
+oh-my-posh init pwsh --config $env:POSH_THEME | Invoke-Expression
 
 
 # PSReadLine
@@ -47,4 +49,42 @@ Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory
 function which ($command) {
     Get-Command -Name $command -ErrorAction SilentlyContinue |
       Select-Object -ExpandProperty Path -ErrorAction SilentlyContinue
-  }
+}
+
+# Oh-My-Posh theme management functions
+function Set-PoshTheme {
+    param(
+        [Parameter(Mandatory=$true)]
+        [string]$ThemeName
+    )
+    
+    $themePath = "$env:POSH_THEMES_PATH\$ThemeName.omp.json"
+    
+    if (Test-Path $themePath) {
+        $env:POSH_THEME = $themePath
+        oh-my-posh init pwsh --config $env:POSH_THEME | Invoke-Expression
+        Write-Host "已切换到主题: $ThemeName" -ForegroundColor Green
+    } else {
+        Write-Host "主题文件不存在: $themePath" -ForegroundColor Red
+        Write-Host "可用主题:" -ForegroundColor Yellow
+        Get-ChildItem "$env:POSH_THEMES_PATH\*.omp.json" | ForEach-Object { 
+            Write-Host "  $($_.BaseName)" -ForegroundColor Cyan
+        }
+    }
+}
+
+function Get-PoshThemes {
+    Write-Host "可用的 Oh-My-Posh 主题:" -ForegroundColor Yellow
+    Get-ChildItem "$env:POSH_THEMES_PATH\*.omp.json" | ForEach-Object { 
+        $name = $_.BaseName
+        if ($env:POSH_THEME -and $env:POSH_THEME.Contains($name)) {
+            Write-Host "  $name (当前使用)" -ForegroundColor Green
+        } else {
+            Write-Host "  $name" -ForegroundColor Cyan
+        }
+    }
+}
+
+# 别名
+Set-Alias themes Get-PoshThemes
+Set-Alias theme Set-PoshTheme
