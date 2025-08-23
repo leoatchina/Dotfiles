@@ -1,24 +1,31 @@
+# Cross-platform Alacritty configuration
+# Set these environment variables on different platforms:
+# Linux/macOS: export ALACRITTY_OS=unix
+# Windows: set ALACRITTY_OS=windows
+
 [window]
 padding = { x = 2, y = 2 }
 option_as_alt = 'Both'
 startup_mode = "Maximized"
 
 [font]
-size = 12
+# Use environment variable for font size, with platform-specific defaults
+size = { env = "ALACRITTY_FONT_SIZE", default = 12 }
 
 [font.bold]
-family = "JetBrainsMono Nerd Font"
+# Use platform-specific font families via environment variables
+family = { env = "ALACRITTY_FONT_FAMILY", default = "JetBrainsMono Nerd Font" }
 
 [font.bold_italic]
-family = "JetBrainsMono Nerd Font"
+family = { env = "ALACRITTY_FONT_FAMILY", default = "JetBrainsMono Nerd Font" }
 
 [font.italic]
-family = "JetBrainsMono Nerd Font"
+family = { env = "ALACRITTY_FONT_FAMILY", default = "JetBrainsMono Nerd Font" }
 
 [font.normal]
-family = "JetBrainsMono Nerd Font"
+family = { env = "ALACRITTY_FONT_FAMILY", default = "JetBrainsMono Nerd Font" }
 
-# Windows shell configuration - use cmd.exe as default
+# Platform-specific shell configuration
 [terminal.shell]
-program = "cmd.exe"
-args = ["/k"]
+program = { env = "ALACRITTY_SHELL", default = "cmd.exe" }
+args = { env = "ALACRITTY_SHELL_ARGS", default = ["/k"] }
