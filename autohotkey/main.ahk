@@ -56,7 +56,7 @@ CapsLock & f:: {
         LaunchOrActivate("ahk_exe feishu.exe", AppDataLocal . "\Feishu\Feishu.exe")
 }
 
-; terminal 
+; terminal
 CapsLock & t:: {
     if GetKeyState("Alt")
         LaunchOrActivate("ahk_exe alacritty.exe", ScoopPath . "\apps\alacritty\current\alacritty.exe")
@@ -64,7 +64,7 @@ CapsLock & t:: {
         LaunchOrActivate("ahk_exe WindowsTerminal.exe", AppDataLocal . "\Microsoft\WindowsApps\wt.exe")
 }
 
-; note softwares 
+; note softwares
 CapsLock & o:: {
     if GetKeyState("Alt")
         LaunchOrActivate("ahk_exe joplin.exe", ScoopPath . "\apps\joplin\current\Joplin.exe")
@@ -93,7 +93,7 @@ CapsLock & 2:: LaunchOrActivate("ahk_exe chrome.exe", "C:\Program Files\Google\C
 CapsLock & 3:: LaunchOrActivate("ahk_exe Cursor.exe", AppDataLocal . "\Programs\Cursor\Cursor.exe")
 CapsLock & 4:: LaunchOrActivate("ahk_exe windsurf.exe", AppDataLocal . "\Programs\Windsurf\Windsurf.exe")
 CapsLock & 5:: LaunchOrActivate("ahk_exe trae.exe", AppDataLocal . "\Programs\trae\trae.exe")
-CapsLock & 6:: LaunchOrActivate("ahk_exe tabby.exe", ScoopPath . "\apps\tabby\current\tabby.exe") 
+CapsLock & 6:: LaunchOrActivate("ahk_exe tabby.exe", ScoopPath . "\apps\tabby\current\tabby.exe")
 CapsLock & 7:: LaunchOrActivate("ahk_exe quark.exe", AppDataLocal . "\Programs\Quark\quark.exe")
 CapsLock & 8:: LaunchOrActivate("ahk_exe Positron.exe", AppDataLocal . "\Programs\Positron\Positron.exe")
 CapsLock & 9:: LaunchOrActivate("ahk_exe code.exe", AppDataLocal . "\Programs\Microsoft VS Code\Code.exe")
@@ -194,11 +194,8 @@ CapsLock & j up:: SendDirKey("Down", "PgDn", "Up")
 ; ------------------------------------
 ; Input Method Control
 ; ------------------------------------
-CapsLock & Enter:: Send("^#{Space}")
-CapsLock & Shift:: Send("^#{Space}")
-Shift & CapsLock:: Send("^#{Space}")
-CapsLock & BackSpace:: Send("#{Space}")
-
+CapsLock & Shift:: Send("#{Space}")
+Shift & CapsLock:: Send("#{Space}")
 SwitchInputMethod() {
     WinID := WinGetID("A")
     ThreadID := DllCall("GetWindowThreadProcessId", "Ptr", WinID, "Ptr", 0)
@@ -209,7 +206,8 @@ SwitchInputMethod() {
     else
         Send("^{Space}") ; Switch to English
 }
-CapsLock:: SwitchInputMethod()
+CapsLock & Enter:: SwitchInputMethod()
+CapsLock:: Send("^#{Space}")
 ; ------------------------------------
 ; Remap side mouse buttons to middle button for xtop.exe
 ; ------------------------------------
