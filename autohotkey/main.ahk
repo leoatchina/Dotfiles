@@ -95,17 +95,29 @@ CapsLock & 4:: LaunchOrActivate("ahk_exe windsurf.exe", AppDataLocal . "\Program
 CapsLock & 5:: LaunchOrActivate("ahk_exe trae.exe", AppDataLocal . "\Programs\trae\trae.exe")
 CapsLock & 6:: LaunchOrActivate("ahk_exe tabby.exe", ScoopPath . "\apps\tabby\current\tabby.exe")
 CapsLock & 7:: LaunchOrActivate("ahk_exe quark.exe", AppDataLocal . "\Programs\Quark\quark.exe")
-CapsLock & 8:: LaunchOrActivate("ahk_exe Positron.exe", AppDataLocal . "\Programs\Positron\Positron.exe")
-CapsLock & 9:: LaunchOrActivate("ahk_exe code.exe", AppDataLocal . "\Programs\Microsoft VS Code\Code.exe")
-CapsLock & 0:: LaunchOrActivate("ahk_exe zed.exe", ScoopPath . "\apps\zed\current\zed.exe")
+CapsLock & 8:: LaunchOrActivate("ahk_exe zed.exe", ScoopPath . "\apps\zed\current\zed.exe")
+CapsLock & 9:: LaunchOrActivate("ahk_exe Positron.exe", AppDataLocal . "\Programs\Positron\Positron.exe")
+CapsLock & 0:: LaunchOrActivate("ahk_exe code.exe", AppDataLocal . "\Programs\Microsoft VS Code\Code.exe")
 CapsLock & -:: LaunchOrActivate("ahk_exe nvim-qt.exe", ScoopPath . "\apps\neovim-qt\current\bin\nvim-qt.exe")
 CapsLock & =:: LaunchOrActivate("ahk_exe neovide.exe", ScoopPath . "\apps\neovide\current\neovide.exe")
 
+; Utools intergration 
+CapsLock & /:: Send("^#+!f")
+; Clipboard
+CapsLock & v:: {
+    if GetKeyState("Alt") {
+        Send("^#+!.")
+    } else {
+        Send("^#!.")
+    }
+}
+CapsLock & Ctrl:: Send("^#!.")
+Ctrl & CapsLock:: Send("^#!.")
 ; ------------------------------------
 ; General Hotkeys
 ; ------------------------------------
-; Utools search
-CapsLock & /:: Send("^#!f")
+; Capture
+CapsLock & c:: Send("#+s")
 
 ; Tab navigation
 CapsLock & n:: Send("^{Tab}")
@@ -118,16 +130,11 @@ CapsLock & m:: {
     else
         Send("{Volume_Mute}")
 }
-CapsLock & ]:: Send("{Volume_Up}")
 CapsLock & [:: Send("{Volume_Down}")
+CapsLock & ]:: Send("{Volume_Up}")
 
-; Clipboard
-LCtrl & CapsLock:: Send("#!c")
-CapsLock & LCtrl:: Send("#!c")
-CapsLock & y:: Send("^#!c")
-CapsLock & v:: Send("+{Ins}")
-CapsLock & c:: Send("^{Ins}")
-
+CapsLock & y:: Send("^{Ins}")
+CapsLock & Tab:: Send("!{Tab}")
 ; Remove line breaks from clipboard
 CapsLock & u:: {
     if GetKeyState("Alt") {
