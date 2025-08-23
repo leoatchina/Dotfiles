@@ -14,14 +14,31 @@ oh-my-posh init pwsh | Invoke-Expression
 
 # PSReadLine
 Import-Module PSReadLine
-Set-PSReadLineOption -EditMode Emacs
-Set-PSReadLineOption -BellStyle None
+
 Set-PSReadLineKeyHandler -Chord 'Ctrl+d' -Function DeleteChar
 
-# Only set PredictionSource if PSReadLine version supports it (2.2.0+)
+# Basic PSReadLine options (compatible with all versions)
+Set-PSReadLineOption -EditMode Emacs `
+                     -BellStyle None `
+                     -ShowToolTips `
+                     -HistoryNoDuplicates `
+                     -Colors @{ # 设置不同元素的颜色，如命令、参数、运算符、变量、字符串、数字、成员、类型、函数和默认颜色
+                        Command = 'Cyan'
+                        Parameter = 'Yellow'
+                        Operator = 'Red'
+                        Variable = 'Green'
+                        String = 'Magenta'
+                        Number = 'White'
+                        Member = 'DarkYellow'
+                        Type = 'DarkCyan'
+                        Function = 'Blue'
+                        Default = 'Gray'
+                     }
+
+# Only set PredictionSource and PredictionViewStyle if PSReadLine version supports it (2.2.0+)
 if ($PSVersionTable.PSVersion.Major -ge 7 -or 
     (Get-Module PSReadLine).Version -ge [Version]"2.2.0") {
-    Set-PSReadLineOption -PredictionSource History
+    Set-PSReadLineOption -PredictionSource History -PredictionViewStyle ListView
 }
 # fzf
 Import-Module PSFzf
