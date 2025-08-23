@@ -60,7 +60,7 @@ if ($PSVersionTable.PSVersion.Major -ge 7 -or
 }
 # fzf
 Import-Module PSFzf
-Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory 'Ctrl+r'
+Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory 'Ctrl+r' -FzfOptions '--tac'
 # Utilities
 function which ($command) {
     Get-Command -Name $command -ErrorAction SilentlyContinue |
