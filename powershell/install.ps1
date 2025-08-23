@@ -6,3 +6,4 @@ Install-Module posh-git -Scope CurrentUser -Force
 Install-Module -Name Terminal-Icons -Repository PSGallery -Scope CurrentUser -Force
 Install-Module -Name z -Force -Scope CurrentUser
 Install-Module -Name PSReadLine -AllowPrerelease -Scope CurrentUser -Force -SkipPublishercheck
+Install-Module -Name PSFzf -Scope CurrentUser -Force 
