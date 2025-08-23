@@ -9,9 +9,25 @@ Set-Alias grep findstr
 Import-Module posh-git
 Import-Module Terminal-Icons
 Import-Module scoop-completion
-# Initialize oh-my-posh with default theme
-$env:POSH_THEME = if ($env:POSH_THEME) { $env:POSH_THEME } else { "$env:POSH_THEMES_PATH\atomic.omp.json" }
-oh-my-posh init pwsh --config $env:POSH_THEME | Invoke-Expression
+
+# Check PSReadLine version compatibility before initializing oh-my-posh
+$psReadLineVersion = (Get-Module PSReadLine).Version
+$requiredVersion = [Version]"2.2.0"
+
+if ($psReadLineVersion -ge $requiredVersion) {
+    # Initialize oh-my-posh with default theme
+    $env:POSH_THEME = if ($env:POSH_THEME) { $env:POSH_THEME } else { "$env:POSH_THEMES_PATH\atomic.omp.json" }
+    try {
+        oh-my-posh init pwsh --config $env:POSH_THEME | Invoke-Expression
+    } catch {
+        Write-Warning "Failed to initialize oh-my-posh: $($_.Exception.Message)"
+        Write-Host "Please update PSReadLine: Install-Module PSReadLine -Force -AllowPrerelease" -ForegroundColor Yellow
+    }
+} else {
+    Write-Warning "PSReadLine version $psReadLineVersion is too old for oh-my-posh. Required: $requiredVersion or higher."
+    Write-Host "Please update PSReadLine: Install-Module PSReadLine -Force -AllowPrerelease" -ForegroundColor Yellow
+    Write-Host "Current session will use basic prompt." -ForegroundColor Cyan
+}
 
 
 # PSReadLine
