@@ -12,7 +12,6 @@ Import-Module scoop-completion
 oh-my-posh init pwsh | Invoke-Expression
 
 
-
 # PSReadLine
 Import-Module PSReadLine
 Set-PSReadLineOption -EditMode Emacs

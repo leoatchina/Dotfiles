@@ -1,0 +1,23 @@
+[window]
+padding = { x = 2, y = 2 }
+option_as_alt = 'Both'
+
+[font]
+size = 12
+
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+
+# Windows shell configuration - use cmd.exe as default
+[terminal.shell]
+program = "cmd.exe"
+args = ["/k"]
