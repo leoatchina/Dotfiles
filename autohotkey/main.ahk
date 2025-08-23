@@ -79,6 +79,13 @@ CapsLock & e:: {
         LaunchOrActivate("ahk_exe Heynote.exe",  ScoopPath . "\apps\Heynote\current\Heynote.exe")
 }
 
+CapsLock & z:: {
+    if GetKeyState("Alt")
+        LaunchOrActivate("ahk_exe zeal.exe", ScoopPath . "\apps\zeal\current\zeal.exe")
+    else
+        LaunchOrActivate("ahk_exe zotero.exe", ScoopPath . "\apps\zotero\current\zotero.exe")
+}
+
 ; Browsers & Editors
 CapsLock & b:: LaunchOrActivate("ahk_exe zen.exe", "C:\Program Files\Zen Browser\zen.exe")
 CapsLock & 1:: LaunchOrActivate("ahk_exe msedge.exe", "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe")
@@ -187,6 +194,10 @@ CapsLock & j up:: SendDirKey("Down", "PgDn", "Up")
 ; ------------------------------------
 ; Input Method Control
 ; ------------------------------------
+CapsLock & Enter:: Send("^#{Space}")
+CapsLock & Shift:: Send("^#{Space}")
+Shift & CapsLock:: Send("^#{Space}")
+CapsLock & BackSpace:: Send("#{Space}")
 
 SwitchInputMethod() {
     WinID := WinGetID("A")
@@ -198,22 +209,7 @@ SwitchInputMethod() {
     else
         Send("^{Space}") ; Switch to English
 }
-
-CapsLock & RShift:: SwitchInputMethod()
-RShift & CapsLock:: SwitchInputMethod()
-CapsLock & Enter:: Send("^#{Space}")
-CapsLock & LShift:: Send("^#{Space}")
-LShift & CapsLock:: Send("^#{Space}")
-CapsLock & BackSpace:: Send("#{Space}")
-
-CapsLock & z:: {
-    if GetKeyState("Alt")
-        LaunchOrActivate("ahk_exe zotero.exe", ScoopPath . "\apps\zotero\current\zotero.exe")
-    else
-        Send("^#{Space}")
-}
-
-
+CapsLock:: SwitchInputMethod()
 ; ------------------------------------
 ; Remap side mouse buttons to middle button for xtop.exe
 ; ------------------------------------
