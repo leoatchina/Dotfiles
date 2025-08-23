@@ -205,10 +205,14 @@ CapsLock & Shift:: Send("#{Space}")
 Shift & CapsLock:: Send("#{Space}")
 CapsLock & BackSpace:: Send("#{Space}")
 CapsLock & Space:: Send("^#{Space}")
-SwitchChsEng() {
+GetCurrentInputLocaleID() {
     WinID := WinGetID("A")
     ThreadID := DllCall("GetWindowThreadProcessId", "Ptr", WinID, "Ptr", 0)
-    InputLocaleID := DllCall("GetKeyboardLayout", "UInt", ThreadID, "UInt")
+    return DllCall("GetKeyboardLayout", "UInt", ThreadID, "UInt")
+}
+
+SwitchChsEng() {
+    InputLocaleID := GetCurrentInputLocaleID()
     ; 0x04090409 is English (US)
     if (InputLocaleID == 0x04090409) ; 67699721 in decimal
         Send("^#{Space}") ; Switch to Chinese
@@ -216,10 +220,9 @@ SwitchChsEng() {
         Send("^{Space}") ; Switch to English
 }
 CapsLock & Enter:: SwitchChsEng()
+
 ForceSwitchToEnglish() {
-    WinID := WinGetID("A")
-    ThreadID := DllCall("GetWindowThreadProcessId", "Ptr", WinID, "Ptr", 0)
-    InputLocaleID := DllCall("GetKeyboardLayout", "UInt", ThreadID, "UInt")
+    InputLocaleID := GetCurrentInputLocaleID()
     ; 0x04090409 is English (US)
     if (InputLocaleID != 0x04090409) {
         Send("^#{Space}") ; Switch to English
