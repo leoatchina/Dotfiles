@@ -203,7 +203,9 @@ CapsLock & j up:: SendDirKey("Down", "PgDn", "Up")
 ; ------------------------------------
 CapsLock & Shift:: Send("#{Space}")
 Shift & CapsLock:: Send("#{Space}")
-SwitchInputMethod() {
+CapsLock & BackSpace:: Send("#{Space}")
+CapsLock & Space:: Send("^#{Space}")
+SwitchChsEng() {
     WinID := WinGetID("A")
     ThreadID := DllCall("GetWindowThreadProcessId", "Ptr", WinID, "Ptr", 0)
     InputLocaleID := DllCall("GetKeyboardLayout", "UInt", ThreadID, "UInt")
@@ -213,8 +215,17 @@ SwitchInputMethod() {
     else
         Send("^{Space}") ; Switch to English
 }
-CapsLock & Enter:: SwitchInputMethod()
-CapsLock:: Send("^#{Space}")
+CapsLock & Enter:: SwitchChsEng()
+ForceSwitchToEnglish() {
+    WinID := WinGetID("A")
+    ThreadID := DllCall("GetWindowThreadProcessId", "Ptr", WinID, "Ptr", 0)
+    InputLocaleID := DllCall("GetKeyboardLayout", "UInt", ThreadID, "UInt")
+    ; 0x04090409 is English (US)
+    if (InputLocaleID != 0x04090409) {
+        Send("^#{Space}") ; Switch to English
+    }
+}
+CapsLock:: ForceSwitchToEnglish()
 ; ------------------------------------
 ; Remap side mouse buttons to middle button for xtop.exe
 ; ------------------------------------
