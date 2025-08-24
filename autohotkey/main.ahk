@@ -8,7 +8,7 @@ SetCapsLockState("AlwaysOff")
 ; ------------------------------------
 ; Global Variables - Detect Scoop Path
 ; ------------------------------------
-global ScoopPath,UserProfile,AppDataLocal
+global ScoopPath,UserProfile,AppDataLocal,CurrentMonitor
 UserProfile := EnvGet("USERPROFILE")
 AppDataLocal := UserProfile . "\AppData\Local"
 if DirExist("C:\Scoop"){
@@ -111,8 +111,10 @@ CapsLock & v:: {
         Send("^#!.")
     }
 }
+; Monitor focus switching
 CapsLock & Ctrl:: Send("^#!.")
 Ctrl & CapsLock:: Send("^#!.")
+
 ; ------------------------------------
 ; General Hotkeys
 ; ------------------------------------
@@ -201,8 +203,6 @@ CapsLock & j up:: SendDirKey("Down", "PgDn", "Up")
 ; ------------------------------------
 ; Input Method Control
 ; ------------------------------------
-CapsLock & Shift:: Send("#{Space}")
-Shift & CapsLock:: Send("#{Space}")
 CapsLock & BackSpace:: Send("#{Space}")
 CapsLock & Space:: Send("^#{Space}")
 GetCurrentInputLocaleID() {
@@ -230,10 +230,29 @@ ForceSwitchToEnglish() {
 }
 CapsLock:: ForceSwitchToEnglish()
 ; ------------------------------------
+; Monitor Focus Switching Function
+; ------------------------------------
+; Window movement between monitors
+CapsLock & Left:: {
+    if GetKeyState("Shift")
+        Send("#+{Left}")
+}
+CapsLock & Right:: {
+    if GetKeyState("Shift")
+        Send("#+{Right}")
+}
+CapsLock & Up:: {
+    if GetKeyState("Shift")
+        Send("#+{Up}")
+}
+CapsLock & Down:: {
+    if GetKeyState("Shift")
+        Send("#+{Down}")
+}
+; ------------------------------------
 ; Remap side mouse buttons to middle button for xtop.exe
 ; ------------------------------------
 #HotIf WinActive("ahk_exe xtop.exe")
 XButton1::MButton
 XButton2::MButton
 #HotIf
-
