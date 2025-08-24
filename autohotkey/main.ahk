@@ -201,10 +201,19 @@ CapsLock & s up:: SendDirKey("Down", "PgDn", "Up")
 CapsLock & j up:: SendDirKey("Down", "PgDn", "Up")
 
 ; ------------------------------------
+; Window movement between monitors
+; ------------------------------------
+CapsLock & Left:: Send("#+{Left}")
+CapsLock & Right:: Send("#+{Right}")
+
+; ------------------------------------
 ; Input Method Control
 ; ------------------------------------
 CapsLock & BackSpace:: Send("#{Space}")
+CapsLock & Shift:: Send("#{Space}")
+Shift & CapsLock:: Send("#{Space}")
 CapsLock & Space:: Send("^#{Space}")
+
 GetCurrentInputLocaleID() {
     WinID := WinGetID("A")
     ThreadID := DllCall("GetWindowThreadProcessId", "Ptr", WinID, "Ptr", 0)
@@ -229,26 +238,6 @@ ForceSwitchToEnglish() {
     }
 }
 CapsLock:: ForceSwitchToEnglish()
-; ------------------------------------
-; Monitor Focus Switching Function
-; ------------------------------------
-; Window movement between monitors
-CapsLock & Left:: {
-    if GetKeyState("Shift")
-        Send("#+{Left}")
-}
-CapsLock & Right:: {
-    if GetKeyState("Shift")
-        Send("#+{Right}")
-}
-CapsLock & Up:: {
-    if GetKeyState("Shift")
-        Send("#+{Up}")
-}
-CapsLock & Down:: {
-    if GetKeyState("Shift")
-        Send("#+{Down}")
-}
 ; ------------------------------------
 ; Remap side mouse buttons to middle button for xtop.exe
 ; ------------------------------------
