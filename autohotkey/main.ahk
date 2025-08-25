@@ -165,6 +165,8 @@ CapsLock & q:: Send("{Esc}")
 #f:: Send("^{F1}")
 #b:: Send("!{F1}")
 #u:: Send("!{F2}")
+CapsLock & F1:: Send("^{F1}")
+CapsLock & F2:: Send("!{F1}")
 
 ; ------------------------------------
 ; Directional Keys (Vim & WASD style)
