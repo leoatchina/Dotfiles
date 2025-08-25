@@ -8,7 +8,7 @@ SetCapsLockState("AlwaysOff")
 ; ------------------------------------
 ; Global Variables - Detect Scoop Path
 ; ------------------------------------
-global ScoopPath,UserProfile,AppDataLocal,CurrentMonitor
+global ScoopPath,UserProfile,AppDataLocal
 UserProfile := EnvGet("USERPROFILE")
 AppDataLocal := UserProfile . "\AppData\Local"
 if DirExist("C:\Scoop"){
@@ -205,11 +205,12 @@ CapsLock & j up:: SendDirKey("Down", "PgDn", "Up")
 ; ------------------------------------
 CapsLock & Left:: Send("#+{Left}")
 CapsLock & Right:: Send("#+{Right}")
+CapsLock & Up:: Send("#{Up}")
+CapsLock & Down:: Send("#{Down}")
 
 ; ------------------------------------
 ; Input Method Control
 ; ------------------------------------
-CapsLock & BackSpace:: Send("#{Space}")
 CapsLock & Shift:: Send("#{Space}")
 Shift & CapsLock:: Send("#{Space}")
 CapsLock & Space:: Send("^#{Space}")
