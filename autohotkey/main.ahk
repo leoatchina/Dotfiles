@@ -136,7 +136,14 @@ CapsLock & [:: Send("{Volume_Down}")
 CapsLock & ]:: Send("{Volume_Up}")
 
 CapsLock & y:: Send("^{Ins}")
-CapsLock & Tab:: Send("!{Tab}")
+; ------------------------------------
+; Horizontal Scrolling with CapsLock + Wheel
+; ------------------------------------
+; CapsLock + WheelDown = Right scroll
+CapsLock & WheelDown:: Send("{WheelRight}")
+; CapsLock + WheelUp = Left scroll
+CapsLock & WheelUp:: Send("{WheelLeft}")
+
 ; Remove line breaks from clipboard
 CapsLock & u:: {
     if GetKeyState("Alt") {
