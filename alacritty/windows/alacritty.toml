@@ -3,6 +3,9 @@ padding = { x = 2, y = 2 }
 option_as_alt = 'Both'
 startup_mode = "Maximized"
 
+[cursor]
+style = { shape = "Block", blinking = "On" }
+
 [font]
 size = 12
 
