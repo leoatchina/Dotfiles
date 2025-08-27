@@ -67,9 +67,9 @@ CapsLock & t:: {
 ; note softwares
 CapsLock & o:: {
     if GetKeyState("Alt")
-        LaunchOrActivate("ahk_exe joplin.exe", ScoopPath . "\apps\joplin\current\Joplin.exe")
-    else
         LaunchOrActivate("ahk_exe obsidian.exe", ScoopPath . "\apps\obsidian\current\Obsidian.exe")
+    else
+        LaunchOrActivate("ahk_exe joplin.exe", ScoopPath . "\apps\joplin\current\Joplin.exe")
 }
 
 CapsLock & e:: {
