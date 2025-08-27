@@ -86,6 +86,15 @@ CapsLock & z:: {
         LaunchOrActivate("ahk_exe zed.exe", ScoopPath . "\apps\zed\current\zed.exe")
 }
 
+; zen && firefox
+CapsLock & b:: {
+    if GetKeyState("Alt") {
+        LaunchOrActivate("ahk_exe firefox.exe", ScoopPath . "\apps\firefox\current\firefox.exe")
+    } else {
+        LaunchOrActivate("ahk_exe zen.exe", "C:\Program Files\Zen Browser\zen.exe")
+    }
+}
+
 ; Browsers & Editors
 CapsLock & 1:: LaunchOrActivate("ahk_exe msedge.exe", "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe")
 CapsLock & 2:: LaunchOrActivate("ahk_exe chrome.exe", "C:\Program Files\Google\Chrome\Application\chrome.exe")
@@ -124,15 +133,9 @@ CapsLock & v:: {
         Send("^#!.")
     }
 }
-; zen && firefox
-CapsLock & b:: {
-    if GetKeyState("Alt") {
-        LaunchOrActivate("ahk_exe firefox.exe", ScoopPath . "\apps\firefox\current\firefox.exe")
-    } else {
-        LaunchOrActivate("ahk_exe zen.exe", "C:\Program Files\Zen Browser\zen.exe")
-    }
-}
 
+CapsLock & Ctrl:: Send("^#!.")
+Ctrl & CapsLock:: Send("^#!.")
 ; ------------------------------------
 ; General Hotkeys
 ; ------------------------------------
