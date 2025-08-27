@@ -100,7 +100,7 @@ CapsLock & 0:: LaunchOrActivate("ahk_exe code.exe", AppDataLocal . "\Programs\Mi
 CapsLock & -:: LaunchOrActivate("ahk_exe nvim-qt.exe", ScoopPath . "\apps\neovim-qt\current\bin\nvim-qt.exe")
 CapsLock & =:: LaunchOrActivate("ahk_exe neovide.exe", ScoopPath . "\apps\neovide\current\neovide.exe")
 
-; Utools intergration 
+; Utools intergration
 CapsLock & /:: Send("^#+!f")
 
 ; Clipboard
