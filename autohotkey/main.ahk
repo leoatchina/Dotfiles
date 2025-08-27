@@ -119,9 +119,6 @@ CapsLock & b:: {
         LaunchOrActivate("ahk_exe zen.exe", "C:\Program Files\Zen Browser\zen.exe")
     }
 }
-; Monitor focus switching
-CapsLock & Ctrl:: Send("^#!.")
-Ctrl & CapsLock:: Send("^#!.")
 
 ; ------------------------------------
 ; General Hotkeys
@@ -132,6 +129,7 @@ CapsLock & c:: Send("#+s")
 ; Tab navigation
 CapsLock & n:: Send("^{Tab}")
 CapsLock & p:: Send("^+{Tab}")
+CapsLock & Tab:: Send("!{Tab}")
 
 ; Volume control
 CapsLock & m:: {
