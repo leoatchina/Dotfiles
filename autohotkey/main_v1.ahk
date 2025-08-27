@@ -1,4 +1,4 @@
-; #是win, !是alt, ^是ctrl, +是shift
+; ^是ctrl, #是win, !是alt, +是shift
 #Persistent
 SetCapsLockState, AlwaysOff
 ; ------------------------------------

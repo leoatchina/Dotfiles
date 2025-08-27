@@ -103,7 +103,20 @@ CapsLock & =:: LaunchOrActivate("ahk_exe neovide.exe", ScoopPath . "\apps\neovid
 ; Utools intergration
 CapsLock & /:: Send("^#+!f")
 
+; -------------------
 ; Clipboard
+; -------------------
+CapsLock & y:: Send("^{Ins}")
+; Remove line breaks from clipboard
+CapsLock & u:: {
+    if GetKeyState("Alt") {
+        A_Clipboard := RegExReplace(A_Clipboard, "(\S.*?)\R(.*?\S)", "$1 $2")
+    } else {
+        A_Clipboard := A_Clipboard ; Force update
+    }
+    ClipWait(0.1)
+}
+
 CapsLock & v:: {
     if GetKeyState("Alt") {
         Send("^#+!.")
@@ -123,8 +136,6 @@ CapsLock & b:: {
 ; ------------------------------------
 ; General Hotkeys
 ; ------------------------------------
-; Capture
-CapsLock & c:: Send("#+s")
 
 ; Tab navigation
 CapsLock & n:: Send("^{Tab}")
@@ -141,7 +152,6 @@ CapsLock & m:: {
 CapsLock & [:: Send("{Volume_Down}")
 CapsLock & ]:: Send("{Volume_Up}")
 
-CapsLock & y:: Send("^{Ins}")
 ; ------------------------------------
 ; Horizontal Scrolling with CapsLock + Wheel
 ; ------------------------------------
@@ -149,16 +159,6 @@ CapsLock & y:: Send("^{Ins}")
 CapsLock & WheelDown:: Send("{WheelRight}")
 ; CapsLock + WheelUp = Left scroll
 CapsLock & WheelUp:: Send("{WheelLeft}")
-
-; Remove line breaks from clipboard
-CapsLock & u:: {
-    if GetKeyState("Alt") {
-        A_Clipboard := RegExReplace(A_Clipboard, "(\S.*?)\R(.*?\S)", "$1 $2")
-    } else {
-        A_Clipboard := A_Clipboard ; Force update
-    }
-    ClipWait(0.1)
-}
 
 ; Delete / Backspace
 CapsLock & x:: {
@@ -174,7 +174,15 @@ CapsLock & q:: Send("{Esc}")
 ; Disable system hotkeys
 ^<#d:: Send("{Esc}")
 
+; ------------------------------------
 ; Screen shot
+; ------------------------------------
+CapsLock & c:: {
+    if GetKeyState("Alt")
+        Send("#!+s")
+    else
+        Send("#+s")
+}
 #f:: Send("^{F1}")
 #b:: Send("!{F1}")
 #u:: Send("!{F2}")
