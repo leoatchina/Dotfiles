@@ -87,7 +87,6 @@ CapsLock & z:: {
 }
 
 ; Browsers & Editors
-CapsLock & b:: LaunchOrActivate("ahk_exe zen.exe", "C:\Program Files\Zen Browser\zen.exe")
 CapsLock & 1:: LaunchOrActivate("ahk_exe msedge.exe", "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe")
 CapsLock & 2:: LaunchOrActivate("ahk_exe chrome.exe", "C:\Program Files\Google\Chrome\Application\chrome.exe")
 CapsLock & 3:: LaunchOrActivate("ahk_exe Cursor.exe", AppDataLocal . "\Programs\Cursor\Cursor.exe")
@@ -103,12 +102,21 @@ CapsLock & =:: LaunchOrActivate("ahk_exe neovide.exe", ScoopPath . "\apps\neovid
 
 ; Utools intergration 
 CapsLock & /:: Send("^#+!f")
+
 ; Clipboard
 CapsLock & v:: {
     if GetKeyState("Alt") {
         Send("^#+!.")
     } else {
         Send("^#!.")
+    }
+}
+; zen && firefox
+CapsLock & b:: {
+    if GetKeyState("Alt") {
+        LaunchOrActivate("ahk_exe firefox.exe", ScoopPath . "\apps\firefox\current\firefox.exe")
+    } else {
+        LaunchOrActivate("ahk_exe zen.exe", "C:\Program Files\Zen Browser\zen.exe")
     }
 }
 ; Monitor focus switching
