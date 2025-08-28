@@ -42,6 +42,55 @@ LaunchOrActivate(Title, paths*) {
         }
     }
 }
+; ------------------------------------
+; General Hotkeys
+; ------------------------------------
+; ESC
+CapsLock & q:: Send("{Esc}")
+
+; Disable system hotkeys
+^<#d:: Send("{Esc}")
+
+
+; Tab navigation
+CapsLock & n:: {
+    if GetKeyState("Alt")
+        LaunchOrActivate("notepad--.exe", ScoopPath . "\apps\notepad--\current\Notepad--.exe")
+    else
+        Send("^{Tab}")
+}
+
+CapsLock & p:: {
+    if GetKeyState("Alt")
+        LaunchOrActivate("PotPlayerMini.exe", ScoopPath . "\apps\potplaher\current\PotPlayerMini.exe")
+    else
+        Send("^+{Tab}")
+}
+
+CapsLock & Tab:: Send("!{Tab}")
+
+; Volume control
+CapsLock & m:: {
+    if GetKeyState("Alt")
+        LaunchOrActivate("Motrix.exe", AppDataLocal . "\Programs\Motrix\Motrix.exe")
+    else
+        Send("{Volume_Mute}")
+}
+CapsLock & [:: Send("{Volume_Down}")
+CapsLock & ]:: Send("{Volume_Up}")
+
+; CapsLock + WheelDown = Right scroll
+CapsLock & WheelDown:: Send("{WheelRight}")
+; CapsLock + WheelUp = Left scroll
+CapsLock & WheelUp:: Send("{WheelLeft}")
+
+; Delete / Backspace
+CapsLock & x:: {
+    if GetKeyState("Alt")
+        Send("{Backspace}")
+    else
+        Send("{Del}")
+}
 
 ; ------------------------------------
 ; Application Hotkeys
@@ -91,6 +140,14 @@ CapsLock & z:: {
 }
 
 ; Browsers & Editors
+CapsLock & b:: {
+    if GetKeyState("Alt") {
+        LaunchOrActivate("ahk_exe firefox.exe", ScoopPath . "\apps\firefox\current\firefox.exe")
+    } else {
+        LaunchOrActivate("ahk_exe zen.exe", "C:\Program Files\Zen Browser\zen.exe")
+    }
+}
+
 CapsLock & 1:: LaunchOrActivate("msedge.exe", "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe")
 CapsLock & 2:: LaunchOrActivate("chrome.exe", "C:\Program Files\Google\Chrome\Application\chrome.exe")
 CapsLock & 3:: LaunchOrActivate("Cursor.exe", AppDataLocal . "\Programs\Cursor\Cursor.exe")
@@ -104,68 +161,16 @@ CapsLock & 0:: LaunchOrActivate("code.exe", AppDataLocal . "\Programs\Microsoft 
 CapsLock & -:: LaunchOrActivate("nvim-qt.exe", ScoopPath . "\apps\neovim-qt\current\bin\nvim-qt.exe")
 CapsLock & =:: LaunchOrActivate("neovide.exe", ScoopPath . "\apps\neovide\current\neovide.exe")
 
+; -------------------
+; search 
+; -------------------
 ; Utools intergration
 CapsLock & /:: Send("^#+!f")
 
+; -------------------
 ; Clipboard
-CapsLock & v:: {
-    if GetKeyState("Alt") {
-        Send("^#+!.")
-    } else {
-        Send("^#!.")
-    }
-}
-; zen && firefox
-CapsLock & b:: {
-    if GetKeyState("Alt") {
-        LaunchOrActivate("firefox.exe", ScoopPath . "\apps\firefox\current\firefox.exe")
-    } else {
-        LaunchOrActivate("zen.exe", "C:\Program Files\Zen Browser\zen.exe")
-    }
-}
-
-; ------------------------------------
-; General Hotkeys
-; ------------------------------------
-; Capture
-CapsLock & c:: Send("#+s")
-
-; Tab navigation
-CapsLock & n:: {
-    if GetKeyState("Alt")
-        LaunchOrActivate("notepad--.exe", ScoopPath . "\apps\notepad--\current\Notepad--.exe")
-    else
-        Send("^{Tab}")
-}
-
-CapsLock & p:: {
-    if GetKeyState("Alt")
-        LaunchOrActivate("PotPlayerMini.exe", ScoopPath . "\apps\potplaher\current\PotPlayerMini.exe")
-    else
-        Send("^+{Tab}")
-}
-
-CapsLock & Tab:: Send("!{Tab}")
-
-; Volume control
-CapsLock & m:: {
-    if GetKeyState("Alt")
-        LaunchOrActivate("Motrix.exe", AppDataLocal . "\Programs\Motrix\Motrix.exe")
-    else
-        Send("{Volume_Mute}")
-}
-CapsLock & [:: Send("{Volume_Down}")
-CapsLock & ]:: Send("{Volume_Up}")
-
+; -------------------
 CapsLock & y:: Send("^{Ins}")
-; ------------------------------------
-; Horizontal Scrolling with CapsLock + Wheel
-; ------------------------------------
-; CapsLock + WheelDown = Right scroll
-CapsLock & WheelDown:: Send("{WheelRight}")
-; CapsLock + WheelUp = Left scroll
-CapsLock & WheelUp:: Send("{WheelLeft}")
-
 ; Remove line breaks from clipboard
 CapsLock & u:: {
     if GetKeyState("Alt") {
@@ -175,22 +180,28 @@ CapsLock & u:: {
     }
     ClipWait(0.1)
 }
-
-; Delete / Backspace
-CapsLock & x:: {
-    if GetKeyState("Alt")
-        Send("{Backspace}")
-    else
-        Send("{Del}")
+; using utools
+CapsLock & v:: {
+    if GetKeyState("Alt") {
+        Send("^#+!.")
+    } else {
+        Send("^#!.")
+    }
 }
 
-; ESC
-CapsLock & q:: Send("{Esc}")
-
-; Disable system hotkeys
-^<#d:: Send("{Esc}")
-
+CapsLock & Ctrl:: Send("^#!.")
+Ctrl & CapsLock:: Send("^#!.")
+; ------------------------------------
 ; Screen shot
+; ------------------------------------
+CapsLock & c:: {
+    ; utools
+    if GetKeyState("Alt")
+        Send("#!+s")
+    else
+        Send("#+s")
+}
+; snipaste
 #f:: Send("^{F1}")
 #b:: Send("!{F1}")
 #u:: Send("!{F2}")
