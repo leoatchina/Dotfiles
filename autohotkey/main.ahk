@@ -171,6 +171,14 @@ CapsLock & /:: Send("^#+!f")
 ; Clipboard
 ; -------------------
 CapsLock & y:: Send("^{Ins}")
+; using utools
+CapsLock & v:: {
+    if GetKeyState("Alt") {
+        Send("^#+!.")
+    } else {
+        Send("^#!.")
+    }
+}
 ; Remove line breaks from clipboard
 CapsLock & u:: {
     if GetKeyState("Alt") {
@@ -180,15 +188,6 @@ CapsLock & u:: {
     }
     ClipWait(0.1)
 }
-; using utools
-CapsLock & v:: {
-    if GetKeyState("Alt") {
-        Send("^#+!.")
-    } else {
-        Send("^#!.")
-    }
-}
-
 CapsLock & Ctrl:: Send("^#!.")
 Ctrl & CapsLock:: Send("^#!.")
 ; ------------------------------------
