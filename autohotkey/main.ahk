@@ -47,10 +47,8 @@ LaunchOrActivate(Title, paths*) {
 ; ------------------------------------
 ; ESC
 CapsLock & q:: Send("{Esc}")
-
 ; Disable system hotkeys
 ^<#d:: Send("{Esc}")
-
 
 ; Tab navigation
 CapsLock & n:: {
@@ -67,7 +65,8 @@ CapsLock & p:: {
         Send("^+{Tab}")
 }
 
-CapsLock & Tab:: Send("!{Tab}")
+CapsLock & Tab:: Send("^{Tab}")
+CapsLock & LShift:: Send("^+{Tab}")
 
 ; Volume control
 CapsLock & m:: {
@@ -91,7 +90,6 @@ CapsLock & x:: {
     else
         Send("{Del}")
 }
-
 ; ------------------------------------
 ; Application Hotkeys
 ; ------------------------------------
@@ -162,7 +160,7 @@ CapsLock & -:: LaunchOrActivate("nvim-qt.exe", ScoopPath . "\apps\neovim-qt\curr
 CapsLock & =:: LaunchOrActivate("neovide.exe", ScoopPath . "\apps\neovide\current\neovide.exe")
 
 ; -------------------
-; search 
+; search
 ; -------------------
 ; Utools intergration
 CapsLock & /:: Send("^#+!f")
@@ -252,8 +250,9 @@ CapsLock & Down:: Send("#{Down}")
 ; ------------------------------------
 ; Input Method Control
 ; ------------------------------------
-CapsLock & Shift:: Send("#{Space}")
 Shift & CapsLock:: Send("#{Space}")
+CapsLock & RShift:: Send("#{Space}")
+CapsLock & Backspace:: Send("#{Space}")
 CapsLock & Space:: Send("^#{Space}")
 
 GetCurrentInputLocaleID() {
