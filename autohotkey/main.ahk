@@ -278,6 +278,7 @@ ForceSwitchToEnglish() {
     }
 }
 CapsLock:: ForceSwitchToEnglish()
+CapsLock up:: ForceSwitchToEnglish()
 ; ------------------------------------
 ; Remap side mouse buttons to middle button for xtop.exe
 ; ------------------------------------
