@@ -251,7 +251,7 @@ CapsLock & Down:: Send("#{Down}")
 ; Input Method Control
 ; ------------------------------------
 CapsLock & Backspace:: Send("#{Space}")
-CapsLock & Space:: Send("^#{Space}")
+CapsLock & Enter:: Send("^#{Space}")
 
 GetCurrentInputLocaleID() {
     WinID := WinGetID("A")
@@ -267,7 +267,7 @@ SwitchChsEng() {
     else
         Send("^{Space}") ; Switch to English
 }
-CapsLock & Enter:: SwitchChsEng()
+CapsLock & Space:: SwitchChsEng()
 
 ForceSwitchToEnglish() {
     InputLocaleID := GetCurrentInputLocaleID()
