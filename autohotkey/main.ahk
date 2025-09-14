@@ -250,7 +250,6 @@ CapsLock & Down:: Send("#{Down}")
 ; ------------------------------------
 ; Input Method Control
 ; ------------------------------------
-CapsLock & RShift:: Send("#{Space}")
 CapsLock & Backspace:: Send("#{Space}")
 CapsLock & Space:: Send("^#{Space}")
 
