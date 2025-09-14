@@ -1,4 +1,3 @@
-
 try{if(Get-Command scoop){}} catch {iex (new-object net.webclient).downloadstring('https://get.scoop.sh')}
 scoop install git
 scoop bucket add main https://gitee.com/scoop-bucket/main.git
@@ -8,8 +7,8 @@ scoop bucket add nerd-fonts https://gitee.com/scoop-bucket/nerd-fonts.git
 scoop bucket add java https://gitee.com/scoop-bucket/java.git
 scoop bucket add apps https://github.com/kkzzhizhou/scoop-apps.git
 scoop bucket add backit https://gitee.com/scoop-bucket/backit.git
-scoop bucket add diklios https://github.com/diklios5768/diklios-scoop-bucket.git
 scoop bucket add dorado https://gitee.com/scoop-bucket/dorado.git
+scoop bucket add diklios https://github.com/diklios5768/diklios-scoop-bucket
 scoop install main/7zip
 scoop install extras/alacritty
 scoop install /anytxt
