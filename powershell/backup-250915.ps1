@@ -7,16 +7,15 @@ scoop bucket add nerd-fonts https://gitee.com/scoop-bucket/nerd-fonts.git
 scoop bucket add java https://gitee.com/scoop-bucket/java.git
 scoop bucket add apps https://github.com/kkzzhizhou/scoop-apps.git
 scoop bucket add backit https://gitee.com/scoop-bucket/backit.git
+scoop bucket add diklios https://github.com/diklios5768/diklios-scoop-bucket.git
 scoop bucket add dorado https://gitee.com/scoop-bucket/dorado.git
-scoop bucket add diklios https://github.com/diklios5768/diklios-scoop-bucket
 scoop install main/7zip
 scoop install extras/alacritty
-scoop install /anytxt
 scoop install main/aria2
 scoop install extras/autohotkey
-scoop install apps/baidunetdisk
 scoop install main/bat
 scoop install main/cacert
+scoop install main/clink
 scoop install main/curl
 scoop install extras/dbeaver
 scoop install apps/dingtalk
@@ -31,11 +30,11 @@ scoop install extras/firefox
 scoop install extras/folo
 scoop install main/fzf
 scoop install main/gawk
+scoop install main/gcc
 scoop install main/git
 scoop install apps/goldendict
 scoop install main/gzip
 scoop install extras/heynote
-scoop install main/innounp
 scoop install nerd-fonts/JetBrainsMono-NF
 scoop install nerd-fonts/JetBrainsMono-NF-Mono
 scoop install nerd-fonts/jetbrainsmono-nf-propo
@@ -53,8 +52,11 @@ scoop install extras/neovim-qt
 scoop install apps/neteasemusic
 scoop install main/nodejs
 scoop install apps/notepad--
+scoop install main/nvm
 scoop install extras/obsidian
+scoop install main/oh-my-posh
 scoop install apps/openjdk17
+scoop install extras/posh-git
 scoop install apps/postman
 scoop install extras/potplayer
 scoop install main/ripgrep
@@ -72,9 +74,9 @@ scoop install extras/ventoy
 scoop install apps/vim-nightly
 scoop install apps/vncviewer
 scoop install main/wget
-scoop install /windhawk
 scoop install apps/wireshark
 scoop install versions/xmind8
+scoop install main/yarn
 scoop install main/yazi
 scoop install apps/zeal
 scoop install extras/zed
