@@ -276,8 +276,44 @@ ForceSwitchToEnglish() {
         Send("^#{Space}") ; Switch to English
     }
 }
-CapsLock:: ForceSwitchToEnglish()
-CapsLock up:: ForceSwitchToEnglish()
+; 全局变量防止CapsLock卡住
+global CapsLockPressed := false
+global CapsLockPressTime := 0
+global KeyPressThreshold := 50  ; 最小按键间隔(毫秒)
+
+CapsLock:: {
+    global CapsLockPressed, CapsLockPressTime, KeyPressThreshold
+    
+    ; 检查按键是否过快
+    currentTime := A_TickCount
+    if (CapsLockPressed && currentTime - CapsLockPressTime < KeyPressThreshold) {
+        ; 按键过快，忽略此次按下
+        return
+    }
+    
+    CapsLockPressed := true
+    CapsLockPressTime := currentTime
+    
+    ; 添加小延迟防止按键过快
+    Sleep(4)
+    ForceSwitchToEnglish()
+}
+CapsLock up:: {
+    global CapsLockPressed, CapsLockPressTime, KeyPressThreshold
+    
+    ; 检查按键是否过快
+    currentTime := A_TickCount
+    if (CapsLockPressed && currentTime - CapsLockPressTime < KeyPressThreshold) {
+        ; 按键过快，忽略此次释放
+        return
+    }
+    
+    CapsLockPressed := false
+    
+    ; 添加小延迟防止按键过快
+    Sleep(4)
+    ForceSwitchToEnglish()
+}
 ; ------------------------------------
 ; Remap side mouse buttons to middle button for xtop.exe
 ; ------------------------------------
