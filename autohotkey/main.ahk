@@ -314,43 +314,13 @@ ForceSwitchToEnglish() {
         Sleep(10)
     }
 }
-; 全局变量防止CapsLock卡住
-global CapsLockPressed := false
-global CapsLockPressTime := 0
-global KeyPressThreshold := 50  ; 最小按键间隔(毫秒)
-
-CapsLock:: {
-    global CapsLockPressed, CapsLockPressTime, KeyPressThreshold
-    
-    ; 检查按键是否过快
-    currentTime := A_TickCount
-    if (CapsLockPressed && currentTime - CapsLockPressTime < KeyPressThreshold) {
-        ; 按键过快，忽略此次按下
-        return
-    }
-    
-    CapsLockPressed := true
-    CapsLockPressTime := currentTime
-    
-    ; 添加小延迟防止按键过快
-    Sleep(4)
-    ForceSwitchToEnglish()
-}
+; 单击 CapsLock 在抬起时触发切到英文；与其它键组合时不触发
+CapsLock::Return
 CapsLock up:: {
-    global CapsLockPressed, CapsLockPressTime, KeyPressThreshold
-    
-    ; 检查按键是否过快
-    currentTime := A_TickCount
-    if (CapsLockPressed && currentTime - CapsLockPressTime < KeyPressThreshold) {
-        ; 按键过快，忽略此次释放
-        return
+    ; 仅当 CapsLock 单独按下/抬起（未与其它键组合）时才切英文
+    if (A_PriorKey = "CapsLock") {
+        ForceSwitchToEnglish()
     }
-    
-    CapsLockPressed := false
-    
-    ; 添加小延迟防止按键过快
-    Sleep(4)
-    ForceSwitchToEnglish()
 }
 ; ------------------------------------
 ; Remap side mouse buttons to middle button for xtop.exe
