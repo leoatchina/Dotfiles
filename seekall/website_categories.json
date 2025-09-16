@@ -1,0 +1,648 @@
+[
+  {
+    "id": 1,
+    "name": "AI搜索",
+    "sites": [
+      {
+        "id": 200,
+        "name": "Devv",
+        "url": "https://devv.ai/",
+        "openMethod": "simulation",
+        "jsSelect": [
+          "body div[contenteditable]"
+        ]
+      },
+      {
+        "id": 190,
+        "name": "纳米搜索",
+        "url": "https://www.n.cn/?q=%s",
+        "openMethod": "urlConcat"
+      },
+      {
+        "id": 180,
+        "name": "ThinkAny",
+        "url": "https://thinkany.so/search?q=%s",
+        "openMethod": "urlConcat",
+        "followQuestions": false,
+        "jsSelect": [
+          "body > div.w-screen.h-screen > div > div.h-full.flex-1.overflow-hidden > div > div > div > div.flex-1.max-w-3xl.mx-auto.overflow-hidden.flex.flex-col.gap-y-6.px-4 > div.flex-1 > div.fixed.bottom-0.left-0.right-0.w-full > div > div.flex-1.bg-base-100.pt-4.pb-8 > div > div.flex-1.max-w-3xl.mx-auto.px-4 > div > input",
+          "body > div > div > div.h-full.flex-1.overflow-hidden > div > div > div > div.flex-1.max-w-3xl.mx-auto.overflow-hidden.flex.flex-col.gap-y-6.px-4 > div.flex-1 > div.fixed.bottom-0.left-0.right-0.w-full > div > div.flex-1.bg-base-100.pt-4.pb-8 > div > div.flex-1.max-w-3xl.mx-auto.px-4 > div > div"
+        ]
+      },
+      {
+        "id": 170,
+        "name": "开搜AI",
+        "url": "https://kaisouai.com/?q=%s",
+        "openMethod": "urlConcat",
+        "followQuestions": true,
+        "jsSelect": [
+          "#searchBox_question_textArea"
+        ]
+      },
+      {
+        "id": 160,
+        "name": "WebPilot",
+        "url": "https://www.webpilot.ai/search?q=%s",
+        "openMethod": "urlConcat"
+      },
+      {
+        "id": 150,
+        "name": "Consensus",
+        "url": "https://consensus.app/results/?q=%s",
+        "openMethod": "urlConcat"
+      },
+      {
+        "id": 140,
+        "name": "YOU",
+        "url": "https://you.com/search?q=%s",
+        "openMethod": "urlConcat",
+        "followQuestions": true,
+        "jsSelect": [
+          "#search-input-textarea"
+        ],
+        "show": true
+      },
+      {
+        "id": 130,
+        "name": "Phind",
+        "url": "https://www.phind.com/search?q=%s",
+        "openMethod": "urlConcat",
+        "show": false
+      },
+      {
+        "id": 120,
+        "name": "SEMANTIC SCHOLAR",
+        "url": "https://www.semanticscholar.org/search?q=%s",
+        "openMethod": "urlConcat"
+      },
+      {
+        "id": 110,
+        "name": "Genspark",
+        "url": "https://www.genspark.ai/search?query=%s",
+        "openMethod": "urlConcat"
+      },
+      {
+        "id": 100,
+        "name": "知乎直答",
+        "url": "https://zhida.zhihu.com/",
+        "openMethod": "simulation",
+        "jsSelect": [
+          "#root textarea"
+        ]
+      },
+      {
+        "id": 90,
+        "name": "Felo Search",
+        "url": "https://felo.ai/?q=%s",
+        "openMethod": "urlConcat"
+      },
+      {
+        "id": 80,
+        "name": "Miku",
+        "url": "https://hellomiku.com/search?q=%s",
+        "openMethod": "urlConcat",
+        "followQuestions": true,
+        "jsSelect": [
+          "#result > div > div > div > textarea"
+        ]
+      },
+      {
+        "id": 70,
+        "name": "kFind",
+        "url": "https://kfind.kmind.com/search?q=%s",
+        "openMethod": "urlConcat",
+        "show": true
+      },
+      {
+        "id": 60,
+        "name": "Monica",
+        "url": "https://s.monica.im/search?q=%s",
+        "openMethod": "urlConcat",
+        "followQuestions": true,
+        "jsSelect": [
+          "#root > div textArea"
+        ]
+      },
+      {
+        "id": 50,
+        "name": "MERGEEK",
+        "url": "https://mergeek.com/search",
+        "openMethod": "simulation",
+        "jsSelect": [
+          "#messageContent"
+        ]
+      },
+      {
+        "id": 40,
+        "name": "Xanswer",
+        "url": "https://www.xanswer.com/",
+        "openMethod": "simulation",
+        "jsSelect": [
+          "body form textarea"
+        ],
+        "show": true
+      },
+      {
+        "id": 30,
+        "name": "Exa",
+        "url": "https://exa.ai/search?q=%s",
+        "openMethod": "urlConcat"
+      },
+      {
+        "id": 20,
+        "name": "ChatVid",
+        "url": "https://chatvid.ai/",
+        "openMethod": "simulation",
+        "jsSelect": [
+          "body > div form > div > textarea"
+        ]
+      },
+      {
+        "id": 10,
+        "name": "天工AI",
+        "url": "https://www.tiangong.cn/",
+        "openMethod": "simulation",
+        "jsSelect": [
+          "#app textArea.el-textarea__inner"
+        ]
+      }
+    ],
+    "selectedSites": [],
+    "checkAll": false,
+    "isIndeterminate": false
+  },
+  {
+    "id": 2,
+    "name": "AI对话",
+    "sites": [
+      {
+        "id": 130,
+        "name": "Claude",
+        "url": "https://claude.ai/new",
+        "openMethod": "simulation",
+        "jsSelect": [
+          "body div[contenteditable]"
+        ],
+        "isHidden": false
+      },
+      {
+        "id": 120,
+        "name": "百小应",
+        "url": "https://ying.baichuan-ai.com/chat",
+        "openMethod": "simulation",
+        "jsSelect": [
+          "body > div textarea"
+        ],
+        "isHidden": false
+      },
+      {
+        "id": 110,
+        "name": "海螺",
+        "url": "https://hailuoai.com/",
+        "openMethod": "simulation",
+        "jsSelect": [
+          "#chat-input"
+        ]
+      },
+      {
+        "id": 100,
+        "name": "豆包",
+        "url": "https://www.doubao.com/",
+        "openMethod": "simulation",
+        "jsSelect": [
+          "body > div > div div textarea.semi-input-textarea"
+        ],
+        "show": false
+      },
+      {
+        "id": 90,
+        "name": "文心一言",
+        "url": "https://yiyan.baidu.com/",
+        "openMethod": "simulation",
+        "jsSelect": [
+          "div div[contenteditable]",
+          ".VAtmtpqL"
+        ],
+        "show": true
+      },
+      {
+        "id": 10,
+        "name": "Perplexity",
+        "url": "https://www.perplexity.ai/?q=%s",
+        "openMethod": "urlConcat",
+        "followQuestions": true,
+        "jsSelect": [
+          "#__next div > div > div > div > div > div div > div > div > div > div > div > div textarea"
+        ]
+      },
+      {
+        "id": 20,
+        "name": "ChatGPT",
+        "url": "https://chatgpt.com/?q=%s",
+        "openMethod": "urlConcat",
+        "followQuestions": true,
+        "jsSelect": [
+          "#prompt-textarea",
+          "div.flex.w-full > div.flex > button[data-testid]"
+        ]
+      },
+      {
+        "id": 30,
+        "name": "Gemini",
+        "url": "https://gemini.google.com/app",
+        "openMethod": "simulation",
+        "jsSelect": [
+          "div.ql-editor",
+          "button.send-button"
+        ]
+      },
+      {
+        "id": 40,
+        "name": "DeepSeek",
+        "url": "https://chat.deepseek.com/",
+        "openMethod": "simulation",
+        "jsSelect": [
+          "#chat-input"
+        ],
+        "version": "1.6.2"
+      },
+      {
+        "id": 50,
+        "name": "腾讯元宝",
+        "url": "https://yuanbao.tencent.com/chat/naQivTmsDa",
+        "openMethod": "simulation",
+        "jsSelect": [
+          "body div div[contenteditable]"
+        ]
+      },
+      {
+        "id": 60,
+        "name": "Kimi",
+        "url": "https://www.kimi.com/",
+        "openMethod": "simulation",
+        "jsSelect": [
+          ".chat-input-editor-container .chat-input-editor",
+          ".send-button-container .send-button"
+        ]
+      },
+      {
+        "id": 70,
+        "name": "通义千问",
+        "url": "https://www.tongyi.com/qianwen/",
+        "openMethod": "simulation",
+        "jsSelect": [
+          "textarea.ant-input",
+          "div[class*=\"operateBtn\"]"
+        ]
+      },
+      {
+        "id": 80,
+        "name": "秘塔",
+        "url": "https://metaso.cn/?q=%s",
+        "openMethod": "urlConcat"
+      }
+    ],
+    "selectedSites": [],
+    "checkAll": false,
+    "isIndeterminate": false
+  },
+  {
+    "id": 3,
+    "name": "传统搜索",
+    "sites": [
+      {
+        "id": 80,
+        "name": "Google",
+        "url": "https://www.google.com/search?q=%s",
+        "openMethod": "urlConcat"
+      },
+      {
+        "id": 70,
+        "name": "Bing",
+        "url": "https://bing.com/?q=%s",
+        "openMethod": "urlConcat"
+      },
+      {
+        "id": 60,
+        "name": "百度",
+        "url": "https://www.baidu.com/s?wd=%s",
+        "openMethod": "urlConcat"
+      },
+      {
+        "id": 50,
+        "name": "DuckDuckGo",
+        "url": "https://duckduckgo.com/?q=%s",
+        "openMethod": "urlConcat"
+      },
+      {
+        "id": 40,
+        "name": "Yandex",
+        "url": "https://yandex.com/search?text=%s",
+        "openMethod": "urlConcat"
+      },
+      {
+        "id": 30,
+        "name": "搜狗",
+        "url": "https://www.sogou.com/sogou?query=%s",
+        "openMethod": "urlConcat"
+      },
+      {
+        "id": 20,
+        "name": "360搜索",
+        "url": "https://www.so.com/s?q=%s",
+        "openMethod": "urlConcat"
+      },
+      {
+        "id": 10,
+        "name": "Yahoo",
+        "url": "https://search.yahoo.com/search?p=%s",
+        "openMethod": "urlConcat"
+      }
+    ],
+    "selectedSites": [],
+    "checkAll": false,
+    "isIndeterminate": false
+  },
+  {
+    "id": 4,
+    "name": "社交媒体",
+    "sites": [
+      {
+        "id": 160,
+        "name": "小红书",
+        "url": "https://www.xiaohongshu.com/search_result?keyword=%s",
+        "openMethod": "urlConcat"
+      },
+      {
+        "id": 150,
+        "name": "抖音",
+        "url": "https://www.douyin.com/search/%s",
+        "openMethod": "urlConcat"
+      },
+      {
+        "id": 140,
+        "name": "X (Twitter) ",
+        "url": "https://x.com/search?q=%s",
+        "openMethod": "urlConcat"
+      },
+      {
+        "id": 130,
+        "name": "YouTube",
+        "url": "https://www.youtube.com/results?search_query=%s",
+        "openMethod": "urlConcat"
+      },
+      {
+        "id": 120,
+        "name": "V2EX",
+        "url": "https://www.sov2ex.com/?q=%s",
+        "openMethod": "urlConcat"
+      },
+      {
+        "id": 110,
+        "name": "Github",
+        "url": "https://github.com/search?q=%s",
+        "openMethod": "urlConcat"
+      },
+      {
+        "id": 100,
+        "name": "ProductHunt",
+        "url": "https://www.producthunt.com/search?q=%s",
+        "openMethod": "urlConcat"
+      },
+      {
+        "id": 90,
+        "name": "即刻",
+        "url": "https://web.okjike.com/search?keyword=%s",
+        "openMethod": "urlConcat"
+      },
+      {
+        "id": 80,
+        "name": "FaceBook",
+        "url": "https://www.facebook.com//search?q=%s",
+        "openMethod": "urlConcat"
+      },
+      {
+        "id": 70,
+        "name": "bilibili",
+        "url": "https://search.bilibili.com/?keyword=%s",
+        "openMethod": "urlConcat"
+      },
+      {
+        "id": 60,
+        "name": "知乎",
+        "url": "https://www.zhihu.com/search?q=%s",
+        "openMethod": "urlConcat",
+        "language": "zh-CN"
+      },
+      {
+        "id": 50,
+        "name": "微信公众号",
+        "url": "https://weixin.sogou.com/weixin?type=2&query=%s",
+        "openMethod": "urlConcat"
+      },
+      {
+        "id": 40,
+        "name": "微博",
+        "url": "https://s.weibo.com/weibo?q=%s",
+        "openMethod": "urlConcat"
+      },
+      {
+        "id": 30,
+        "name": "今日头条",
+        "url": "https://so.toutiao.com/search?dvpf=pc&keyword=%s",
+        "openMethod": "urlConcat"
+      },
+      {
+        "id": 20,
+        "name": "百度贴吧",
+        "url": "https://tieba.baidu.com/f/search/res?ie=utf-8&qw=%s",
+        "openMethod": "urlConcat"
+      },
+      {
+        "id": 10,
+        "name": "TikTok",
+        "url": "https://www.tiktok.com/search/video?&q=%s",
+        "openMethod": "urlConcat"
+      }
+    ],
+    "selectedSites": [],
+    "checkAll": false,
+    "isIndeterminate": false
+  },
+  {
+    "id": 1752221094318,
+    "name": "常用引擎",
+    "sites": [
+      {
+        "id": 90,
+        "name": "豆包",
+        "url": "https://www.doubao.com/",
+        "openMethod": "simulation",
+        "jsSelect": [
+          "body > div > div div textarea.semi-input-textarea"
+        ],
+        "show": false
+      },
+      {
+        "id": 80,
+        "name": "秘塔",
+        "url": "https://metaso.cn/?q=%s",
+        "openMethod": "urlConcat"
+      },
+      {
+        "id": 70,
+        "name": "通义千问",
+        "url": "https://www.tongyi.com/qianwen/",
+        "openMethod": "simulation",
+        "jsSelect": [
+          "textarea.ant-input",
+          "div[class*=\"operateBtn\"]"
+        ]
+      },
+      {
+        "id": 60,
+        "name": "Kimi",
+        "url": "https://www.kimi.com/",
+        "openMethod": "simulation",
+        "jsSelect": [
+          ".chat-input-editor-container .chat-input-editor",
+          ".send-button-container .send-button"
+        ]
+      },
+      {
+        "id": 50,
+        "name": "腾讯元宝",
+        "url": "https://yuanbao.tencent.com/chat/naQivTmsDa",
+        "openMethod": "simulation",
+        "jsSelect": [
+          "body div div[contenteditable]"
+        ]
+      },
+      {
+        "id": 40,
+        "name": "DeepSeek",
+        "url": "https://chat.deepseek.com/",
+        "openMethod": "simulation",
+        "jsSelect": [
+          "#chat-input"
+        ],
+        "version": "1.6.2"
+      },
+      {
+        "id": 30,
+        "name": "Gemini",
+        "url": "https://gemini.google.com/app",
+        "openMethod": "simulation",
+        "jsSelect": [
+          "div.ql-editor",
+          "button.send-button"
+        ]
+      },
+      {
+        "id": 20,
+        "name": "ChatGPT",
+        "url": "https://chatgpt.com/?q=%s",
+        "openMethod": "urlConcat",
+        "followQuestions": true,
+        "jsSelect": [
+          "#prompt-textarea",
+          "div.flex.w-full > div.flex > button[data-testid]"
+        ]
+      },
+      {
+        "id": 10,
+        "name": "Perplexity",
+        "url": "https://www.perplexity.ai/?q=%s",
+        "openMethod": "urlConcat",
+        "followQuestions": true,
+        "jsSelect": [
+          "#__next div > div > div > div > div > div div > div > div > div > div > div > div textarea"
+        ]
+      }
+    ],
+    "checkAll": true,
+    "isIndeterminate": false,
+    "selectedSites": [
+      {
+        "id": 80,
+        "name": "秘塔",
+        "url": "https://metaso.cn/?q=%s",
+        "openMethod": "urlConcat"
+      },
+      {
+        "id": 70,
+        "name": "通义千问",
+        "url": "https://www.tongyi.com/qianwen/",
+        "openMethod": "simulation",
+        "jsSelect": [
+          "textarea.ant-input",
+          "div[class*=\"operateBtn\"]"
+        ]
+      },
+      {
+        "id": 60,
+        "name": "Kimi",
+        "url": "https://www.kimi.com/",
+        "openMethod": "simulation",
+        "jsSelect": [
+          ".chat-input-editor-container .chat-input-editor",
+          ".send-button-container .send-button"
+        ]
+      },
+      {
+        "id": 50,
+        "name": "腾讯元宝",
+        "url": "https://yuanbao.tencent.com/chat/naQivTmsDa",
+        "openMethod": "simulation",
+        "jsSelect": [
+          "body div div[contenteditable]"
+        ]
+      },
+      {
+        "id": 40,
+        "name": "DeepSeek",
+        "url": "https://chat.deepseek.com/",
+        "openMethod": "simulation",
+        "jsSelect": [
+          "#chat-input"
+        ],
+        "version": "1.6.2"
+      },
+      {
+        "id": 30,
+        "name": "Gemini",
+        "url": "https://gemini.google.com/app",
+        "openMethod": "simulation",
+        "jsSelect": [
+          "div.ql-editor",
+          "button.send-button"
+        ]
+      },
+      {
+        "id": 20,
+        "name": "ChatGPT",
+        "url": "https://chatgpt.com/?q=%s",
+        "openMethod": "urlConcat",
+        "followQuestions": true,
+        "jsSelect": [
+          "#prompt-textarea",
+          "div.flex.w-full > div.flex > button[data-testid]"
+        ]
+      },
+      {
+        "id": 10,
+        "name": "Perplexity",
+        "url": "https://www.perplexity.ai/?q=%s",
+        "openMethod": "urlConcat",
+        "followQuestions": true,
+        "jsSelect": [
+          "#__next div > div > div > div > div > div div > div > div > div > div > div > div textarea"
+        ]
+      }
+    ],
+    "isCustomCombination": true,
+    "selectedCategories": [
+      "AI对话"
+    ]
+  }
+]
