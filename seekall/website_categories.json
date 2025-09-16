@@ -604,9 +604,9 @@
         "url": "https://chat.deepseek.com/",
         "openMethod": "simulation",
         "jsSelect": [
-          "#chat-input"
-        ],
-        "version": "1.6.2"
+          "body div.ds-theme textarea.ds-scroll-area",
+          "body div.ds-theme div.ds-icon"
+        ]
       },
       {
         "id": 30,
