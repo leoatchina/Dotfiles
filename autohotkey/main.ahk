@@ -255,7 +255,7 @@ CapsLock & Enter:: Send("^#{Space}")
 GetCurrentInputLocaleID() {
     WinID := WinGetID("A")
     ThreadID := DllCall("GetWindowThreadProcessId", "Ptr", WinID, "Ptr", 0)
-    return DllCall("GetKeyboardLayout", "UInt", ThreadID, "UInt")
+    return DllCall("GetKeyboardLayout", "UInt", ThreadID, "UPtr")
 }
 
 SwitchChsEng() {
@@ -268,11 +268,50 @@ SwitchChsEng() {
 }
 CapsLock & Space:: SwitchChsEng()
 
+; IME control helpers: close IME to force English mode inside IME-based layouts (e.g., Microsoft Pinyin)
+GetImeOpen(winTitle := "A") {
+    hwnd := WinGetID(winTitle)
+    hIMC := DllCall("imm32\ImmGetContext", "ptr", hwnd, "ptr")
+    open := 0
+    if (hIMC) {
+        open := DllCall("imm32\ImmGetOpenStatus", "ptr", hIMC, "int")
+        DllCall("imm32\ImmReleaseContext", "ptr", hwnd, "ptr", hIMC)
+    }
+    return open
+}
+
+SetImeOpen(open := false, winTitle := "A") {
+    hwnd := WinGetID(winTitle)
+    hIMC := DllCall("imm32\ImmGetContext", "ptr", hwnd, "ptr")
+    if (hIMC) {
+        DllCall("imm32\ImmSetOpenStatus", "ptr", hIMC, "int", open ? 1 : 0)
+        DllCall("imm32\ImmReleaseContext", "ptr", hwnd, "ptr", hIMC)
+    }
+}
+
 ForceSwitchToEnglish() {
-    InputLocaleID := GetCurrentInputLocaleID()
-    ; 0x04090409 is English (US)
-    if (InputLocaleID != 0x04090409) {
-        Send("^#{Space}") ; Switch to English
+    ; If already en-US (0409), do nothing
+    if ((GetCurrentInputLocaleID() & 0xFFFF) == 0x0409)
+        return
+
+    ; Load the en-US layout (US keyboard) and request the active window to switch to it
+    hklEn := DllCall("LoadKeyboardLayout", "Str", "00000409", "UInt", 0, "UPtr")
+    hwnd := WinGetID("A")
+    ; WM_INPUTLANGCHANGEREQUEST (0x50): wParam=0, lParam=HKL
+    SendMessage(0x50, 0, hklEn, , "ahk_id " hwnd)
+    Sleep(10)
+
+    if ((GetCurrentInputLocaleID() & 0xFFFF) != 0x0409) {
+        ; Try activating directly as a fallback
+        DllCall("ActivateKeyboardLayout", "UPtr", hklEn, "UInt", 0)
+        Sleep(10)
+    }
+
+    ; Final fallback: cycle Win+Space a few times to land on 0409
+    tries := 4
+    while ((GetCurrentInputLocaleID() & 0xFFFF) != 0x0409 && tries-- > 0) {
+        Send("#{Space}")
+        Sleep(10)
     }
 }
 ; 全局变量防止CapsLock卡住
