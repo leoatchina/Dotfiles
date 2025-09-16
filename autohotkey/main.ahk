@@ -45,7 +45,6 @@ LaunchOrActivate(Title, paths*) {
 ; ------------------------------------
 ; General Hotkeys
 ; ------------------------------------
-; ESC
 CapsLock & q:: Send("{Esc}")
 ; Disable system hotkeys
 ^<#d:: Send("{Esc}")
@@ -53,7 +52,7 @@ CapsLock & q:: Send("{Esc}")
 ; Tab navigation
 CapsLock & n:: {
     if GetKeyState("Alt")
-        LaunchOrActivate("notepad--.exe", ScoopPath . "\apps\notepad--\current\Notepad--.exe")
+        LaunchOrActivate("notepad--.exe", ScoopPath . "\apps\notepad--\current\Notepad--.exe", ScoopPath . "\apps\notepad3\current\notepad3.exe")
     else
         Send("^{Tab}")
 }
