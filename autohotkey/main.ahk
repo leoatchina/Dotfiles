@@ -5,6 +5,7 @@
 #Warn VarUnset, Off
 #SingleInstance
 SetCapsLockState("AlwaysOff")
+
 ; ------------------------------------
 ; Global Variables - Detect Scoop Path
 ; ------------------------------------
@@ -314,12 +315,37 @@ ForceSwitchToEnglish() {
         Sleep(10)
     }
 }
+
+; Caps single-tap handling state
+global caps_sw_busy := false
+global caps_last_up_tick := 0
+; Guarded version to avoid re-entrancy when CapsLock is tapped very fast
+ForceSwitchToEnglish_Safe() {
+    global caps_sw_busy
+    if (caps_sw_busy)
+        return
+    caps_sw_busy := true
+    try {
+        ; Make this block less interruptible to finish key sequences
+        Critical "On"
+        ForceSwitchToEnglish()
+    } finally {
+        Critical "Off"
+        caps_sw_busy := false
+    }
+}
 ; 单击 CapsLock 在抬起时触发切到英文；与其它键组合时不触发
 CapsLock::Return
 CapsLock up:: {
     ; 仅当 CapsLock 单独按下/抬起（未与其它键组合）时才切英文
     if (A_PriorKey = "CapsLock") {
-        ForceSwitchToEnglish()
+        ; Debounce: 忽略过于频繁的连按，避免重入导致卡住
+        global caps_last_up_tick
+        now := A_TickCount
+        if (now - caps_last_up_tick >= 120) {
+            caps_last_up_tick := now
+            ForceSwitchToEnglish_Safe()
+        }
     }
 }
 ; ------------------------------------
