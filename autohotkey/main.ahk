@@ -342,7 +342,7 @@ CapsLock up:: {
         ; Debounce: 忽略过于频繁的连按，避免重入导致卡住
         global caps_last_up_tick
         now := A_TickCount
-        if (now - caps_last_up_tick >= 120) {
+        if (now - caps_last_up_tick >= 80) {
             caps_last_up_tick := now
             ForceSwitchToEnglish_Safe()
         }
