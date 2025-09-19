@@ -1,5 +1,11 @@
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+# Utilities
+function which ($command) {
+    Get-Command -Name $command -ErrorAction SilentlyContinue |
+        Select-Object -ExpandProperty Path -ErrorAction SilentlyContinue
+}
 
+# Aliases
 Set-Alias touch ni
 Set-Alias open explorer.exe
 Set-Alias ll ls
@@ -9,10 +15,9 @@ Set-Alias grep findstr
 Import-Module posh-git
 Import-Module Terminal-Icons
 Import-Module scoop-completion
+
 # oh-my-posh init pwsh | Invoke-Expression
 # oh-my-posh init pwsh --config "amro" | Invoke-Expression
-
-
 
 # PSReadLine
 Import-Module PSReadLine
@@ -41,8 +46,3 @@ if ($PSVersionTable.PSVersion.Major -ge 7 -or
 Import-Module PSFzf
 Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory 'Ctrl+r'
 
-# Utilities
-function which ($command) {
-    Get-Command -Name $command -ErrorAction SilentlyContinue |
-        Select-Object -ExpandProperty Path -ErrorAction SilentlyContinue
-}
