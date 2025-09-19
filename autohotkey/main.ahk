@@ -46,6 +46,7 @@ LaunchOrActivate(Title, paths*) {
 ; ------------------------------------
 ; General Hotkeys
 ; ------------------------------------
+CapsLock & Tab:: Send("{Esc}")
 CapsLock & q:: Send("{Esc}")
 ; Disable system hotkeys
 ^<#d:: Send("{Esc}")
@@ -65,7 +66,7 @@ CapsLock & p:: {
         Send("^+{Tab}")
 }
 
-CapsLock & Tab:: Send("^{Tab}")
+CapsLock & LCtrl:: Send("^{Tab}")
 CapsLock & LShift:: Send("^+{Tab}")
 
 ; Volume control
@@ -186,8 +187,6 @@ CapsLock & u:: {
     }
     ClipWait(0.1)
 }
-CapsLock & Ctrl:: Send("^#!.")
-Ctrl & CapsLock:: Send("^#!.")
 ; ------------------------------------
 ; Screen shot
 ; ------------------------------------
