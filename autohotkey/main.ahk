@@ -169,7 +169,7 @@ CapsLock & /:: Send("^#+!f")
 ; -------------------
 ; Clipboard
 ; -------------------
-CapsLock & y:: Send("^{Ins}")
+CapsLock & c:: Send("^{Ins}")
 ; using utools
 CapsLock & v:: {
     if GetKeyState("Alt") {
@@ -190,7 +190,7 @@ CapsLock & u:: {
 ; ------------------------------------
 ; Screen shot
 ; ------------------------------------
-CapsLock & c:: {
+CapsLock & y:: {
     ; utools
     if GetKeyState("Alt")
         Send("#!+s")
