@@ -249,8 +249,8 @@ CapsLock & Down:: Send("#{Down}")
 ; ------------------------------------
 ; Input Method Control
 ; ------------------------------------
-CapsLock & Backspace:: Send("#{Space}")
-CapsLock & Enter:: Send("^#{Space}")
+CapsLock & Enter:: Send("#{Space}")
+CapsLock & Space:: Send("^#{Space}")
 
 GetCurrentInputLocaleID() {
     WinID := WinGetID("A")
@@ -266,7 +266,7 @@ SwitchChsEng() {
     else
         Send("^{Space}") ; Switch to English
 }
-CapsLock & Space:: SwitchChsEng()
+CapsLock & Backspace:: SwitchChsEng()
 
 ; IME control helpers: close IME to force English mode inside IME-based layouts (e.g., Microsoft Pinyin)
 GetImeOpen(winTitle := "A") {
