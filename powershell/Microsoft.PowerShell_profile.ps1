@@ -16,10 +16,9 @@ Import-Module posh-git
 Import-Module Terminal-Icons
 Import-Module scoop-completion
 
-# oh-my-posh init pwsh | Invoke-Expression
-# oh-my-posh init pwsh --config "amro" | Invoke-Expression
 # Import-Module oh-my-posh
-# Set-PoshPrompt -Theme paradox
+oh-my-posh init pwsh | Invoke-Expression
+# oh-my-posh init pwsh --config "amro" | Invoke-Expression
 
 # PSReadLine
 Import-Module PSReadLine
