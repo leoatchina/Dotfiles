@@ -152,7 +152,7 @@ CapsLock & 2:: LaunchOrActivate("chrome.exe", "C:\Program Files\Google\Chrome\Ap
 CapsLock & 3:: LaunchOrActivate("cursor.exe", AppDataLocal . "\Programs\Cursor\Cursor.exe")
 CapsLock & 4:: LaunchOrActivate("windsurf.exe", AppDataLocal . "\Programs\Windsurf\Windsurf.exe")
 CapsLock & 5:: LaunchOrActivate("code.exe", AppDataLocal . "\Programs\Microsoft VS Code\Code.exe")
-CapsLock & 6:: LaunchOrActivate("tabby.exe", ScoopPath . "\apps\tabby\current\tabby.exe")
+CapsLock & 6:: LaunchOrActivate("tabby.exe", AppDataLocal . "\Programs\Tabby\Tabby.exe")
 CapsLock & 7:: LaunchOrActivate("quark.exe", AppDataLocal . "\Programs\Quark\quark.exe")
 CapsLock & 8:: LaunchOrActivate("qoder.exe", AppDataLocal . "\Programs\Qoder\Qoder.exe")
 CapsLock & 9:: LaunchOrActivate("lingma.exe", AppDataLocal . "\Programs\Lingma\Lingma.exe")
