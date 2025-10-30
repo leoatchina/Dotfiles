@@ -154,9 +154,9 @@ CapsLock & 4:: LaunchOrActivate("windsurf.exe", AppDataLocal . "\Programs\Windsu
 CapsLock & 5:: LaunchOrActivate("code.exe", AppDataLocal . "\Programs\Microsoft VS Code\Code.exe")
 CapsLock & 6:: LaunchOrActivate("tabby.exe", AppDataLocal . "\Programs\Tabby\Tabby.exe")
 CapsLock & 7:: LaunchOrActivate("quark.exe", AppDataLocal . "\Programs\Quark\quark.exe")
-CapsLock & 8:: LaunchOrActivate("positron.exe", AppDataLocal . "\Programs\Positron\Positron.exe")
-CapsLock & 9:: LaunchOrActivate("nvim-qt.exe", ScoopPath . "\apps\neovim-qt\current\bin\nvim-qt.exe")
-CapsLock & 0:: LaunchOrActivate("neovide.exe", ScoopPath . "\apps\neovide\current\neovide.exe")
+CapsLock & 8:: LaunchOrActivate("nvim-qt.exe", ScoopPath . "\apps\neovim-qt\current\bin\nvim-qt.exe")
+CapsLock & 9:: LaunchOrActivate("neovide.exe", ScoopPath . "\apps\neovide\current\neovide.exe")
+CapsLock & 0:: LaunchOrActivate("positron.exe", AppDataLocal . "\Programs\Positron\Positron.exe")
 CapsLock & -:: {
     if GetKeyState("Alt") {
         LaunchOrActivate("lingma.exe", AppDataLocal . "\Programs\Lingma\Lingma.exe")
