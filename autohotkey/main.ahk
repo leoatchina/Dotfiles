@@ -107,19 +107,18 @@ CapsLock & f:: {
     else
         LaunchOrActivate("feishu.exe", AppDataLocal . "\Feishu\Feishu.exe")
 }
-
 ; terminal
 CapsLock & t:: {
-    if GetKeyState("Alt")
-        LaunchOrActivate("hyper.exe", ScoopPath . "\apps\hyper\current\hyper.exe")
-    else
-        LaunchOrActivate("wezterm-gui.exe", ScoopPath . "\apps\wezterm-nightly\current\wezterm-gui.exe")
-}
-CapsLock & \:: {
     if GetKeyState("Alt")
         LaunchOrActivate("alacritty.exe", ScoopPath . "\apps\alacritty\current\alacritty.exe")
     else
         LaunchOrActivate("WindowsTerminal.exe", AppDataLocal . "\Microsoft\WindowsApps\wt.exe")
+}
+CapsLock & \:: {
+    if GetKeyState("Alt")
+        LaunchOrActivate("hyper.exe", ScoopPath . "\apps\hyper\current\hyper.exe")
+    else
+        LaunchOrActivate("wezterm-gui.exe", ScoopPath . "\apps\wezterm-nightly\current\wezterm-gui.exe")
 }
 ; note softwares
 CapsLock & o:: {
