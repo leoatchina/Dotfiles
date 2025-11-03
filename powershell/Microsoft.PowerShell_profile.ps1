@@ -47,3 +47,12 @@ if ($PSVersionTable.PSVersion.Major -ge 7 -or
 Import-Module PSFzf
 Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory 'Ctrl+r'
 
+# SSH connection function with fzf selection
+Import-Module "$PSScriptRoot\ssh-fzf.ps1"
+
+# Set Ctrl+Shift+S as the shortcut for SSH selection
+Set-PSReadLineKeyHandler -Chord 'Ctrl+Shift+S' -ScriptBlock {
+    [Microsoft.PowerShell.PSConsoleReadLine]::RevertLine()
+    [Microsoft.PowerShell.PSConsoleReadLine]::Insert("Invoke-SshFzf")
+    [Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
+}
