@@ -10,20 +10,28 @@ function Invoke-SshFzf {
     }
     
     # Parse ssh config to extract hosts with User and Port
-    $hosts = @()
+    $hostObjects = [System.Collections.ArrayList]::new()
     $currentHost = ""
     $hostInfo = @{}
-    
+
+    $ProcessHost = {
+        param($CH, $HI)
+        if ($CH -and $HI.ContainsKey("User")) {
+            $hostName = if ($HI.ContainsKey("HostName")) { $HI["HostName"] } else { $CH }
+            $port = if ($HI.ContainsKey("Port")) { $HI["Port"] } else { "22" }
+            
+            $null = $hostObjects.Add([PSCustomObject]@{
+                Display = "$CH (User: $($HI['User']), Port: $port)"
+                SortKey = $hostName
+                Host    = $CH
+            })
+        }
+    }
+
     Get-Content $sshConfigPath | ForEach-Object {
         $line = $_.Trim()
         if ($line -match "^Host\s+(.+)$") {
-            # Save previous host if it has required info
-            if ($currentHost -and $hostInfo.ContainsKey("User")) {
-                $port = if ($hostInfo.ContainsKey("Port")) { $hostInfo["Port"] } else { "22" }
-                $hosts += "$currentHost (User: $($hostInfo['User']), Port: $port)"
-            }
-            
-            # Start new host
+            & $ProcessHost $currentHost $hostInfo
             $currentHost = $matches[1]
             $hostInfo = @{}
         } elseif ($line -match "^User\s+(.+)$") {
@@ -34,20 +42,28 @@ function Invoke-SshFzf {
             $hostInfo["HostName"] = $matches[1]
         }
     }
-    
-    # Don't forget the last host
-    if ($currentHost -and $hostInfo.ContainsKey("User")) {
-        $port = if ($hostInfo.ContainsKey("Port")) { $hostInfo["Port"] } else { "22" }
-        $hosts += "$currentHost (User: $($hostInfo['User']), Port: $port)"
-    }
-    
-    if ($hosts.Count -eq 0) {
+
+    # Process the last host in the file
+    & $ProcessHost $currentHost $hostInfo
+
+    if ($hostObjects.Count -eq 0) {
         Write-Warning "No SSH hosts found with User configuration"
         return
     }
-    
-    # Use fzf to select a host
-    $selected = $hosts | Invoke-Fzf -Prompt "Select SSH host > "
+
+    # Sort hosts by IP address, then by name
+    $sortedHosts = $hostObjects | Sort-Object -Property @{Expression = {
+        if ($_.SortKey -match '^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})$') {
+            # Pad each octet to 3 digits for correct numeric sorting as a string
+            return ('1{0:D3}{1:D3}{2:D3}{3:D3}' -f [int]$matches[1], [int]$matches[2], [int]$matches[3], [int]$matches[4])
+        } else {
+            # Prefix with '2' to group non-IPs after IPs
+            return "2$($_.SortKey)"
+        }
+    }}
+
+    # Use fzf to select a host, with reversed layout
+    $selected = $sortedHosts.Display | Invoke-Fzf -Prompt "Select SSH host > " -Reverse
     
     if ($selected) {
         # Extract host name from selection
@@ -56,6 +72,3 @@ function Invoke-SshFzf {
         ssh $hostName
     }
 }
-
-# Export the function
-Export-ModuleMember -Function Invoke-SshFzf
