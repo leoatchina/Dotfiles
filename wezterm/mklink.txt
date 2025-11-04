@@ -1,1 +1,0 @@
- sudo cmd /c mklink/d C:\Users\LEO\.config\wezterm C:\Users\LEO\Dotfiles\wezterm
