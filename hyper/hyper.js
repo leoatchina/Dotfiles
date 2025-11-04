@@ -138,11 +138,13 @@ module.exports = {
     //   `@company/project`
     //   `project#1.0.1`
     plugins: [
-        "hyper-manager",
         "hyperline",
-        "hyperterm-tabs",
         "hyper-search",
-        "hyper-subliminal-theme"
+        "hyper-subliminal-theme",
+        "hyper-highlight-active-pane",
+        "hyper-launch-menu",
+        "hyper-active-tab",
+        "hyper-tabs-enhanced"
     ],
     // in development, you can create a directory under
     // `~/.hyper_plugins/local/` and include it here
