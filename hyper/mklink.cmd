@@ -12,6 +12,6 @@ REM Remove existing .hyper.js file in AppData\Roaming\Hyper if it exists
 if exist "%APPDATA%\Hyper\.hyper.js" del "%APPDATA%\Hyper\.hyper.js"
 
 REM Create symbolic link from AppData\Roaming\Hyper\.hyper.js to Dotfiles\hyper\.hyper.js
-mklink "%APPDATA%\Hyper\.hyper.js" "%SCRIPT_DIR%\.hyper.js"
+mklink /H "%APPDATA%\Hyper\.hyper.js" "%SCRIPT_DIR%\hyper.js"
 
 pause
