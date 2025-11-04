@@ -63,11 +63,9 @@ function Invoke-SshFzf {
     }}
 
     # Use fzf to select a host, with reversed layout and no sorting (preserve IP order)
-    $oldFzfOpts = $env:FZF_DEFAULT_OPTS
     $env:FZF_DEFAULT_OPTS = "--layout=reverse"
-    $selected = $sortedHosts.Display | Invoke-Fzf -Prompt "Select SSH host > " -NoSort
-    $env:FZF_DEFAULT_OPTS = $oldFzfOpts
-    
+    $selected = $sortedHosts.Display | Sort-Object | Invoke-Fzf -Prompt "Select SSH host > "
+
     if ($selected) {
         # Extract host name from selection
         $hostName = $selected -replace "\s*\(.*$", ""
