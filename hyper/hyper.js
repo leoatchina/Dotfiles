@@ -92,10 +92,10 @@ module.exports = {
         //
         // Cygwin
         // - Example: `C:\\cygwin64\\bin\\bash.exe`
-        shell: 'C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe',
+        shell: 'cmd.exe',
         // for setting shell arguments (i.e. for using interactive shellArgs: `['-i']`)
         // by default `['--login']` will be used
-        shellArgs: ['-NoExit', '-Command', ''],
+        shellArgs: [],
         // for environment variables
         env: {},
         // Supported Options:
@@ -142,7 +142,6 @@ module.exports = {
         "hyper-search",
         "hyper-subliminal-theme",
         "hyper-highlight-active-pane",
-        "hyper-launch-menu",
         "hyper-active-tab",
         "hyper-tabs-enhanced"
     ],
