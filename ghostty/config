@@ -1,4 +1,5 @@
 font-size = 10.5
+font-features = calt 
 
 keybind = alt+one=unbind
 keybind = alt+two=unbind
