@@ -23,5 +23,4 @@ family = "JetBrainsMono Nerd Font"
 
 # Windows shell configuration - use cmd.exe as default
 [terminal.shell]
-program = "cmd.exe"
-args = ["/k"]
+program = "pwsh.exe"
