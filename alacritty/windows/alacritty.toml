@@ -6,6 +6,9 @@ startup_mode = "Maximized"
 [cursor]
 style = { shape = "Block", blinking = "On" }
 
+[hints]
+enabled = []
+
 [font]
 size = 12
 
