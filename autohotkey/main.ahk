@@ -163,7 +163,7 @@ CapsLock & 9:: LaunchOrActivate("neovide.exe", ScoopPath . "\apps\neovide\curren
 CapsLock & 0:: LaunchOrActivate("positron.exe", AppDataLocal . "\Programs\Positron\Positron.exe")
 CapsLock & -:: {
     if GetKeyState("Alt") {
-        LaunchOrActivate("lingma.exe", AppDataLocal . "\Programs\Lingma\Lingma.exe")
+        LaunchOrActivate("Kiro.exe", AppDataLocal . "\Programs\Kiro\Kiro.exe")
     } else {
         LaunchOrActivate("qoder.exe", AppDataLocal . "\Programs\Qoder\Qoder.exe")
     }
@@ -180,7 +180,6 @@ CapsLock & =:: {
 ; -------------------
 ; Utools intergration
 CapsLock & /:: Send("^#+!f")
-
 ; -------------------
 ; Clipboard
 ; -------------------
@@ -218,7 +217,6 @@ CapsLock & y:: {
 #u:: Send("!{F2}")
 CapsLock & F1:: Send("^{F1}")
 CapsLock & F2:: Send("!{F1}")
-
 ; ------------------------------------
 ; Directional Keys (Vim & WASD style)
 ; ------------------------------------
