@@ -4,19 +4,13 @@
     "name": "AI搜索",
     "sites": [
       {
-        "id": 200,
+        "id": 190,
         "name": "Devv",
         "url": "https://devv.ai/",
         "openMethod": "simulation",
         "jsSelect": [
           "body div[contenteditable]"
         ]
-      },
-      {
-        "id": 190,
-        "name": "纳米搜索",
-        "url": "https://www.n.cn/?q=%s",
-        "openMethod": "urlConcat"
       },
       {
         "id": 180,
@@ -167,9 +161,8 @@
         ]
       }
     ],
-    "selectedSites": [],
     "checkAll": false,
-    "isIndeterminate": false
+    "isIndeterminate": true
   },
   {
     "id": 2,
@@ -481,13 +474,9 @@
       },
       {
         "id": 80,
-        "name": "豆包",
-        "url": "https://www.doubao.com/",
-        "openMethod": "simulation",
-        "jsSelect": [
-          "body > div > div div textarea.semi-input-textarea"
-        ],
-        "show": false
+        "name": "纳米搜索",
+        "url": "https://www.n.cn/?q=%s",
+        "openMethod": "urlConcat"
       },
       {
         "id": 70,
@@ -558,6 +547,85 @@
           "#__next div > div > div > div > div > div div > div > div > div > div > div > div textarea"
         ]
       }
-    ]
+    ],
+    "selectedSites": [
+      {
+        "id": 90,
+        "name": "秘塔",
+        "url": "https://metaso.cn/?q=%s",
+        "openMethod": "urlConcat"
+      },
+      {
+        "id": 70,
+        "name": "通义千问",
+        "url": "https://www.tongyi.com/qianwen/",
+        "openMethod": "simulation",
+        "jsSelect": [
+          "textarea.ant-input",
+          "div[class*=\"operateBtn\"]"
+        ]
+      },
+      {
+        "id": 60,
+        "name": "Kimi",
+        "url": "https://www.kimi.com/",
+        "openMethod": "simulation",
+        "jsSelect": [
+          ".chat-input-editor-container .chat-input-editor",
+          ".send-button-container .send-button"
+        ]
+      },
+      {
+        "id": 50,
+        "name": "腾讯元宝",
+        "url": "https://yuanbao.tencent.com/chat/naQivTmsDa",
+        "openMethod": "simulation",
+        "jsSelect": [
+          "body div div[contenteditable]"
+        ]
+      },
+      {
+        "id": 40,
+        "name": "DeepSeek",
+        "url": "https://chat.deepseek.com/",
+        "openMethod": "simulation",
+        "jsSelect": [
+          "div.ds-theme textarea.ds-scroll-area"
+        ]
+      },
+      {
+        "id": 30,
+        "name": "Gemini",
+        "url": "https://gemini.google.com/app",
+        "openMethod": "simulation",
+        "jsSelect": [
+          "div.ql-editor",
+          "button.send-button"
+        ]
+      },
+      {
+        "id": 20,
+        "name": "ChatGPT",
+        "url": "https://chatgpt.com/?q=%s",
+        "openMethod": "urlConcat",
+        "followQuestions": true,
+        "jsSelect": [
+          "#prompt-textarea",
+          "div.flex.w-full > div.flex > button[data-testid]"
+        ]
+      },
+      {
+        "id": 10,
+        "name": "Perplexity",
+        "url": "https://www.perplexity.ai/?q=%s",
+        "openMethod": "urlConcat",
+        "followQuestions": true,
+        "jsSelect": [
+          "#__next div > div > div > div > div > div div > div > div > div > div > div > div textarea"
+        ]
+      }
+    ],
+    "checkAll": false,
+    "isIndeterminate": true
   }
 ]
