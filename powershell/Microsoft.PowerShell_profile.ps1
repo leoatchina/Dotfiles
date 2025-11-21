@@ -56,3 +56,8 @@ Set-PSReadLineKeyHandler -Chord 'Ctrl+Shift+S' -ScriptBlock {
         [Microsoft.PowerShell.PSConsoleReadLine]::Insert("Invoke-SshFzf")
             [Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
 }
+
+# Load fnm environment if fnm is available
+if (Get-Command fnm -ErrorAction SilentlyContinue) {
+    fnm env --use-on-cd --shell powershell | Out-String | Invoke-Expression
+}
