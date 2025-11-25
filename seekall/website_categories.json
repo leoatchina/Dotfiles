@@ -455,58 +455,7 @@
     "name": "常用引擎",
     "sites": [
       {
-        "id": 90,
-        "name": "文心一言",
-        "url": "https://yiyan.baidu.com/",
-        "openMethod": "simulation",
-        "jsSelect": [
-          "div div[contenteditable]",
-          ".VAtmtpqL"
-        ],
-        "show": true
-      },
-      {
-        "id": 80,
-        "name": "秘塔",
-        "url": "https://metaso.cn/?q=%s",
-        "openMethod": "urlConcat"
-      },
-      {
-        "id": 70,
-        "name": "纳米搜索",
-        "url": "https://www.n.cn/?q=%s",
-        "openMethod": "urlConcat"
-      },
-      {
-        "id": 60,
-        "name": "Kimi",
-        "url": "https://www.kimi.com/",
-        "openMethod": "simulation",
-        "jsSelect": [
-          ".chat-input-editor-container .chat-input-editor",
-          ".send-button-container .send-button"
-        ]
-      },
-      {
-        "id": 50,
-        "name": "腾讯元宝",
-        "url": "https://yuanbao.tencent.com/chat/naQivTmsDa",
-        "openMethod": "simulation",
-        "jsSelect": [
-          "body div div[contenteditable]"
-        ]
-      },
-      {
-        "id": 40,
-        "name": "DeepSeek",
-        "url": "https://chat.deepseek.com/",
-        "openMethod": "simulation",
-        "jsSelect": [
-          "div.ds-theme textarea.ds-scroll-area"
-        ]
-      },
-      {
-        "id": 30,
+        "id": 100,
         "name": "Gemini",
         "url": "https://gemini.google.com/app",
         "openMethod": "simulation",
@@ -516,13 +465,72 @@
         ]
       },
       {
-        "id": 20,
+        "id": 90,
         "name": "Perplexity",
         "url": "https://www.perplexity.ai/?q=%s",
         "openMethod": "urlConcat",
         "followQuestions": true,
         "jsSelect": [
           "#__next div > div > div > div > div > div div > div > div > div > div > div > div textarea"
+        ]
+      },
+      {
+        "id": 80,
+        "name": "秘塔",
+        "url": "https://metaso.cn/?q=%s",
+        "openMethod": "urlConcat"
+      },
+      {
+        "id": 70,
+        "name": "文心一言",
+        "url": "https://yiyan.baidu.com/",
+        "openMethod": "simulation",
+        "jsSelect": [
+          "div div[contenteditable]",
+          ".VAtmtpqL"
+        ]
+      },
+			{
+				"id": 60,
+				"name": "豆包",
+				"url": "https://www.doubao.com/",
+				"openMethod": "simulation",
+				"jsSelect": [
+					"body > div > div div textarea.semi-input-textarea"
+				]
+      },
+      {
+        "id": 50,
+        "name": "纳米搜索",
+        "url": "https://www.n.cn/?q=%s",
+        "openMethod": "urlConcat"
+      },
+      {
+        "id": 40,
+        "name": "腾讯元宝",
+        "url": "https://yuanbao.tencent.com/chat/naQivTmsDa",
+        "openMethod": "simulation",
+        "jsSelect": [
+          "body div div[contenteditable]"
+        ]
+      },
+      {
+        "id": 30,
+        "name": "Kimi",
+        "url": "https://www.kimi.com/",
+        "openMethod": "simulation",
+        "jsSelect": [
+          ".chat-input-editor-container .chat-input-editor",
+          ".send-button-container .send-button"
+        ]
+      },
+      {
+        "id": 20,
+        "name": "DeepSeek",
+        "url": "https://chat.deepseek.com/",
+        "openMethod": "simulation",
+        "jsSelect": [
+          "div.ds-theme textarea.ds-scroll-area"
         ]
       },
       {
