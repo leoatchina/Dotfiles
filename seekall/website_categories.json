@@ -480,12 +480,12 @@
       },
       {
         "id": 70,
-        "name": "通义千问",
-        "url": "https://www.tongyi.com/qianwen/",
+        "name": "千问",
+        "url": "https://qianwen.com/",
         "openMethod": "simulation",
         "jsSelect": [
           "textarea.ant-input",
-          "div[class*=\"operateBtn\"]"
+          "span.anticon"
         ]
       },
       {
@@ -528,17 +528,6 @@
       },
       {
         "id": 20,
-        "name": "ChatGPT",
-        "url": "https://chatgpt.com/?q=%s",
-        "openMethod": "urlConcat",
-        "followQuestions": true,
-        "jsSelect": [
-          "#prompt-textarea",
-          "div.flex.w-full > div.flex > button[data-testid]"
-        ]
-      },
-      {
-        "id": 10,
         "name": "Perplexity",
         "url": "https://www.perplexity.ai/?q=%s",
         "openMethod": "urlConcat",

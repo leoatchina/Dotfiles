@@ -328,37 +328,28 @@ ForceSwitchToEnglish() {
     }
 }
 
-; Caps single-tap handling state
-global caps_sw_busy := false
-global caps_last_up_tick := 0
-; Guarded version to avoid re-entrancy when CapsLock is tapped very fast
-ForceSwitchToEnglish_Safe() {
-    global caps_sw_busy
-    if (caps_sw_busy)
-        return
-    caps_sw_busy := true
-    try {
-        ; Make this block less interruptible to finish key sequences
-        Critical "On"
-        ForceSwitchToEnglish()
-    } finally {
-        Critical "Off"
-        caps_sw_busy := false
-    }
-}
+; CapsLock 释放后的冷却期，防止键盘信号延迟导致误触组合键
+global caps_release_time := 0
+
 ; 单击 CapsLock 在抬起时触发切到英文；与其它键组合时不触发
-CapsLock::Return
+CapsLock:: {
+    ; 检查是否在冷却期内（释放后 150ms 内），如果是则忽略
+    global caps_release_time
+    if (A_TickCount - caps_release_time < 150)
+        return
+    ; 正常按下，等待后续操作
+}
+
 CapsLock up:: {
+    global caps_release_time
     ; 仅当 CapsLock 单独按下/抬起（未与其它键组合）时才切英文
     if (A_PriorKey = "CapsLock") {
-        ; Debounce: 忽略过于频繁的连按，避免重入导致卡住
-        global caps_last_up_tick
-        now := A_TickCount
-        if (now - caps_last_up_tick >= 80) {
-            caps_last_up_tick := now
-            ForceSwitchToEnglish_Safe()
-        }
+        Critical "On"
+        ForceSwitchToEnglish()
+        Critical "Off"
     }
+    ; 记录释放时间，开始冷却期
+    caps_release_time := A_TickCount
 }
 ; ------------------------------------
 ; Remap side mouse buttons to middle button for xtop.exe
