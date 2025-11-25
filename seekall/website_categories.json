@@ -170,21 +170,21 @@
     "sites": [
       {
         "id": 130,
-        "name": "Claude",
-        "url": "https://claude.ai/new",
-        "openMethod": "simulation",
-        "jsSelect": [
-          "body div[contenteditable]"
-        ],
-        "isHidden": false
-      },
-      {
-        "id": 120,
         "name": "百小应",
         "url": "https://ying.baichuan-ai.com/chat",
         "openMethod": "simulation",
         "jsSelect": [
           "body > div textarea"
+        ],
+        "isHidden": false
+      },
+      {
+        "id": 120,
+        "name": "Claude",
+        "url": "https://claude.ai/new",
+        "openMethod": "simulation",
+        "jsSelect": [
+          "body div[contenteditable]"
         ],
         "isHidden": false
       },
@@ -206,17 +206,6 @@
           "body > div > div div textarea.semi-input-textarea"
         ],
         "show": false
-      },
-      {
-        "id": 90,
-        "name": "文心一言",
-        "url": "https://yiyan.baidu.com/",
-        "openMethod": "simulation",
-        "jsSelect": [
-          "div div[contenteditable]",
-          ".VAtmtpqL"
-        ],
-        "show": true
       },
       {
         "id": 10,
@@ -256,8 +245,7 @@
         "openMethod": "simulation",
         "jsSelect": [
           "#chat-input"
-        ],
-        "version": "1.6.2"
+        ]
       },
       {
         "id": 50,
@@ -466,6 +454,17 @@
     "id": 256,
     "name": "常用引擎",
     "sites": [
+      {
+        "id": 90,
+        "name": "文心一言",
+        "url": "https://yiyan.baidu.com/",
+        "openMethod": "simulation",
+        "jsSelect": [
+          "div div[contenteditable]",
+          ".VAtmtpqL"
+        ],
+        "show": true
+      },
       {
         "id": 80,
         "name": "秘塔",
