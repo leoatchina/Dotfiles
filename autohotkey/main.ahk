@@ -306,40 +306,35 @@ ForceSwitchToEnglish() {
     ; If already en-US (0409), do nothing
     if ((GetCurrentInputLocaleID() & 0xFFFF) == 0x0409)
         return
-
     ; Load the en-US layout (US keyboard) and request the active window to switch to it
     hklEn := DllCall("LoadKeyboardLayout", "Str", "00000409", "UInt", 0, "UPtr")
     hwnd := WinGetID("A")
     ; WM_INPUTLANGCHANGEREQUEST (0x50): wParam=0, lParam=HKL
     SendMessage(0x50, 0, hklEn, , "ahk_id " hwnd)
-    Sleep(10)
-
+    Sleep(4)
     if ((GetCurrentInputLocaleID() & 0xFFFF) != 0x0409) {
         ; Try activating directly as a fallback
         DllCall("ActivateKeyboardLayout", "UPtr", hklEn, "UInt", 0)
-        Sleep(10)
+        Sleep(4)
     }
 
     ; Final fallback: cycle Win+Space a few times to land on 0409
     tries := 4
     while ((GetCurrentInputLocaleID() & 0xFFFF) != 0x0409 && tries-- > 0) {
         Send("#{Space}")
-        Sleep(10)
     }
 }
 
 ; CapsLock 释放后的冷却期，防止键盘信号延迟导致误触组合键
 global caps_release_time := 0
-
 ; 单击 CapsLock 在抬起时触发切到英文；与其它键组合时不触发
 CapsLock:: {
-    ; 检查是否在冷却期内（释放后 150ms 内），如果是则忽略
+    ; 检查是否在冷却期内，如果是则忽略
     global caps_release_time
-    if (A_TickCount - caps_release_time < 150)
+    if (A_TickCount - caps_release_time < 256)
         return
     ; 正常按下，等待后续操作
 }
-
 CapsLock up:: {
     global caps_release_time
     ; 仅当 CapsLock 单独按下/抬起（未与其它键组合）时才切英文
