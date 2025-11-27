@@ -156,11 +156,18 @@ CapsLock & 2:: LaunchOrActivate("chrome.exe", "C:\Program Files\Google\Chrome\Ap
 CapsLock & 3:: LaunchOrActivate("quark.exe", AppDataLocal . "\Programs\Quark\quark.exe")
 CapsLock & 4:: LaunchOrActivate("cursor.exe", AppDataLocal . "\Programs\Cursor\Cursor.exe")
 CapsLock & 5:: LaunchOrActivate("windsurf.exe", AppDataLocal . "\Programs\Windsurf\Windsurf.exe")
+; NOTE,  7 is for ths
 CapsLock & 6:: LaunchOrActivate("code.exe", AppDataLocal . "\Programs\Microsoft VS Code\Code.exe")
-CapsLock & 7:: LaunchOrActivate("mobaxterm.exe", ScoopPath . "\apps\mobaxterm\current\mobaxterm.exe")
 CapsLock & 8:: LaunchOrActivate("nvim-qt.exe", ScoopPath . "\apps\neovim-qt\current\bin\nvim-qt.exe")
 CapsLock & 9:: LaunchOrActivate("neovide.exe", ScoopPath . "\apps\neovide\current\neovide.exe")
-CapsLock & 0:: LaunchOrActivate("positron.exe", AppDataLocal . "\Programs\Positron\Positron.exe")
+CapsLock & 0:: LaunchOrActivate("mobaxterm.exe", ScoopPath . "\apps\mobaxterm\current\mobaxterm.exe")
+CapsLock & 7:: {
+    if GetKeyState("Alt") {
+        LaunchOrActivate("hexin.exe", "C:\同花顺软件\同花顺\hexin.exe")
+    } else {
+        LaunchOrActivate("happ.exe", "C:\同花顺远航版\bin\happ.exe")
+    }
+}
 CapsLock & -:: {
     if GetKeyState("Alt") {
         LaunchOrActivate("Kiro.exe", AppDataLocal . "\Programs\Kiro\Kiro.exe")
@@ -170,7 +177,7 @@ CapsLock & -:: {
 }
 CapsLock & =:: {
     if GetKeyState("Alt") {
-        LaunchOrActivate("trae.exe", AppDataLocal . "\Programs\Trae\Trae.exe")
+        LaunchOrActivate("positron.exe", AppDataLocal . "\Programs\Positron\Positron.exe")
     } else {
         LaunchOrActivate("trae cn.exe", AppDataLocal . "\Programs\Trae CN\Trae CN.exe")
     }
