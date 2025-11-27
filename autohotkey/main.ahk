@@ -165,7 +165,7 @@ CapsLock & 7:: {
     if GetKeyState("Alt") {
         LaunchOrActivate("hexin.exe", "C:\同花顺软件\同花顺\hexin.exe")
     } else {
-        LaunchOrActivate("happ.exe", "C:\同花顺远航版\bin\happ.exe")
+        LaunchOrActivate("happ.exe", "C:\同花顺远航版\bin\hexinlauncher.exe")
     }
 }
 CapsLock & -:: {
