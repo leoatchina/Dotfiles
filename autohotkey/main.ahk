@@ -172,14 +172,14 @@ CapsLock & -:: {
     if GetKeyState("Alt") {
         LaunchOrActivate("Kiro.exe", AppDataLocal . "\Programs\Kiro\Kiro.exe")
     } else {
-        LaunchOrActivate("qoder.exe", AppDataLocal . "\Programs\Qoder\Qoder.exe")
+        LaunchOrActivate("positron.exe", AppDataLocal . "\Programs\Positron\Positron.exe")
     }
 }
 CapsLock & =:: {
     if GetKeyState("Alt") {
-        LaunchOrActivate("positron.exe", AppDataLocal . "\Programs\Positron\Positron.exe")
-    } else {
         LaunchOrActivate("trae cn.exe", AppDataLocal . "\Programs\Trae CN\Trae CN.exe")
+    } else {
+        LaunchOrActivate("qoder.exe", AppDataLocal . "\Programs\Qoder\Qoder.exe")
     }
 }
 ; -------------------
