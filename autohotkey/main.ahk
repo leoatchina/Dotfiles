@@ -137,9 +137,9 @@ CapsLock & e:: {
 
 CapsLock & z:: {
     if GetKeyState("Alt")
-        LaunchOrActivate("zotero.exe", ScoopPath . "\apps\zotero\current\zotero.exe")
-    else
         LaunchOrActivate("zed.exe", ScoopPath . "\apps\zed\current\zed.exe")
+    else
+        LaunchOrActivate("zotero.exe", ScoopPath . "\apps\zotero\current\zotero.exe")
 }
 
 ; Browsers & Editors
@@ -338,8 +338,10 @@ global caps_release_time := 0
 CapsLock:: {
     ; 检查是否在冷却期内，如果是则忽略
     global caps_release_time
-    if (A_TickCount - caps_release_time < 256)
+    if (A_TickCount - caps_release_time < 256) {
+        KeyWait("CapsLock")
         return
+    }
     ; 正常按下，等待后续操作
 }
 CapsLock up:: {
