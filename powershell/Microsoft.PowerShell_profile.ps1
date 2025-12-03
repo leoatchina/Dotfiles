@@ -61,3 +61,14 @@ Set-PSReadLineKeyHandler -Chord 'Ctrl+Shift+S' -ScriptBlock {
 if (Get-Command fnm -ErrorAction SilentlyContinue) {
     fnm env --use-on-cd --shell powershell | Out-String | Invoke-Expression
 }
+
+$dotEnv = Join-Path $HOME '/.env.ps1'
+if (Test-Path $dotEnv -PathType Leaf) {
+    try {
+        . $dotEnv
+        Write-Host "$dotEnv 运行成功：$_" -ForegroundColor Green
+    }
+    catch {
+        Write-Host "$dotEnv 运行失败：$_" -ForegroundColor Red
+    }
+}
