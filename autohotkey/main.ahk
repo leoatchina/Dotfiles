@@ -155,12 +155,12 @@ CapsLock & 1:: LaunchOrActivate("msedge.exe", "C:\Program Files (x86)\Microsoft\
 CapsLock & 2:: LaunchOrActivate("chrome.exe", "C:\Program Files\Google\Chrome\Application\chrome.exe")
 CapsLock & 3:: LaunchOrActivate("quark.exe", AppDataLocal . "\Programs\Quark\quark.exe")
 CapsLock & 4:: LaunchOrActivate("cursor.exe", AppDataLocal . "\Programs\Cursor\Cursor.exe")
-CapsLock & 5:: LaunchOrActivate("windsurf.exe", AppDataLocal . "\Programs\Windsurf\Windsurf.exe")
-CapsLock & 6:: LaunchOrActivate("code.exe", AppDataLocal . "\Programs\Microsoft VS Code\Code.exe")
-; NOTE,  7 is for ths
+CapsLock & 5:: LaunchOrActivate("code.exe", AppDataLocal . "\Programs\Microsoft VS Code\Code.exe")
+CapsLock & 6:: LaunchOrActivate("windsurf.exe", AppDataLocal . "\Programs\Windsurf\Windsurf.exe")
 CapsLock & 8:: LaunchOrActivate("nvim-qt.exe", ScoopPath . "\apps\neovim-qt\current\bin\nvim-qt.exe")
 CapsLock & 9:: LaunchOrActivate("neovide.exe", ScoopPath . "\apps\neovide\current\neovide.exe")
 CapsLock & 0:: LaunchOrActivate("mobaxterm.exe", ScoopPath . "\apps\mobaxterm\current\mobaxterm.exe")
+; NOTE,  7 is for ths
 CapsLock & 7:: {
     if GetKeyState("Alt") {
         LaunchOrActivate("hexin.exe", "C:\同花顺软件\同花顺\hexin.exe")
