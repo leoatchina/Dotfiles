@@ -269,15 +269,6 @@ CapsLock & Down:: Send("#{Down}")
 ; ------------------------------------
 ; Input Method Control
 ; ------------------------------------
-CapsLock & Enter:: Send("#{Space}")
-CapsLock & Space:: Send("^#{Space}")
-
-GetCurrentInputLocaleID() {
-    WinID := WinGetID("A")
-    ThreadID := DllCall("GetWindowThreadProcessId", "Ptr", WinID, "Ptr", 0)
-    return DllCall("GetKeyboardLayout", "UInt", ThreadID, "UPtr")
-}
-
 SwitchChsEng() {
     InputLocaleID := GetCurrentInputLocaleID()
     ; 0x04090409 is English (US)
@@ -286,7 +277,16 @@ SwitchChsEng() {
     else
         Send("^{Space}") ; Switch to English
 }
-CapsLock & Backspace:: SwitchChsEng()
+; CapsLock & Backspace:: SwitchChsEng()
+
+CapsLock & Enter:: Send("#{Space}")
+CapsLock & Backspace:: Send("^#{Space}")
+
+GetCurrentInputLocaleID() {
+    WinID := WinGetID("A")
+    ThreadID := DllCall("GetWindowThreadProcessId", "Ptr", WinID, "Ptr", 0)
+    return DllCall("GetKeyboardLayout", "UInt", ThreadID, "UPtr")
+}
 
 ; IME control helpers: close IME to force English mode inside IME-based layouts (e.g., Microsoft Pinyin)
 GetImeOpen(winTitle := "A") {
@@ -318,17 +318,29 @@ ForceSwitchToEnglish() {
     hwnd := WinGetID("A")
     ; WM_INPUTLANGCHANGEREQUEST (0x50): wParam=0, lParam=HKL
     SendMessage(0x50, 0, hklEn, , "ahk_id " hwnd)
-    Sleep(4)
+    Sleep(1)
     if ((GetCurrentInputLocaleID() & 0xFFFF) != 0x0409) {
         ; Try activating directly as a fallback
         DllCall("ActivateKeyboardLayout", "UPtr", hklEn, "UInt", 0)
-        Sleep(4)
+        Sleep(1)
     }
 
     ; Final fallback: cycle Win+Space a few times to land on 0409
-    tries := 4
+    tries := 3
     while ((GetCurrentInputLocaleID() & 0xFFFF) != 0x0409 && tries-- > 0) {
         Send("#{Space}")
+        Sleep(1)
+    }
+}
+
+ForceSwitchToChinese() {
+    ; Only toggle when currently in en-US; keep state if already Chinese
+    if ((GetCurrentInputLocaleID() & 0xFFFF) != 0x0409)
+        return
+    tries := 3
+    while ((GetCurrentInputLocaleID() & 0xFFFF) == 0x0409 && tries-- > 0) {
+        Send("^#{Space}")
+        Sleep(1)
     }
 }
 
@@ -355,6 +367,7 @@ CapsLock up:: {
     ; 记录释放时间，开始冷却期
     caps_release_time := A_TickCount
 }
+CapsLock & Space:: ForceSwitchToChinese()
 ; ------------------------------------
 ; Remap side mouse buttons to middle button for xtop.exe
 ; ------------------------------------
