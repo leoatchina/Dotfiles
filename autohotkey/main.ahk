@@ -145,9 +145,9 @@ CapsLock & z:: {
 ; Browsers & Editors
 CapsLock & b:: {
     if GetKeyState("Alt") {
-        LaunchOrActivate("ahk_exe firefox.exe", ScoopPath . "\apps\firefox\current\firefox.exe")
-    } else {
         LaunchOrActivate("ahk_exe zen.exe", "C:\Program Files\Zen Browser\zen.exe")
+    } else {
+        LaunchOrActivate("ahk_exe brave.exe", ScoopPath . "\apps\brave\current\brave.exe")
     }
 }
 
