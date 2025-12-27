@@ -153,13 +153,20 @@ CapsLock & b:: {
 
 CapsLock & 1:: LaunchOrActivate("msedge.exe", "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe")
 CapsLock & 2:: LaunchOrActivate("chrome.exe", "C:\Program Files\Google\Chrome\Application\chrome.exe")
-CapsLock & 3:: LaunchOrActivate("code.exe", AppDataLocal . "\Programs\Microsoft VS Code\Code.exe")
 CapsLock & 4:: LaunchOrActivate("windsurf.exe", AppDataLocal . "\Programs\Windsurf\Windsurf.exe")
 CapsLock & 5:: LaunchOrActivate("cursor.exe", AppDataLocal . "\Programs\Cursor\Cursor.exe")
 CapsLock & 6:: LaunchOrActivate("quark.exe", AppDataLocal . "\Programs\Quark\quark.exe")
 CapsLock & 8:: LaunchOrActivate("nvim-qt.exe", ScoopPath . "\apps\neovim-qt\current\bin\nvim-qt.exe")
 CapsLock & 9:: LaunchOrActivate("neovide.exe", ScoopPath . "\apps\neovide\current\neovide.exe")
 CapsLock & 0:: LaunchOrActivate("mobaxterm.exe", ScoopPath . "\apps\mobaxterm\current\mobaxterm.exe")
+; code && positron, with gpt5.1
+CapsLock & 3:: {
+    if GetKeyState("Alt") {
+        LaunchOrActivate("Antigravity.exe", AppDataLocal . "\Programs\Antigravity\Antigravity.exe")
+    } else {
+        LaunchOrActivate("code.exe", AppDataLocal . "\Programs\Microsoft VS Code\Code.exe")
+    }
+}
 ; NOTE,  7 is for ths
 CapsLock & 7:: {
     if GetKeyState("Alt") {
