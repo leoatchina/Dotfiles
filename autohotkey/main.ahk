@@ -208,7 +208,7 @@ CapsLock & v:: {
 }
 ; Remove line breaks from clipboard
 CapsLock & u:: {
-    if GetKeyState("Alt") 
+    if GetKeyState("Alt") {
         A_Clipboard := RegExReplace(A_Clipboard, "(\S.*?)\R(.*?\S)", "$1 $2")
     } else {
         A_Clipboard := A_Clipboard ; Force update
