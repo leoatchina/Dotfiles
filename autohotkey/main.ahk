@@ -118,7 +118,7 @@ CapsLock & \:: {
     if GetKeyState("Alt")
         LaunchOrActivate("hyper.exe", ScoopPath . "\apps\hyper\current\hyper.exe")
     else
-        LaunchOrActivate("wezterm-gui.exe", ScoopPath . "\apps\wezterm-nightly\current\wezterm-gui.exe")
+        LaunchOrActivate("mobaxterm.exe", ScoopPath . "\apps\mobaxterm\current\mobaxterm.exe")
 }
 ; note softwares
 CapsLock & o:: {
@@ -158,8 +158,8 @@ CapsLock & 5:: LaunchOrActivate("cursor.exe", AppDataLocal . "\Programs\Cursor\C
 CapsLock & 6:: LaunchOrActivate("quark.exe", AppDataLocal . "\Programs\Quark\quark.exe")
 CapsLock & 8:: LaunchOrActivate("nvim-qt.exe", ScoopPath . "\apps\neovim-qt\current\bin\nvim-qt.exe")
 CapsLock & 9:: LaunchOrActivate("neovide.exe", ScoopPath . "\apps\neovide\current\neovide.exe")
-CapsLock & 0:: LaunchOrActivate("mobaxterm.exe", ScoopPath . "\apps\mobaxterm\current\mobaxterm.exe")
-; code && positron, with gpt5.1
+CapsLock & 0:: LaunchOrActivate("wezterm-gui.exe", ScoopPath . "\apps\wezterm-nightly\current\wezterm-gui.exe")
+; code && positron, with gpt
 CapsLock & 3:: {
     if GetKeyState("Alt") {
         LaunchOrActivate("Antigravity.exe", AppDataLocal . "\Programs\Antigravity\Antigravity.exe")
