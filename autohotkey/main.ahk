@@ -157,15 +157,21 @@ CapsLock & 3:: LaunchOrActivate("code.exe", AppDataLocal . "\Programs\Microsoft 
 CapsLock & 4:: LaunchOrActivate("windsurf.exe", AppDataLocal . "\Programs\Windsurf\Windsurf.exe")
 CapsLock & 5:: LaunchOrActivate("cursor.exe", AppDataLocal . "\Programs\Cursor\Cursor.exe")
 CapsLock & 6:: LaunchOrActivate("quark.exe", AppDataLocal . "\Programs\Quark\quark.exe")
-CapsLock & 8:: LaunchOrActivate("positron.exe", AppDataLocal . "\Programs\Positron\Positron.exe")
-CapsLock & 9:: LaunchOrActivate("antigravity.exe", AppDataLocal . "\Programs\Antigravity\Antigravity.exe") 
-CapsLock & 0:: LaunchOrActivate("wezterm-gui.exe", ScoopPath . "\apps\wezterm-nightly\current\wezterm-gui.exe")
 ; NOTE,  7 is for ths
 CapsLock & 7:: {
     if GetKeyState("Alt") {
         LaunchOrActivate("hexin.exe", "C:\同花顺软件\同花顺\hexin.exe")
     } else {
         LaunchOrActivate("happ.exe", "C:\同花顺远航版\bin\hexinlauncher.exe")
+    }
+}
+CapsLock & 8:: LaunchOrActivate("positron.exe", AppDataLocal . "\Programs\Positron\Positron.exe")
+CapsLock & 9:: LaunchOrActivate("antigravity.exe", AppDataLocal . "\Programs\Antigravity\Antigravity.exe")
+CapsLock & 0:: {
+    if GetKeyState("Alt") {
+        LaunchOrActivate("gvim.exe", ScoopPath . "\apps\gvim\current\gvim.exe")
+    } else {
+        LaunchOrActivate("wezterm-gui.exe", ScoopPath . "\apps\wezterm-nightly\current\wezterm-gui.exe")
     }
 }
 CapsLock & -:: {
