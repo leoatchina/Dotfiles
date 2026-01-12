@@ -110,15 +110,9 @@ CapsLock & f:: {
 ; terminal
 CapsLock & t:: {
     if GetKeyState("Alt")
-        LaunchOrActivate("alacritty.exe", ScoopPath . "\apps\alacritty\current\alacritty.exe")
+        LaunchOrActivate("wezterm-gui.exe", ScoopPath . "\apps\wezterm-nightly\current\wezterm-gui.exe")
     else
         LaunchOrActivate("WindowsTerminal.exe", AppDataLocal . "\Microsoft\WindowsApps\wt.exe")
-}
-CapsLock & \:: {
-    if GetKeyState("Alt")
-        LaunchOrActivate("hyper.exe", ScoopPath . "\apps\hyper\current\hyper.exe")
-    else
-        LaunchOrActivate("mobaxterm.exe", ScoopPath . "\apps\mobaxterm\current\mobaxterm.exe")
 }
 ; note softwares
 CapsLock & o:: {
@@ -169,23 +163,30 @@ CapsLock & 8:: LaunchOrActivate("positron.exe", AppDataLocal . "\Programs\Positr
 CapsLock & 9:: LaunchOrActivate("antigravity.exe", AppDataLocal . "\Programs\Antigravity\Antigravity.exe")
 CapsLock & 0:: {
     if GetKeyState("Alt") {
-        LaunchOrActivate("gvim.exe", ScoopPath . "\apps\gvim\current\gvim.exe")
+        LaunchOrActivate("hyper.exe", ScoopPath . "\apps\hyper\current\hyper.exe")
     } else {
-        LaunchOrActivate("wezterm-gui.exe", ScoopPath . "\apps\wezterm-nightly\current\wezterm-gui.exe")
+        LaunchOrActivate("mobaxterm.exe", ScoopPath . "\apps\mobaxterm\current\mobaxterm.exe")
     }
 }
 CapsLock & -:: {
+    if GetKeyState("Alt") {
+        LaunchOrActivate("trae cn.exe", AppDataLocal . "\Programs\Trae CN\Trae CN.exe")
+    } else {
+        LaunchOrActivate("qoder.exe", AppDataLocal . "\Programs\Qoder\Qoder.exe")
+    }
+}
+CapsLock & =:: {
     if GetKeyState("Alt") {
         LaunchOrActivate("neovide.exe", ScoopPath . "\apps\neovide\current\neovide.exe")
     } else {
         LaunchOrActivate("nvim-qt.exe", ScoopPath . "\apps\neovim-qt\current\bin\nvim-qt.exe")
     }
 }
-CapsLock & =:: {
+CapsLock & \:: {
     if GetKeyState("Alt") {
-        LaunchOrActivate("trae cn.exe", AppDataLocal . "\Programs\Trae CN\Trae CN.exe")
+        LaunchOrActivate("gvim.exe", ScoopPath . "\apps\vim-nightly\current\gvim.exe")
     } else {
-        LaunchOrActivate("qoder.exe", AppDataLocal . "\Programs\Qoder\Qoder.exe")
+        LaunchOrActivate("alacritty.exe", ScoopPath . "\apps\alacritty\current\alacritty.exe")
     }
 }
 ; -------------------
