@@ -157,8 +157,8 @@ CapsLock & 3:: LaunchOrActivate("code.exe", AppDataLocal . "\Programs\Microsoft 
 CapsLock & 4:: LaunchOrActivate("windsurf.exe", AppDataLocal . "\Programs\Windsurf\Windsurf.exe")
 CapsLock & 5:: LaunchOrActivate("cursor.exe", AppDataLocal . "\Programs\Cursor\Cursor.exe")
 CapsLock & 6:: LaunchOrActivate("quark.exe", AppDataLocal . "\Programs\Quark\quark.exe")
-CapsLock & 8:: LaunchOrActivate("nvim-qt.exe", ScoopPath . "\apps\neovim-qt\current\bin\nvim-qt.exe")
-CapsLock & 9:: LaunchOrActivate("neovide.exe", ScoopPath . "\apps\neovide\current\neovide.exe")
+CapsLock & 8:: LaunchOrActivate("positron.exe", AppDataLocal . "\Programs\Positron\Positron.exe")
+CapsLock & 9:: LaunchOrActivate("antigravity.exe", AppDataLocal . "\Programs\Antigravity\Antigravity.exe") 
 CapsLock & 0:: LaunchOrActivate("wezterm-gui.exe", ScoopPath . "\apps\wezterm-nightly\current\wezterm-gui.exe")
 ; NOTE,  7 is for ths
 CapsLock & 7:: {
@@ -170,9 +170,9 @@ CapsLock & 7:: {
 }
 CapsLock & -:: {
     if GetKeyState("Alt") {
-        LaunchOrActivate("positron.exe", AppDataLocal . "\Programs\Positron\Positron.exe")
+        LaunchOrActivate("neovide.exe", ScoopPath . "\apps\neovide\current\neovide.exe")
     } else {
-        LaunchOrActivate("Antigravity.exe", AppDataLocal . "\Programs\Antigravity\Antigravity.exe")
+        LaunchOrActivate("nvim-qt.exe", ScoopPath . "\apps\neovim-qt\current\bin\nvim-qt.exe")
     }
 }
 CapsLock & =:: {
