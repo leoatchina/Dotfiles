@@ -159,8 +159,8 @@ CapsLock & 7:: {
         LaunchOrActivate("happ.exe", "C:\同花顺远航版\bin\hexinlauncher.exe")
     }
 }
-CapsLock & 8:: LaunchOrActivate("positron.exe", AppDataLocal . "\Programs\Positron\Positron.exe")
-CapsLock & 9:: LaunchOrActivate("antigravity.exe", AppDataLocal . "\Programs\Antigravity\Antigravity.exe")
+CapsLock & 8:: LaunchOrActivate("antigravity.exe", AppDataLocal . "\Programs\Antigravity\Antigravity.exe")
+CapsLock & 9:: LaunchOrActivate("positron.exe", AppDataLocal . "\Programs\Positron\Positron.exe")
 CapsLock & 0:: {
     if GetKeyState("Alt") {
         LaunchOrActivate("hyper.exe", ScoopPath . "\apps\hyper\current\hyper.exe")
