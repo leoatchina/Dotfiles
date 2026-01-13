@@ -128,13 +128,7 @@ CapsLock & e:: {
     else
         LaunchOrActivate("360FileBrowser64.exe", A_AppData . "\360FileBrowser\360FileBrowser64.exe")
 }
-
-CapsLock & z:: {
-    if GetKeyState("Alt")
-        LaunchOrActivate("zed.exe", ScoopPath . "\apps\zed\current\zed.exe")
-    else
-        LaunchOrActivate("zotero.exe", ScoopPath . "\apps\zotero\current\zotero.exe")
-}
+CapsLock & z:: LaunchOrActivate("zotero.exe", ScoopPath . "\apps\zotero\current\zotero.exe")
 
 ; Browsers & Editors
 CapsLock & b:: {
@@ -147,7 +141,14 @@ CapsLock & b:: {
 
 CapsLock & 1:: LaunchOrActivate("msedge.exe", "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe")
 CapsLock & 2:: LaunchOrActivate("chrome.exe", "C:\Program Files\Google\Chrome\Application\chrome.exe")
-CapsLock & 3:: LaunchOrActivate("code.exe", AppDataLocal . "\Programs\Microsoft VS Code\Code.exe")
+CapsLock & 3:: {
+    if GetKeyState("Alt") {
+        LaunchOrActivate("positron.exe", AppDataLocal . "\Programs\Positron\Positron.exe")
+    } else {
+        LaunchOrActivate("code.exe", AppDataLocal . "\Programs\Microsoft VS Code\Code.exe")
+    }
+
+}
 CapsLock & 4:: LaunchOrActivate("windsurf.exe", AppDataLocal . "\Programs\Windsurf\Windsurf.exe")
 CapsLock & 5:: LaunchOrActivate("cursor.exe", AppDataLocal . "\Programs\Cursor\Cursor.exe")
 CapsLock & 6:: LaunchOrActivate("quark.exe", AppDataLocal . "\Programs\Quark\quark.exe")
@@ -160,7 +161,7 @@ CapsLock & 7:: {
     }
 }
 CapsLock & 8:: LaunchOrActivate("antigravity.exe", AppDataLocal . "\Programs\Antigravity\Antigravity.exe")
-CapsLock & 9:: LaunchOrActivate("positron.exe", AppDataLocal . "\Programs\Positron\Positron.exe")
+CapsLock & 9:: LaunchOrActivate("zed.exe", ScoopPath . "\apps\zed\current\zed.exe")
 CapsLock & 0:: {
     if GetKeyState("Alt") {
         LaunchOrActivate("hyper.exe", ScoopPath . "\apps\hyper\current\hyper.exe")
