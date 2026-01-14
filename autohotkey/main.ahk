@@ -98,7 +98,7 @@ CapsLock & r:: {
     if GetKeyState("Alt")
         Reload()
     else
-        LaunchOrActivate("telegram.exe", A_AppData . "\Telegram Desktop\telegram.exe")
+        LaunchOrActivate("wezterm-gui.exe", ScoopPath . "\apps\wezterm-nightly\current\wezterm-gui.exe")
 }
 
 CapsLock & f:: {
@@ -107,10 +107,11 @@ CapsLock & f:: {
     else
         LaunchOrActivate("feishu.exe", AppDataLocal . "\Feishu\Feishu.exe")
 }
+
 ; terminal
 CapsLock & t:: {
     if GetKeyState("Alt")
-        LaunchOrActivate("wezterm-gui.exe", ScoopPath . "\apps\wezterm-nightly\current\wezterm-gui.exe")
+        LaunchOrActivate("telegram.exe", A_AppData . "\Telegram Desktop\telegram.exe")
     else
         LaunchOrActivate("WindowsTerminal.exe", AppDataLocal . "\Microsoft\WindowsApps\wt.exe")
 }
