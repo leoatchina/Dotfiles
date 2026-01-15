@@ -455,7 +455,7 @@
     "name": "常用引擎",
     "sites": [
       {
-        "id": 100,
+        "id": 90,
         "name": "Gemini",
         "url": "https://gemini.google.com/app",
         "openMethod": "simulation",
@@ -465,7 +465,7 @@
         ]
       },
       {
-        "id": 90,
+        "id": 80,
         "name": "Perplexity",
         "url": "https://www.perplexity.ai/?q=%s",
         "openMethod": "urlConcat",
@@ -475,20 +475,10 @@
         ]
       },
       {
-        "id": 80,
+        "id": 70,
         "name": "秘塔",
         "url": "https://metaso.cn/?q=%s",
         "openMethod": "urlConcat"
-      },
-      {
-        "id": 70,
-        "name": "文心一言",
-        "url": "https://yiyan.baidu.com/",
-        "openMethod": "simulation",
-        "jsSelect": [
-          "div div[contenteditable]",
-          ".VAtmtpqL"
-        ]
       },
 			{
 				"id": 60,
