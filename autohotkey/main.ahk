@@ -9,19 +9,19 @@ SetCapsLockState("AlwaysOff")
 ; ------------------------------------
 ; Global Variables - Detect Scoop Path
 ; ------------------------------------
-global ScoopPath,UserProfile,AppDataLocal
+global ScoopPath, UserProfile, AppDataLocal
 UserProfile := EnvGet("USERPROFILE")
 AppDataLocal := UserProfile . "\AppData\Local"
-if DirExist("C:\Scoop"){
+if DirExist("C:\Scoop") {
     ScoopPath := "C:\Scoop"
 }
-else if DirExist("D:\Scoop"){
+else if DirExist("D:\Scoop") {
     ScoopPath := "D:\Scoop"
 }
-else if DirExist(UserProfile . "\scoop"){
+else if DirExist(UserProfile . "\scoop") {
     ScoopPath := UserProfile . "\scoop"
 }
-else{
+else {
     ScoopPath := ""
 }
 ; ------------------------------------
@@ -54,7 +54,8 @@ CapsLock & q:: Send("{Esc}")
 ; Tab navigation
 CapsLock & n:: {
     if GetKeyState("Alt")
-        LaunchOrActivate("notepad--.exe", ScoopPath . "\apps\notepad--\current\Notepad--.exe", ScoopPath . "\apps\notepad3\current\notepad3.exe")
+        LaunchOrActivate("notepad--.exe", ScoopPath . "\apps\notepad--\current\Notepad--.exe", ScoopPath .
+            "\apps\notepad3\current\notepad3.exe")
     else
         Send("^{Tab}")
 }
@@ -125,7 +126,7 @@ CapsLock & o:: {
 
 CapsLock & e:: {
     if GetKeyState("Alt")
-        LaunchOrActivate("Heynote.exe",  ScoopPath . "\apps\Heynote\current\Heynote.exe")
+        LaunchOrActivate("Heynote.exe", ScoopPath . "\apps\Heynote\current\Heynote.exe")
     else
         LaunchOrActivate("360FileBrowser64.exe", A_AppData . "\360FileBrowser\360FileBrowser64.exe")
 }
@@ -278,6 +279,7 @@ CapsLock & Down:: Send("#{Down}")
 ; ------------------------------------
 ; Input Method Control
 ; ------------------------------------
+CapsLock & .:: Send("^{.}")
 SwitchChsEng() {
     InputLocaleID := GetCurrentInputLocaleID()
     ; 0x04090409 is English (US)
