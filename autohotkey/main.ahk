@@ -53,18 +53,19 @@ CapsLock & q:: Send("{Esc}")
 
 ; Tab navigation
 CapsLock & n:: {
-    if GetKeyState("Alt")
-        LaunchOrActivate("notepad--.exe", ScoopPath . "\apps\notepad--\current\Notepad--.exe", ScoopPath .
-            "\apps\notepad3\current\notepad3.exe")
-    else
+    if GetKeyState("Alt"){
+        LaunchOrActivate("notepad--.exe", ScoopPath . "\apps\notepad--\current\Notepad--.exe", ScoopPath . "\apps\notepad3\current\notepad3.exe")
+    }else{
         Send("^{Tab}")
+    }
 }
 
 CapsLock & p:: {
-    if GetKeyState("Alt")
+    if GetKeyState("Alt"){
         LaunchOrActivate("PotPlayerMini.exe", ScoopPath . "\apps\potplaher\current\PotPlayerMini.exe")
-    else
+    }else{
         Send("^+{Tab}")
+    }
 }
 
 CapsLock & LCtrl:: Send("^{Tab}")
@@ -72,10 +73,11 @@ CapsLock & LShift:: Send("^+{Tab}")
 
 ; Volume control
 CapsLock & m:: {
-    if GetKeyState("Alt")
+    if GetKeyState("Alt"){
         LaunchOrActivate("Motrix.exe", AppDataLocal . "\Programs\Motrix\Motrix.exe")
-    else
+    }else{
         Send("{Volume_Mute}")
+    }
 }
 CapsLock & [:: Send("{Volume_Down}")
 CapsLock & ]:: Send("{Volume_Up}")
@@ -149,7 +151,6 @@ CapsLock & 3:: {
     } else {
         LaunchOrActivate("code.exe", AppDataLocal . "\Programs\Microsoft VS Code\Code.exe")
     }
-
 }
 CapsLock & 4:: LaunchOrActivate("windsurf.exe", AppDataLocal . "\Programs\Windsurf\Windsurf.exe")
 CapsLock & 5:: LaunchOrActivate("cursor.exe", AppDataLocal . "\Programs\Cursor\Cursor.exe")
