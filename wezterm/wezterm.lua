@@ -21,8 +21,8 @@ config.keys = {
   },
   { key = 'n', mods = 'CTRL|SHIFT|ALT', action = action.MoveTabRelative(1) },
   { key = 'p', mods = 'CTRL|SHIFT|ALT', action = action.MoveTabRelative(-1) },
+  { key = 'Enter', mods = 'ALT', action = action.DisableDefaultAssignment },
 }
-
 
 for i = 1, 9 do
   table.insert(config.keys, {
