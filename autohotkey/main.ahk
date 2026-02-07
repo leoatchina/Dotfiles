@@ -174,9 +174,9 @@ CapsLock & -:: {
 }
 CapsLock & =:: {
     if GetKeyState("Alt") {
-        LaunchOrActivate("neovide.exe", ScoopPath . "\apps\neovide\current\neovide.exe")
-    } else {
         LaunchOrActivate("nvim-qt.exe", ScoopPath . "\apps\neovim-qt\current\bin\nvim-qt.exe")
+    } else {
+        LaunchOrActivate("neovide.exe", ScoopPath . "\apps\neovide\current\neovide.exe")
     }
 }
 CapsLock & \:: {
