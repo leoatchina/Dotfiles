@@ -156,7 +156,7 @@ CapsLock & 7:: {
         LaunchOrActivate("happ.exe", "C:\同花顺远航版\bin\hexinlauncher.exe")
     }
 }
-CapsLock & 8:: LaunchOrActivate("positron.exe", AppDataLocal . "\Programs\Positron\Positron.exe")
+CapsLock & 8:: LaunchOrActivate("antigravity.exe", AppDataLocal . "\Programs\antigravity\antigravity.exe")
 CapsLock & 9:: LaunchOrActivate("zed.exe", ScoopPath . "\apps\zed\current\zed.exe")
 CapsLock & 0:: {
     if GetKeyState("Alt") {
@@ -167,7 +167,7 @@ CapsLock & 0:: {
 }
 CapsLock & -:: {
     if GetKeyState("Alt") {
-        LaunchOrActivate("trae cn.exe", AppDataLocal . "\Programs\Trae CN\Trae CN.exe")
+        LaunchOrActivate("positron.exe", AppDataLocal . "\Programs\Positron\Positron.exe")
     } else {
         LaunchOrActivate("qoder.exe", AppDataLocal . "\Programs\Qoder\Qoder.exe")
     }
