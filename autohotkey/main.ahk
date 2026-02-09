@@ -145,7 +145,13 @@ CapsLock & b:: {
 
 CapsLock & 1:: LaunchOrActivate("msedge.exe", "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe")
 CapsLock & 2:: LaunchOrActivate("chrome.exe", "C:\Program Files\Google\Chrome\Application\chrome.exe")
-CapsLock & 3:: LaunchOrActivate("code.exe", AppDataLocal . "\Programs\Microsoft VS Code\Code.exe")
+CapsLock & 3:: {
+    if GetKeyState("Alt") {
+        LaunchOrActivate("positron.exe", AppDataLocal . "\Programs\Positron\Positron.exe")
+    } else {
+        LaunchOrActivate("code.exe", AppDataLocal . "\Programs\Microsoft VS Code\Code.exe")
+    }
+}
 CapsLock & 4:: LaunchOrActivate("windsurf.exe", AppDataLocal . "\Programs\Windsurf\Windsurf.exe")
 CapsLock & 5:: LaunchOrActivate("cursor.exe", AppDataLocal . "\Programs\Cursor\Cursor.exe")
 CapsLock & 6:: LaunchOrActivate("quark.exe", AppDataLocal . "\Programs\Quark\quark.exe")
@@ -156,7 +162,7 @@ CapsLock & 7:: {
         LaunchOrActivate("happ.exe", "C:\同花顺远航版\bin\hexinlauncher.exe")
     }
 }
-CapsLock & 8:: LaunchOrActivate("antigravity.exe", AppDataLocal . "\Programs\antigravity\antigravity.exe")
+CapsLock & 8:: LaunchOrActivate("qoder.exe", AppDataLocal . "\Programs\Qoder\Qoder.exe")
 CapsLock & 9:: LaunchOrActivate("zed.exe", ScoopPath . "\apps\zed\current\zed.exe")
 CapsLock & 0:: {
     if GetKeyState("Alt") {
@@ -167,9 +173,9 @@ CapsLock & 0:: {
 }
 CapsLock & -:: {
     if GetKeyState("Alt") {
-        LaunchOrActivate("positron.exe", AppDataLocal . "\Programs\Positron\Positron.exe")
+        LaunchOrActivate("antigravity_tools.exe", AppDataLocal . "\Antigravity Tools\antigravity_tools.exe")
     } else {
-        LaunchOrActivate("qoder.exe", AppDataLocal . "\Programs\Qoder\Qoder.exe")
+        LaunchOrActivate("antigravity.exe", AppDataLocal . "\Programs\antigravity\antigravity.exe")
     }
 }
 CapsLock & =:: {
