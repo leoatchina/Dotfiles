@@ -153,7 +153,13 @@ CapsLock & 3:: {
     }
 }
 CapsLock & 4:: LaunchOrActivate("windsurf.exe", AppDataLocal . "\Programs\Windsurf\Windsurf.exe")
-CapsLock & 5:: LaunchOrActivate("cursor.exe", AppDataLocal . "\Programs\Cursor\Cursor.exe")
+CapsLock & 5:: {
+    if GetKeyState("Alt") {
+        LaunchOrActivate("cursor.exe", AppDataLocal . "\Programs\Cursor\Cursor.exe")
+    } else {
+        LaunchOrActivate("qoder.exe", AppDataLocal . "\Programs\Qoder\Qoder.exe")
+    }
+}
 CapsLock & 6:: LaunchOrActivate("quark.exe", AppDataLocal . "\Programs\Quark\quark.exe")
 CapsLock & 7:: {
     if GetKeyState("Alt") {
@@ -162,29 +168,23 @@ CapsLock & 7:: {
         LaunchOrActivate("happ.exe", "C:\同花顺远航版\bin\hexinlauncher.exe")
     }
 }
-CapsLock & 8:: LaunchOrActivate("qoder.exe", AppDataLocal . "\Programs\Qoder\Qoder.exe")
-CapsLock & 9:: LaunchOrActivate("zed.exe", ScoopPath . "\apps\zed\current\zed.exe")
-CapsLock & 0:: {
-    if GetKeyState("Alt") {
-        LaunchOrActivate("hyper.exe", ScoopPath . "\apps\hyper\current\hyper.exe")
-    } else {
-        LaunchOrActivate("mobaxterm.exe", ScoopPath . "\apps\mobaxterm\current\mobaxterm.exe")
-    }
-}
-CapsLock & -:: {
+CapsLock & 8:: LaunchOrActivate("zed.exe", ScoopPath . "\apps\zed\current\zed.exe")
+CapsLock & 9:: {
     if GetKeyState("Alt") {
         LaunchOrActivate("antigravity_tools.exe", AppDataLocal . "\Antigravity Tools\antigravity_tools.exe")
     } else {
         LaunchOrActivate("antigravity.exe", AppDataLocal . "\Programs\antigravity\antigravity.exe")
     }
 }
-CapsLock & =:: {
+CapsLock & 0:: {
     if GetKeyState("Alt") {
-        LaunchOrActivate("nvim-qt.exe", ScoopPath . "\apps\neovim-qt\current\bin\nvim-qt.exe")
-    } else {
         LaunchOrActivate("neovide.exe", ScoopPath . "\apps\neovide\current\neovide.exe")
+    } else {
+        LaunchOrActivate("nvim-qt.exe", ScoopPath . "\apps\neovim-qt\current\bin\nvim-qt.exe")
     }
 }
+CapsLock & -:: LaunchOrActivate("mobaxterm.exe", ScoopPath . "\apps\mobaxterm\current\mobaxterm.exe")
+CapsLock & =:: LaunchOrActivate("hyper.exe", ScoopPath . "\apps\hyper\current\hyper.exe")
 CapsLock & \:: {
     if GetKeyState("Alt") {
         LaunchOrActivate("gvim.exe", ScoopPath . "\apps\vim-nightly\current\gvim.exe")
