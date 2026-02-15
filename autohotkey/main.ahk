@@ -328,7 +328,7 @@ ForceSwitchToEnglish() {
     hklEn := DllCall("LoadKeyboardLayout", "Str", "00000409", "UInt", 0, "UPtr")
     hwnd := WinGetID("A")
     ; WM_INPUTLANGCHANGEREQUEST (0x50): wParam=0, lParam=HKL
-    SendMessage(0x50, 0, hklEn, , "ahk_id " hwnd)
+    try SendMessage(0x50, 0, hklEn, , "ahk_id " hwnd,, 1000)
     Sleep(1)
     if ((GetCurrentInputLocaleID() & 0xFFFF) != 0x0409) {
         ; Try activating directly as a fallback
