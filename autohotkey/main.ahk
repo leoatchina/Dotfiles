@@ -178,13 +178,13 @@ CapsLock & 9:: {
 }
 CapsLock & 0:: {
     if GetKeyState("Alt") {
-        LaunchOrActivate("neovide.exe", ScoopPath . "\apps\neovide\current\neovide.exe")
+        LaunchOrActivate("hyper.exe", ScoopPath . "\apps\hyper\current\hyper.exe")
     } else {
-        LaunchOrActivate("nvim-qt.exe", ScoopPath . "\apps\neovim-qt\current\bin\nvim-qt.exe")
+        LaunchOrActivate("mobaxterm.exe", ScoopPath . "\apps\mobaxterm\current\mobaxterm.exe")
     }
 }
-CapsLock & -:: LaunchOrActivate("mobaxterm.exe", ScoopPath . "\apps\mobaxterm\current\mobaxterm.exe")
-CapsLock & =:: LaunchOrActivate("hyper.exe", ScoopPath . "\apps\hyper\current\hyper.exe")
+CapsLock & -:: LaunchOrActivate("neovide.exe", ScoopPath . "\apps\neovide\current\neovide.exe")
+CapsLock & =:: LaunchOrActivate("nvim-qt.exe", ScoopPath . "\apps\neovim-qt\current\bin\nvim-qt.exe")
 CapsLock & \:: {
     if GetKeyState("Alt") {
         LaunchOrActivate("gvim.exe", ScoopPath . "\apps\vim-nightly\current\gvim.exe")
