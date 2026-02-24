@@ -155,9 +155,9 @@ CapsLock & 3:: {
 CapsLock & 4:: LaunchOrActivate("windsurf.exe", AppDataLocal . "\Programs\Windsurf\Windsurf.exe")
 CapsLock & 5:: {
     if GetKeyState("Alt") {
-        LaunchOrActivate("cursor.exe", AppDataLocal . "\Programs\Cursor\Cursor.exe")
-    } else {
         LaunchOrActivate("qoder.exe", AppDataLocal . "\Programs\Qoder\Qoder.exe")
+    } else {
+        LaunchOrActivate("cursor.exe", AppDataLocal . "\Programs\Cursor\Cursor.exe")
     }
 }
 CapsLock & 6:: LaunchOrActivate("quark.exe", AppDataLocal . "\Programs\Quark\quark.exe")
