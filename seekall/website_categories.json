@@ -455,6 +455,16 @@
     "name": "常用引擎",
     "sites": [
       {
+        "id": 100,
+        "name": "ChatGPT",
+        "url": "https://chatgpt.com/",
+        "openMethod": "simulation",
+        "jsSelect": [
+          "p[data-placeholder][class=\"placeholder\"]",
+          "button[id=\"composer-submit-button\"]"
+        ]
+      },
+      {
         "id": 90,
         "name": "Gemini",
         "url": "https://gemini.google.com/app",
