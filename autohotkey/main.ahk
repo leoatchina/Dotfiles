@@ -355,27 +355,41 @@ ForceSwitchToChinese() {
     }
 }
 
-; CapsLock 释放后的冷却期，防止键盘信号延迟导致误触组合键
+global caps_press_time := 0
 global caps_release_time := 0
-; 单击 CapsLock 在抬起时触发切到英文；与其它键组合时不触发
+global caps_just_tapped := false
+
+ClearTapFlag() {
+    global caps_just_tapped
+    caps_just_tapped := false
+}
+
 CapsLock:: {
-    ; 检查是否在冷却期内，如果是则忽略
+    global caps_press_time
     global caps_release_time
+    global caps_just_tapped
     if (A_TickCount - caps_release_time < 256) {
         KeyWait("CapsLock")
         return
     }
-    ; 正常按下，等待后续操作
+    caps_press_time := A_TickCount
+    caps_just_tapped := false
 }
+
 CapsLock up:: {
+    global caps_press_time
     global caps_release_time
-    ; 仅当 CapsLock 单独按下/抬起（未与其它键组合）时才切英文
+    global caps_just_tapped
+    hold_duration := A_TickCount - caps_press_time
+    if (hold_duration < 100) {
+        caps_just_tapped := true
+        SetTimer(ClearTapFlag, -150)
+    }
     if (A_PriorKey = "CapsLock") {
         Critical "On"
         ForceSwitchToEnglish()
         Critical "Off"
     }
-    ; 记录释放时间，开始冷却期
     caps_release_time := A_TickCount
 }
 CapsLock & Space:: ForceSwitchToChinese()
