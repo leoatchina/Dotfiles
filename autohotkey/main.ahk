@@ -393,6 +393,8 @@ CapsLock up:: {
     caps_release_time := A_TickCount
 }
 CapsLock & Space:: ForceSwitchToChinese()
+~Alt & Shift::ForceSwitchToEnglish()
+~Shift & Alt::ForceSwitchToEnglish()
 ; ------------------------------------
 ; Remap side mouse buttons to middle button for xtop.exe
 ; ------------------------------------
