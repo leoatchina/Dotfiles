@@ -358,6 +358,7 @@ ForceSwitchToChinese() {
 global caps_press_time := 0
 global caps_release_time := 0
 global caps_just_tapped := false
+global caps_combo_used := false
 global alt_shift_triggered := false
 
 ClearTapFlag() {
@@ -369,31 +370,39 @@ CapsLock:: {
     global caps_press_time
     global caps_release_time
     global caps_just_tapped
+    global caps_combo_used
     if (A_TickCount - caps_release_time < 256) {
         KeyWait("CapsLock")
         return
     }
     caps_press_time := A_TickCount
     caps_just_tapped := false
+    caps_combo_used := false
 }
 
 CapsLock up:: {
     global caps_press_time
     global caps_release_time
     global caps_just_tapped
+    global caps_combo_used
     hold_duration := A_TickCount - caps_press_time
     if (hold_duration < 100) {
         caps_just_tapped := true
         SetTimer(ClearTapFlag, -150)
     }
-    if (A_PriorKey = "CapsLock") {
+    if (A_PriorKey = "CapsLock" && !caps_combo_used) {
         Critical "On"
         ForceSwitchToEnglish()
         Critical "Off"
     }
     caps_release_time := A_TickCount
 }
-CapsLock & Space:: ForceSwitchToChinese()
+
+CapsLock & Space:: {
+    global caps_combo_used
+    caps_combo_used := true
+    ForceSwitchToChinese()
+}
 ; ------------------------------------
 ; Remap side mouse buttons to middle button for xtop.exe
 ; ------------------------------------
