@@ -358,6 +358,7 @@ ForceSwitchToChinese() {
 global caps_press_time := 0
 global caps_release_time := 0
 global caps_just_tapped := false
+global alt_shift_triggered := false
 
 ClearTapFlag() {
     global caps_just_tapped
@@ -393,8 +394,6 @@ CapsLock up:: {
     caps_release_time := A_TickCount
 }
 CapsLock & Space:: ForceSwitchToChinese()
-~Alt & Shift::ForceSwitchToEnglish()
-~Shift & Alt::ForceSwitchToEnglish()
 ; ------------------------------------
 ; Remap side mouse buttons to middle button for xtop.exe
 ; ------------------------------------
