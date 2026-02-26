@@ -56,10 +56,10 @@ global caps_just_tapped := false
 ; 组合键已使用标志：CapsLock 松开时若为 true，则不触发切英文（避免组合键后意外切换）
 global caps_combo_used := false
 
-; 按住时长低于此值（ms）视为快速点击
-global CAPS_TAP_MAX_MS := 100
+; 按住时长低于此值（ms）视为快速点击（键盘硬件/OS 延迟通常 < 50ms，故意按住的组合键一般 > 50ms）
+global CAPS_TAP_MAX_MS := 50
 ; 快速点击后屏蔽组合键的持续时间（ms）
-global CAPS_TAP_BLOCK_MS := 150
+global CAPS_TAP_BLOCK_MS := 125
 ; CapsLock 连击冷却期（ms），冷却期内再次按下 CapsLock 会被忽略
 global CAPS_COOLDOWN_MS := 256
 
