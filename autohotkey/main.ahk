@@ -46,23 +46,36 @@ LaunchOrActivate(Title, paths*) {
 ; ------------------------------------
 ; CapsLock tap/hold state tracking
 ; ------------------------------------
+; 按下 CapsLock 的时刻（用于计算按住时长）
 global caps_press_time := 0
+; 松开 CapsLock 的时刻（用于冷却期判断，防止连击误触）
 global caps_release_time := 0
+; 快速点击标志：按住时长 < CAPS_TAP_MAX_MS 时置 true，持续 CAPS_TAP_BLOCK_MS 后自动清除
+; 期间 #HotIf !caps_just_tapped 会屏蔽所有 CapsLock 组合键，防止延迟键事件误触
 global caps_just_tapped := false
+; 组合键已使用标志：CapsLock 松开时若为 true，则不触发切英文（避免组合键后意外切换）
 global caps_combo_used := false
+
+; 按住时长低于此值（ms）视为快速点击
+global CAPS_TAP_MAX_MS := 100
+; 快速点击后屏蔽组合键的持续时间（ms）
+global CAPS_TAP_BLOCK_MS := 150
+; CapsLock 连击冷却期（ms），冷却期内再次按下 CapsLock 会被忽略
+global CAPS_COOLDOWN_MS := 256
 
 ClearTapFlag() {
     global caps_just_tapped
     caps_just_tapped := false
 }
 
-; CapsLock:: and CapsLock up:: must be outside #HotIf to always fire
+; CapsLock:: 和 CapsLock up:: 必须在 #HotIf 之外，保证状态管理始终生效
 CapsLock:: {
     global caps_press_time
     global caps_release_time
     global caps_just_tapped
     global caps_combo_used
-    if (A_TickCount - caps_release_time < 256) {
+    global CAPS_COOLDOWN_MS
+    if (A_TickCount - caps_release_time < CAPS_COOLDOWN_MS) {
         KeyWait("CapsLock")
         return
     }
@@ -76,10 +89,12 @@ CapsLock up:: {
     global caps_release_time
     global caps_just_tapped
     global caps_combo_used
+    global CAPS_TAP_MAX_MS
+    global CAPS_TAP_BLOCK_MS
     hold_duration := A_TickCount - caps_press_time
-    if (hold_duration < 100) {
+    if (hold_duration < CAPS_TAP_MAX_MS) {
         caps_just_tapped := true
-        SetTimer(ClearTapFlag, -150)
+        SetTimer(ClearTapFlag, -CAPS_TAP_BLOCK_MS)
     }
     if (A_PriorKey = "CapsLock" && !caps_combo_used) {
         Critical "On"
@@ -89,7 +104,7 @@ CapsLock up:: {
     caps_release_time := A_TickCount
 }
 
-; Block all CapsLock combos during quick-tap cooldown (150ms)
+; 快速点击冷却期内屏蔽所有 CapsLock 组合键
 #HotIf !caps_just_tapped
 ; ------------------------------------
 ; General Hotkeys
