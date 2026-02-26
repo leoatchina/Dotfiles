@@ -61,7 +61,7 @@ global CAPS_TAP_MAX_MS := 50
 ; 快速点击后屏蔽组合键的持续时间（ms）
 global CAPS_TAP_BLOCK_MS := 125
 ; CapsLock 连击冷却期（ms），冷却期内再次按下 CapsLock 会被忽略
-global CAPS_COOLDOWN_MS := 256
+global CAPS_COOLDOWN_MS := 250
 
 ClearTapFlag() {
     global caps_just_tapped
