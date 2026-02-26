@@ -44,6 +44,54 @@ LaunchOrActivate(Title, paths*) {
     }
 }
 ; ------------------------------------
+; CapsLock tap/hold state tracking
+; ------------------------------------
+global caps_press_time := 0
+global caps_release_time := 0
+global caps_just_tapped := false
+global caps_combo_used := false
+
+ClearTapFlag() {
+    global caps_just_tapped
+    caps_just_tapped := false
+}
+
+; CapsLock:: and CapsLock up:: must be outside #HotIf to always fire
+CapsLock:: {
+    global caps_press_time
+    global caps_release_time
+    global caps_just_tapped
+    global caps_combo_used
+    if (A_TickCount - caps_release_time < 256) {
+        KeyWait("CapsLock")
+        return
+    }
+    caps_press_time := A_TickCount
+    caps_just_tapped := false
+    caps_combo_used := false
+}
+
+CapsLock up:: {
+    global caps_press_time
+    global caps_release_time
+    global caps_just_tapped
+    global caps_combo_used
+    hold_duration := A_TickCount - caps_press_time
+    if (hold_duration < 100) {
+        caps_just_tapped := true
+        SetTimer(ClearTapFlag, -150)
+    }
+    if (A_PriorKey = "CapsLock" && !caps_combo_used) {
+        Critical "On"
+        ForceSwitchToEnglish()
+        Critical "Off"
+    }
+    caps_release_time := A_TickCount
+}
+
+; Block all CapsLock combos during quick-tap cooldown (150ms)
+#HotIf !caps_just_tapped
+; ------------------------------------
 ; General Hotkeys
 ; ------------------------------------
 CapsLock & Tab:: Send("{Esc}")
@@ -355,54 +403,12 @@ ForceSwitchToChinese() {
     }
 }
 
-global caps_press_time := 0
-global caps_release_time := 0
-global caps_just_tapped := false
-global caps_combo_used := false
-global alt_shift_triggered := false
-
-ClearTapFlag() {
-    global caps_just_tapped
-    caps_just_tapped := false
-}
-
-CapsLock:: {
-    global caps_press_time
-    global caps_release_time
-    global caps_just_tapped
-    global caps_combo_used
-    if (A_TickCount - caps_release_time < 256) {
-        KeyWait("CapsLock")
-        return
-    }
-    caps_press_time := A_TickCount
-    caps_just_tapped := false
-    caps_combo_used := false
-}
-
-CapsLock up:: {
-    global caps_press_time
-    global caps_release_time
-    global caps_just_tapped
-    global caps_combo_used
-    hold_duration := A_TickCount - caps_press_time
-    if (hold_duration < 100) {
-        caps_just_tapped := true
-        SetTimer(ClearTapFlag, -150)
-    }
-    if (A_PriorKey = "CapsLock" && !caps_combo_used) {
-        Critical "On"
-        ForceSwitchToEnglish()
-        Critical "Off"
-    }
-    caps_release_time := A_TickCount
-}
-
 CapsLock & Space:: {
     global caps_combo_used
     caps_combo_used := true
     ForceSwitchToChinese()
 }
+#HotIf
 ; ------------------------------------
 ; Remap side mouse buttons to middle button for xtop.exe
 ; ------------------------------------
