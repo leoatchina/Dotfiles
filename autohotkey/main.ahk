@@ -160,26 +160,25 @@ CapsLock & x:: {
 ; ------------------------------------
 ; Application Hotkeys
 ; ------------------------------------
-CapsLock & r:: {
-    if GetKeyState("Alt")
-        Reload()
-    else
-        LaunchOrActivate("wezterm-gui.exe", ScoopPath . "\apps\wezterm-nightly\current\wezterm-gui.exe")
-}
-
-CapsLock & f:: {
-    if GetKeyState("Alt")
-        LaunchOrActivate("folo.exe", ScoopPath . "\apps\folo\current\folo.exe")
-    else
-        LaunchOrActivate("feishu.exe", AppDataLocal . "\Feishu\Feishu.exe")
-}
-
 ; terminal
 CapsLock & t:: {
     if GetKeyState("Alt")
         LaunchOrActivate("telegram.exe", A_AppData . "\Telegram Desktop\telegram.exe")
     else
         LaunchOrActivate("WindowsTerminal.exe", AppDataLocal . "\Microsoft\WindowsApps\wt.exe")
+}
+CapsLock & r:: {
+    if GetKeyState("Alt")
+        Reload()
+    else
+        LaunchOrActivate("wezterm-gui.exe", ScoopPath . "\apps\wezterm-nightly\current\wezterm-gui.exe")
+}
+; folo
+CapsLock & f:: {
+    if GetKeyState("Alt")
+        LaunchOrActivate("folo.exe", AppDataLocal . "\Folo\Folo.exe", ScoopPath . "\apps\folo\current\folo.exe")
+    else
+        LaunchOrActivate("feishu.exe", AppDataLocal . "\Feishu\Feishu.exe")
 }
 ; note softwares
 CapsLock & o:: {
