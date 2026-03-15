@@ -352,8 +352,8 @@ SwitchChsEng() {
 }
 ; CapsLock & Backspace:: SwitchChsEng()
 
-CapsLock & Space:: Send("#{Space}")
-CapsLock & Backspace:: Send("^#{Space}")
+CapsLock & Enter:: Send("#{Space}")
+CapsLock & Space:: Send("^#{Space}")
 
 GetCurrentInputLocaleID() {
     WinID := WinGetID("A")
@@ -417,7 +417,7 @@ ForceSwitchToChinese() {
     }
 }
 
-CapsLock & Enter:: {
+CapsLock & Backspace:: {
     global caps_combo_used
     caps_combo_used := true
     ForceSwitchToChinese()
