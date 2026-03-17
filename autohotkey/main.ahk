@@ -199,7 +199,7 @@ CapsLock & z:: LaunchOrActivate("zotero.exe", ScoopPath . "\apps\zotero\current\
 ; Browsers & Editors
 CapsLock & b:: {
     if GetKeyState("Alt") {
-        LaunchOrActivate("ahk_exe zen.exe", "C:\Program Files\Zen Browser\zen.exe")
+        LaunchOrActivate("ahk_exe opera.exe", ScoopPath . "\apps\opera\current\opera.exe")
     } else {
         LaunchOrActivate("ahk_exe brave.exe", ScoopPath . "\apps\brave\current\brave.exe")
     }
