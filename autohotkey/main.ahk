@@ -249,7 +249,7 @@ CapsLock & \:: {
     if GetKeyState("Alt") {
         LaunchOrActivate("gvim.exe", ScoopPath . "\apps\vim-nightly\current\gvim.exe")
     } else {
-        LaunchOrActivate("warp.exe", ScoopPath . "\apps\warp-terminal\current\hyper.exe")
+        LaunchOrActivate("warp.exe", ScoopPath . "\apps\warp-terminal\current\warp.exe")
     }
 }
 CapsLock & -:: LaunchOrActivate("neovide.exe", ScoopPath . "\apps\neovide\current\neovide.exe")
