@@ -214,7 +214,13 @@ CapsLock & 3:: {
         LaunchOrActivate("code.exe", AppDataLocal . "\Programs\Microsoft VS Code\Code.exe")
     }
 }
-CapsLock & 4:: LaunchOrActivate("windsurf.exe", AppDataLocal . "\Programs\Windsurf\Windsurf.exe")
+CapsLock & 4:: {
+    if GetKeyState("Alt") {
+        LaunchOrActivate("Trae CN.exe", AppDataLocal . "\Programs\Trae CN\Trae CN.exe")
+    } else {
+        LaunchOrActivate("windsurf.exe", AppDataLocal . "\Programs\Windsurf\Windsurf.exe")
+    }
+}
 CapsLock & 5:: {
     if GetKeyState("Alt") {
         LaunchOrActivate("qoder.exe", AppDataLocal . "\Programs\Qoder\Qoder.exe")
