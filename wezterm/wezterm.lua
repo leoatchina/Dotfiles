@@ -35,7 +35,7 @@ end
 local os_name = os.getenv("OS")
 if os_name == "Windows_NT" then
   -- Use pwsh if available in PATH, otherwise fallback to powershell.exe
-  config.default_prog = { 'pwsh.exe' }
+  config.default_prog = { 'C:/Program Files/PowerShell/7/pwsh.exe' }
   config.set_environment_variables = {
     LESS = "-R",
   }
