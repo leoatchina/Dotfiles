@@ -236,14 +236,8 @@ CapsLock & 7:: {
         LaunchOrActivate("happ.exe", "C:\同花顺远航版\bin\hexinlauncher.exe")
     }
 }
-CapsLock & 8:: LaunchOrActivate("zed.exe", ScoopPath . "\apps\zed\current\zed.exe")
-CapsLock & 9:: {
-    if GetKeyState("Alt") {
-        LaunchOrActivate("antigravity_tools.exe", AppDataLocal . "\Antigravity Tools\antigravity_tools.exe")
-    } else {
-        LaunchOrActivate("antigravity.exe", AppDataLocal . "\Programs\antigravity\antigravity.exe")
-    }
-}
+CapsLock & 8:: LaunchOrActivate("antigravity_tools.exe", AppDataLocal . "\Antigravity Tools\antigravity_tools.exe")
+CapsLock & 9:: LaunchOrActivate("antigravity.exe", AppDataLocal . "\Programs\antigravity\antigravity.exe")
 CapsLock & 0:: {
     if GetKeyState("Alt") {
         LaunchOrActivate("mobaxterm.exe", ScoopPath . "\apps\mobaxterm\current\mobaxterm.exe")
