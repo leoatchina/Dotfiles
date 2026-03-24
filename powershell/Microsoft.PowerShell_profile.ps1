@@ -17,7 +17,7 @@ Import-Module Terminal-Icons
 Import-Module scoop-completion
 
 # Import-Module oh-my-posh
-oh-my-posh init pwsh | Invoke-Expression
+oh-my-posh init pwsh --eval | Invoke-Expression
 # oh-my-posh init pwsh --config "amro" | Invoke-Expression
 
 # PSReadLine
