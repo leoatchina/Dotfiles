@@ -129,7 +129,21 @@ plugins {
     }
     plugin-manager location="zellij:plugin-manager"
     session-manager location="zellij:session-manager"
-    status-bar location="zellij:status-bar"
+    status-bar location="https://github.com/dj95/zjstatus/releases/latest/download/zjstatus.wasm" {
+        format_left "#[fg=#89B4FA,bold] {mode}"
+        format_center ""
+        format_right "#[fg=#89B4FA,bold] {session} #[fg=#A6E3A1,bold]{datetime}"
+        format_space " "
+        border_enabled "false"
+
+        mode_normal "#[fg=#89B4FA,bold] {name} "
+        mode_tmux "#[fg=#F9E2AF,bold] {name} "
+        mode_default_to_mode "normal"
+
+        datetime "#[fg=#A6E3A1,bold] {format}"
+        datetime_format "%H:%M"
+        datetime_timezone "Asia/Shanghai"
+    }
     strider location="zellij:strider"
     tab-bar location="zellij:tab-bar"
     welcome-screen location="zellij:session-manager" {
