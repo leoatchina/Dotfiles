@@ -15,7 +15,7 @@ keybinds clear-defaults=true {
             }
             SwitchToMode "normal"
         }
-        bind "Alt |" "Alt Shift \\" { SwitchToMode "scroll"; }
+        bind "Alt |" "Alt Shift \\" { SwitchToMode "entersearch"; SearchInput 0; }
         bind "Alt ." { SwitchFocus; }
         bind "Alt [" { NewPane "down"; SwitchToMode "normal"; }
         bind "Alt \\" { CloseFocus; SwitchToMode "normal"; }
@@ -107,6 +107,16 @@ keybinds clear-defaults=true {
         bind "p" { MoveTab "left"; SwitchToMode "normal"; }
         bind "Alt p" { MoveTab "left"; SwitchToMode "normal"; }
         bind "Alt Shift p" { GoToPreviousTab; SwitchToMode "normal"; }
+        bind "1" { GoToTab 1; SwitchToMode "normal"; }
+        bind "2" { GoToTab 2; SwitchToMode "normal"; }
+        bind "3" { GoToTab 3; SwitchToMode "normal"; }
+        bind "4" { GoToTab 4; SwitchToMode "normal"; }
+        bind "5" { GoToTab 5; SwitchToMode "normal"; }
+        bind "6" { GoToTab 6; SwitchToMode "normal"; }
+        bind "7" { GoToTab 7; SwitchToMode "normal"; }
+        bind "8" { GoToTab 8; SwitchToMode "normal"; }
+        bind "9" { GoToTab 9; SwitchToMode "normal"; }
+        bind "0" { GoToTab 10; SwitchToMode "normal"; }
         bind "q" { CloseTab; SwitchToMode "normal"; }
         bind "Alt q" { CloseTab; SwitchToMode "normal"; }
         bind "r" { SwitchToMode "renametab"; TabNameInput 0; }
