@@ -7,10 +7,8 @@ set "DST_ROOT=C:\Users\leo\AppData\Roaming\Zellij"
 call :link_dir "config"
 if errorlevel 1 exit /b 1
 
-call :link_dir "layouts"
-if errorlevel 1 exit /b 1
 
-echo [OK] All directory links created.
+echo [OK] Zellij config directory link created.
 exit /b 0
 
 :link_dir
