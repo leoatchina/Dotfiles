@@ -33,13 +33,11 @@ if exist "%DST_DIR%\\" (
     )
 )
 
+echo [INFO] Removing existing destination file (if any): "%DST_FILE%"
+del /f /q "%DST_FILE%" >nul 2>nul
 if exist "%DST_FILE%" (
-    echo [INFO] Removing existing destination file: "%DST_FILE%"
-    del /f /q "%DST_FILE%" >nul 2>nul
-    if exist "%DST_FILE%" (
-        echo [ERROR] Failed to remove destination file: "%DST_FILE%"
-        exit /b 1
-    )
+    echo [ERROR] Failed to remove destination file: "%DST_FILE%"
+    exit /b 1
 )
 
 mklink "%DST_FILE%" "%SRC_FILE%" >nul
