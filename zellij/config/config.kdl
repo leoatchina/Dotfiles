@@ -88,25 +88,22 @@ keybinds clear-defaults=true {
             }
             SwitchToMode "normal"
         }
+        // 调节大小
+        bind "Alt h" { Resize "Increase left"; SwitchToMode "normal"; }
+        bind "Alt j" { Resize "Increase down"; SwitchToMode "normal"; }
+        bind "Alt k" { Resize "Increase up"; SwitchToMode "normal"; }
+        bind "Alt l" { Resize "Increase right"; SwitchToMode "normal"; }
+        // focus
         bind "left" { MoveFocus "left"; SwitchToMode "normal"; }
         bind "down" { MoveFocus "down"; SwitchToMode "normal"; }
         bind "up" { MoveFocus "up"; SwitchToMode "normal"; }
         bind "right" { MoveFocus "right"; SwitchToMode "normal"; }
-        bind "\"" { NewPane "down"; SwitchToMode "normal"; }
-        bind "%" { NewPane "right"; SwitchToMode "normal"; }
+        // move tab
         bind "N" { GoToNextTab; SwitchToMode "normal"; }
         bind "P" { GoToPreviousTab; SwitchToMode "normal"; }
-        bind "[" { SwitchToMode "scroll"; }
-        bind "h" { MoveFocus "left"; SwitchToMode "normal"; }
-        bind "j" { MoveFocus "down"; SwitchToMode "normal"; }
-        bind "k" { MoveFocus "up"; SwitchToMode "normal"; }
-        bind "l" { MoveFocus "right"; SwitchToMode "normal"; }
-        bind "n" { MoveTab "right"; SwitchToMode "normal"; }
         bind "Alt n" { MoveTab "right"; SwitchToMode "normal"; }
-        bind "Alt Shift n" { GoToNextTab; SwitchToMode "normal"; }
-        bind "p" { MoveTab "left"; SwitchToMode "normal"; }
         bind "Alt p" { MoveTab "left"; SwitchToMode "normal"; }
-        bind "Alt Shift p" { GoToPreviousTab; SwitchToMode "normal"; }
+        // foucs tab
         bind "1" { GoToTab 1; SwitchToMode "normal"; }
         bind "2" { GoToTab 2; SwitchToMode "normal"; }
         bind "3" { GoToTab 3; SwitchToMode "normal"; }
@@ -117,6 +114,7 @@ keybinds clear-defaults=true {
         bind "8" { GoToTab 8; SwitchToMode "normal"; }
         bind "9" { GoToTab 9; SwitchToMode "normal"; }
         bind "0" { GoToTab 10; SwitchToMode "normal"; }
+        // other
         bind "d" { Detach; SwitchToMode "normal"; }
         bind "Alt q" { CloseTab; SwitchToMode "normal"; }
         bind "Alt w" { ToggleTab; SwitchToMode "normal"; }
