@@ -70,6 +70,6 @@ function Invoke-SshFzf {
         # Extract host name from selection
         $hostName = $selected -replace "\s*\(.*$", ""
         # Connect via SSH
-        ssh $hostName
+        ssh  -o "StrictHostKeyChecking no" -o "UserKnownHostsFile NUL" $hostName
     }
 }
