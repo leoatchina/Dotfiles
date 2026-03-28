@@ -16,19 +16,13 @@ keybinds clear-defaults=true {
             SwitchToMode "normal"
         }
         bind "Alt |" "Alt Shift \\" { SwitchToMode "entersearch"; SearchInput 0; }
-        bind "Alt ." { SwitchFocus; }
-        bind "Alt [" { NewPane "down"; SwitchToMode "normal"; }
         bind "Alt \\" { CloseFocus; SwitchToMode "normal"; }
+        bind "Alt [" { NewPane "down"; SwitchToMode "normal"; }
         bind "Alt ]" { NewPane "right"; SwitchToMode "normal"; }
-        bind "Alt h" { Resize "Increase left"; }
         bind "Alt Shift h" { MoveFocus "left"; }
-        bind "Alt j" { Resize "Increase down"; }
         bind "Alt Shift j" { MoveFocus "down"; }
-        bind "Alt k" { Resize "Increase up"; }
         bind "Alt Shift k" { MoveFocus "up"; }
-        bind "Alt l" { Resize "Increase right"; }
         bind "Alt Shift l" { MoveFocus "right"; }
-        bind "Alt Shift n" { GoToNextTab; }
         bind "Alt o" { SwitchToMode "tmux"; }
         bind "Alt Shift o" { NewTab; }
         bind "Alt Shift p" { GoToPreviousTab; }
@@ -88,6 +82,7 @@ keybinds clear-defaults=true {
             }
             SwitchToMode "normal"
         }
+        bind "Alt ." { SwitchFocus; SwitchToMode "normal"; }
         // 调节大小
         bind "Alt h" { Resize "Increase left"; SwitchToMode "normal"; }
         bind "Alt j" { Resize "Increase down"; SwitchToMode "normal"; }
