@@ -15,6 +15,8 @@
 *.wildignore
 *.tasks.ini
 *.tasks
+NUL
+nul
 *DS_Store
 .vimspector.*
 .venv/
