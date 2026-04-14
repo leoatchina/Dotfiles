@@ -355,15 +355,27 @@ SwitchChsEng() {
 CapsLock & Shift:: Send("#{Space}")
 CapsLock & Space:: Send("^#{Space}")
 
+SafeGetWinID(winTitle := "A") {
+    if (winTitle = "A")
+        return DllCall("GetForegroundWindow", "Ptr")
+    try return WinGetID(winTitle)
+    catch
+        return 0
+}
+
 GetCurrentInputLocaleID() {
-    WinID := WinGetID("A")
+    WinID := SafeGetWinID()
+    if !WinID
+        return 0
     ThreadID := DllCall("GetWindowThreadProcessId", "Ptr", WinID, "Ptr", 0)
     return DllCall("GetKeyboardLayout", "UInt", ThreadID, "UPtr")
 }
 
 ; IME control helpers: close IME to force English mode inside IME-based layouts (e.g., Microsoft Pinyin)
 GetImeOpen(winTitle := "A") {
-    hwnd := WinGetID(winTitle)
+    hwnd := SafeGetWinID(winTitle)
+    if !hwnd
+        return 0
     hIMC := DllCall("imm32\ImmGetContext", "ptr", hwnd, "ptr")
     open := 0
     if (hIMC) {
@@ -374,7 +386,9 @@ GetImeOpen(winTitle := "A") {
 }
 
 SetImeOpen(open := false, winTitle := "A") {
-    hwnd := WinGetID(winTitle)
+    hwnd := SafeGetWinID(winTitle)
+    if !hwnd
+        return
     hIMC := DllCall("imm32\ImmGetContext", "ptr", hwnd, "ptr")
     if (hIMC) {
         DllCall("imm32\ImmSetOpenStatus", "ptr", hIMC, "int", open ? 1 : 0)
@@ -388,7 +402,9 @@ ForceSwitchToEnglish() {
         return
     ; Load the en-US layout (US keyboard) and request the active window to switch to it
     hklEn := DllCall("LoadKeyboardLayout", "Str", "00000409", "UInt", 0, "UPtr")
-    hwnd := WinGetID("A")
+    hwnd := SafeGetWinID()
+    if !hwnd
+        return
     ; WM_INPUTLANGCHANGEREQUEST (0x50): wParam=0, lParam=HKL
     try SendMessage(0x50, 0, hklEn, , "ahk_id " hwnd,, 1000)
     Sleep(1)
