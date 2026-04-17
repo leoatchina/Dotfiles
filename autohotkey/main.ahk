@@ -247,12 +247,12 @@ CapsLock & 0:: {
 }
 CapsLock & \:: {
     if GetKeyState("Alt") {
-        LaunchOrActivate("terminus.exe", ScoopPath . "\apps\terminus\current\terminus.exe")
+        LaunchOrActivate("termius.exe", ScoopPath . "\apps\termius\current\termius.exe")
     } else {
         LaunchOrActivate("neovide.exe", ScoopPath . "\apps\neovide\current\neovide.exe")
     }
 }
-CapsLock & -:: LaunchOrActivate("gvim.exe", ScoopPath . "\apps\vim-nightly\current\gvim.exe") 
+CapsLock & -:: LaunchOrActivate("gvim.exe", ScoopPath . "\apps\vim-nightly\current\gvim.exe")
 CapsLock & =:: LaunchOrActivate("nvim-qt.exe", ScoopPath . "\apps\neovim-qt\current\bin\nvim-qt.exe")
 ; -------------------
 ; search
