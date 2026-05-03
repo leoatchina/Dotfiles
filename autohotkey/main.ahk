@@ -247,7 +247,7 @@ CapsLock & 0:: {
 }
 CapsLock & \:: {
     if GetKeyState("Alt") {
-        LaunchOrActivate("termius.exe", ScoopPath . "\apps\termius\current\termius.exe")
+        LaunchOrActivate("warp.exe", ScoopPath . "\apps\warp-terminal\current\warp.exe")
     } else {
         LaunchOrActivate("neovide.exe", ScoopPath . "\apps\neovide\current\neovide.exe")
     }
