@@ -194,7 +194,12 @@ CapsLock & e:: {
     else
         LaunchOrActivate("360FileBrowser64.exe", A_AppData . "\360FileBrowser\360FileBrowser64.exe")
 }
-CapsLock & z:: LaunchOrActivate("zotero.exe", ScoopPath . "\apps\zotero\current\zotero.exe")
+CapsLock & z:: {
+    if GetKeyState("Alt")
+        LaunchOrActivate("wps.exe", AppDataLocal . "\Kingsoft\WPS Office\ksolaunch.exe")
+    else
+        LaunchOrActivate("zotero.exe", ScoopPath . "\apps\zotero\current\zotero.exe")
+}
 
 ; Browsers & Editors
 CapsLock & b:: {
