@@ -233,7 +233,13 @@ CapsLock & 5:: {
         LaunchOrActivate("cursor.exe", AppDataLocal . "\Programs\Cursor\Cursor.exe")
     }
 }
-CapsLock & 6:: LaunchOrActivate("quark.exe", AppDataLocal . "\Programs\Quark\quark.exe")
+CapsLock & 6:: {
+    if GetKeyState("Alt") {
+        LaunchOrActivate("zen.exe", "C:\Program Files\Zen Browser\zen.exe")
+    } else {
+        LaunchOrActivate("quark.exe", AppDataLocal . "\Programs\Quark\quark.exe")
+    }
+}
 CapsLock & 7:: {
     if GetKeyState("Alt") {
         LaunchOrActivate("hexin.exe", "C:\同花顺软件\同花顺\hexin.exe")
