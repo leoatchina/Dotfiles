@@ -221,16 +221,17 @@ CapsLock & 3:: {
 }
 CapsLock & 4:: {
     if GetKeyState("Alt") {
-        LaunchOrActivate("Trae CN.exe", AppDataLocal . "\Programs\Trae CN\Trae CN.exe")
+        ; LaunchOrActivate("antigravity.exe", AppDataLocal . "\Programs\antigravity\antigravity.exe")
+        LaunchOrActivate("cursor.exe", AppDataLocal . "\Programs\Cursor\Cursor.exe")
     } else {
         LaunchOrActivate("windsurf.exe", AppDataLocal . "\Programs\Windsurf\Windsurf.exe")
     }
 }
 CapsLock & 5:: {
     if GetKeyState("Alt") {
-        LaunchOrActivate("qoder.exe", AppDataLocal . "\Programs\Qoder\Qoder.exe")
+        LaunchOrActivate("Trae CN.exe", AppDataLocal . "\Programs\Trae CN\Trae CN.exe")
     } else {
-        LaunchOrActivate("cursor.exe", AppDataLocal . "\Programs\Cursor\Cursor.exe")
+        LaunchOrActivate("qoder.exe", AppDataLocal . "\Programs\Qoder\Qoder.exe")
     }
 }
 CapsLock & 6:: {
@@ -247,8 +248,15 @@ CapsLock & 7:: {
         LaunchOrActivate("happ.exe", "C:\同花顺远航版\bin\hexinlauncher.exe")
     }
 }
-CapsLock & 8:: LaunchOrActivate("antigravity_tools.exe", AppDataLocal . "\Antigravity Tools\antigravity_tools.exe")
-CapsLock & 9:: LaunchOrActivate("antigravity.exe", AppDataLocal . "\Programs\antigravity\antigravity.exe")
+CapsLock & 8:: {
+    if GetKeyState("Alt") {
+        LaunchOrActivate("antigravity_tools.exe", AppDataLocal . "\Antigravity Tools\antigravity_tools.exe")
+    } else {
+        LaunchOrActivate("zed.exe", ScoopPath . "\apps\zed\current\zed.exe") 
+    }
+}
+
+CapsLock & 9:: LaunchOrActivate("warp.exe", ScoopPath . "\apps\warp-terminal\current\warp.exe") 
 CapsLock & 0:: {
     if GetKeyState("Alt") {
         LaunchOrActivate("mobaxterm.exe", ScoopPath . "\apps\mobaxterm\current\mobaxterm.exe")
@@ -256,13 +264,7 @@ CapsLock & 0:: {
         LaunchOrActivate("alacritty.exe", ScoopPath . "\apps\alacritty\current\alacritty.exe")
     }
 }
-CapsLock & \:: {
-    if GetKeyState("Alt") {
-        LaunchOrActivate("warp.exe", ScoopPath . "\apps\warp-terminal\current\warp.exe")
-    } else {
-        LaunchOrActivate("neovide.exe", ScoopPath . "\apps\neovide\current\neovide.exe")
-    }
-}
+CapsLock & \:: LaunchOrActivate("neovide.exe", ScoopPath . "\apps\neovide\current\neovide.exe")
 CapsLock & -:: LaunchOrActivate("gvim.exe", ScoopPath . "\apps\vim-nightly\current\gvim.exe")
 CapsLock & =:: LaunchOrActivate("nvim-qt.exe", ScoopPath . "\apps\neovim-qt\current\bin\nvim-qt.exe")
 ; -------------------
