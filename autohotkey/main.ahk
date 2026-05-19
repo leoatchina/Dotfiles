@@ -221,8 +221,7 @@ CapsLock & 3:: {
 }
 CapsLock & 4:: {
     if GetKeyState("Alt") {
-        ; LaunchOrActivate("antigravity.exe", AppDataLocal . "\Programs\antigravity\antigravity.exe")
-        LaunchOrActivate("cursor.exe", AppDataLocal . "\Programs\Cursor\Cursor.exe")
+        LaunchOrActivate("zed.exe", ScoopPath . "\apps\zed\current\zed.exe") 
     } else {
         LaunchOrActivate("windsurf.exe", AppDataLocal . "\Programs\Windsurf\Windsurf.exe")
     }
@@ -250,9 +249,9 @@ CapsLock & 7:: {
 }
 CapsLock & 8:: {
     if GetKeyState("Alt") {
-        LaunchOrActivate("antigravity_tools.exe", AppDataLocal . "\Antigravity Tools\antigravity_tools.exe")
+        LaunchOrActivate("cursor.exe", AppDataLocal . "\Programs\Cursor\Cursor.exe")
     } else {
-        LaunchOrActivate("zed.exe", ScoopPath . "\apps\zed\current\zed.exe") 
+        LaunchOrActivate("antigravity_tools.exe", AppDataLocal . "\Antigravity Tools\antigravity_tools.exe")
     }
 }
 
