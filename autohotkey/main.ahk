@@ -249,9 +249,9 @@ CapsLock & 7:: {
 }
 CapsLock & 8:: {
     if GetKeyState("Alt") {
-        LaunchOrActivate("cursor.exe", AppDataLocal . "\Programs\Cursor\Cursor.exe")
-    } else {
         LaunchOrActivate("antigravity_tools.exe", AppDataLocal . "\Antigravity Tools\antigravity_tools.exe")
+    } else {
+        LaunchOrActivate("cursor.exe", AppDataLocal . "\Programs\Cursor\Cursor.exe")
     }
 }
 
