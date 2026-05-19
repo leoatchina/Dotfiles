@@ -221,7 +221,7 @@ CapsLock & 3:: {
 }
 CapsLock & 4:: {
     if GetKeyState("Alt") {
-        LaunchOrActivate("zed.exe", ScoopPath . "\apps\zed\current\zed.exe") 
+        LaunchOrActivate("cursor.exe", AppDataLocal . "\Programs\Cursor\Cursor.exe")
     } else {
         LaunchOrActivate("windsurf.exe", AppDataLocal . "\Programs\Windsurf\Windsurf.exe")
     }
@@ -251,11 +251,11 @@ CapsLock & 8:: {
     if GetKeyState("Alt") {
         LaunchOrActivate("antigravity_tools.exe", AppDataLocal . "\Antigravity Tools\antigravity_tools.exe")
     } else {
-        LaunchOrActivate("cursor.exe", AppDataLocal . "\Programs\Cursor\Cursor.exe")
+        LaunchOrActivate("zed.exe", ScoopPath . "\apps\zed\current\zed.exe")
     }
 }
 
-CapsLock & 9:: LaunchOrActivate("warp.exe", ScoopPath . "\apps\warp-terminal\current\warp.exe") 
+CapsLock & 9:: LaunchOrActivate("warp.exe", ScoopPath . "\apps\warp-terminal\current\warp.exe")
 CapsLock & 0:: {
     if GetKeyState("Alt") {
         LaunchOrActivate("mobaxterm.exe", ScoopPath . "\apps\mobaxterm\current\mobaxterm.exe")
