@@ -96,11 +96,6 @@ CapsLock up:: {
         caps_just_tapped := true
         SetTimer(ClearTapFlag, -CAPS_TAP_BLOCK_MS)
     }
-    if (A_PriorKey = "CapsLock" && !caps_combo_used) {
-        Critical "On"
-        ForceSwitchToEnglish()
-        Critical "Off"
-    }
     caps_release_time := A_TickCount
 }
 
@@ -354,103 +349,9 @@ CapsLock & Down:: Send("#{Down}")
 ; Input Method Control
 ; ------------------------------------
 CapsLock & .:: Send("^{.}")
-SwitchChsEng() {
-    InputLocaleID := GetCurrentInputLocaleID()
-    ; 0x04090409 is English (US)
-    if (InputLocaleID == 0x04090409) ; 67699721 in decimal
-        Send("^#{Space}") ; Switch to Chinese
-    else
-        Send("^{Space}") ; Switch to English
-}
-; CapsLock & Backspace:: SwitchChsEng()
-
 CapsLock & Shift:: Send("#{Space}")
 CapsLock & Space:: Send("^#{Space}")
 
-SafeGetWinID(winTitle := "A") {
-    if (winTitle = "A")
-        return DllCall("GetForegroundWindow", "Ptr")
-    try return WinGetID(winTitle)
-    catch
-        return 0
-}
-
-GetCurrentInputLocaleID() {
-    WinID := SafeGetWinID()
-    if !WinID
-        return 0
-    ThreadID := DllCall("GetWindowThreadProcessId", "Ptr", WinID, "Ptr", 0)
-    return DllCall("GetKeyboardLayout", "UInt", ThreadID, "UPtr")
-}
-
-; IME control helpers: close IME to force English mode inside IME-based layouts (e.g., Microsoft Pinyin)
-GetImeOpen(winTitle := "A") {
-    hwnd := SafeGetWinID(winTitle)
-    if !hwnd
-        return 0
-    hIMC := DllCall("imm32\ImmGetContext", "ptr", hwnd, "ptr")
-    open := 0
-    if (hIMC) {
-        open := DllCall("imm32\ImmGetOpenStatus", "ptr", hIMC, "int")
-        DllCall("imm32\ImmReleaseContext", "ptr", hwnd, "ptr", hIMC)
-    }
-    return open
-}
-
-SetImeOpen(open := false, winTitle := "A") {
-    hwnd := SafeGetWinID(winTitle)
-    if !hwnd
-        return
-    hIMC := DllCall("imm32\ImmGetContext", "ptr", hwnd, "ptr")
-    if (hIMC) {
-        DllCall("imm32\ImmSetOpenStatus", "ptr", hIMC, "int", open ? 1 : 0)
-        DllCall("imm32\ImmReleaseContext", "ptr", hwnd, "ptr", hIMC)
-    }
-}
-
-ForceSwitchToEnglish() {
-    ; If already en-US (0409), do nothing
-    if ((GetCurrentInputLocaleID() & 0xFFFF) == 0x0409)
-        return
-    ; Load the en-US layout (US keyboard) and request the active window to switch to it
-    hklEn := DllCall("LoadKeyboardLayout", "Str", "00000409", "UInt", 0, "UPtr")
-    hwnd := SafeGetWinID()
-    if !hwnd
-        return
-    ; WM_INPUTLANGCHANGEREQUEST (0x50): wParam=0, lParam=HKL
-    try SendMessage(0x50, 0, hklEn, , "ahk_id " hwnd,, 1000)
-    Sleep(1)
-    if ((GetCurrentInputLocaleID() & 0xFFFF) != 0x0409) {
-        ; Try activating directly as a fallback
-        DllCall("ActivateKeyboardLayout", "UPtr", hklEn, "UInt", 0)
-        Sleep(1)
-    }
-
-    ; Final fallback: cycle Win+Space a few times to land on 0409
-    tries := 3
-    while ((GetCurrentInputLocaleID() & 0xFFFF) != 0x0409 && tries-- > 0) {
-        Send("#{Space}")
-        Sleep(1)
-    }
-}
-
-ForceSwitchToChinese() {
-    ; Only toggle when currently in en-US; keep state if already Chinese
-    if ((GetCurrentInputLocaleID() & 0xFFFF) != 0x0409)
-        return
-    tries := 3
-    while ((GetCurrentInputLocaleID() & 0xFFFF) == 0x0409 && tries-- > 0) {
-        Send("^#{Space}")
-        Sleep(1)
-    }
-}
-
-CapsLock & Enter:: {
-    global caps_combo_used
-    caps_combo_used := true
-    ForceSwitchToChinese()
-}
-#HotIf
 ; ------------------------------------
 ; Remap side mouse buttons to middle button for xtop.exe
 ; ------------------------------------
