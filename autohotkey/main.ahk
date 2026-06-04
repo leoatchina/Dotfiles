@@ -216,16 +216,16 @@ CapsLock & 3:: {
 }
 CapsLock & 4:: {
     if GetKeyState("Alt") {
-        LaunchOrActivate("cursor.exe", AppDataLocal . "\Programs\Cursor\Cursor.exe")
+        LaunchOrActivate("Qoder.exe", AppDataLocal . "\Programs\Qoder\Qoder.exe")
     } else {
-        LaunchOrActivate("windsurf.exe", AppDataLocal . "\Programs\Windsurf\Windsurf.exe")
+        LaunchOrActivate("VSCodium.exe", AppDataLocal . "\Programs\Vscodium\Vscodium.exe")
     }
 }
 CapsLock & 5:: {
     if GetKeyState("Alt") {
         LaunchOrActivate("Trae CN.exe", AppDataLocal . "\Programs\Trae CN\Trae CN.exe")
     } else {
-        LaunchOrActivate("qoder.exe", AppDataLocal . "\Programs\Qoder\Qoder.exe")
+        LaunchOrActivate("Devin.exe", AppDataLocal . "\Programs\Devin\Devin.exe")
     }
 }
 CapsLock & 6:: {
