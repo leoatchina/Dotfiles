@@ -246,7 +246,7 @@ CapsLock & 8:: {
     if GetKeyState("Alt") {
         LaunchOrActivate("antigravity_tools.exe", AppDataLocal . "\Antigravity Tools\antigravity_tools.exe")
     } else {
-        LaunchOrActivate("zed.exe", ScoopPath . "\apps\zed\current\zed.exe")
+        LaunchOrActivate("Vibeyard.exe", AppDataLocal . "\Programs\Vibeyard\Vibeyard.exe ")
     }
 }
 
