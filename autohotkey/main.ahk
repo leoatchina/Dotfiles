@@ -184,16 +184,18 @@ CapsLock & o:: {
 }
 
 CapsLock & e:: {
-    if GetKeyState("Alt")
+    if GetKeyState("Alt"){
         LaunchOrActivate("Heynote.exe", ScoopPath . "\apps\Heynote\current\Heynote.exe")
-    else
+    } else {
         LaunchOrActivate("360FileBrowser64.exe", A_AppData . "\360FileBrowser\360FileBrowser64.exe")
+    }
 }
 CapsLock & z:: {
-    if GetKeyState("Alt")
-        LaunchOrActivate("wps.exe", AppDataLocal . "\Kingsoft\WPS Office\ksolaunch.exe")
-    else
+    if GetKeyState("Alt"){
+        LaunchOrActivate("zed.exe", AppDataLocal . "\Programs\zed\zed.exe")
+    } else {
         LaunchOrActivate("zotero.exe", ScoopPath . "\apps\zotero\current\zotero.exe")
+    }
 }
 
 ; Browsers & Editors
@@ -250,7 +252,13 @@ CapsLock & 8:: {
     }
 }
 
-CapsLock & 9:: LaunchOrActivate("warp.exe", ScoopPath . "\apps\warp-terminal\current\warp.exe")
+CapsLock & 9:: {
+    if GetKeyState("Alt") {
+        LaunchOrActivate("wps.exe", AppDataLocal . "\Kingsoft\WPS Office\ksolaunch.exe")
+    } else {
+        LaunchOrActivate("warp.exe", ScoopPath . "\apps\warp-terminal\current\warp.exe")
+    }
+}
 CapsLock & 0:: {
     if GetKeyState("Alt") {
         LaunchOrActivate("mobaxterm.exe", ScoopPath . "\apps\mobaxterm\current\mobaxterm.exe")
