@@ -211,7 +211,7 @@ CapsLock & 1:: LaunchOrActivate("msedge.exe", "C:\Program Files (x86)\Microsoft\
 CapsLock & 2:: LaunchOrActivate("chrome.exe", "C:\Program Files\Google\Chrome\Application\chrome.exe")
 CapsLock & 3:: {
     if GetKeyState("Alt") {
-        LaunchOrActivate("positron.exe", AppDataLocal . "\Programs\Positron\Positron.exe")
+        LaunchOrActivate("CodeBuddy CN.exe", AppDataLocal . "\Programs\CodeBuddy CN\CodeBuddy CN.exe")
     } else {
         LaunchOrActivate("code.exe", AppDataLocal . "\Programs\Microsoft VS Code\Code.exe")
     }
@@ -220,7 +220,7 @@ CapsLock & 4:: {
     if GetKeyState("Alt") {
         LaunchOrActivate("Qoder.exe", AppDataLocal . "\Programs\Qoder\Qoder.exe")
     } else {
-        LaunchOrActivate("VSCodium.exe", AppDataLocal . "\Programs\Vscodium\Vscodium.exe")
+        LaunchOrActivate("positron.exe", AppDataLocal . "\Programs\Positron\Positron.exe")
     }
 }
 CapsLock & 5:: {
