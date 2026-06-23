@@ -218,14 +218,14 @@ CapsLock & 3:: {
 }
 CapsLock & 4:: {
     if GetKeyState("Alt") {
-        LaunchOrActivate("Qoder.exe", AppDataLocal . "\Programs\Qoder\Qoder.exe")
+        LaunchOrActivate("Trae CN.exe", AppDataLocal . "\Programs\Trae CN\Trae CN.exe")
     } else {
         LaunchOrActivate("positron.exe", AppDataLocal . "\Programs\Positron\Positron.exe")
     }
 }
 CapsLock & 5:: {
     if GetKeyState("Alt") {
-        LaunchOrActivate("Trae CN.exe", AppDataLocal . "\Programs\Trae CN\Trae CN.exe")
+        LaunchOrActivate("Qoder.exe", AppDataLocal . "\Programs\Qoder\Qoder.exe")
     } else {
         LaunchOrActivate("Devin.exe", AppDataLocal . "\Programs\Devin\Devin.exe")
     }
