@@ -198,17 +198,20 @@ CapsLock & z:: {
     }
 }
 
-; Browsers & Editors
-CapsLock & b:: {
+CapsLock & 1:: {
     if GetKeyState("Alt") {
-        LaunchOrActivate("ahk_exe opera.exe", ScoopPath . "\apps\opera\current\opera.exe")
+        LaunchOrActivate("brave.exe", ScoopPath . "\apps\brave\current\brave.exe")
     } else {
-        LaunchOrActivate("ahk_exe brave.exe", ScoopPath . "\apps\brave\current\brave.exe")
+        LaunchOrActivate("msedge.exe", "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe")
     }
 }
-
-CapsLock & 1:: LaunchOrActivate("msedge.exe", "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe")
-CapsLock & 2:: LaunchOrActivate("chrome.exe", "C:\Program Files\Google\Chrome\Application\chrome.exe")
+CapsLock & 2:: {
+    if GetKeyState("Alt") {
+        LaunchOrActivate("opera.exe", ScoopPath . "\apps\opera\current\opera.exe")
+    } else {
+        LaunchOrActivate("chrome.exe", "C:\Program Files\Google\Chrome\Application\chrome.exe")
+    }
+}
 CapsLock & 3:: {
     if GetKeyState("Alt") {
         LaunchOrActivate("CodeBuddy CN.exe", AppDataLocal . "\Programs\CodeBuddy CN\CodeBuddy CN.exe")
