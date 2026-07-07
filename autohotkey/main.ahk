@@ -259,7 +259,7 @@ CapsLock & 9:: {
     if GetKeyState("Alt") {
         LaunchOrActivate("wps.exe", AppDataLocal . "\Kingsoft\WPS Office\ksolaunch.exe")
     } else {
-        LaunchOrActivate("warp.exe", ScoopPath . "\apps\warp-terminal\current\warp.exe")
+        LaunchOrActivate("tabby.exe", ScoopPath . "\apps\tabby\current\tabby.exe")
     }
 }
 CapsLock & 0:: {
