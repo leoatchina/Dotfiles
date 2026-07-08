@@ -192,7 +192,7 @@ CapsLock & e:: {
 }
 CapsLock & z:: {
     if GetKeyState("Alt"){
-        LaunchOrActivate("zed.exe", AppDataLocal . "\Programs\zed\zed.exe")
+        LaunchOrActivate("zcode.exe", AppDataLocal . "\Programs\zcode\zcode.exe")
     } else {
         LaunchOrActivate("zotero.exe", ScoopPath . "\apps\zotero\current\zotero.exe")
     }
@@ -269,8 +269,8 @@ CapsLock & 0:: {
         LaunchOrActivate("alacritty.exe", ScoopPath . "\apps\alacritty\current\alacritty.exe")
     }
 }
-CapsLock & \:: LaunchOrActivate("neovide.exe", ScoopPath . "\apps\neovide\current\neovide.exe")
-CapsLock & -:: LaunchOrActivate("gvim.exe", ScoopPath . "\apps\vim-nightly\current\gvim.exe")
+CapsLock & -:: LaunchOrActivate("neovide.exe", ScoopPath . "\apps\neovide\current\neovide.exe")
+CapsLock & \:: LaunchOrActivate("gvim.exe", ScoopPath . "\apps\vim-nightly\current\gvim.exe")
 CapsLock & =:: LaunchOrActivate("nvim-qt.exe", ScoopPath . "\apps\neovim-qt\current\bin\nvim-qt.exe")
 ; -------------------
 ; search
