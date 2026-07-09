@@ -223,7 +223,7 @@ CapsLock & 4:: {
     if GetKeyState("Alt") {
         LaunchOrActivate("Trae CN.exe", AppDataLocal . "\Programs\Trae CN\Trae CN.exe")
     } else {
-        LaunchOrActivate("positron.exe", AppDataLocal . "\Programs\Positron\Positron.exe")
+        LaunchOrActivate("orca.exe", AppDataLocal . "\Programs\orca\orca.exe ")
     }
 }
 CapsLock & 5:: {
@@ -251,7 +251,7 @@ CapsLock & 8:: {
     if GetKeyState("Alt") {
         LaunchOrActivate("antigravity_tools.exe", AppDataLocal . "\Antigravity Tools\antigravity_tools.exe")
     } else {
-        LaunchOrActivate("orca.exe", AppDataLocal . "\Programs\orca\orca.exe ")
+        LaunchOrActivate("positron.exe", AppDataLocal . "\Programs\Positron\Positron.exe")
     }
 }
 
