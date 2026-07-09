@@ -192,9 +192,9 @@ CapsLock & e:: {
 }
 CapsLock & z:: {
     if GetKeyState("Alt"){
-        LaunchOrActivate("zcode.exe", AppDataLocal . "\Programs\zcode\zcode.exe")
+        LaunchOrActivate("zed.exe", ScoopPath . "\apps\zed\current\zed.exe")
     } else {
-        LaunchOrActivate("zotero.exe", ScoopPath . "\apps\zotero\current\zotero.exe")
+        LaunchOrActivate("zcode.exe", AppDataLocal . "\Programs\zcode\zcode.exe")
     }
 }
 
@@ -259,7 +259,7 @@ CapsLock & 9:: {
     if GetKeyState("Alt") {
         LaunchOrActivate("wps.exe", AppDataLocal . "\Kingsoft\WPS Office\ksolaunch.exe")
     } else {
-        LaunchOrActivate("tabby.exe", ScoopPath . "\apps\tabby\current\tabby.exe")
+        LaunchOrActivate("zotero.exe", ScoopPath . "\apps\zotero\current\zotero.exe")
     }
 }
 CapsLock & 0:: {
