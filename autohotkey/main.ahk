@@ -251,7 +251,7 @@ CapsLock & 8:: {
     if GetKeyState("Alt") {
         LaunchOrActivate("antigravity_tools.exe", AppDataLocal . "\Antigravity Tools\antigravity_tools.exe")
     } else {
-        LaunchOrActivate("Vibeyard.exe", AppDataLocal . "\Programs\Vibeyard\Vibeyard.exe ")
+        LaunchOrActivate("orca.exe", AppDataLocal . "\Programs\orca\orca.exe ")
     }
 }
 
