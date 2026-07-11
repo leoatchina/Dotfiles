@@ -160,13 +160,13 @@ CapsLock & t:: {
     if GetKeyState("Alt")
         LaunchOrActivate("telegram.exe", A_AppData . "\Telegram Desktop\telegram.exe")
     else
-        LaunchOrActivate("WindowsTerminal.exe", AppDataLocal . "\Microsoft\WindowsApps\wt.exe")
+        LaunchOrActivate("wezterm-gui.exe", ScoopPath . "\apps\wezterm-nightly\current\wezterm-gui.exe")
 }
 CapsLock & r:: {
     if GetKeyState("Alt")
         Reload()
     else
-        LaunchOrActivate("wezterm-gui.exe", ScoopPath . "\apps\wezterm-nightly\current\wezterm-gui.exe")
+        LaunchOrActivate("orca.exe", AppDataLocal . "\Programs\orca\orca.exe ")
 }
 ; folo
 CapsLock & f:: {
@@ -214,14 +214,14 @@ CapsLock & 2:: {
 }
 CapsLock & 3:: {
     if GetKeyState("Alt") {
-        LaunchOrActivate("CodeBuddy CN.exe", AppDataLocal . "\Programs\CodeBuddy CN\CodeBuddy CN.exe")
+        LaunchOrActivate("positron.exe", AppDataLocal . "\Programs\Positron\Positron.exe")
     } else {
         LaunchOrActivate("code.exe", AppDataLocal . "\Programs\Microsoft VS Code\Code.exe")
     }
 }
 CapsLock & 4:: {
     if GetKeyState("Alt") {
-        LaunchOrActivate("Trae CN.exe", AppDataLocal . "\Programs\Trae CN\Trae CN.exe")
+        LaunchOrActivate("CodeBuddy CN.exe", AppDataLocal . "\Programs\CodeBuddy CN\CodeBuddy CN.exe")
     } else {
         LaunchOrActivate("Devin.exe", AppDataLocal . "\Programs\Devin\Devin.exe")
     }
@@ -230,7 +230,7 @@ CapsLock & 5:: {
     if GetKeyState("Alt") {
         LaunchOrActivate("Qoder.exe", AppDataLocal . "\Programs\Qoder\Qoder.exe")
     } else {
-        LaunchOrActivate("orca.exe", AppDataLocal . "\Programs\orca\orca.exe ")
+        LaunchOrActivate("WindowsTerminal.exe", AppDataLocal . "\Microsoft\WindowsApps\wt.exe")
     }
 }
 CapsLock & 6:: {
@@ -251,7 +251,7 @@ CapsLock & 8:: {
     if GetKeyState("Alt") {
         LaunchOrActivate("antigravity_tools.exe", AppDataLocal . "\Antigravity Tools\antigravity_tools.exe")
     } else {
-        LaunchOrActivate("positron.exe", AppDataLocal . "\Programs\Positron\Positron.exe")
+        LaunchOrActivate("WorkBuddy.exe", AppDataLocal . "\Programs\WorkBuddy\WorkBuddy.exe")
     }
 }
 
