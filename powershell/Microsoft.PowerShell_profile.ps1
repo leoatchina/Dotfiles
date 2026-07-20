@@ -14,7 +14,7 @@ Set-Alias grep findstr
 # modules
 Import-Module posh-git
 Import-Module Terminal-Icons
-Import-Module scoop-completion
+# Import-Module scoop-completion
 
 # Import-Module oh-my-posh
 oh-my-posh init pwsh --eval | Invoke-Expression
