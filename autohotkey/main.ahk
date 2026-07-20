@@ -192,9 +192,9 @@ CapsLock & e:: {
 }
 CapsLock & z:: {
     if GetKeyState("Alt"){
-        LaunchOrActivate("zed.exe", ScoopPath . "\apps\zed\current\zed.exe")
-    } else {
         LaunchOrActivate("zcode.exe", AppDataLocal . "\Programs\zcode\zcode.exe")
+    } else {
+        LaunchOrActivate("zotero.exe", ScoopPath . "\apps\zotero\current\zotero.exe")
     }
 }
 
