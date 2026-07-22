@@ -259,7 +259,7 @@ CapsLock & 9:: {
     if GetKeyState("Alt") {
         LaunchOrActivate("wps.exe", AppDataLocal . "\Kingsoft\WPS Office\ksolaunch.exe")
     } else {
-        LaunchOrActivate("zotero.exe", ScoopPath . "\apps\zotero\current\zotero.exe")
+        LaunchOrActivate("excel.exe", "C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE")
     }
 }
 CapsLock & 0:: {
