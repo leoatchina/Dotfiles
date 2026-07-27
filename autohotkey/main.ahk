@@ -300,9 +300,9 @@ CapsLock & u:: {
 CapsLock & y:: {
     ; utools
     if GetKeyState("Alt")
-        Send("#!+s")
-    else
         Send("#+s")
+    else
+        Send("#!+s")
 }
 ; snipaste
 #f:: Send("^{F1}")
