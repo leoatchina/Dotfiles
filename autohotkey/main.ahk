@@ -218,7 +218,7 @@ CapsLock & 3:: {
 }
 CapsLock & 4:: {
     if GetKeyState("Alt") {
-        LaunchOrActivate("CodeBuddy CN.exe", AppDataLocal . "\Programs\CodeBuddy CN\CodeBuddy CN.exe")
+        LaunchOrActivate("Cursor.exe", AppDataLocal . "\Programs\Cursor\Cursor.exe")
     } else {
         LaunchOrActivate("Devin.exe", AppDataLocal . "\Programs\Devin\Devin.exe")
     }
