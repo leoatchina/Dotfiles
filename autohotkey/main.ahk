@@ -159,6 +159,7 @@ CapsLock & t:: {
     else
         LaunchOrActivate("wezterm-gui.exe", ScoopPath . "\apps\wezterm-nightly\current\wezterm-gui.exe")
 }
+CapsLock & g:: LaunchOrActivate("WindowsTerminal.exe", AppDataLocal . "\Microsoft\WindowsApps\wt.exe")
 CapsLock & r:: {
     if GetKeyState("Alt")
         Reload()
@@ -189,7 +190,7 @@ CapsLock & e:: {
 }
 CapsLock & z:: {
     if GetKeyState("Alt"){
-        LaunchOrActivate("zcode.exe", AppDataLocal . "\Programs\zcode\zcode.exe")
+        LaunchOrActivate("filezilla.exe", ScoopPath . "\apps\filezilla\current\filezilla.exe")
     } else {
         LaunchOrActivate("zotero.exe", ScoopPath . "\apps\zotero\current\zotero.exe")
     }
@@ -227,7 +228,7 @@ CapsLock & 5:: {
     if GetKeyState("Alt") {
         LaunchOrActivate("Qoder.exe", AppDataLocal . "\Programs\Qoder\Qoder.exe")
     } else {
-        LaunchOrActivate("WindowsTerminal.exe", AppDataLocal . "\Microsoft\WindowsApps\wt.exe")
+        LaunchOrActivate("zcode.exe", AppDataLocal . "\Programs\zcode\zcode.exe")
     }
 }
 CapsLock & 6:: {
