@@ -212,7 +212,7 @@ CapsLock & 2:: {
 }
 CapsLock & 3:: {
     if GetKeyState("Alt") {
-        LaunchOrActivate("positron.exe", AppDataLocal . "\Programs\Positron\Positron.exe")
+        LaunchOrActivate("zed.exe", ScoopPath . "\apps\zed\current\zed.exe")
     } else {
         LaunchOrActivate("code.exe", AppDataLocal . "\Programs\Microsoft VS Code\Code.exe")
     }
