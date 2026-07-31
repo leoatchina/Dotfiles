@@ -267,8 +267,8 @@ CapsLock & 0:: {
     }
 }
 CapsLock & -:: LaunchOrActivate("neovide.exe", ScoopPath . "\apps\neovide\current\neovide.exe")
-CapsLock & \:: LaunchOrActivate("gvim.exe", ScoopPath . "\apps\vim-nightly\current\gvim.exe")
 CapsLock & =:: LaunchOrActivate("nvim-qt.exe", ScoopPath . "\apps\neovim-qt\current\bin\nvim-qt.exe")
+CapsLock & \:: LaunchOrActivate("gvim.exe", ScoopPath . "\apps\vim-nightly\current\gvim.exe")
 ; -------------------
 ; search
 ; -------------------
