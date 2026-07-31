@@ -233,7 +233,7 @@ CapsLock & 5:: {
 }
 CapsLock & 6:: {
     if GetKeyState("Alt") {
-        LaunchOrActivate("zen.exe", "C:\Program Files\Zen Browser\zen.exe")
+        LaunchOrActivate("filefox.exe", ScoopPath . "\apps\firefox\current\firefox.exe")
     } else {
         LaunchOrActivate("quark.exe", AppDataLocal . "\Programs\Quark\quark.exe")
     }
