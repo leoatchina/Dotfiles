@@ -219,7 +219,7 @@ CapsLock & 3:: {
 }
 CapsLock & 4:: {
     if GetKeyState("Alt") {
-        LaunchOrActivate("Cursor.exe", AppDataLocal . "\Programs\Cursor\Cursor.exe")
+        LaunchOrActivate("Positron.exe", AppDataLocal . "\Programs\Positron\Positron.exe")
     } else {
         LaunchOrActivate("Devin.exe", AppDataLocal . "\Programs\Devin\Devin.exe")
     }
