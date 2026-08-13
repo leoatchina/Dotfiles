@@ -157,14 +157,14 @@ CapsLock & t:: {
     if GetKeyState("Alt")
         LaunchOrActivate("telegram.exe", A_AppData . "\Telegram Desktop\telegram.exe")
     else
-        LaunchOrActivate("wezterm-gui.exe", ScoopPath . "\apps\wezterm-nightly\current\wezterm-gui.exe")
+        LaunchOrActivate("WindowsTerminal.exe", AppDataLocal . "\Microsoft\WindowsApps\wt.exe")
 }
-CapsLock & g:: LaunchOrActivate("WindowsTerminal.exe", AppDataLocal . "\Microsoft\WindowsApps\wt.exe")
+CapsLock & g:: LaunchOrActivate("orca.exe", AppDataLocal . "\Programs\orca\orca.exe ")
 CapsLock & r:: {
     if GetKeyState("Alt")
         Reload()
     else
-        LaunchOrActivate("orca.exe", AppDataLocal . "\Programs\orca\orca.exe ")
+        LaunchOrActivate("wezterm-gui.exe", ScoopPath . "\apps\wezterm-nightly\current\wezterm-gui.exe")
 }
 ; folo
 CapsLock & f:: {
