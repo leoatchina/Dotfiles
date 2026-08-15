@@ -240,9 +240,9 @@ CapsLock & 6:: {
 }
 CapsLock & 7:: {
     if GetKeyState("Alt") {
-        LaunchOrActivate("powerpoint.exe", "C:\Program Files\Microsoft Office\root\Office16\powerpoint.EXE")
+        LaunchOrActivate("powerpnt.exe", "C:\Program Files\Microsoft Office\root\Office16\powerpnt.EXE")
     } else {
-        LaunchOrActivate("word.exe", "C:\Program Files\Microsoft Office\root\Office16\word.EXE")
+        LaunchOrActivate("winword.exe", "C:\Program Files\Microsoft Office\root\Office16\winword.EXE")
     }
 }
 CapsLock & 8:: {
