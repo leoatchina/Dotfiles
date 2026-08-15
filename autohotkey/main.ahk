@@ -212,21 +212,21 @@ CapsLock & 2:: {
 }
 CapsLock & 3:: {
     if GetKeyState("Alt") {
-        LaunchOrActivate("zed.exe", ScoopPath . "\apps\zed\current\zed.exe")
+        LaunchOrActivate("Positron.exe", AppDataLocal . "\Programs\Positron\Positron.exe")
     } else {
         LaunchOrActivate("code.exe", AppDataLocal . "\Programs\Microsoft VS Code\Code.exe")
     }
 }
 CapsLock & 4:: {
     if GetKeyState("Alt") {
-        LaunchOrActivate("Positron.exe", AppDataLocal . "\Programs\Positron\Positron.exe")
+        LaunchOrActivate("Qoder.exe", AppDataLocal . "\Programs\Qoder\Qoder.exe")
     } else {
         LaunchOrActivate("Devin.exe", AppDataLocal . "\Programs\Devin\Devin.exe")
     }
 }
 CapsLock & 5:: {
     if GetKeyState("Alt") {
-        LaunchOrActivate("Qoder.exe", AppDataLocal . "\Programs\Qoder\Qoder.exe")
+        LaunchOrActivate("zed.exe", ScoopPath . "\apps\zed\current\zed.exe")
     } else {
         LaunchOrActivate("zcode.exe", AppDataLocal . "\Programs\zcode\zcode.exe")
     }
@@ -240,23 +240,23 @@ CapsLock & 6:: {
 }
 CapsLock & 7:: {
     if GetKeyState("Alt") {
-        LaunchOrActivate("filezilla.exe", ScoopPath . "\apps\filezilla\current\filezilla.exe")
+        LaunchOrActivate("powerpoint.exe", "C:\Program Files\Microsoft Office\root\Office16\powerpoint.EXE")
     } else {
-        LaunchOrActivate("notepad--.exe", ScoopPath . "\apps\notepad--\current\notepad--.exe")
+        LaunchOrActivate("word.exe", "C:\Program Files\Microsoft Office\root\Office16\word.EXE")
     }
 }
 CapsLock & 8:: {
     if GetKeyState("Alt") {
-        LaunchOrActivate("antigravity_tools.exe", AppDataLocal . "\Antigravity Tools\antigravity_tools.exe")
+        LaunchOrActivate("wps.exe", AppDataLocal . "\Kingsoft\WPS Office\ksolaunch.exe")
     } else {
-        LaunchOrActivate("WorkBuddy.exe", AppDataLocal . "\Programs\WorkBuddy\WorkBuddy.exe")
+        LaunchOrActivate("excel.exe", "C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE")
     }
 }
 CapsLock & 9:: {
     if GetKeyState("Alt") {
-        LaunchOrActivate("wps.exe", AppDataLocal . "\Kingsoft\WPS Office\ksolaunch.exe")
+        LaunchOrActivate("antigravity_tools.exe", AppDataLocal . "\Antigravity Tools\antigravity_tools.exe")
     } else {
-        LaunchOrActivate("excel.exe", "C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE")
+        LaunchOrActivate("WorkBuddy.exe", AppDataLocal . "\Programs\WorkBuddy\WorkBuddy.exe")
     }
 }
 CapsLock & 0:: {
