@@ -1,0 +1,6 @@
+setupVersion: 1
+disabledProviders:
+  - ollama
+  - llama.cpp
+  - lm-studio
+defaultThinkingLevel: auto
