@@ -1,8 +1,8 @@
 setupVersion: 1
-modelRoles: 
-  default: opencode-go/deepseek-v4-flash
-disabledProviders: 
+disabledProviders:
   - ollama
   - llama.cpp
   - lm-studio
 defaultThinkingLevel: auto
+modelRoles:
+  {}
