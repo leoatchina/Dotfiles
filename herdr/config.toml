@@ -1,0 +1,59 @@
+# Herdr keybindings modeled after ~/.leotmux/tmux.conf.
+onboarding = false
+
+[terminal]
+new_cwd = "follow"
+
+[keys]
+prefix = "alt+o"
+
+# Help / reload / navigation surfaces
+help = "prefix+?"
+reload_config = "prefix+enter"
+workspace_picker = "prefix+tab"
+goto = "prefix+g"
+
+# Panes: tmux split, select, close, swap, last pane
+split_vertical = ["alt+]", "prefix+v"]
+split_horizontal = ["alt+[", "prefix+minus"]
+focus_pane_left = ["alt+h", "shift+left", "prefix+h"]
+focus_pane_down = ["alt+j", "shift+down", "prefix+j"]
+focus_pane_up = ["alt+k", "shift+up", "prefix+k"]
+focus_pane_right = ["alt+l", "shift+right", "prefix+l"]
+close_pane = ["alt+backslash", "prefix+x"]
+swap_pane_down = "prefix+shift+j"
+swap_pane_up = "prefix+]"
+last_pane = "prefix+alt+."
+resize_mode = "prefix+r"
+zoom = "prefix+z"
+
+# Tabs: tmux windows mapped to Herdr tabs
+new_tab = ["alt+shift+o", "prefix+c"]
+previous_tab = ["alt+shift+p", "prefix+p"]
+next_tab = ["alt+shift+n", "prefix+n"]
+switch_tab = "prefix+1..9"
+close_tab = ["prefix+alt+q", "prefix+shift+x"]
+rename_tab = ["prefix+alt+r", "prefix+shift+t"]
+
+# Workspaces: tmux sessions mapped to Herdr workspaces
+rename_workspace = ["prefix+alt+s", "prefix+shift+w"]
+new_workspace = "prefix+shift+n"
+close_workspace = "prefix+shift+d"
+
+# Copy mode / paste equivalents
+copy_mode = ["alt+shift+backslash", "prefix+["]
+
+# Navigate mode uses vi keys like tmux copy/select movement.
+navigate_workspace_up = "up"
+navigate_workspace_down = "down"
+navigate_pane_left = "h"
+navigate_pane_down = "j"
+navigate_pane_up = "k"
+navigate_pane_right = "l"
+
+[ui]
+copy_on_select = true
+confirm_close = true
+prompt_new_tab_name = false
+pane_borders = true
+mouse_capture = true
