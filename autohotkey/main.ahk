@@ -152,14 +152,15 @@ CapsLock & x:: {
 ; ------------------------------------
 ; Application Hotkeys
 ; ------------------------------------
+CapsLock & g:: LaunchOrActivate("orca.exe", AppDataLocal . "\Programs\orca\orca.exe ")
 ; terminal
 CapsLock & t:: {
     if GetKeyState("Alt")
         LaunchOrActivate("telegram.exe", A_AppData . "\Telegram Desktop\telegram.exe")
     else
         LaunchOrActivate("WindowsTerminal.exe", AppDataLocal . "\Microsoft\WindowsApps\wt.exe")
+        ; LaunchOrActivate("wezterm-gui.exe", ScoopPath . "\apps\wezterm-nightly\current\wezterm-gui.exe")
 }
-CapsLock & g:: LaunchOrActivate("orca.exe", AppDataLocal . "\Programs\orca\orca.exe ")
 CapsLock & r:: {
     if GetKeyState("Alt")
         Reload()
