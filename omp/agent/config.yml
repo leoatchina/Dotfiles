@@ -1,8 +1,8 @@
 setupVersion: 1
-disabledProviders:
+disabledProviders: 
   - ollama
   - llama.cpp
   - lm-studio
 defaultThinkingLevel: auto
-modelRoles:
-  {}
+modelRoles: 
+  default: google-antigravity/gemini-3.7-flash
