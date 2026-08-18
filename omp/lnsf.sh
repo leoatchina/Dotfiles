@@ -2,6 +2,4 @@
 # Link omp agent config files into ~/.omp/agent
 DIR="$(cd "$(dirname "$0")" && pwd)"
 rm ~/.omp/agent/keybindings.yml || true
-rm ~/.omp/agent/config.yml || true
 ln -sf "$DIR/agent/keybindings.yml" ~/.omp/agent/keybindings.yml && echo "=== omp keybindings linked ==="
-ln -sf "$DIR/agent/config.yml" ~/.omp/agent/config.yml && echo "=== omp config linked ==="
