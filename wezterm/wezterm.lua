@@ -21,6 +21,14 @@ config.keys = {
   },
   { key = 'n', mods = 'CTRL|SHIFT|ALT', action = action.MoveTabRelative(1) },
   { key = 'p', mods = 'CTRL|SHIFT|ALT', action = action.MoveTabRelative(-1) },
+  -- Send Herdr shortcuts as CSI-u so Alt is not encoded as an ambiguous ESC prefix.
+  { key = 'P', mods = 'ALT|SHIFT', action = action.SendString '\x1b[112;4u' },
+  { key = '[', mods = 'ALT', action = action.SendString '\x1b[91;3u' },
+  { key = ']', mods = 'ALT', action = action.SendString '\x1b[93;3u' },
+  { key = 'H', mods = 'ALT|SHIFT', action = action.SendString '\x1b[104;4u' },
+  { key = 'J', mods = 'ALT|SHIFT', action = action.SendString '\x1b[106;4u' },
+  { key = 'K', mods = 'ALT|SHIFT', action = action.SendString '\x1b[107;4u' },
+  { key = 'L', mods = 'ALT|SHIFT', action = action.SendString '\x1b[108;4u' },
   { key = 'Enter', mods = 'ALT', action = action.DisableDefaultAssignment },
 }
 

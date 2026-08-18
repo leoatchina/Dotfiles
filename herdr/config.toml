@@ -1,4 +1,4 @@
-# Herdr keybindings modeled after ~/.leotmux/tmux.conf.
+# Herdr keybindings modeled after ~/.tmux.conf.
 onboarding = false
 
 [terminal]
@@ -12,36 +12,37 @@ help = "prefix+?"
 reload_config = "prefix+enter"
 workspace_picker = "prefix+tab"
 goto = "prefix+g"
+detach = "prefix+d"
 
-# Panes: tmux split, select, close, swap, last pane
-split_vertical = ["alt+]", "prefix+v"]
-split_horizontal = ["alt+[", "prefix+minus"]
-focus_pane_left = ["alt+h", "shift+left", "prefix+h"]
-focus_pane_down = ["alt+j", "shift+down", "prefix+j"]
-focus_pane_up = ["alt+k", "shift+up", "prefix+k"]
-focus_pane_right = ["alt+l", "shift+right", "prefix+l"]
-close_pane = ["alt+backslash", "prefix+x"]
-swap_pane_down = "prefix+shift+j"
+# Panes: Alt+[ / Alt+] split, Alt+Shift+H/J/K/L focus, Alt+\ closes.
+split_vertical = "alt+]"
+split_horizontal = "alt+["
+focus_pane_left = "alt+shift+h"
+focus_pane_down = "alt+shift+j"
+focus_pane_up = "alt+shift+k"
+focus_pane_right = "alt+shift+l"
+close_pane = "alt+backslash"
+swap_pane_down = "prefix+["
 swap_pane_up = "prefix+]"
 last_pane = "prefix+alt+."
 resize_mode = "prefix+r"
 zoom = "prefix+z"
 
 # Tabs: tmux windows mapped to Herdr tabs
-new_tab = ["alt+shift+o", "prefix+c"]
-previous_tab = ["alt+shift+p", "prefix+p"]
-next_tab = ["alt+shift+n", "prefix+n"]
+new_tab = "alt+shift+o"
+previous_tab = "alt+shift+p"
+next_tab = "alt+shift+n"
 switch_tab = "prefix+1..9"
-close_tab = ["prefix+alt+q", "prefix+shift+x"]
-rename_tab = ["prefix+alt+r", "prefix+shift+t"]
+close_tab = "prefix+alt+q"
+rename_tab = "prefix+alt+r"
 
 # Workspaces: tmux sessions mapped to Herdr workspaces
-rename_workspace = ["prefix+alt+s", "prefix+shift+w"]
+rename_workspace = "prefix+alt+s"
 new_workspace = "prefix+shift+n"
 close_workspace = "prefix+shift+d"
 
-# Copy mode / paste equivalents
-copy_mode = ["alt+shift+backslash", "prefix+["]
+# Alt+| enters copy mode. Herdr has no tmux choose-buffer action for Alt+".
+copy_mode = "alt+shift+backslash"
 
 # Navigate mode uses vi keys like tmux copy/select movement.
 navigate_workspace_up = "up"
