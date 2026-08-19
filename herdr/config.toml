@@ -11,7 +11,7 @@ prefix = "alt+o"
 help = "prefix+?"
 reload_config = "prefix+enter"
 workspace_picker = "prefix+tab"
-goto = "prefix+g"
+goto = "prefix+space"
 detach = "prefix+d"
 
 # Panes: Alt+[ / Alt+] split, Alt+Shift+H/J/K/L focus, Alt+\ closes.
@@ -40,6 +40,8 @@ rename_tab = "prefix+alt+r"
 rename_workspace = "prefix+alt+s"
 new_workspace = "prefix+shift+n"
 close_workspace = "prefix+shift+d"
+next_workspace = "alt+backtick"
+previous_workspace = "alt+shift+backtick"
 
 # Alt+| enters copy mode. Herdr has no tmux choose-buffer action for Alt+".
 copy_mode = "alt+shift+backslash"
@@ -51,6 +53,16 @@ navigate_pane_left = "h"
 navigate_pane_down = "j"
 navigate_pane_up = "k"
 navigate_pane_right = "l"
+
+[[keys.command]]
+key = "prefix+alt+p"
+command = "$HOME/Dotfiles/herdr/move-tab.sh previous"
+description = "move tab left"
+
+[[keys.command]]
+key = "prefix+alt+n"
+command = "$HOME/Dotfiles/herdr/move-tab.sh next"
+description = "move tab right"
 
 [ui]
 copy_on_select = true
