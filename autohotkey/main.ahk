@@ -152,18 +152,21 @@ CapsLock & x:: {
 ; ------------------------------------
 ; Application Hotkeys
 ; ------------------------------------
-CapsLock & g:: LaunchOrActivate("orca.exe", AppDataLocal . "\Programs\orca\orca.exe ")
-; terminal
+CapsLock & r:: {
+    if GetKeyState("Alt")
+        Reload()
+    else
+        LaunchOrActivate("orca.exe", AppDataLocal . "\Programs\orca\orca.exe ")
+}
 CapsLock & t:: {
     if GetKeyState("Alt")
         LaunchOrActivate("telegram.exe", A_AppData . "\Telegram Desktop\telegram.exe")
     else
-        LaunchOrActivate("WindowsTerminal.exe", AppDataLocal . "\Microsoft\WindowsApps\wt.exe")
-        ; LaunchOrActivate("wezterm-gui.exe", ScoopPath . "\apps\wezterm-nightly\current\wezterm-gui.exe")
+        LaunchOrActivate("tty7-app.exe", ScoopPath . "\apps\tty7\current\tty7.exe")
 }
-CapsLock & r:: {
+CapsLock & g:: {
     if GetKeyState("Alt")
-        Reload()
+        LaunchOrActivate("alacritty.exe", ScoopPath . "\apps\alacritty\current\alacritty.exe")
     else
         LaunchOrActivate("wezterm-gui.exe", ScoopPath . "\apps\wezterm-nightly\current\wezterm-gui.exe")
 }
@@ -264,7 +267,7 @@ CapsLock & 0:: {
     if GetKeyState("Alt") {
         LaunchOrActivate("mobaxterm.exe", ScoopPath . "\apps\mobaxterm\current\mobaxterm.exe")
     } else {
-        LaunchOrActivate("alacritty.exe", ScoopPath . "\apps\alacritty\current\alacritty.exe")
+        LaunchOrActivate("WindowsTerminal.exe", AppDataLocal . "\Microsoft\WindowsApps\wt.exe")
     }
 }
 CapsLock & -:: LaunchOrActivate("neovide.exe", ScoopPath . "\apps\neovide\current\neovide.exe")
