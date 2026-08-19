@@ -40,8 +40,12 @@ rename_tab = "prefix+alt+r"
 rename_workspace = "prefix+alt+s"
 new_workspace = "prefix+shift+n"
 close_workspace = "prefix+shift+d"
-next_workspace = "alt+backtick"
-previous_workspace = "alt+shift+backtick"
+next_workspace = "ctrl+backtick"
+previous_workspace = "ctrl+~"
+
+# Agents
+next_agent = "alt+backtick"
+previous_agent = "alt+~"
 
 # Alt+| enters copy mode. Herdr has no tmux choose-buffer action for Alt+".
 copy_mode = "alt+shift+backslash"
