@@ -10,8 +10,8 @@ prefix = "alt+o"
 # Help / reload / navigation surfaces
 help = "prefix+?"
 reload_config = "prefix+enter"
-workspace_picker = "prefix+w"
-goto = "prefix+tab"
+workspace_picker = "prefix+tab"
+goto = "prefix+space"
 detach = "prefix+d"
 
 # Panes: Alt+[ / Alt+] split, Vim-aware Alt+Shift+H/J/K/L focus, Alt+\ closes.
