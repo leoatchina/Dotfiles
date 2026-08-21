@@ -10,11 +10,15 @@ prefix = "alt+o"
 # Help / reload / navigation surfaces
 help = "prefix+?"
 reload_config = "prefix+enter"
-workspace_picker = "prefix+tab"
-goto = "prefix+space"
+workspace_picker = "prefix+w"
+goto = "prefix+tab"
 detach = "prefix+d"
 
 # Panes: Alt+[ / Alt+] split, Vim-aware Alt+Shift+H/J/K/L focus, Alt+\ closes.
+focus_pane_left = ["prefix+h", "shift+left"]
+focus_pane_down = ["prefix+j", "shift+down"]
+focus_pane_up = ["prefix+k", "shift+up"]
+focus_pane_right = ["prefix+l", "shift+right"]
 split_vertical = "alt+]"
 split_horizontal = "alt+["
 close_pane = "alt+backslash"
@@ -35,6 +39,8 @@ next_tab = "alt+shift+n"
 switch_tab = "prefix+1..9"
 close_tab = "prefix+alt+q"
 rename_tab = "prefix+alt+r"
+move_tab_previous = "prefix+alt+p"
+move_tab_next = "prefix+alt+n"
 
 # Workspaces: tmux sessions mapped to Herdr workspaces
 rename_workspace = "prefix+alt+s"
@@ -81,19 +87,14 @@ key = "alt+shift+l"
 type = "plugin_action"
 command = "vim-herdr-navigation.right"
 description = "navigate right (vim/herdr)"
-
-[[keys.command]]
-key = "prefix+alt+p"
-command = "$HOME/Dotfiles/herdr/move-tab.sh previous"
-description = "move tab left"
-
-[[keys.command]]
-key = "prefix+alt+n"
-command = "$HOME/Dotfiles/herdr/move-tab.sh next"
-description = "move tab right"
-
 [ui]
 tab_bar_position = "bottom"
+tab_bar_right = [
+  { type = "command", command = "$HOME/Dotfiles/herdr/status.sh", interval_seconds = 3, timeout_seconds = 2 },
+  { type = "datetime", format = "%Y-%b-%d" },
+  { type = "datetime", format = "%H:%M" },
+]
+tab_bar_right_separator = " | "
 copy_on_select = true
 confirm_close = true
 prompt_new_tab_name = false
