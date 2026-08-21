@@ -162,7 +162,7 @@ CapsLock & t:: {
     if GetKeyState("Alt")
         LaunchOrActivate("telegram.exe", A_AppData . "\Telegram Desktop\telegram.exe")
     else
-        LaunchOrActivate("WindowsTerminal.exe", AppDataLocal . "\Microsoft\WindowsApps\wt.exe")
+        LaunchOrActivate("tty7-app.exe", ScoopPath . "\apps\tty7\current\tty7-app.exe")
 }
 CapsLock & g:: {
     if GetKeyState("Alt")
@@ -174,7 +174,7 @@ CapsLock & 0:: {
     if GetKeyState("Alt") {
         LaunchOrActivate("mobaxterm.exe", ScoopPath . "\apps\mobaxterm\current\mobaxterm.exe")
     } else {
-        LaunchOrActivate("tty7-app.exe", ScoopPath . "\apps\tty7\current\tty7.exe")
+        LaunchOrActivate("alacritty.exe", ScoopPath . "\apps\alacritty\current\alacritty.exe")
     }
 }
 ; folo
