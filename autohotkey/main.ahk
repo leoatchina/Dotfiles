@@ -162,13 +162,20 @@ CapsLock & t:: {
     if GetKeyState("Alt")
         LaunchOrActivate("telegram.exe", A_AppData . "\Telegram Desktop\telegram.exe")
     else
-        LaunchOrActivate("tty7-app.exe", ScoopPath . "\apps\tty7\current\tty7.exe")
+        LaunchOrActivate("WindowsTerminal.exe", AppDataLocal . "\Microsoft\WindowsApps\wt.exe")
 }
 CapsLock & g:: {
     if GetKeyState("Alt")
         LaunchOrActivate("zap-oss.exe", ScoopPath . "\apps\zap\current\zap-oss.exe")
     else
         LaunchOrActivate("wezterm-gui.exe", ScoopPath . "\apps\wezterm-nightly\current\wezterm-gui.exe")
+}
+CapsLock & 0:: {
+    if GetKeyState("Alt") {
+        LaunchOrActivate("mobaxterm.exe", ScoopPath . "\apps\mobaxterm\current\mobaxterm.exe")
+    } else {
+        LaunchOrActivate("tty7-app.exe", ScoopPath . "\apps\tty7\current\tty7.exe")
+    }
 }
 ; folo
 CapsLock & f:: {
@@ -184,7 +191,6 @@ CapsLock & o:: {
     else
         LaunchOrActivate("joplin.exe", ScoopPath . "\apps\joplin\current\Joplin.exe")
 }
-
 CapsLock & e:: {
     if GetKeyState("Alt"){
         LaunchOrActivate("Heynote.exe", ScoopPath . "\apps\Heynote\current\Heynote.exe")
@@ -199,7 +205,6 @@ CapsLock & z:: {
         LaunchOrActivate("zotero.exe", ScoopPath . "\apps\zotero\current\zotero.exe")
     }
 }
-
 CapsLock & 1:: {
     if GetKeyState("Alt") {
         LaunchOrActivate("brave.exe", ScoopPath . "\apps\brave\current\brave.exe")
@@ -261,13 +266,6 @@ CapsLock & 9:: {
         LaunchOrActivate("antigravity_tools.exe", AppDataLocal . "\Antigravity Tools\antigravity_tools.exe")
     } else {
         LaunchOrActivate("WorkBuddy.exe", AppDataLocal . "\Programs\WorkBuddy\WorkBuddy.exe")
-    }
-}
-CapsLock & 0:: {
-    if GetKeyState("Alt") {
-        LaunchOrActivate("mobaxterm.exe", ScoopPath . "\apps\mobaxterm\current\mobaxterm.exe")
-    } else {
-        LaunchOrActivate("WindowsTerminal.exe", AppDataLocal . "\Microsoft\WindowsApps\wt.exe")
     }
 }
 CapsLock & -:: LaunchOrActivate("neovide.exe", ScoopPath . "\apps\neovide\current\neovide.exe")
