@@ -172,9 +172,9 @@ CapsLock & g:: {
 }
 CapsLock & 0:: {
     if GetKeyState("Alt") {
-        LaunchOrActivate("alacritty.exe", ScoopPath . "\apps\alacritty\current\alacritty.exe")
-    } else {
         LaunchOrActivate("mobaxterm.exe", ScoopPath . "\apps\mobaxterm\current\mobaxterm.exe")
+    } else {
+        LaunchOrActivate("alacritty.exe", ScoopPath . "\apps\alacritty\current\alacritty.exe")
     }
 }
 ; folo
