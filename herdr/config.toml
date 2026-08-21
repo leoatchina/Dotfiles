@@ -13,12 +13,14 @@ reload_config = "prefix+enter"
 workspace_picker = "prefix+tab"
 goto = "prefix+space"
 detach = "prefix+d"
+open_notification_target = "alt+u"
 
 # Panes: Alt+[ / Alt+] split, Vim-aware Alt+Shift+H/J/K/L focus, Alt+\ closes.
 focus_pane_left = ["prefix+h", "shift+left"]
 focus_pane_down = ["prefix+j", "shift+down"]
 focus_pane_up = ["prefix+k", "shift+up"]
 focus_pane_right = ["prefix+l", "shift+right"]
+edit_scrollback = "alt+shift+u"
 split_vertical = "alt+]"
 split_horizontal = "alt+["
 close_pane = "alt+backslash"
