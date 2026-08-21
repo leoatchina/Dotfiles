@@ -67,6 +67,16 @@ mods = "Alt|Shift"
 chars = "\u001b[92;4u"
 
 [[keyboard.bindings]]
+key = "U"
+mods = "Alt"
+chars = "\u001b[117;3u"
+
+[[keyboard.bindings]]
+key = "U"
+mods = "Alt|Shift"
+chars = "\u001b[117;4u"
+
+[[keyboard.bindings]]
 key = "H"
 mods = "Alt|Shift"
 chars = "\u001b[104;4u"
