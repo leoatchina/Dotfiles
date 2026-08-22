@@ -21,6 +21,7 @@ config.keys = {
   },
   { key = 'n', mods = 'CTRL|SHIFT|ALT', action = action.MoveTabRelative(1) },
   { key = 'p', mods = 'CTRL|SHIFT|ALT', action = action.MoveTabRelative(-1) },
+  { key = 'Enter', mods = 'ALT', action = action.DisableDefaultAssignment },
   -- Send Herdr shortcuts as CSI-u so Alt is not encoded as an ambiguous ESC prefix.
   -- { key = 'u', mods = 'ALT', action = action.SendString '\x1b[117;3u' },
   -- { key = 'u', mods = 'ALT|SHIFT', action = action.SendString '\x1b[117;4u' },
@@ -33,11 +34,10 @@ config.keys = {
   -- { key = 'j', mods = 'ALT|SHIFT', action = action.SendString '\x1b[106;4u' },
   -- { key = 'k', mods = 'ALT|SHIFT', action = action.SendString '\x1b[107;4u' },
   -- { key = 'l', mods = 'ALT|SHIFT', action = action.SendString '\x1b[108;4u' },
-  { key = '[', mods = 'ALT', action = action.SendString '\x1b[91;3u' },
-  { key = ']', mods = 'ALT', action = action.SendString '\x1b[93;3u' },
-  { key = '\\', mods = 'ALT', action = action.SendString '\x1b[92;3u' },
-  { key = '\\', mods = 'ALT|SHIFT', action = action.SendString '\x1b[92;4u' },
-  { key = 'Enter', mods = 'ALT', action = action.DisableDefaultAssignment },
+  -- { key = '[', mods = 'ALT', action = action.SendString '\x1b[91;3u' },
+  -- { key = ']', mods = 'ALT', action = action.SendString '\x1b[93;3u' },
+  -- { key = '\\', mods = 'ALT', action = action.SendString '\x1b[92;3u' },
+  -- { key = '\\', mods = 'ALT|SHIFT', action = action.SendString '\x1b[92;4u' },
 }
 
 for i = 1, 9 do
