@@ -32,6 +32,8 @@ nul
 .vim/
 .vscode/
 .vs/
+.pi/
+.omp/
 .root/
 .ccls-cache/
 .netrwhist
