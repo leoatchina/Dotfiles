@@ -9,6 +9,13 @@ style = { shape = "Block", blinking = "On" }
 [hints]
 enabled = []
 
+# Encode physical Alt+Shift+P as Alt+uppercase P. This avoids the ambiguous
+# legacy ESC P/DCS sequence while remaining M-P to both Herdr and tmux.
+[keyboard]
+bindings = [
+  { key = "P", mods = "Alt|Shift", chars = "\u001b[80;3u" },
+]
+
 [font]
 size = 12
 
