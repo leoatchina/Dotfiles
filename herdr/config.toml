@@ -20,14 +20,14 @@ focus_pane_left = ["prefix+h", "shift+left"]
 focus_pane_down = ["prefix+j", "shift+down"]
 focus_pane_up = ["prefix+k", "shift+up"]
 focus_pane_right = ["prefix+l", "shift+right"]
-edit_scrollback = "alt+shift+u"
+edit_scrollback = "alt+U"
 split_vertical = "alt+]"
 split_horizontal = "alt+["
 close_pane = "alt+backslash"
-swap_pane_left = "prefix+alt+shift+h"
-swap_pane_down = "prefix+alt+shift+j"
-swap_pane_up = "prefix+alt+shift+k"
-swap_pane_right = "prefix+alt+shift+l"
+swap_pane_left = "prefix+alt+H"
+swap_pane_down = "prefix+alt+J"
+swap_pane_up = "prefix+alt+K"
+swap_pane_right = "prefix+alt+L"
 last_pane = "prefix+alt+."
 resize_mode = "prefix+r"
 resize_pane_left = "prefix+alt+h"
@@ -37,9 +37,9 @@ resize_pane_right = "prefix+alt+l"
 zoom = "prefix+z"
 
 # Tabs: tmux windows mapped to Herdr tabs
-new_tab = "alt+shift+o"
-previous_tab = "alt+shift+p"
-next_tab = "alt+shift+n"
+new_tab = "alt+O"
+previous_tab = "alt+P"
+next_tab = "alt+N"
 switch_tab = "prefix+1..9"
 close_tab = "prefix+alt+q"
 rename_tab = "prefix+alt+r"
@@ -58,7 +58,7 @@ next_agent = "alt+backtick"
 previous_agent = "alt+~"
 
 # Alt+| enters copy mode. Herdr has no tmux choose-buffer action for Alt+".
-copy_mode = "alt+shift+backslash"
+copy_mode = "alt+|"
 
 # Navigate mode uses vi keys like tmux copy/select movement.
 navigate_workspace_up = "up"
@@ -69,25 +69,25 @@ navigate_pane_up = "k"
 navigate_pane_right = "l"
 
 [[keys.command]]
-key = "alt+shift+h"
+key = "alt+H"
 type = "plugin_action"
 command = "vim-herdr-navigation.left"
 description = "navigate left (vim/herdr)"
 
 [[keys.command]]
-key = "alt+shift+j"
+key = "alt+J"
 type = "plugin_action"
 command = "vim-herdr-navigation.down"
 description = "navigate down (vim/herdr)"
 
 [[keys.command]]
-key = "alt+shift+k"
+key = "alt+K"
 type = "plugin_action"
 command = "vim-herdr-navigation.up"
 description = "navigate up (vim/herdr)"
 
 [[keys.command]]
-key = "alt+shift+l"
+key = "alt+L"
 type = "plugin_action"
 command = "vim-herdr-navigation.right"
 description = "navigate right (vim/herdr)"
