@@ -1,0 +1,30 @@
+# ===== 第一梯队：系统运行基石（缺一不可） =====
+pi install npm:pi-agent-router          # 任务委派与多代理分工
+pi install npm:pi-subagents             # 并行子任务执行
+pi install npm:pi-memory                # 跨会话持久化记忆
+pi install npm:context-mode             # 工具输出拦截，防止上下文撑爆
+pi install npm:pi-ultra-compact         # 自动对话压缩，保持上下文在窗口内
+
+# ===== 第二梯队：模型订阅源（动力来源） =====
+pi install npm:pi-devin-auth            # Devin 订阅
+pi install npm:pi-antigravity           # Antigravity 订阅
+# Z.ai / OpenCode / Codex 由 Pi 原生支持，无需插件
+
+# ===== 第三梯队：核心工作能力（干活工具） =====
+pi install npm:pi-mcp-adapter           # MCP 协议，外部工具互通
+pi install npm:pi-web-access            # 网页访问
+pi install npm:pi-lens                  # 代码检索与洞察
+pi install npm:pi-workflow              # 多步骤任务编排
+
+# ===== 第四梯队：交互与状态（使用体验） =====
+pi install npm:@narumitw/pi-usage       # 订阅用量显示
+pi install npm:pi-input-bar             # 输入框状态栏（分支/模型/上下文）
+pi install npm:@oipsanthony/pi-command-history  # 上下键复用历史命令
+pi install npm:pi-hashline-edit-pro     # 哈希锚定精准编辑
+
+# ===== 第五梯队：辅助增强（锦上添花） =====
+pi install npm:@narumitw/pi-plan-mode   # 计划模式 - 安全规划闭环
+pi install npm:pi-playwright            # 浏览器自动化（UI测试）
+pi install npm:pi-self-learning         # 自动学习总结
+pi install npm:pi-permission-modes      # 权限模式切换（Shift+Tab）
+
