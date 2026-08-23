@@ -1,3 +1,3 @@
 app.plan.toggle: Shift+Tab
-app.thinking.cycle: Alt+M
-app.model.select: Alt+Shift+M
+app.thinking.cycle: Alt+Shift+M
+app.model.select: Ctrl+L
