@@ -9,7 +9,8 @@
       "permission": {
         "tool": {
           "*": "ask",
-          "ctx_search": "allow"
+          "ctx_search": "allow",
+          "ctx_execute": "allow"
         }
       }
     }
