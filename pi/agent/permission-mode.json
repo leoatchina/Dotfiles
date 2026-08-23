@@ -1,0 +1,17 @@
+{
+  "cycleOrder": [
+    "default",
+    "build",
+    "yolo"
+  ],
+  "modes": {
+    "default": {
+      "permission": {
+        "tool": {
+          "*": "ask",
+          "ctx_search": "allow"
+        }
+      }
+    }
+  }
+}

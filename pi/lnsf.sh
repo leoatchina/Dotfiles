@@ -1,11 +1,20 @@
 #!/bin/sh
-# Link pi agent config files into ~/.pi/agent
+# Link/copy pi config files into place.
+# NOTE: pi-plan-mode.json MUST stay a real file — the extension opens it with
+# O_NOFOLLOW and rejects symlinks ("settings path is not a regular file"),
+# so it is copied, never linked.
 DIR="$(cd "$(dirname "$0")" && pwd)"
 mkdir -p ~/.pi/agent
 rm ~/.pi/agent/keybindings.json || true
 ln -sf "$DIR/agent/keybindings.json" ~/.pi/agent/keybindings.json && echo "=== pi keybindings linked ==="
-rm ~/.pi/agent/pi-plan-mode.json || true
-ln -sf "$DIR/agent/pi-plan-mode.json" ~/.pi/agent/pi-plan-mode.json && echo "=== pi plan-mode settings linked ==="
+
+rm -f ~/.pi/agent/pi-plan-mode.json
+cp -f "$DIR/agent/pi-plan-mode.json" ~/.pi/agent/pi-plan-mode.json && echo "=== pi plan-mode settings copied (O_NOFOLLOW: real file) ==="
+
+mkdir -p ~/.pi/agent/permission-mode
+rm ~/.pi/agent/permission-mode/permission-mode.json || true
+ln -sf "$DIR/agent/permission-mode.json" ~/.pi/agent/permission-mode/permission-mode.json && echo "=== pi permission-mode linked ==="
+
 mkdir -p ~/.pi-lens
 rm ~/.pi-lens/config.json || true
 ln -sf "$DIR/pi-lens/config.json" ~/.pi-lens/config.json && echo "=== pi-lens config linked ==="
