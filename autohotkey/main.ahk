@@ -166,7 +166,7 @@ CapsLock & t:: {
 }
 CapsLock & g:: {
     if GetKeyState("Alt")
-        LaunchOrActivate("zap-oss.exe", ScoopPath . "\apps\zap\current\zap-oss.exe")
+        LaunchOrActivate("WindowsTerminal.exe", AppDataLocal . "\Microsoft\WindowsApps\wt.exe")
     else
         LaunchOrActivate("wezterm-gui.exe", ScoopPath . "\apps\wezterm-nightly\current\wezterm-gui.exe")
 }
