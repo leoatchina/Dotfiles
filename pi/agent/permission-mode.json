@@ -11,7 +11,7 @@
           "*": "ask",
           "ctx_search": "allow",
           "ctx_execute": "allow",
-          "memory_write": "allow",
+          "memory_write": "allow"
         }
       }
     }
