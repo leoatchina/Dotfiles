@@ -9,25 +9,26 @@ style = { shape = "Block", blinking = "On" }
 [hints]
 enabled = []
 
-# Encode Alt chords as CSI-u Alt+character events. Uppercase entries deliberately
-# omit the Shift modifier in the payload so both Herdr and tmux see M-<uppercase>.
+# Match wezterm/wezterm.lua: tmux 3.4-sensitive bindings use xterm
+# modifyOtherKeys; the remaining Alt chords use CSI-u.
 [keyboard]
-# bindings = [
-#   { key = "O", mods = "Alt|Shift", chars = "\u001b[79;3u" },
-#   { key = "U", mods = "Alt|Shift", chars = "\u001b[85;3u" },
-#   { key = "H", mods = "Alt|Shift", chars = "\u001b[72;3u" },
-#   { key = "J", mods = "Alt|Shift", chars = "\u001b[74;3u" },
-#   { key = "K", mods = "Alt|Shift", chars = "\u001b[75;3u" },
-#   { key = "L", mods = "Alt|Shift", chars = "\u001b[76;3u" },
-#   { key = "P", mods = "Alt|Shift", chars = "\u001b[80;3u" },
-#   { key = "N", mods = "Alt|Shift", chars = "\u001b[78;3u" },
-#   { key = "o", mods = "Alt", chars = "\u001b[111;3u" },
-#   { key = "u", mods = "Alt", chars = "\u001b[117;3u" },
-#   { key = "[", mods = "Alt", chars = "\u001b[91;3u" },
-#   { key = "]", mods = "Alt", chars = "\u001b[93;3u" },
-#   { key = "|", mods = "Alt|Shift", chars = "\u001b[124;3u" },
-#   { key = "\\", mods = "Alt", chars = "\u001b[92;3u" },
-# ]
+bindings = [
+  { key = "[",  mods = "Alt",       chars = "\u001b[91;3u" },
+  { key = "]",  mods = "Alt",       chars = "\u001b[93;3u" },
+  { key = "|",  mods = "Alt|Shift", chars = "\u001b[124;3u" },
+  { key = "\\", mods = "Alt",       chars = "\u001b[92;3u" },
+  { key = "\"", mods = "Alt|Shift", chars = "\u001b[27;3;34~" },
+  { key = "o",  mods = "Alt|Shift", chars = "\u001b[27;3;79~" },
+  { key = "o",  mods = "Alt",       chars = "\u001b[111;3u" },
+  { key = "u",  mods = "Alt|Shift", chars = "\u001b[85;3u" },
+  { key = "u",  mods = "Alt",       chars = "\u001b[117;3u" },
+  { key = "h",  mods = "Alt|Shift", chars = "\u001b[72;3u" },
+  { key = "j",  mods = "Alt|Shift", chars = "\u001b[74;3u" },
+  { key = "k",  mods = "Alt|Shift", chars = "\u001b[75;3u" },
+  { key = "l",  mods = "Alt|Shift", chars = "\u001b[76;3u" },
+  { key = "p",  mods = "Alt|Shift", chars = "\u001b[80;3u" },
+  { key = "n",  mods = "Alt|Shift", chars = "\u001b[78;3u" },
+]
 
 [font]
 size = 12
