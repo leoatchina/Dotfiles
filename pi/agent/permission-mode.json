@@ -10,7 +10,8 @@
         "tool": {
           "*": "ask",
           "ctx_search": "allow",
-          "memory_write": "allow"
+          "ctx_execute": "allow",
+          "memory_write": "allow",
         }
       }
     }

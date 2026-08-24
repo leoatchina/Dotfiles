@@ -30,7 +30,7 @@ if errorlevel 1 (
 REM permission-mode.json (symlink ok - plain read/write)
 if not exist "%USERPROFILE%\.pi\agent\permission-mode" mkdir "%USERPROFILE%\.pi\agent\permission-mode"
 if exist "%USERPROFILE%\.pi\agent\permission-mode\permission-mode.json" del /F /Q "%USERPROFILE%\.pi\agent\permission-mode\permission-mode.json"
-mklink "%USERPROFILE%\.pi\agent\permission-mode\permission-mode.json" "%SCRIPT_DIR%\agent\permission-mode.json"
+mklink "%USERPROFILE%\.pi\agent\permission-mode\permission-mode.json" "%SCRIPT_DIR%\agent\permission-mode.win.json"
 if errorlevel 1 (
     echo [HINT] Run this cmd as Administrator or enable Developer Mode on Windows.
     exit /b 1
