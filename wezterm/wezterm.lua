@@ -24,19 +24,21 @@ config.keys = {
   { key = 'Enter', mods = 'ALT', action = action.DisableDefaultAssignment },
   -- Encode Alt chords as CSI-u Alt+character events. Uppercase payloads omit
   -- Shift so both Herdr and tmux see M-<uppercase>.
-  { key = "'", mods = 'ALT|SHIFT', action = action.SendString '\x1b[27;3;34~' },
-  { key = 'o', mods = 'ALT|SHIFT', action = action.SendString '\x1b[27;3;79~' },
-  { key = 'o', mods = 'ALT', action = action.SendString '\x1b[111;3u' },
-  { key = 'h', mods = 'ALT|SHIFT', action = action.SendString '\x1b[72;3u' },
-  { key = 'j', mods = 'ALT|SHIFT', action = action.SendString '\x1b[74;3u' },
-  { key = 'k', mods = 'ALT|SHIFT', action = action.SendString '\x1b[75;3u' },
-  { key = 'l', mods = 'ALT|SHIFT', action = action.SendString '\x1b[76;3u' },
-  { key = 'p', mods = 'ALT|SHIFT', action = action.SendString '\x1b[80;3u' },
-  { key = 'n', mods = 'ALT|SHIFT', action = action.SendString '\x1b[78;3u' },
-  { key = '[', mods = 'ALT', action = action.SendString '\x1b[91;3u' },
-  { key = ']', mods = 'ALT', action = action.SendString '\x1b[93;3u' },
+  { key = '[',  mods = 'ALT',       action = action.SendString '\x1b[91;3u' },
+  { key = ']',  mods = 'ALT',       action = action.SendString '\x1b[93;3u' },
   { key = '\\', mods = 'ALT|SHIFT', action = action.SendString '\x1b[124;3u' },
   { key = '\\', mods = 'ALT',       action = action.SendString '\x1b[92;3u' },
+  { key = "'",  mods = 'ALT|SHIFT', action = action.SendString '\x1b[27;3;34~' },
+  { key = 'o',  mods = 'ALT|SHIFT', action = action.SendString '\x1b[27;3;79~' },
+  { key = 'o',  mods = 'ALT',       action = action.SendString '\x1b[111;3u' },
+  { key = 'u',  mods = 'ALT|SHIFT', action = action.SendString '\x1b[85;3u' },
+  { key = 'u',  mods = 'ALT',       action = action.SendString '\x1b[117;3u' },
+  { key = 'h',  mods = 'ALT|SHIFT', action = action.SendString '\x1b[72;3u' },
+  { key = 'j',  mods = 'ALT|SHIFT', action = action.SendString '\x1b[74;3u' },
+  { key = 'k',  mods = 'ALT|SHIFT', action = action.SendString '\x1b[75;3u' },
+  { key = 'l',  mods = 'ALT|SHIFT', action = action.SendString '\x1b[76;3u' },
+  { key = 'p',  mods = 'ALT|SHIFT', action = action.SendString '\x1b[80;3u' },
+  { key = 'n',  mods = 'ALT|SHIFT', action = action.SendString '\x1b[78;3u' },
 }
 
 for i = 1, 9 do
