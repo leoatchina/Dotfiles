@@ -1,0 +1,6 @@
+---
+"project_buttons:open_repository": ctrl-alt-shift-O
+"workspace:open_repository": none
+"terminal:open_block_list_context_menu_via_keybinding": ctrl-alt-shift-F
+"workspace:open_global_search": alt-shift-F
+"terminal:ask_ai_assistant": ctrl-alt-space

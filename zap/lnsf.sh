@@ -1,6 +1,6 @@
 #!/bin/sh
-# Link zap config into ~/.config/zap
+# Link zap keybindings into ~/.config/zap
 DIR="$(cd "$(dirname "$0")" && pwd)"
 mkdir -p ~/.config/zap
-rm ~/.config/zap/config.toml || true
-ln -sf "$DIR/config.toml" ~/.config/zap/config.toml && echo "=== zap config linked ==="
+rm ~/.config/zap/keybindings.yaml || true
+ln -sf "$DIR/keybindings.yaml" ~/.config/zap/keybindings.yaml && echo "=== zap keybindings linked ==="
