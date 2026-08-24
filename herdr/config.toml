@@ -68,6 +68,21 @@ navigate_pane_down = "j"
 navigate_pane_up = "k"
 navigate_pane_right = "l"
 
+[ui]
+tab_bar_position = "bottom"
+tab_bar_right = [
+  { type = "command", command = "$HOME/Dotfiles/herdr/status.sh", interval_seconds = 3, timeout_seconds = 2 },
+  { type = "datetime", format = "%Y-%b-%d" },
+  { type = "datetime", format = "%H:%M" },
+]
+tab_bar_right_separator = " | "
+copy_on_select = true
+confirm_close = true
+prompt_new_tab_name = false
+pane_borders = true
+pane_gaps = false
+mouse_capture = true
+
 [[keys.command]]
 key = "alt+H"
 type = "plugin_action"
@@ -91,17 +106,4 @@ key = "alt+L"
 type = "plugin_action"
 command = "vim-herdr-navigation.right"
 description = "navigate right (vim/herdr)"
-[ui]
-tab_bar_position = "bottom"
-tab_bar_right = [
-  { type = "command", command = "$HOME/Dotfiles/herdr/status.sh", interval_seconds = 3, timeout_seconds = 2 },
-  { type = "datetime", format = "%Y-%b-%d" },
-  { type = "datetime", format = "%H:%M" },
-]
-tab_bar_right_separator = " | "
-copy_on_select = true
-confirm_close = true
-prompt_new_tab_name = false
-pane_borders = true
-pane_gaps = false
-mouse_capture = true
+
