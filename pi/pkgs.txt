@@ -24,6 +24,7 @@ pi install npm:@oipsanthony/pi-command-history  # 上下键复用历史命令
 
 # ===== 第五梯队：辅助增强（锦上添花） =====
 pi install npm:pi-playwright            # 浏览器自动化（UI测试）
+pi install npm:pi-doc-review            # Markdown 文档审阅与批注
 pi install npm:pi-self-learning         # 自动学习总结
 pi install npm:pi-permission-modes      # 权限模式切换（Shift+Tab）
 pi install npm:@narumitw/pi-plan-mode   # 计划模式 - 安全规划闭环
