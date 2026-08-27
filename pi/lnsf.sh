@@ -18,3 +18,18 @@ ln -sf "$DIR/agent/permission-mode.json" ~/.pi/agent/permission-mode/permission-
 mkdir -p ~/.pi-lens
 rm ~/.pi-lens/config.json || true
 ln -sf "$DIR/pi-lens/config.json" ~/.pi-lens/config.json && echo "=== pi-lens config linked ==="
+
+# Link each Dotfiles-managed skill without replacing real third-party skill directories.
+mkdir -p ~/.agents/skills
+for skill_dir in "$DIR"/skills/*; do
+    [ -d "$skill_dir" ] || continue
+    skill_name="$(basename "$skill_dir")"
+    skill_link="$HOME/.agents/skills/$skill_name"
+    if [ -L "$skill_link" ]; then
+        rm -f "$skill_link"
+    elif [ -e "$skill_link" ]; then
+        echo "[WARN] Skill destination exists and is not a symlink, skipped: $skill_link"
+        continue
+    fi
+    ln -s "$skill_dir" "$skill_link" && echo "=== pi skill linked: $skill_name ==="
+done

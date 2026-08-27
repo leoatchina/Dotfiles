@@ -45,7 +45,26 @@ if errorlevel 1 (
     exit /b 1
 )
 
+REM Link each Dotfiles-managed skill without replacing real third-party skill directories.
+if not exist "%USERPROFILE%\.agents\skills" mkdir "%USERPROFILE%\.agents\skills"
+for /D %%D in ("%SCRIPT_DIR%\skills\*") do (
+    if exist "%USERPROFILE%\.agents\skills\%%~nxD" (
+        fsutil reparsepoint query "%USERPROFILE%\.agents\skills\%%~nxD" >nul 2>&1
+        if errorlevel 1 (
+            echo [WARN] Skill destination exists and is not a symbolic link, skipped: %%~nxD
+        ) else (
+            rmdir "%USERPROFILE%\.agents\skills\%%~nxD"
+            mklink /D "%USERPROFILE%\.agents\skills\%%~nxD" "%%~fD"
+            if errorlevel 1 exit /b 1
+        )
+    ) else (
+        mklink /D "%USERPROFILE%\.agents\skills\%%~nxD" "%%~fD"
+        if errorlevel 1 exit /b 1
+    )
+)
+
 echo === pi keybindings linked ===
 echo === pi plan-mode settings copied (O_NOFOLLOW: real file) ===
 echo === pi permission-mode linked ===
 echo === pi-lens config linked ===
+echo === pi skills linked ===
