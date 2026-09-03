@@ -18,6 +18,26 @@ if errorlevel 1 (
     exit /b 1
 )
 
+REM Link each Dotfiles-managed subagent without replacing unmanaged agent files.
+if not exist "%USERPROFILE%\.pi\agent\agents" mkdir "%USERPROFILE%\.pi\agent\agents"
+for %%F in ("%SCRIPT_DIR%\agent\agents\*.md") do (
+    if exist "%%~fF" (
+        if exist "%USERPROFILE%\.pi\agent\agents\%%~nxF" (
+            fsutil reparsepoint query "%USERPROFILE%\.pi\agent\agents\%%~nxF" >nul 2>&1
+            if errorlevel 1 (
+                echo [WARN] Agent destination exists and is not a symbolic link, skipped: %%~nxF
+            ) else (
+                del /F /Q "%USERPROFILE%\.pi\agent\agents\%%~nxF"
+                mklink "%USERPROFILE%\.pi\agent\agents\%%~nxF" "%%~fF"
+                if errorlevel 1 exit /b 1
+            )
+        ) else (
+            mklink "%USERPROFILE%\.pi\agent\agents\%%~nxF" "%%~fF"
+            if errorlevel 1 exit /b 1
+        )
+    )
+)
+
 REM pi-plan-mode.json MUST be a real file: the extension opens it with
 REM O_NOFOLLOW and rejects symlinks. Copy instead of linking.
 if exist "%USERPROFILE%\.pi\agent\pi-plan-mode.json" del /F /Q "%USERPROFILE%\.pi\agent\pi-plan-mode.json"
@@ -64,6 +84,7 @@ for /D %%D in ("%SCRIPT_DIR%\skills\*") do (
 )
 
 echo === pi keybindings linked ===
+echo === pi subagents linked ===
 echo === pi plan-mode settings copied (O_NOFOLLOW: real file) ===
 echo === pi permission-mode linked ===
 echo === pi-lens config linked ===
