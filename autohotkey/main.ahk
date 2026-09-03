@@ -162,7 +162,7 @@ CapsLock & t:: {
     if GetKeyState("Alt")
         LaunchOrActivate("telegram.exe", A_AppData . "\Telegram Desktop\telegram.exe")
     else
-        LaunchOrActivate("tty7-app.exe", AppDataLocal . "\Programes\tty7\tty7-app.exe")
+        LaunchOrActivate("tty7-app.exe", AppDataLocal . "\Programs\tty7\tty7-app.exe")
 }
 CapsLock & g:: {
     if GetKeyState("Alt")
