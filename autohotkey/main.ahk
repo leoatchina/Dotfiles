@@ -228,7 +228,7 @@ CapsLock & 3:: {
 }
 CapsLock & 4:: {
     if GetKeyState("Alt") {
-        LaunchOrActivate("Qoder.exe", AppDataLocal . "\Programs\Qoder\Qoder.exe")
+        LaunchOrActivate("Qoder IDE.exe", AppDataLocal . "\Programs\Qoder\Qoder.exe")
     } else {
         LaunchOrActivate("Devin.exe", AppDataLocal . "\Programs\Devin\Devin.exe")
     }
