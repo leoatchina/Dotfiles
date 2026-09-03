@@ -166,7 +166,7 @@ CapsLock & t:: {
 }
 CapsLock & g:: {
     if GetKeyState("Alt")
-        LaunchOrActivate("zap-oss.exe", ScoopPath . "\apps\zap\current\zap-oss.exe")
+        LaunchOrActivate("uniterm.exe", ScoopPath . "\apps\uniterm\current\uniterm.exe")
     else
         LaunchOrActivate("wezterm-gui.exe", ScoopPath . "\apps\wezterm-nightly\current\wezterm-gui.exe")
 }
@@ -228,7 +228,7 @@ CapsLock & 3:: {
 }
 CapsLock & 4:: {
     if GetKeyState("Alt") {
-        LaunchOrActivate("Qoder.exe", AppDataLocal . "\Programs\Qoder\Qoder.exe")
+        LaunchOrActivate("Qoder IDE.exe", AppDataLocal . "\Programs\Qoder\Qoder.exe")
     } else {
         LaunchOrActivate("Devin.exe", AppDataLocal . "\Programs\Devin\Devin.exe")
     }
