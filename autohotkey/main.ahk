@@ -162,7 +162,7 @@ CapsLock & t:: {
     if GetKeyState("Alt")
         LaunchOrActivate("telegram.exe", A_AppData . "\Telegram Desktop\telegram.exe")
     else
-        LaunchOrActivate("tty7-app.exe", ScoopPath . "\apps\tty7\current\tty7-app.exe")
+        LaunchOrActivate("tty7-app.exe", AppDataLocal . "\Programes\tty7\tty7-app.exe")
 }
 CapsLock & g:: {
     if GetKeyState("Alt")
@@ -228,7 +228,7 @@ CapsLock & 3:: {
 }
 CapsLock & 4:: {
     if GetKeyState("Alt") {
-        LaunchOrActivate("Qoder IDE.exe", AppDataLocal . "\Programs\Qoder\Qoder.exe")
+        LaunchOrActivate("Qoder IDE.exe", AppDataLocal . "\Programs\Qoder IDE\Qoder IDE.exe")
     } else {
         LaunchOrActivate("Devin.exe", AppDataLocal . "\Programs\Devin\Devin.exe")
     }
