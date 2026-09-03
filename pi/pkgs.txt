@@ -1,6 +1,5 @@
 # ===== 第一梯队：系统运行基石（缺一不可） =====
 pi install npm:context-mode             # 工具输出拦截，防止上下文撑爆
-pi install npm:pi-agent-router          # 任务委派与多代理分工
 pi install npm:pi-subagents             # 并行子任务执行
 pi install npm:pi-memory                # 跨会话持久化记忆
 pi install npm:pi-ultra-compact         # 自动对话压缩，保持上下文在窗口内
