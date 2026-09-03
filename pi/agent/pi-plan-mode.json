@@ -1,3 +1,12 @@
 {
-  "toggleShortcut": "shift+tab"
+  "toggleShortcut": "shift+tab",
+  "defaultPlanTools": [
+    "read",
+    "bash",
+    "powershell",
+    "grep",
+    "find",
+    "ls",
+    "subagent"
+  ]
 }
