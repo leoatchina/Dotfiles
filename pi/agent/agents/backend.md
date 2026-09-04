@@ -2,7 +2,7 @@
 name: backend
 description: Backend implementation specialist using OpenAI Codex Terra
 model: openai-codex/gpt-5.6-terra
-fallbackModels: devin/gpt-5-6-terra, antigravity/gemini-3.7-flash
+fallbackModels: devin/gpt-5-6-terra, antigravity/gemini-3.8-flash
 thinking: high
 tools: read, grep, find, ls, bash, edit, write, contact_supervisor
 systemPromptMode: replace

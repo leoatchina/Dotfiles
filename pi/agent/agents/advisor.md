@@ -1,7 +1,7 @@
 ---
 name: advisor
 description: Read-only plan and architecture advisor using Antigravity Gemini Flash
-model: antigravity/gemini-3.7-flash
+model: antigravity/gemini-3.8-flash
 thinking: high
 tools: read, grep, find, ls
 systemPromptMode: replace
