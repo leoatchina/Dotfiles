@@ -164,12 +164,8 @@ CapsLock & t:: {
     else
         LaunchOrActivate("tty7-app.exe", AppDataLocal . "\Programs\tty7\tty7-app.exe")
 }
-CapsLock & g:: {
-    if GetKeyState("Alt")
-        LaunchOrActivate("uniterm.exe", ScoopPath . "\apps\uniterm\current\uniterm.exe")
-    else
-        LaunchOrActivate("wezterm-gui.exe", ScoopPath . "\apps\wezterm-nightly\current\wezterm-gui.exe")
-}
+CapsLock & g:: LaunchOrActivate("wezterm-gui.exe", ScoopPath . "\apps\wezterm-nightly\current\wezterm-gui.exe")
+CapsLock & b:: LaunchOrActivate("uniterm.exe", ScoopPath . "\apps\uniterm\current\uniterm.exe")
 CapsLock & 0:: {
     if GetKeyState("Alt") {
         LaunchOrActivate("mobaxterm.exe", ScoopPath . "\apps\mobaxterm\current\mobaxterm.exe")
