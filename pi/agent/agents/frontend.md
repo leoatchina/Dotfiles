@@ -1,7 +1,7 @@
 ---
 name: frontend
 description: Frontend implementation specialist using Antigravity Gemini Flash
-model: antigravity/gemini-3.7-flash
+model: antigravity/gemini-3.8-flash
 thinking: medium
 tools: read, grep, find, ls, bash, edit, write, contact_supervisor
 systemPromptMode: replace

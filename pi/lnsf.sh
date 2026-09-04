@@ -8,6 +8,18 @@ mkdir -p ~/.pi/agent
 rm ~/.pi/agent/keybindings.json || true
 ln -sf "$DIR/agent/keybindings.json" ~/.pi/agent/keybindings.json && echo "=== pi keybindings linked ==="
 
+# Link global Pi instructions without replacing an unmanaged real file.
+agent_instructions="$HOME/.pi/agent/AGENTS.md"
+if [ -L "$agent_instructions" ]; then
+    rm -f "$agent_instructions"
+elif [ -e "$agent_instructions" ]; then
+    echo "[WARN] Global Pi instructions exist and are not a symlink, skipped: $agent_instructions"
+    agent_instructions=""
+fi
+if [ -n "$agent_instructions" ]; then
+    ln -s "$DIR/agent/AGENTS.md" "$agent_instructions" && echo "=== pi global instructions linked ==="
+fi
+
 # Link each Dotfiles-managed subagent without replacing unmanaged agent files.
 mkdir -p ~/.pi/agent/agents
 for agent_file in "$DIR"/agent/agents/*.md; do
