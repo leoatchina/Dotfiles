@@ -10,9 +10,13 @@ When the latest effective Plan Mode contract says Plan Mode is active, automatic
 
 Use one parent-controlled `workflowScript` for the two stages. Keep both children read-only. Never launch `backend` or `frontend` while Plan Mode is active. If external documentation or web research is required during planning, `tiny` may also be dispatched as a read-only researcher. Do not launch the same planning workflow repeatedly for an unchanged request; reuse results already present in the conversation. If `subagent` is unavailable or blocked, continue planning directly rather than failing the request.
 
-## Research, Web Search, and Git Commits (Both Modes)
+## Research and Web Search (Read-Only)
 
-When external information, online API documentation, library specs, GitHub issues, or public error solutions are needed (in either Plan Mode or Normal Mode), automatically dispatch `tiny` to perform web searches and documentation retrieval, keeping the main context clean. `tiny` can also be used for inspecting git diffs and crafting clean git commits. Do not dispatch `backend` or `frontend` for research tasks.
+When external information, online API documentation, library specs, GitHub issues, or public error solutions are needed (in either Plan Mode or Normal Mode), automatically dispatch `tiny` to perform web searches and documentation retrieval, keeping the main context clean. `tiny` is strictly read-only and never modifies repository files. Do not dispatch `backend` or `frontend` for research tasks.
+
+## Git Management (Commits & Push)
+
+When the user asks to stage, commit, generate git logs/history, or push changes, dispatch `git`. `git` inspects git diffs, creates concise conventional commits, and handles push operations upon user confirmation.
 
 ## Outside Plan Mode (Implementation Workflow)
 
