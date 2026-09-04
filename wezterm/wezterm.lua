@@ -22,6 +22,7 @@ config.keys = {
   { key = 'n', mods = 'CTRL|SHIFT|ALT', action = action.MoveTabRelative(1) },
   { key = 'p', mods = 'CTRL|SHIFT|ALT', action = action.MoveTabRelative(-1) },
   { key = 'Enter', mods = 'ALT', action = action.DisableDefaultAssignment },
+  { key = 'M', mods = 'CTRL|SHIFT', action = action.DisableDefaultAssignment },
   -- Encode Alt chords as CSI-u Alt+character events. Uppercase payloads omit
   -- Shift so both Herdr and tmux see M-<uppercase>.
   { key = '[',  mods = 'ALT',       action = action.SendString '\x1b[91;3u' },
