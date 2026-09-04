@@ -3,7 +3,7 @@ name: architect
 description: Read-only planning and architecture specialist using OpenAI Codex Sol
 model: openai-codex/gpt-5.6-sol
 fallbackModels: zai/glm-5.3, antigravity/gemini-3.7-flash
-thinking: high
+thinking: xhigh
 tools: read, grep, find, ls
 systemPromptMode: replace
 inheritProjectContext: true
