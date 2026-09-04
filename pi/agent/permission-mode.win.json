@@ -32,7 +32,12 @@
         "tool": {
           "*": "ask",
           "ctx_search": "allow",
-          "ctx_execute": "allow"
+          "ctx_execute": "allow",
+          "memory_write": "allow",
+          "ctx_batch_execute": "allow",
+          "ctx_execute_file": "allow",
+          "lsp_diagnostics": "allow",
+          "lens_diagnostics": "allow"
         },
         "skill": "allow"
       }
@@ -75,9 +80,7 @@
       },
       "bypassProtectedPaths": true,
       "permission": {
-        "path": {
-          "*": "allow"
-        },
+        "path": "allow",
         "external_directory": "allow",
         "read": "allow",
         "write": "allow",
@@ -85,9 +88,7 @@
         "grep": "allow",
         "find": "allow",
         "ls": "allow",
-        "bash": {
-          "*": "allow"
-        },
+        "bash": "allow",
         "web_search": "allow",
         "tool": "allow",
         "skill": "allow"

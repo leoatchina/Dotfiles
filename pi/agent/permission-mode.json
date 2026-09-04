@@ -1,4 +1,6 @@
 {
+  "$schema": "https://raw.githubusercontent.com/wynainfo/pi-permission-modes/main/schemas/permission-mode.schema.json",
+  "defaultMode": "default",
   "cycleOrder": [
     "default",
     "build",
@@ -17,6 +19,43 @@
           "lsp_diagnostics": "allow",
           "lens_diagnostics": "allow"
         }
+      }
+    },
+    "build": {
+      "permission": {
+        "path": {
+          "*": "allow",
+          "*.env": "deny"
+        },
+        "bash": {
+          "*": "allow",
+          "rm -rf*": "ask"
+        },
+        "tool": "allow",
+        "skill": "allow"
+      }
+    },
+    "yolo": {
+      "label": "YOLO",
+      "color": "error",
+      "sandbox": {
+        "enabled": false,
+        "writable": true
+      },
+      "bypassProtectedPaths": true,
+      "permission": {
+        "path": "allow",
+        "external_directory": "allow",
+        "read": "allow",
+        "write": "allow",
+        "edit": "allow",
+        "grep": "allow",
+        "find": "allow",
+        "ls": "allow",
+        "bash": "allow",
+        "web_search": "allow",
+        "tool": "allow",
+        "skill": "allow"
       }
     }
   }
