@@ -164,13 +164,28 @@ CapsLock & t:: {
     else
         LaunchOrActivate("tty7-app.exe", AppDataLocal . "\Programs\tty7\tty7-app.exe")
 }
-CapsLock & g:: LaunchOrActivate("wezterm-gui.exe", ScoopPath . "\apps\wezterm-nightly\current\wezterm-gui.exe")
-CapsLock & b:: LaunchOrActivate("uniterm.exe", ScoopPath . "\apps\uniterm\current\uniterm.exe")
 CapsLock & 0:: {
     if GetKeyState("Alt") {
         LaunchOrActivate("mobaxterm.exe", ScoopPath . "\apps\mobaxterm\current\mobaxterm.exe")
     } else {
         LaunchOrActivate("alacritty.exe", ScoopPath . "\apps\alacritty\current\alacritty.exe")
+    }
+}
+CapsLock & 1:: LaunchOrActivate("wezterm-gui.exe", ScoopPath . "\apps\wezterm-nightly\current\wezterm-gui.exe")
+CapsLock & 2:: LaunchOrActivate("uniterm.exe", ScoopPath . "\apps\uniterm\current\uniterm.exe")
+; browsers
+CapsLock & b:: {
+    if GetKeyState("Alt") {
+        LaunchOrActivate("brave.exe", ScoopPath . "\apps\brave\current\brave.exe")
+    } else {
+        LaunchOrActivate("msedge.exe", "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe")
+    }
+}
+CapsLock & g:: {
+    if GetKeyState("Alt") {
+        LaunchOrActivate("opera.exe", ScoopPath . "\apps\opera\current\opera.exe")
+    } else {
+        LaunchOrActivate("chrome.exe", "C:\Program Files\Google\Chrome\Application\chrome.exe")
     }
 }
 ; folo
@@ -199,20 +214,6 @@ CapsLock & z:: {
         LaunchOrActivate("filezilla.exe", ScoopPath . "\apps\filezilla\current\filezilla.exe")
     } else {
         LaunchOrActivate("zotero.exe", ScoopPath . "\apps\zotero\current\zotero.exe")
-    }
-}
-CapsLock & 1:: {
-    if GetKeyState("Alt") {
-        LaunchOrActivate("brave.exe", ScoopPath . "\apps\brave\current\brave.exe")
-    } else {
-        LaunchOrActivate("msedge.exe", "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe")
-    }
-}
-CapsLock & 2:: {
-    if GetKeyState("Alt") {
-        LaunchOrActivate("opera.exe", ScoopPath . "\apps\opera\current\opera.exe")
-    } else {
-        LaunchOrActivate("chrome.exe", "C:\Program Files\Google\Chrome\Application\chrome.exe")
     }
 }
 CapsLock & 3:: {
