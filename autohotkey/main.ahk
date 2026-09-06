@@ -259,7 +259,7 @@ CapsLock & 8:: {
 }
 CapsLock & 9:: {
     if GetKeyState("Alt") {
-        LaunchOrActivate("antigravity_tools.exe", AppDataLocal . "\Antigravity Tools\antigravity_tools.exe")
+        LaunchOrActivate("antigravity-tools.exe", AppDataLocal . "\Antigravity Tools\antigravity-tools.exe")
     } else {
         LaunchOrActivate("WorkBuddy.exe", AppDataLocal . "\Programs\WorkBuddy\WorkBuddy.exe")
     }
