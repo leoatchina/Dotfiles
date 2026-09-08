@@ -174,9 +174,9 @@ CapsLock & 0:: {
 CapsLock & 1:: LaunchOrActivate("alacritty.exe", ScoopPath . "\apps\alacritty\current\alacritty.exe")
 CapsLock & 2:: {
     if GetKeyState("Alt") {
-        LaunchOrActivate("rio.exe", "C:\Program Files\rio\rio.exe")
-    } else {
         LaunchOrActivate("wezterm-gui.exe", ScoopPath . "\apps\wezterm-nightly\current\wezterm-gui.exe")
+    } else {
+        LaunchOrActivate("rio.exe", "C:\Program Files\rio\rio.exe")
     }
 }
 ; browsers
