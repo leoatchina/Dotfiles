@@ -129,7 +129,7 @@ CapsLock & LShift:: Send("^+{Tab}")
 ; Volume control
 CapsLock & m:: {
     if GetKeyState("Alt"){
-        LaunchOrActivate("Motrix.exe", AppDataLocal . "\Programs\Motrix\Motrix.exe")
+        LaunchOrActivate("Motrix.exe", AppDataLocal . "\Programs\Motrix\Motrix.exe", ScoopPath . "\apps\motrix\current\motrix.exe")
     }else{
         Send("{Volume_Mute}")
     }
